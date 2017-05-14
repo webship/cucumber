@@ -8,11 +8,18 @@ dependencies:
   - user
   - node
   - taxonomy
+  - block
+  - block_content
+  - menu_link_content
+  - menu_ui
+  - color
   - field
   - field_ui
   - file
   - image
   - text
+  - datetime
+  - options
   - contextual
   - editor
   - filter
@@ -21,8 +28,35 @@ dependencies:
   - shortcut
   - toolbar
   - views
+  - views_ui
+  - datetime_range
+  - layout_discovery
+  - statistics
+  - syslog
+  
+  - uikit_components
+  - ctools
+  - ctools_block
+  - ctools_views
+  - token
+  - page_manager
+  - page_manager_ui
+  - panels
+  - ds
+  - ds_extras
+  - field_group
+  - smart_trim
+  - pathauto
+  - features
+  - features_ui
+  
 themes:
   - agnian_material_admin
   - uikit
+  - cucumber_install 
+  - cucumber_backend
+  - cucumber_frontend
 distribution:
   name: Cucumber
+  install:
+    theme: cucumber_install

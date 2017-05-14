@@ -22,10 +22,10 @@
       "web/core": [
           "type:drupal-core"
       ],
-      "web/modules/{$name}": [
+      "web/modules/contrib/{$name}": [
           "type:drupal-module"
       ],
-      "web/themes/{$name}": [
+      "web/themes/contrib/{$name}": [
           "type:drupal-theme"
       ],
       "web/profiles/{$name}": [
