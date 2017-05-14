@@ -38,6 +38,8 @@ dependencies:
   - ctools
   - ctools_block
   - ctools_views
+  - config_update
+  - entity
   - token
   - page_manager
   - page_manager_ui

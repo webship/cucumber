@@ -6,8 +6,6 @@ package: Cucumber
 author: Rajab Natshah
 libraries:
   - agnian_material_admin/material_styling
-  - agnian_material_admin/switch_style
-  - agnian_material_admin/owl_carousel
 regions:
   header: 'Header'
   pre_content: 'Pre-content'
@@ -19,6 +17,13 @@ regions:
   page_bottom: 'Page bottom'
   sidebar_first: 'First sidebar'
 regions_hidden:
+  - header
+  - pre_content
+  - breadcrumb
+  - highlighted
+  - help
+  - page_top
+  - page_bottom
   - sidebar_first
 
 libraries-override:

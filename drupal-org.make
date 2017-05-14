@@ -15,6 +15,12 @@ projects[uikit_components][version] = 1.x-dev
 projects[ctools][type] = module
 projects[ctools][version] = 3.0
 
+projects[entity][type] = module
+projects[entity][version] = 1.0-alpha4
+
+projects[config_update][type] = module
+projects[config_update][version] = 1.3
+
 projects[token][type] = module
 projects[token][version] = 1.0
 
