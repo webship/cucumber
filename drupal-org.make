@@ -23,7 +23,7 @@ projects[panels][type] = module
 projects[panels][version] = 4.1
 
 projects[ds][type] = module
-projects[ds][version] = 3.0-beta4
+projects[ds][version] = 3.0-rc1
 
 projects[field_group][type] = module
 projects[field_group][version] = 1.0-rc6

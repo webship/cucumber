@@ -23,6 +23,6 @@ dependencies:
   - views
 themes:
   - agnian_material_admin
-  - uikitf
+  - uikit
 distribution:
   name: Cucumber
