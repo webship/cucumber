@@ -1,2 +1,2 @@
-admin: agnian_material_admin
-default: uikit
+admin: cucumber_backend
+default: cucumber_frontend
