@@ -1,0 +1,28 @@
+name: Cucumber
+type: profile
+description: 'Cucumber Managment system'
+core: 8.x
+version: 8.x-1.x-dev
+dependencies:
+  - config
+  - user
+  - node
+  - taxonomy
+  - field
+  - field_ui
+  - file
+  - image
+  - text
+  - contextual
+  - editor
+  - filter
+  - path
+  - search
+  - shortcut
+  - toolbar
+  - views
+themes:
+  - agnian_material_admin
+  - uikitf
+distribution:
+  name: Cucumber

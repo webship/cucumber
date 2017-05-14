@@ -1,0 +1,53 @@
+{
+  "name": "Natshah/cucumber",
+  "description": "Cucumber Management System",
+  "type": "drupal-profile",
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "repositories": [
+      {
+        "type": "composer",
+        "url": "https://packages.drupal.org/8"
+      }
+  ],
+  "scripts": {
+    "post-install-cmd": [
+      "@composer drupal-scaffold"
+    ],
+    "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
+  },
+  "extra": {
+    "installer-paths": {
+      "web/core": [
+          "type:drupal-core"
+      ],
+      "web/modules/{$name}": [
+          "type:drupal-module"
+      ],
+      "web/themes/{$name}": [
+          "type:drupal-theme"
+      ],
+      "web/profiles/{$name}": [
+          "type:drupal-profile"
+      ]
+    }
+  },
+  "require": {
+    "cweagans/composer-patches": "^1.5.0",
+    "composer/installers": "^1.0",
+    "drupal-composer/drupal-scaffold": "^2.0.0",
+    "drupal/core": "8.3.2",
+    "drupal/agnian_material_admin": "1.2",
+    "drupal/uikit": "",
+    "drupal/ctools": "3.0",
+    "drupal/token": "1.0",
+    "drupal/page_manager": "4.0-beta2",
+    "drupal/panels": "4.1",
+    "drupal/ds": "3.0-beta4",
+    "drupal/field_group": "1.0-rc6",
+    "drupal/smart_trim": "1.0",
+    "drupal/pathauto": "1.0",
+    "drupal/features": "3.5"
+  }
+}
