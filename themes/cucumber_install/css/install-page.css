@@ -5,7 +5,7 @@
  */
 
 html {
-  background: url(../images/druoal-cucumber.png) no-repeat center center fixed;
+  background: url(../images/druoal-cucumber.svg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -13,9 +13,13 @@ html {
 }
 
 body {
-  background: url(../images/druoal-cucumber.png) no-repeat center center fixed;
+  background: url(../images/druoal-cucumber.svg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+img.install-logo {
+  width: 300px;
 }
