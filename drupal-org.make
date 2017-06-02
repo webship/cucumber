@@ -10,7 +10,7 @@ projects[uikit][type] = theme
 projects[uikit][version] = 3.0-beta2
 
 projects[uikit_components][type] = module
-projects[uikit_components][version] = 1.x-dev
+projects[uikit_components][version] = 1.0-beta1
 
 projects[ctools][type] = module
 projects[ctools][version] = 3.0
