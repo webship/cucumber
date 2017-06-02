@@ -14,4 +14,4 @@ regions:
   footer: 'Footer'
 
 libraries:
-  - cucumber_frontend/global-styling
+  - cucumber_frontend/global-style
