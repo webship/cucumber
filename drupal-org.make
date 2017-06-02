@@ -7,7 +7,7 @@ projects[agnian_material_admin][type] = theme
 projects[agnian_material_admin][version] = 1.21
 
 projects[uikit][type] = theme
-projects[uikit][version] = 3.0-beta2
+projects[uikit][version] = 3.0-beta3
 
 projects[uikit_components][type] = module
 projects[uikit_components][version] = 1.0-beta2
