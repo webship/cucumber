@@ -5,7 +5,7 @@
  */
 
 html {
-  background: url(../images/druoal-cucumber.svg) no-repeat center center fixed;
+  background: url(../images/drupal-cucumber.svg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -13,13 +13,27 @@ html {
 }
 
 body {
-  background: url(../images/druoal-cucumber.svg) no-repeat center center fixed;
+  background: url(../images/drupal-cucumber.svg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 
-img.install-logo {
-  width: 300px;
+body img.install-logo {
+  width: 125px;
+  float: left;
+}
+
+body .install-site-name {
+  float: left;
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
+body body .layout-container,
+body .js .layout-container,
+.js body .layout-container,
+.js .js .layout-container {
+  margin-left: 5%;
 }
