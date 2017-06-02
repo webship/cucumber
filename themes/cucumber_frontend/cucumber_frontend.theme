@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * @file
+ * Conditional logic and data processing for cucumber_frontend.
+ */
+
+/**
+ * Load cucumber_frontend's include files for theme processing.
+ */
+uikit_load_include('inc', 'cucumber_frontend', 'preprocess', 'includes');
+uikit_load_include('inc', 'cucumber_frontend', 'process', 'includes');
+uikit_load_include('inc', 'cucumber_frontend', 'theme', 'includes');
+uikit_load_include('inc', 'cucumber_frontend', 'alter', 'includes');

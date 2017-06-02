@@ -1,0 +1,13 @@
+global-style:
+  version: VERSION
+  css:
+    base:
+      css/cucumber_frontend.base.css: {}
+    layout:
+      css/cucumber_frontend.layout.css: {}
+    component:
+      css/cucumber_frontend.component.css: {}
+    theme:
+      css/cucumber_frontend.theme.css: {}
+  js:
+    js/cucumber_frontend.theme.js: {}
