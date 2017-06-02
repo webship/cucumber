@@ -4,7 +4,7 @@ core = 8.x
 defaults[projects][subdir] = "contrib"
 
 projects[agnian_material_admin][type] = theme
-projects[agnian_material_admin][version] = 1.2
+projects[agnian_material_admin][version] = 1.21
 
 projects[uikit][type] = theme
 projects[uikit][version] = 3.0-beta2

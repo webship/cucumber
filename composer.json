@@ -1,10 +1,21 @@
 {
-  "name": "Natshah/cucumber",
+  "name": "natshah/cucumber",
   "description": "Cucumber Management System",
   "type": "drupal-profile",
   "license": "GPL-2.0+",
   "minimum-stability": "dev",
   "prefer-stable": true,
+  "authors": [
+    {
+      "name": "Rajab Natshah",
+      "homepage": "https://www.drupal.org/u/rajabnatshah",
+      "role": "Maintainer"
+    }
+  ],
+  "support": {
+    "issues": "http://drupal.org/project/issues/cucumber",
+    "source": "http://cgit.drupalcode.org/cucumber"
+  },
   "repositories": [
       {
         "type": "composer",
@@ -38,7 +49,7 @@
     "composer/installers": "^1.0",
     "drupal-composer/drupal-scaffold": "^2.0.0",
     "drupal/core": "8.3.2",
-    "drupal/agnian_material_admin": "1.2",
+    "drupal/agnian_material_admin": "1.21",
     "drupal/uikit": "",
     "drupal/ctools": "3.0",
     "drupal/entity": "1.0-alpha4",
