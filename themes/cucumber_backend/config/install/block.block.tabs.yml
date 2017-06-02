@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - cucumber_backend
+id: tabs
+theme: cucumber_backend
+region: content
+weight: -1
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility:
+  request_path:
+    id: request_path
+    pages: /admin/content
+    negate: true
+    context_mapping: {  }

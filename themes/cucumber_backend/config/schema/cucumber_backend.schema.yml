@@ -1,0 +1,5 @@
+# Schema for the configuration files of the Seven theme.
+
+cucumber_backend.settings:
+  type: theme_settings
+  label: 'Cucumber Back-End'
