@@ -51,7 +51,7 @@
     "cweagans/composer-patches": "^1.5.0",
     "composer/installers": "^1.0",
     "drupal-composer/drupal-scaffold": "^2.0.0",
-    "drupal/core": "8.3.3",
+    "drupal/core": "8.3.4",
     "drupal/agnian_material_admin": "1.21",
     "drupal/uikit": "3.0-beta3",
     "drupal/uikit_components": "1.0-beta2",
