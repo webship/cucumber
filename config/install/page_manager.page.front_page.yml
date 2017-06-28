@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+id: front_page
+label: 'Front Page'
+description: 'The front page of the website.'
+use_admin_theme: false
+path: /node
+access_logic: and
+access_conditions: {  }
+parameters: {  }
