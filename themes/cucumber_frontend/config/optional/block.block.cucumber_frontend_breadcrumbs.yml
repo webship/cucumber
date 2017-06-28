@@ -16,9 +16,4 @@ settings:
   label: Breadcrumbs
   provider: system
   label_display: '0'
-visibility:
-  request_path:
-    id: request_path
-    pages: "<front>\r\n/user/*"
-    negate: true
-    context_mapping: {  }
+visibility: {  }
