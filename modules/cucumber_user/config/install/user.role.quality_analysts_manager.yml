@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: quality_analysts_manager
+label: 'Quality Analysts Manager'
+weight: -1
+is_admin: null

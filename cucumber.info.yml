@@ -52,6 +52,9 @@ dependencies:
   - features
   - features_ui
   
+  - cucumber_core
+  - cucumber_user
+  
 themes:
   - agnian_material_admin
   - uikit

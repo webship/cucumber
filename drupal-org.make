@@ -1,8 +1,6 @@
 api = 2
 core = 8.x
 
-defaults[projects][subdir] = "contrib"
-
 projects[agnian_material_admin][type] = theme
 projects[agnian_material_admin][version] = 1.21
 

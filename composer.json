@@ -36,10 +36,10 @@
       "web/core": [
           "type:drupal-core"
       ],
-      "web/modules/contrib/{$name}": [
+      "web/modules/{$name}": [
           "type:drupal-module"
       ],
-      "web/themes/contrib/{$name}": [
+      "web/themes/{$name}": [
           "type:drupal-theme"
       ],
       "web/profiles/{$name}": [
