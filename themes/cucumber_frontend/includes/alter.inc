@@ -17,10 +17,9 @@
  */
 
 /**
- * Implements hook_theme_suggestions_alter() for block templates.
+ * Implements hook_theme_suggestions_alter().
  */
 /* -- Delete this line if you want to use this function
-function cucumber_frontend_theme_suggestions_alter(array &$suggestions, array
- *  $variables) {
+function cucumber_frontend_theme_suggestions_alter(array &$suggestions, array $variables) {
 }
- */
+// */

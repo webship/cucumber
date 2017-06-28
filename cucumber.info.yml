@@ -6,12 +6,20 @@ version: 8.x-1.x-dev
 dependencies:
   - config
   - user
+  - tracker
   - node
+  - comment
   - taxonomy
   - block
   - block_content
   - menu_link_content
   - menu_ui
+  - help
+  - action
+  - dynamic_page_cache
+  - page_cache
+  - big_pipe
+  - automated_cron
   - color
   - field
   - field_ui
@@ -31,19 +39,25 @@ dependencies:
   - views_ui
   - datetime_range
   - layout_discovery
+  - field_layout
   - statistics
   - syslog
+  - update
+  - history
   
   - uikit_components
+  - uikit_views
   - ctools
   - ctools_block
   - ctools_views
   - config_update
+  - config_update_ui
   - entity
   - token
   - page_manager
   - page_manager_ui
   - panels
+  - panels_ipe
   - ds
   - ds_extras
   - field_group
