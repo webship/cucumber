@@ -55,7 +55,7 @@ before_install:
   - echo "[  OK  ] Starting Selenium on the 4444 port ..."
   
 install:
-  - composer install --stability dev --no-interaction -vvv
+  - composer install --dev -vvv
   - cd web
   - drush site-install cucumber --yes --site-name=cucumber --account-name=webmaster --account-pass=dD.123123ddd --db-url=mysql://root:@localhost/cucumber
 
