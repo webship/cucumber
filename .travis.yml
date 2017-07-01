@@ -15,7 +15,7 @@ php:
 env:
   - VERSION=8.x-1.x-test
   
-sudo: enabled
+sudo: required
 dist: trusty
 
 addons:  
@@ -55,16 +55,16 @@ before_install:
   - echo "[  OK  ] Starting Selenium on the 4444 port ..."
   
 install:
-  - composer install -vvv
-  - cd web/
-  - drush site-install cucumber --yes --site-name=cucumber --account-name=webmaster --account-pass=dD.123123ddd --db-url=mysql://root:@localhost/drupal
+  - composer install --stability dev --no-interaction -vvv
+  - cd web
+  - drush site-install cucumber --yes --site-name=cucumber --account-name=webmaster --account-pass=dD.123123ddd --db-url=mysql://root:@localhost/cucumber
 
 before_script:
   - drush runserver --default-server=builtin 8080 &>/dev/null &
   - sleep 5
 
 script:
-  - cd ./profiles/cucumber/
+  - cd ./profiles/cucumber
   - behat --strict tests/features/cucumber/
 
 matrix:
