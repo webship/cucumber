@@ -7,17 +7,13 @@ cache:
     - "$HOME/.drush/cache"
     - "$HOME/.npm"
     - "$HOME/.selenium/cache"
-    
 php:
   - 5.6
   - 7.0
   - 7.1
 env:
   - VERSION=8.x-1.x-test
-  
-sudo: required
 dist: trusty
-
 addons:  
   firefox: 46.0.1
   apt:
@@ -30,12 +26,10 @@ addons:
       - xfonts-75dpi
       - xfonts-scalable
       - xserver-xorg-core
-  
 mysql:
   database: drupal
   username: root
   encoding: utf8
-
 before_install:
   - composer self-update
   - composer --version
@@ -53,19 +47,15 @@ before_install:
   - if [[ ! -f $SELENIUM ]]; then wget -O $SELENIUM http://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.1.jar; fi
   - java -jar $SELENIUM -port 4444 > /dev/null 2>&1 &
   - echo "[  OK  ] Starting Selenium on the 4444 port ..."
-  
 install:
   - composer install --dev -vvv
   - cd web
   - drush site-install cucumber --yes --site-name=cucumber --account-name=webmaster --account-pass=dD.123123ddd --db-url=mysql://root:@localhost/cucumber
-
 before_script:
   - drush runserver --default-server=builtin 8080 &>/dev/null &
   - sleep 5
-
 script:
   - cd ./profiles/cucumber
   - behat --strict tests/features/cucumber/
-
 matrix:
   fast_finish: true
