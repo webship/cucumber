@@ -11,6 +11,7 @@ cache:
 php:
   - 5.6
   - 7.0
+  - 7.1
 env:
   - VERSION=8.x-1.x-test
   
@@ -54,7 +55,7 @@ before_install:
   - echo "[  OK  ] Starting Selenium on the 4444 port ..."
   
 install:
-  - cd web
+  - cd $HOME/cucumber/web/
   - drush site-install cucumber --yes --site-name=cucumber --account-name=webmaster --account-pass=dD.123123ddd --db-url=mysql://root:@localhost/drupal
 
 before_script:
@@ -62,7 +63,7 @@ before_script:
   - sleep 5
 
 script:
-  - cd ./profiles/cucumber
+  - cd ./profiles/cucumber/
   - behat --strict tests/features/cucumber/
 
 matrix:
