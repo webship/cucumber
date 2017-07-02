@@ -54,6 +54,9 @@ install:
   - composer install --dev -vvv
   - cd web
   - drush site-install cucumber --yes --site-name=cucumber --account-name=webmaster --account-pass=dD.123123ddd --db-url=mysql://root:@localhost/cucumber
+  - drush config-set system.performance css.preprocess 0 --yes --format=boolean
+  - drush config-set system.performance js.preprocess 0 --yes --format=boolean
+  - drush config-set system.logging error_level all --yes
 before_script:
   - drush runserver --default-server=builtin 8080 &>/dev/null &
   - sleep 5
