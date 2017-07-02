@@ -13,7 +13,6 @@ php:
   - 7.1
 env:
   - VERSION=8.x-1.x-test
-dist: trusty
 addons:  
   firefox: 46.0.1
   apt:
