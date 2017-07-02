@@ -30,13 +30,21 @@ mysql:
   username: root
   encoding: utf8
 before_install:
+  # Create MySQL Database
+  - mysql -e 'create database drupal;'
+
+  # Install Drush
+  - pear channel-discover pear.drush.org
+  - pear install drush/drush
+  - pear install pear/PHP_CodeSniffer
+  - phpenv rehash
+  
   - phpenv config-rm xdebug.ini
   - phpenv rehash
   - composer self-update
   - composer --version
   - export PATH="$HOME/.composer/vendor/bin:$TRAVIS_BUILD_DIR/bin:$PATH"
   - export COMPOSER_EXIT_ON_PATCH_FAILURE=1
-  - composer global require drush/drush:^8.1 drupal/coder
   
   # Configure the display.
   - export DISPLAY=:0
@@ -52,7 +60,7 @@ before_install:
 install:
   - composer install --dev -vvv
   - cd web
-  - drush site-install cucumber --yes --site-name=cucumber --account-name=webmaster --account-pass=dD.123123ddd --db-url=mysql://root:@localhost/cucumber
+  - drush site-install cucumber --yes --site-name=cucumber --account-name=webmaster --account-pass=dD.123123ddd --db-url=mysql://root:@localhost/drupal
   - drush config-set system.performance css.preprocess 0 --yes --format=boolean
   - drush config-set system.performance js.preprocess 0 --yes --format=boolean
   - drush config-set system.logging error_level all --yes
