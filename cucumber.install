@@ -5,6 +5,7 @@
  * Install, update and uninstall functions for the Cucumber installation profile.
  */
 
+use Symfony\Component\Yaml\Yaml;
 use Drupal\user\Entity\User;
 use Drupal\user\RoleInterface;
 use Drupal\shortcut\Entity\Shortcut;
@@ -24,21 +25,12 @@ function cucumber_install() {
   $user_settings = \Drupal::configFactory()->getEditable('user.settings');
   $user_settings->set('register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL)->save(TRUE);
 
-  // Enable default permissions for system roles.
-  user_role_grant_permissions(RoleInterface::AUTHENTICATED_ID, ['access comments', 'post comments', 'skip comment approval']);
-
-  // Assign user 1 the "administrator" role.
-  $user = User::load(1);
-  $user->roles[] = 'administrator';
-  $user->save();
-
   // We install some menu links, so we have to rebuild the router, to ensure the
   // menu links are valid.
   \Drupal::service('router.builder')->rebuildIfNeeded();
 
-  // Allow all users to use search.
-  user_role_grant_permissions(RoleInterface::AUTHENTICATED_ID, ['search content']);
-
   // Enable the admin theme.
   \Drupal::configFactory()->getEditable('node.settings')->set('use_admin_theme', TRUE)->save(TRUE);
+  
+  \Drupal::service('theme_installer')->uninstall(['cucumber_install']);
 }
