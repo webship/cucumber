@@ -58,7 +58,7 @@
       "drupal-composer/drupal-scaffold": "^2.2",
       "drupal/core": "8.3.5",
       "drupal/agnian_material_admin": "1.21",
-      "drupal/uikit": "2.9",
+      "drupal/uikit": "2.10",
       "drupal/uikit_components": "2.1",
       "drupal/ctools": "3.0",
       "drupal/entity": "1.0-alpha4",
