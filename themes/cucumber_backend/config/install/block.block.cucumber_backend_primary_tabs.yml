@@ -1,26 +1,20 @@
 langcode: en
 status: true
 dependencies:
-  module:
-    - system
   theme:
+    - uikit_admin
     - cucumber_backend
-id: tabs
+id: cucumber_backend_primary_tabs
 theme: cucumber_backend
-region: content
-weight: -1
+region: pre_content
+weight: -4
 provider: null
 plugin: local_tasks_block
 settings:
   id: local_tasks_block
-  label: Tabs
+  label: 'Primary tabs'
   provider: core
   label_display: '0'
   primary: true
-  secondary: true
-visibility:
-  request_path:
-    id: request_path
-    pages: /admin/content
-    negate: true
-    context_mapping: {  }
+  secondary: false
+visibility: {  }

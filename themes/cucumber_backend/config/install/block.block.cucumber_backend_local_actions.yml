@@ -1,14 +1,13 @@
 langcode: en
 status: true
 dependencies:
-  module:
-    - system
   theme:
+    - uikit_admin
     - cucumber_backend
-id: primaryadminactions
+id: cucumber_backend_local_actions
 theme: cucumber_backend
 region: content
-weight: 0
+weight: -4
 provider: null
 plugin: local_actions_block
 settings:
@@ -16,9 +15,4 @@ settings:
   label: 'Primary admin actions'
   provider: core
   label_display: '0'
-visibility:
-  request_path:
-    id: request_path
-    pages: /admin/content
-    negate: true
-    context_mapping: {  }
+visibility: {  }

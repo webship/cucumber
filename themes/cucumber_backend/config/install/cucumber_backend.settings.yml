@@ -1,0 +1,28 @@
+base_style: '0'
+standard_sidebar_positions: holy-grail
+tablet_sidebar_positions: sidebar-left-stacked
+mobile_sidebar_positions: sidebars-stacked
+page_container: 1
+page_centering: 1
+page_margin: uk-margin
+navbar_container: 1
+navbar_centering: 1
+navbar_attached: 0
+navbar_margin_top: uk-margin-top
+navbar_margin_bottom: 0
+primary_tasks_style: uk-tab
+secondary_tasks_style: uk-subnav-line
+display_breadcrumbs: 1
+breakcrumbs_home_link: 1
+breakcrumbs_current_page: 0
+features:
+  node_user_picture: 1
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+logo:
+  use_default: 1
+  path: ''
+favicon:
+  use_default: 1
+  path: ''

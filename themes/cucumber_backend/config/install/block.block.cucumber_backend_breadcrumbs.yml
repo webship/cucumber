@@ -4,11 +4,12 @@ dependencies:
   module:
     - system
   theme:
+    - uikit_admin
     - cucumber_backend
-id: breadcrumbs
+id: cucumber_backend_breadcrumbs
 theme: cucumber_backend
 region: breadcrumb
-weight: 0
+weight: -6
 provider: null
 plugin: system_breadcrumb_block
 settings:

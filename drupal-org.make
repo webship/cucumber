@@ -1,14 +1,19 @@
 api = 2
 core = 8.x
 
-projects[agnian_material_admin][type] = theme
-projects[agnian_material_admin][version] = 1.21
-
 projects[uikit][type] = theme
 projects[uikit][version] = 2.10
 
+projects[uikit_admin][type] = theme
+projects[uikit_admin][version] = 2.0-beta1
+
 projects[uikit_components][type] = module
 projects[uikit_components][version] = 2.1
+
+projects[uikit_gui][type] = module
+projects[uikit_gui][download][url] = https://git.drupal.org/project/uikit_gui.git
+projects[uikit_gui][download][revision] = 06e9e4ac428be66a96b9d618a5d681c516cfc294
+projects[uikit_gui][download][branch] = 8.x-1.x
 
 projects[ctools][type] = module
 projects[ctools][version] = 3.0

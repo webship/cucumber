@@ -46,6 +46,7 @@ dependencies:
   - history
   
   - uikit_components
+  - uikit_gui
   - uikit_views
   - ctools
   - ctools_block
@@ -70,8 +71,8 @@ dependencies:
   - cucumber_user
   
 themes:
-  - agnian_material_admin
   - uikit
+  - uikit_admin
   - cucumber_install 
   - cucumber_backend
   - cucumber_frontend

@@ -33,7 +33,10 @@
     ],
     "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
   },
-  "require-dev": {
+  "require": {
+      "cweagans/composer-patches": "^1.6",
+      "composer/installers": "^1.2",
+      "drupal-composer/drupal-scaffold": "^2.2",
       "drupal/drupal-extension": "^3.2",
       "webflo/drupal-finder": "^0.3.0",
       "webmozart/path-util": "^2.3",
@@ -50,16 +53,12 @@
       "symfony/css-selector": "~2.8",
       "squizlabs/php_codesniffer": "2.*",
       "behatch/contexts": "*",
-      "emuse/behat-html-formatter": "@stable"
-  },
-  "require": {
-      "cweagans/composer-patches": "^1.6",
-      "composer/installers": "^1.2",
-      "drupal-composer/drupal-scaffold": "^2.2",
+      "emuse/behat-html-formatter": "@stable",
       "drupal/core": "8.3.5",
-      "drupal/agnian_material_admin": "1.21",
       "drupal/uikit": "2.10",
+      "drupal/uikit_admin": "2.0-beta1",
       "drupal/uikit_components": "2.1",
+      "drupal/uikit_gui": "1.x-dev#06e9e4ac428be66a96b9d618a5d681c516cfc294",
       "drupal/ctools": "3.0",
       "drupal/entity": "1.0-alpha4",
       "drupal/config_update": "1.3",
