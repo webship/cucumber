@@ -4,8 +4,10 @@ core = 8.x
 projects[uikit][type] = theme
 projects[uikit][version] = 2.10
 
-projects[uikit_admin][type] = theme
-projects[uikit_admin][version] = 2.0-beta1
+projects[uikit_admin][type] = module
+projects[uikit_admin][download][url] = https://git.drupal.org/project/uikit_admin.git
+projects[uikit_admin][download][revision] = 8e0d4d98d8de0e473d2fdd931a1f5acbe9cacc83
+projects[uikit_admin][download][branch] = 8.x-2.x
 
 projects[uikit_components][type] = module
 projects[uikit_components][version] = 2.2
