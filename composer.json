@@ -57,7 +57,7 @@
       "drupal/core": "8.3.5",
       "drupal/uikit": "2.10",
       "drupal/uikit_admin": "2.0-beta1",
-      "drupal/uikit_components": "2.1",
+      "drupal/uikit_components": "2.2",
       "drupal/uikit_gui": "1.x-dev#06e9e4ac428be66a96b9d618a5d681c516cfc294",
       "drupal/ctools": "3.0",
       "drupal/entity": "1.0-alpha4",
