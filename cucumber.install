@@ -20,6 +20,9 @@ use Drupal\shortcut\Entity\Shortcut;
 function cucumber_install() {
   // Set front page to "node".
   \Drupal::configFactory()->getEditable('system.site')->set('page.front', '/node')->save(TRUE);
+  
+  // Restrict user registration to admin role creation.
+  \Drupal::configFactory()->getEditable('user.settings')->set('register', USER_REGISTER_ADMINISTRATORS_ONLY)->save(TRUE);
 
   // Allow visitor account creation with administrative approval.
   $user_settings = \Drupal::configFactory()->getEditable('user.settings');
@@ -32,5 +35,11 @@ function cucumber_install() {
   // Enable the admin theme.
   \Drupal::configFactory()->getEditable('node.settings')->set('use_admin_theme', TRUE)->save(TRUE);
   
+  // Uninstall the cucumber install theme.
   \Drupal::service('theme_installer')->uninstall(['cucumber_install']);
+  
+  // Entity updates to clear up any mismatched entity and/or field definitions
+  // And Fix changes were detected in the entity type and field definitions.
+  \Drupal::entityDefinitionUpdateManager()->applyUpdates();
+
 }

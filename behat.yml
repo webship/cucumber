@@ -1,2 +1,3 @@
+
 imports:
-  - behat.local.yml
+  - behat.cucumber.yml
