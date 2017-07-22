@@ -43,7 +43,8 @@
     "drupal/field_group": "1.0-rc6",
     "drupal/smart_trim": "1.0",
     "drupal/pathauto": "1.0",
-    "drupal/features": "3.5"
+    "drupal/features": "3.5",
+    "drupal/behat_ui": "1.x-dev#6487c8b7beddecc12d4100698e348c369d3"
   },
   "require-dev": {
     "drush/drush": "^8.0.0",

@@ -49,3 +49,8 @@ projects[pathauto][version] = 1.0
 
 projects[features][type] = module
 projects[features][version] = 3.5
+
+projects[behat_ui][type] = module
+projects[behat_ui][download][url] = https://git.drupal.org/project/behat_ui.git
+projects[behat_ui][download][revision] = 6487c8b7beddecc12d4100698e348c369d3
+projects[behat_ui][download][branch] = 8.x-1.x
