@@ -2,7 +2,7 @@ api = 2
 core = 8.x
 
 projects[uikit][type] = theme
-projects[uikit][version] = 2.10
+projects[uikit][version] = 2.11
 
 projects[uikit_admin][type] = module
 projects[uikit_admin][download][url] = https://git.drupal.org/project/uikit_admin.git
