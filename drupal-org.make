@@ -8,7 +8,7 @@ projects[uikit_admin]][type] = theme
 projects[uikit_admin]][version] = 2.0-rc1
 
 projects[uikit_components][type] = module
-projects[uikit_components][version] = 2.2
+projects[uikit_components][version] = 2.3
 
 projects[uikit_gui][type] = module
 projects[uikit_gui][download][url] = https://git.drupal.org/project/uikit_gui.git
