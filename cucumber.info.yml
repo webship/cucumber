@@ -45,9 +45,6 @@ dependencies:
   - update
   - history
   
-  - uikit_components
-  - uikit_gui
-  - uikit_views
   - ctools
   - ctools_block
   - ctools_views
@@ -66,17 +63,10 @@ dependencies:
   - pathauto
   - features
   - features_ui
-  
+## Cucumber features.
   - cucumber_core
   - cucumber_user
-  
 themes:
-  - uikit
-  - uikit_admin
-  - cucumber_install 
-  - cucumber_backend
-  - cucumber_frontend
+  - adminimal_theme
 distribution:
   name: Cucumber
-  install:
-    theme: cucumber_install

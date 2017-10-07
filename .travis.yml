@@ -8,8 +8,6 @@ cache:
     - "$HOME/.npm"
     - "$HOME/.selenium/cache"
 php:
-  - 5.6
-  - 7.0
   - 7.1
 env:
   - VERSION=8.x-1.x
@@ -41,16 +39,16 @@ before_install:
   - mysql -e "SHOW VARIABLES LIKE 'wait_timeout'"
 
   # PHP Configurations.
-  - echo 'max_execution_time = 1200' >> drupal.php.ini;
-  - echo 'max_input_time = 180' >> drupal.php.ini;
-  - echo 'max_input_vars = 10000' >> drupal.php.ini;
-  - echo 'memory_limit = 2048M' >> drupal.php.ini;
-  - echo 'error_reporting = E_ALL' >> drupal.php.ini;
-  - echo 'post_max_size = 64M' >> drupal.php.ini;
-  - echo 'upload_max_filesize = 32M' >> drupal.php.ini;
-  - echo 'max_file_uploads = 40' >> drupal.php.ini;
-  - echo 'sendmail_path = /bin/true' >> drupal.php.ini;
-  - phpenv config-add drupal.php.ini
+  - echo 'max_execution_time = 1200' >> cucumber.php.ini;
+  - echo 'max_input_time = 180' >> cucumber.php.ini;
+  - echo 'max_input_vars = 10000' >> cucumber.php.ini;
+  - echo 'memory_limit = 2048M' >> cucumber.php.ini;
+  - echo 'error_reporting = E_ALL' >> cucumber.php.ini;
+  - echo 'post_max_size = 64M' >> cucumber.php.ini;
+  - echo 'upload_max_filesize = 32M' >> cucumber.php.ini;
+  - echo 'max_file_uploads = 40' >> cucumber.php.ini;
+  - echo 'sendmail_path = /bin/true' >> cucumber.php.ini;
+  - phpenv config-add cucumber.php.ini
   - phpenv rehash
    
   # Configure the display.

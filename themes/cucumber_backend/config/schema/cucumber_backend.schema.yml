@@ -1,5 +1,0 @@
-# Schema for the configuration files of the cucumber backend theme.
-
-cucumber_backend.settings:
-  type: theme_settings
-  label: 'Cucumber Back-End settings'

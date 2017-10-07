@@ -1,5 +1,0 @@
-# Schema for the configuration files of the cucumber_frontend theme.
-
-cucumber_frontend.settings:
-  type: theme_settings
-  label: 'Cucumber Front-End settings'

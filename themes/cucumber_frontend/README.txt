@@ -1,4 +1,0 @@
-Cucumber Front-End
----------------------
-
- * Introduction

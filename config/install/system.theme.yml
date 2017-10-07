@@ -1,2 +1,2 @@
-admin: cucumber_backend
-default: cucumber_frontend
+admin: adminimal_theme
+default: adminimal_theme
