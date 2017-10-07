@@ -4,14 +4,20 @@ core = 8.x
 projects[adminimal_theme][type] = theme
 projects[adminimal_theme][version] = 1.3
 
+projects[admin_toolbar][type] = module
+projects[admin_toolbar][version] = 1.20
+
+projects[adminimal_admin_toolbar][type] = module
+projects[adminimal_admin_toolbar][version] = 1.5
+
+projects[config_update][type] = module
+projects[config_update][version] = 1.3
+
 projects[ctools][type] = module
 projects[ctools][version] = 3.0
 
 projects[entity][type] = module
 projects[entity][version] = 1.0-alpha4
-
-projects[config_update][type] = module
-projects[config_update][version] = 1.3
 
 projects[token][type] = module
 projects[token][version] = 1.0

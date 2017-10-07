@@ -44,7 +44,10 @@ dependencies:
   - syslog
   - update
   - history
-  
+## Contrib Modules
+  - admin_toolbar
+  - admin_toolbar_tools
+  - adminimal_admin_toolbar
   - ctools
   - ctools_block
   - ctools_views
