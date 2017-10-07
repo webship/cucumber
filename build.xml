@@ -11,9 +11,9 @@
   <property name="db.password" value="" />
   <property name="db.database" value="drupal" />
   <property name="db.url" value="${db.type}://${db.user}:${db.password}@${db.host}/${db.database}" />
-  <property name="docroot" value="docroot" />
-  <property name="profile" value="${docroot}/profiles/cucumber" />
-  <property name="site" value="${docroot}/sites/default" />
+  <property name="web" value="web" />
+  <property name="profile" value="${web}/profiles/cucumber" />
+  <property name="site" value="${web}/sites/default" />
   <property name="version" value="HEAD" />
 
   <!-- Finds Composer, NPM, and rsync. -->
@@ -49,7 +49,7 @@
     <exec command="${npm} run install-libraries" passthru="true" />
 
     <!-- rsync the profile, excluding developer flotsam. -->
-    <filesync destinationDir="${profile}" rsyncPath="${rsync}" sourceDir="." verbose="false" exclude=".idea,bin,build.xml,.git,.gitignore,${docroot},karma.conf.js,*.make,node_modules,.travis.yml,vendor" />
+    <filesync destinationDir="${profile}" rsyncPath="${rsync}" sourceDir="." verbose="false" exclude=".idea,bin,build.xml,.git,.gitignore,${web},karma.conf.js,*.make,node_modules,.travis.yml,vendor" />
 
     <!-- JS libraries and contrib modules were copied over by the file sync. -->
     <delete dir="libraries" failonerror="true" quiet="true" />
@@ -83,7 +83,7 @@
     </if>
   </target>
 
-  <!-- Prepares the docroot for installation via the UI. -->
+  <!-- Prepares the web for installation via the UI. -->
   <target name="preinstall" depends="uninstall">
     <if>
       <not>
@@ -113,18 +113,18 @@
   <!-- Installs cucumber and sets it up for development. -->
   <target name="install" depends="env">
     <!-- Use passthru() when executing drush site-install so that we'll know if errors occur. -->
-    <exec command="${drush} site-install cucumber --yes --site-name=cucumber --account-name=admin --account-pass=admin --db-url=${db.url}" dir="${docroot}" passthru="true" />
-    <exec command="${drush} config-set system.performance css.preprocess 0 --yes --format=boolean" dir="${docroot}" />
-    <exec command="${drush} config-set system.performance js.preprocess 0 --yes --format=boolean" dir="${docroot}" />
-    <exec command="${drush} config-set system.logging error_level all --yes" dir="${docroot}" />
+    <exec command="${drush} site-install cucumber --yes --site-name=cucumber --account-name=admin --account-pass=admin --db-url=${db.url}" dir="${web}" passthru="true" />
+    <exec command="${drush} config-set system.performance css.preprocess 0 --yes --format=boolean" dir="${web}" />
+    <exec command="${drush} config-set system.performance js.preprocess 0 --yes --format=boolean" dir="${web}" />
+    <exec command="${drush} config-set system.logging error_level all --yes" dir="${web}" />
   </target>
 
-  <!-- Builds the cucumber code base from HEAD, overwriting docroot, and
+  <!-- Builds the cucumber code base from HEAD, overwriting web, and
   executes all database updates. -->
   <target name="update" depends="env">
     <phingcall target="build" />
     <exec command="${drush} cache-rebuild" />
-    <exec command="${drush} updatedb --yes" dir="${docroot}" passthru="true" />
+    <exec command="${drush} updatedb --yes" dir="${web}" passthru="true" />
     <!-- TODO: Execute manual update steps as needed. -->
   </target>
 
@@ -139,16 +139,16 @@
   <!-- Builds a cucumber code base from legacy Drush make files. -->
   <target name="build-legacy" depends="env">
     <if>
-      <available file="${docroot}" property="docroot.exists" />
+      <available file="${web}" property="web.exists" />
       <then>
         <phingcall target="package" />
-        <delete dir="${docroot}" />
+        <delete dir="${web}" />
       </then>
     </if>
 
-    <exec command="${drush} make drupal-org-core.make ${docroot} --yes" />
-    <exec command="${drush} make drupal-org.make ${docroot} --no-core --yes" />
-    <exec command="${composer} require drush/drush" dir="${docroot}" />
+    <exec command="${drush} make drupal-org-core.make ${web} --yes" />
+    <exec command="${drush} make drupal-org.make ${web} --no-core --yes" />
+    <exec command="${composer} require drush/drush" dir="${web}" />
 
     <phingcall target="push" />
   </target>
@@ -175,7 +175,7 @@
     <delete failonerror="true" includeemptydirs="true">
       <fileset dir="." defaultexcludes="false">
         <include name="bin/**" />
-        <include name="${docroot}/**" />
+        <include name="${web}/**" />
         <include name="node_modules/**" />
         <include name="vendor/**" />
       </fileset>
