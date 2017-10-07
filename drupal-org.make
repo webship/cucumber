@@ -11,7 +11,7 @@ projects[adminimal_admin_toolbar][type] = module
 projects[adminimal_admin_toolbar][version] = 1.5
 
 projects[config_update][type] = module
-projects[config_update][version] = 1.3
+projects[config_update][version] = 1.4
 
 projects[ctools][type] = module
 projects[ctools][version] = 3.0
