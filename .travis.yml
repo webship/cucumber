@@ -6,7 +6,7 @@ cache:
     - "$HOME/.composer/cache"
     - "$HOME/.drush/cache"
     - "$HOME/.npm"
-    - "$HOME/.selenium/cache"
+    - "$HOME/.selenium/cache"    
 php:
   - 7.1
 env:
@@ -25,7 +25,7 @@ addons:
       - xfonts-scalable
       - xserver-xorg-core
 mysql:
-  database: drupal
+  database: test_cucumber
   username: root
   encoding: utf8
 before_install:
@@ -33,8 +33,12 @@ before_install:
   - phpenv rehash
   - composer self-update
   - composer --version
+
+  # Composer Configurations.
   - export PATH="$HOME/.composer/vendor/bin:$TRAVIS_BUILD_DIR/bin:$PATH"
   - export COMPOSER_EXIT_ON_PATCH_FAILURE=1
+
+  # MySQL Configurations.
   - mysql -e 'SET GLOBAL wait_timeout = 5400;'
   - mysql -e "SHOW VARIABLES LIKE 'wait_timeout'"
 
@@ -51,28 +55,34 @@ before_install:
   - phpenv config-add cucumber.php.ini
   - phpenv rehash
    
-  # Configure the display.
+  # Configure and run the virtual display.
   - export DISPLAY=:0
   - sh -e /etc/init.d/xvfb start
   - Xvfb :0 -ac -screen 0 1366x768x24 &
-  - sleep 3 # give xvfb some time to start
-  
+  - sleep 3
+
   # Run selenium standalone server.
   - SELENIUM="$HOME/.selenium/cache/selenium-server-standalone-2.53.1.jar";
   - if [[ ! -f $SELENIUM ]]; then wget -O $SELENIUM http://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.1.jar; fi
   - java -jar $SELENIUM -port 4444 > /dev/null 2>&1 &
   - echo "[  OK  ] Starting Selenium on the 4444 port ..."
-  - composer global require phing/phing
 install:
-  - phing build -Dversion=$VERSION -Dbranch=$TRAVIS_COMMIT
-  - phing install -Ddb.database=drupal
-  - if [ $VERSION != "HEAD" ]; then phing update; fi
+  - git checkout $TRAVIS_COMMIT
+  ## Build with the composer.
+  - composer install --no-interaction -vvv
+  
+  ## Install with drush.
+  - cd web
+  - drush site-install cucumber --yes --site-name='Cucumber' --account-name=admin --account-pass=dD.123123ddd --account-mail=cucumber@webship.org --db-url="mysql://root:@localhost/test_cucumber" 
+  - drush config-set system.performance css.preprocess 0 --yes
+  - drush config-set system.performance js.preprocess 0 --yes
+  - drush config-set system.logging error_level all --yes
 before_script:
-  - cd docroot
   - drush runserver --default-server=builtin 8080 &>/dev/null &
   - sleep 5
 script:
   - cd ./profiles/cucumber
-  - behat --strict tests/features/cucumber/
+  - behat --strict tests/features/cucumber
+
 matrix:
   fast_finish: true
