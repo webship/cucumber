@@ -2,7 +2,7 @@
   "name": "webship/cucumber",
   "description": "Cucumber Management System",
   "type": "drupal-profile",
-  "license": "GPL-2.0+",
+  "license": "GPL-2.0-or-later",
   "minimum-stability": "dev",
   "prefer-stable": true,
   "authors": [
