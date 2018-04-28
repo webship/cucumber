@@ -1,7 +1,0 @@
-name: 'Cucumber User'
-description: 'Provide User related configuration.'
-type: module
-core: 8.x
-dependencies:
-  - user
-package: Cucumber

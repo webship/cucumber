@@ -64,11 +64,6 @@ dependencies:
   - field_group
   - smart_trim
   - pathauto
-  - features
-  - features_ui
-## Cucumber features.
-  - cucumber_core
-  - cucumber_user
 themes:
   - adminimal_theme
 distribution:

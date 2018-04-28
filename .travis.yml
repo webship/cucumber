@@ -1,3 +1,6 @@
+sudo: required
+dist: trusty
+group: deprecated-2017Q4
 language: php
 cache:
   bundler: true
@@ -6,24 +9,19 @@ cache:
     - "$HOME/.composer/cache"
     - "$HOME/.drush/cache"
     - "$HOME/.npm"
-    - "$HOME/.selenium/cache"    
+    - "$HOME/.selenium/cache"
+
 php:
-  - 7.1
+  - 7.1.15
+
 env:
   - VERSION=8.x-1.x
 dist: precise
-addons:  
-  firefox: 46.0.1
+addons:
   apt:
     packages:
-      - xorg
-      - xvfb
-      - dbus-x11
-      - x11-xkb-utils
-      - xfonts-100dpi
-      - xfonts-75dpi
-      - xfonts-scalable
-      - xserver-xorg-core
+    - libappindicator1
+    - fonts-liberation
 mysql:
   database: test_cucumber
   username: root
@@ -54,12 +52,28 @@ before_install:
   - echo 'sendmail_path = /bin/true' >> cucumber.php.ini;
   - phpenv config-add cucumber.php.ini
   - phpenv rehash
-   
+
   # Configure and run the virtual display.
-  - export DISPLAY=:0
+  - export DISPLAY=:99
   - sh -e /etc/init.d/xvfb start
-  - Xvfb :0 -ac -screen 0 1366x768x24 &
+  - Xvfb :99 -ac -screen 0 1366x768x24 &>/dev/null &
   - sleep 3
+
+  # Download Chrome Driver.
+  - LATEST_CHROMEDRIVER=$(wget -q -O - http://chromedriver.storage.googleapis.com/LATEST_RELEASE)
+  - wget http://chromedriver.storage.googleapis.com/$LATEST_CHROMEDRIVER/chromedriver_linux64.zip
+  - unzip chromedriver_linux64.zip
+  - chmod +x chromedriver
+  - mkdir -p $HOME/.composer/vendor/bin
+  - mv -f chromedriver $HOME/.composer/vendor/bin/
+  - rm chromedriver_linux64.zip
+
+  # Update Chrome.
+  - export CHROME_BIN=/usr/bin/google-chrome
+  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  - sudo dpkg -i google-chrome-stable_current_amd64.deb
+  - rm google-chrome-stable_current_amd64.deb
+  - google-chrome --version
 
   # Run selenium standalone server.
   - SELENIUM="$HOME/.selenium/cache/selenium-server-standalone-2.53.1.jar";
@@ -70,13 +84,14 @@ install:
   - git checkout $TRAVIS_COMMIT
   ## Build with the composer.
   - composer install --no-interaction -vvv
-  
+
   ## Install with drush.
   - cd web
   - drush site-install cucumber --yes --site-name='Cucumber' --account-name=admin --account-pass=dD.123123ddd --account-mail=cucumber@webship.org --db-url="mysql://root:@localhost/test_cucumber" 
   - drush config-set system.performance css.preprocess 0 --yes
   - drush config-set system.performance js.preprocess 0 --yes
   - drush config-set system.logging error_level all --yes
+  - drush cr
 before_script:
   - drush runserver --default-server=builtin 8080 &>/dev/null &
   - sleep 5
