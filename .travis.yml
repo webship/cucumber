@@ -1,6 +1,5 @@
 sudo: required
 dist: trusty
-group: deprecated-2017Q4
 language: php
 cache:
   bundler: true
@@ -12,20 +11,21 @@ cache:
     - "$HOME/.selenium/cache"
 
 php:
-  - 7.1.15
+  - 7.0
+  - 7.1
+  - 7.2
 
-env:
-  - VERSION=8.x-1.x
-dist: precise
 addons:
   apt:
     packages:
     - libappindicator1
     - fonts-liberation
+
 mysql:
   database: test_cucumber
   username: root
   encoding: utf8
+
 before_install:
   - phpenv config-rm xdebug.ini
   - phpenv rehash
@@ -44,7 +44,7 @@ before_install:
   - echo 'max_execution_time = 1200' >> cucumber.php.ini;
   - echo 'max_input_time = 180' >> cucumber.php.ini;
   - echo 'max_input_vars = 10000' >> cucumber.php.ini;
-  - echo 'memory_limit = 2048M' >> cucumber.php.ini;
+  - echo 'memory_limit = 2000M' >> cucumber.php.ini;
   - echo 'error_reporting = E_ALL' >> cucumber.php.ini;
   - echo 'post_max_size = 64M' >> cucumber.php.ini;
   - echo 'upload_max_filesize = 32M' >> cucumber.php.ini;
@@ -78,12 +78,12 @@ before_install:
   # Run selenium standalone server.
   - SELENIUM="$HOME/.selenium/cache/selenium-server-standalone-2.53.1.jar";
   - if [[ ! -f $SELENIUM ]]; then wget -O $SELENIUM http://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.1.jar; fi
-  - java -jar $SELENIUM -port 4444 > /dev/null 2>&1 &
-  - echo "[  OK  ] Starting Selenium on the 4444 port ..."
+  - java -jar $SELENIUM -port 4445 > /dev/null 2>&1 &
+  - echo "[  OK  ] Starting Selenium on the 4445 port ..."
 install:
   - git checkout $TRAVIS_COMMIT
   ## Build with the composer.
-  - composer install --no-interaction -vvv
+  - composer install --no-interaction
 
   ## Install with drush.
   - cd web
