@@ -34,7 +34,7 @@
     "drupal/drupal-library-installer-plugin": "0.3",
     "webflo/drupal-finder": "1.1.0",
     "webmozart/path-util": "2.3.0",
-    "drupal/core": "8.5.3",
+    "drupal/core": "8.5.4",
     "drupal/config_update": "1.5",
     "drupal/libraries": "3.0-alpha1",
     "drupal/adminimal_theme": "1.3",
