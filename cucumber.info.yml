@@ -3,6 +3,12 @@ type: profile
 description: 'Cucumber Managment system'
 core: 8.x
 version: 8.x-1.x-dev
+package: Cucumber
+project: cucumber
+distribution:
+  name: Cucumber
+  install:
+    theme: cucumber_install
 dependencies:
   - config
   - user
@@ -66,5 +72,4 @@ dependencies:
   - pathauto
 themes:
   - adminimal_theme
-distribution:
-  name: Cucumber
+  - cucumber_install

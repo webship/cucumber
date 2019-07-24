@@ -1,0 +1,108 @@
+/**
+ * @file
+ * Installation styling.
+ *
+ */
+
+html {
+  background: url(../images/drupal-cucumber.svg) no-repeat center center;
+  -webkit-background-size: 15%;
+  -moz-background-size: 15%;
+  -o-background-size: 15%;
+  background-size: 15%;
+  background-position: 95% 5%;
+  -webkit-animation: logo-animation 40s infinite;
+  animation: logo-animation 40s infinite;
+  animation-delay: 5s;
+}
+
+body {
+  background: url(../images/drupal-cucumber.svg) repeat center center;
+  -webkit-background-size: 27px;
+  -moz-background-size: 27px;
+  -o-background-size: 27px;
+  background-size: 27px;
+  -webkit-transform:rotate(45deg);
+  -moz-transform:rotate(45deg);
+  transform:rotate(45deg);
+  -webkit-animation: background-animation 180s infinite;
+  animation: background-animation 360s infinite;
+  animation-delay: 5s;
+  width: 100%;
+}
+
+body .dialog-off-canvas-main-canvas {
+  -webkit-transform:rotate(-45deg);
+  -moz-transform:rotate(-45deg);
+  transform:rotate(-45deg);
+}
+
+body img.install-logo {
+  width: 80px;
+  float: left;
+}
+
+body .install-site-name,
+body .site-version {
+  float: left;
+  margin-left: 15px;
+  margin-top: 18px;
+}
+
+body body .layout-container,
+body .js .layout-container,
+.js body .layout-container,
+.js .js .layout-container {
+  margin: 2% auto 2% auto;
+}
+
+@keyframes background-animation {
+  0% {
+    background-size: 27px;
+  }
+  50% {
+    background-size: 17px;
+  }
+  100% {
+    background-size: 27px;
+  }
+}
+
+@keyframes logo-animation {
+  10% {
+    background-size: 15%;
+    background-position: 95% 5%;
+  }
+  20% {
+    background-size: 47%;
+    background-position: 50%;
+  }
+  30% {
+    background-size: 15%;
+    background-position: 5% 95%;
+  }
+  40% {
+    background-size: 47%;
+    background-position: 50%;
+  }
+  50% {
+    background-size: 15%;
+    background-position: 95% 5%;
+  }
+  60% {
+    background-size: 47%;
+    background-position: 50%;
+  }
+  70% {
+    background-size: 15%;
+    background-position: 5% 95%;
+  }
+  80% {
+    background-size: 47%;
+    background-position: 50%;
+  }
+  90% {
+    background-size: 15%;
+    background-position: 95% 5%;
+  }
+}
