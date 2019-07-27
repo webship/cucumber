@@ -4,9 +4,7 @@ defaults[projects][subdir] = "contrib"
 
 projects[] = config_update
 projects[] = libraries
-projects[] = adminimal_theme
 projects[] = admin_toolbar
-projects[] = adminimal_admin_toolbar
 projects[] = ctools
 projects[] = entity
 projects[] = token
@@ -17,3 +15,5 @@ projects[] = field_group
 projects[] = smart_trim
 projects[] = pathauto
 projects[] = behat_ui
+projects[] = uikit
+projects[] = ukkit_admin

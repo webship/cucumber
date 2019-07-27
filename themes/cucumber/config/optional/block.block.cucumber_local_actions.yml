@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  theme:
+    - uikit_admin
+    - cucumber
+id: cucumber_local_actions
+theme: cucumber
+region: content
+weight: -4
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

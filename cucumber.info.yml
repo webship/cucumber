@@ -8,7 +8,11 @@ project: cucumber
 distribution:
   name: Cucumber
   install:
-    theme: cucumber_install
+    theme: cucumber
+themes:
+  - uikit
+  - uikit_admin
+  - cucumber
 dependencies:
   - config
   - user
@@ -53,7 +57,7 @@ dependencies:
 ## Contrib Modules
   - admin_toolbar
   - admin_toolbar_tools
-  - adminimal_admin_toolbar
+  - admin_toolbar_links_access_filter
   - ctools
   - ctools_block
   - ctools_views
@@ -70,6 +74,3 @@ dependencies:
   - field_group
   - smart_trim
   - pathauto
-themes:
-  - adminimal_theme
-  - cucumber_install

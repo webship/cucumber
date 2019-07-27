@@ -1,0 +1,56 @@
+{#
+/**
+ * @file
+ * Seven theme implementation to display a Drupal installation page.
+ *
+ * All available variables are mirrored in page.html.twig.
+ * Some may be blank but they are provided for consistency.
+ *
+ * @see template_preprocess_install_page()
+ */
+#}
+<div class="animated-logo">
+  <div class="animated-background">
+    <div class="uk-width-1-2@m layout-container uk-grid uk-card uk-background-secondary uk-grid-small uk-padding-small">
+
+        <header class="uk-width-1@m uk-text-middle install-header" role="banner">
+          {% if site_name %}
+            <h1 class="page-title uk-heading-small">
+              <img class="install-logo" src="../{{ active_theme_path() }}/logo.svg">
+              <span class="install-site-name">{{ site_name }}</span>
+              {% if site_version %}
+                <span class="site-version">{{ site_version }}</span>
+              {% endif %}
+            </h1>
+          {% endif %}
+        </header>
+
+        {% if page.sidebar_first %}
+          <aside class="uk-width-1-4@m uk-padding-small layout-sidebar-first uk-card uk-background-secondary uk-grid-small uk-card-body" role="complementary">
+            {{ page.sidebar_first }}
+          </aside>{# /.layout-sidebar-first #}
+        {% endif %}
+
+        <main class="uk-width-expand@m uk-card-body uk-background-muted" role="main">
+          {% if title %}
+            <h1>{{ title }}</h1>
+          {% endif %}
+          {{ page.highlighted }}
+          {{ page.content }}
+        </main>
+
+        {% if page.sidebar_second %}
+          <aside class="uk-width-1-4@m layout-sidebar-second" role="complementary">
+            {{ page.sidebar_second }}
+          </aside>{# /.layout-sidebar-second #}
+        {% endif %}
+
+        {% if page.page_bottom %}
+          <footer class="uk-width-1@m" role="contentinfo">
+            {{ page.page_bottom }}
+          </footer>
+        {% endif %}
+
+    </div>{# /.layout-container #}
+  </div>
+</div>

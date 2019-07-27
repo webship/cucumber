@@ -1,0 +1,40 @@
+name: 'Cucumber Theme'
+type: theme
+core: 8.x
+description: 'The default administration theme for Cucumber'
+alt text: 'Default administration theme for Cucumber.'
+package: Cucumber
+version: VERSION
+core: 8.x
+base theme: uikit_admin
+regions:
+  navbar: 'Navigation Bar'
+  offcanvas: 'Offcanvas Navigation'
+  header: Header
+  pre_content: 'Pre-content'
+  breadcrumb: 'Breadcrumb'
+  highlighted: 'Highlighted'
+  help: 'Help'
+  content: Content
+  sidebar_first: 'Left Sidebar'
+  sidebar_second: 'Right Sidebar'
+  footer: 'Footer'
+
+regions_hidden:
+  - navbar
+  - offcanvas
+  - header
+  - pre_content
+  - breadcrumb
+  - highlighted
+  - help
+  - sidebar_first
+  - sidebar_second
+  - footer
+
+libraries:
+  - uikit_admin/global-style
+
+libraries-extend:
+  views_ui/views_ui.admin:
+    - uikit_admin/uikit-admin-views-ui
