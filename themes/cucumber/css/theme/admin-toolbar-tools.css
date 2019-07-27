@@ -8,3 +8,17 @@
 .toolbar-icon.toolbar-icon-admin-toolbar-tools-help:hover:before {
   background-image: url(../../logo.svg);
 }
+
+.toolbar .toolbar-bar,
+.toolbar-tray-horizontal .menu-item--expanded {
+  background: #437100;
+  background-color: #437100;
+  color: #ffffff;
+}
+
+.toolbar .toolbar-tray .menu-item--active-trail > .toolbar-box a,
+.toolbar .toolbar-tray a.is-active {
+  background: #437100;
+  background-color: #437100;
+  color: #ffffff;
+}
