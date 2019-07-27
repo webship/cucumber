@@ -6,19 +6,30 @@
 .toolbar-icon.toolbar-icon-admin-toolbar-tools-help.is-active:before,
 .toolbar-icon.toolbar-tray-horizontal .menu-item--expanded:hover .toolbar-icon-admin-toolbar-tools-help:before,
 .toolbar-icon.toolbar-icon-admin-toolbar-tools-help:hover:before {
-  background-image: url(../../logo.svg);
+  background-color: #437100;
+  background-image: url(../../logo-wight.svg);
+  color: #ffffff
 }
 
+.toolbar,
 .toolbar .toolbar-bar,
-.toolbar-tray-horizontal .menu-item--expanded {
-  background: #437100;
+.toolbar .toolbar-tray .menu-item--active-trail > .toolbar-box a,
+.toolbar .toolbar-menu .toolbar-menu a,
+.toolbar .toolbar-tray a.is-active,
+.toolbar-tray a,
+.toolbar-tray-horizontal .menu-item--expanded,
+.toolbar-icon {
   background-color: #437100;
   color: #ffffff;
 }
 
-.toolbar .toolbar-tray .menu-item--active-trail > .toolbar-box a,
-.toolbar .toolbar-tray a.is-active {
-  background: #437100;
-  background-color: #437100;
-  color: #ffffff;
+.toolbar-tray a:hover,
+.toolbar-tray a:active,
+.toolbar-tray a:focus,
+.toolbar-tray a.is-active,
+.toolbar .hover-intent,
+.toolbar-tray-horizontal .menu-item a:hover,
+.toolbar-tray-horizontal .menu-item a:focus {
+  background-color: #ffffff;
+  color: #437100;
 }
