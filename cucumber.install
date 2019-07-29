@@ -5,10 +5,7 @@
  * Install, update and uninstall functions for the Cucumber installation profile.
  */
 
-use Symfony\Component\Yaml\Yaml;
-use Drupal\user\Entity\User;
-use Drupal\user\RoleInterface;
-use Drupal\shortcut\Entity\Shortcut;
+use Drupal\cucumber\Entity\CucumberEntityDefinitionUpdateManager;
 
 /**
  * Implements hook_install().
@@ -31,4 +28,9 @@ function cucumber_install() {
   // Enable the admin theme.
   \Drupal::configFactory()->getEditable('node.settings')->set('use_admin_theme', TRUE)->save(TRUE);
 
+  // Entity updates to clear up any mismatched entity and/or field definitions
+  // And Fix changes were detected in the entity type and field definitions.
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(CucumberEntityDefinitionUpdateManager::class)
+    ->applyUpdates();
 }
