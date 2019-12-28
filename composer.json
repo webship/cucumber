@@ -42,7 +42,6 @@
     "drupal/smart_trim": "~1.0",
     "drupal/pathauto": "~1.0",
     "drupal/uikit_admin": "~3.0",
-    "drupal/pathauto": "~1.0",
     "drupal/behat_ui": "1.x-dev"
   },
   "config": {
