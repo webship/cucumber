@@ -80,16 +80,6 @@ install:
   ## Build with the composer.
   - cp -R /home/travis/build/webship/cucumber /home/travis/build/webship/cucumber-profile
   - composer install --no-interaction
-  - composer require "drupal/coder:@stable"
-  - composer require "drupal/drupal-extension:@stable"
-  - composer require "behat/behat:@stable"
-  - composer require "behat/mink:@stable"
-  - composer require "behat/mink-extension:@stable"
-  - composer require "behat/mink-goutte-driver:@stable"
-  - composer require "behat/mink-zombie-driver:@stable"
-  - composer require "behat/mink-selenium2-driver:@stable"
-  - composer require "behatch/contexts:@stable"
-  - composer require "emuse/behat-html-formatter:@stable"
   - mv /home/travis/build/webship/cucumber-profile /home/travis/build/webship/cucumber/web/profiles/cucumber
 
   ## Install with drush.
