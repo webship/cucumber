@@ -26,9 +26,9 @@
     "composer/installers": "^1.0",
     "cweagans/composer-patches": "^1.0",
     "drupal/core-composer-scaffold": "^8.8",
+    "drupal/core": "~8.8.0",
     "drupal/console": "^1.0",
     "drush/drush": "^9.0",
-    "drupal/core": "~8.8.0",
     "drupal/config_update": "~1.0",
     "drupal/libraries": "~3.0",
     "drupal/admin_toolbar": "~2.0",
@@ -41,8 +41,9 @@
     "drupal/field_group": "~3.0",
     "drupal/smart_trim": "~1.0",
     "drupal/pathauto": "~1.0",
-    "drupal/behat_ui": "*",
-    "drupal/uikit_admin": "~3.0"
+    "drupal/uikit_admin": "~3.0",
+    "drupal/pathauto": "~1.0",
+    "drupal/behat_ui": "1.x-dev"
   },
   "config": {
     "bin-dir": "bin/",
