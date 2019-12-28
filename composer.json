@@ -20,21 +20,15 @@
     "drupal": {
       "type": "composer",
       "url": "https://packages.drupal.org/8"
-      },
-    "assets": {
-      "type": "composer",
-      "url": "https://asset-packagist.org"
     }
   },
   "require": {
     "composer/installers": "@stable",
-    "oomphinc/composer-installers-extender": "@stable",
     "cweagans/composer-patches": "@stable",
-    "drupal-composer/drupal-scaffold": "@stable",
-    "drupal/drupal-library-installer-plugin": "@stable",
-    "webflo/drupal-finder": "@stable",
-    "webmozart/path-util": "@stable",
-    "drupal/core": "@stable",
+    "drupal/core-composer-scaffold": "@stable",
+    "drupal/core-recommended": "@stable",
+    "drupal/console": "@stable",
+    "drush/drush": "@stable",
     "drupal/config_update": "@stable",
     "drupal/libraries": "@stable",
     "drupal/admin_toolbar": "@stable",
@@ -48,75 +42,35 @@
     "drupal/smart_trim": "@stable",
     "drupal/pathauto": "@stable",
     "drupal/behat_ui": "*",
-    "drupal/uikit": "@stable",
     "drupal/uikit_admin": "@stable"
-  },
-  "require-dev": {
-    "drush/drush": "@stable",
-    "drupal/coder": "@stable",
-    "drupal/drupal-extension": "@stable",
-    "phing/phing": "@stable",
-    "behat/behat": "@stable",
-    "behat/mink": "@stable",
-    "behat/mink-extension": "@stable",
-    "behat/mink-goutte-driver": "@stable",
-    "behat/mink-zombie-driver": "@stable",
-    "behat/mink-selenium2-driver": "@stable",
-    "behatch/contexts": "@stable",
-    "emuse/behat-html-formatter": "@stable"
   },
   "config": {
     "bin-dir": "bin/",
-    "secure-http": false,
-    "preferred-install": {
-      "drupal/core": "dist"
-    }
-  },
-  "autoload": {
-    "psr-4": {
-      "Webship\\composer\\": "src/composer"
-    }
-  },
-  "scripts": {
-    "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
-    "pre-install-cmd": ["Webship\\composer\\Procedures::checkComposerVersionProcedure"],
-    "pre-update-cmd": ["Webship\\composer\\Procedures::checkComposerVersionProcedure"],
-    "post-install-cmd": [
-      "Webship\\composer\\Procedures::createRequiredFilesProcedure",
-      "@composer drupal-scaffold",
-      "./bin/phing push"
-    ],
-    "post-update-cmd": [
-      "Webship\\composer\\Procedures::createRequiredFilesProcedure",
-      "./bin/phing push"
-    ]
+    "secure-http": false
   },
   "extra": {
+    "drupal-scaffold": {
+      "locations": {
+        "web-root": "web/"
+      }
+    },
     "branch-alias": {
       "dev-8.x-1.x": "8.1.x-dev"
     },
-    "installer-types": [
-      "bower-asset",
-      "npm-asset"
-    ],
     "installer-paths": {
       "web/core": ["type:drupal-core"],
-      "web/profiles/{$name}": ["type:drupal-profile"],
+      "web/libraries/{$name}": ["type:drupal-library"],
       "web/modules/contrib/{$name}": ["type:drupal-module"],
+      "web/profiles/{$name}": ["type:drupal-profile"],
       "web/themes/contrib/{$name}": ["type:drupal-theme"],
-      "web/libraries/{$name}": [
-          "type:drupal-library",
-          "type:bower-asset",
-          "type:npm-asset"
-      ],
+      "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
       "web/modules/custom/{$name}": ["type:drupal-custom-module"],
-      "web/themes/custom/{$name}": ["type:drupal-custom-theme"],
-      "drush/contrib/{$name}": ["type:drupal-drush"]
+      "web/themes/custom/{$name}": ["type:drupal-custom-theme"]
     },
     "enable-patching": true,
     "composer-exit-on-patch-failure": true,
     "patchLevel": {
       "drupal/core": "-p2"
-    } 
+    }
   }
 }

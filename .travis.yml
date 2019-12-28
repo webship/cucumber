@@ -1,9 +1,8 @@
-sudo: required
 dist: trusty
+
 language: php
 cache:
   bundler: true
-  apt: true
   directories:
     - "$HOME/.composer/cache"
     - "$HOME/.drush/cache"
@@ -11,15 +10,9 @@ cache:
     - "$HOME/.selenium/cache"
 
 php:
-  - 7.0
   - 7.1
   - 7.2
-
-addons:
-  apt:
-    packages:
-    - libappindicator1
-    - fonts-liberation
+  - 7.3
 
 mysql:
   database: test_cucumber
@@ -27,8 +20,6 @@ mysql:
   encoding: utf8
 
 before_install:
-  - phpenv config-rm xdebug.ini
-  - phpenv rehash
   - composer self-update
   - composer --version
 
@@ -41,10 +32,10 @@ before_install:
   - mysql -e "SHOW VARIABLES LIKE 'wait_timeout'"
 
   # PHP Configurations.
-  - echo 'max_execution_time = 1200' >> cucumber.php.ini;
+  - echo 'max_execution_time = 2200' >> cucumber.php.ini;
   - echo 'max_input_time = 180' >> cucumber.php.ini;
   - echo 'max_input_vars = 10000' >> cucumber.php.ini;
-  - echo 'memory_limit = 2000M' >> cucumber.php.ini;
+  - echo 'memory_limit = 4000M' >> cucumber.php.ini;
   - echo 'error_reporting = E_ALL' >> cucumber.php.ini;
   - echo 'post_max_size = 64M' >> cucumber.php.ini;
   - echo 'upload_max_filesize = 32M' >> cucumber.php.ini;
@@ -59,18 +50,22 @@ before_install:
   - Xvfb :99 -ac -screen 0 1366x768x24 &>/dev/null &
   - sleep 3
 
-  # Download Chrome Driver.
-  - LATEST_CHROMEDRIVER=$(wget -q -O - http://chromedriver.storage.googleapis.com/LATEST_RELEASE)
-  - wget http://chromedriver.storage.googleapis.com/$LATEST_CHROMEDRIVER/chromedriver_linux64.zip
+  # Download Latest Chrome Driver.
+  - CHROME_DRIVER_VERSION=$(wget -qO- chromedriver.storage.googleapis.com/LATEST_RELEASE);
+  - echo $CHROME_DRIVER_VERSION;
+  - wget http://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip
   - unzip chromedriver_linux64.zip
   - chmod +x chromedriver
   - mkdir -p $HOME/.composer/vendor/bin
   - mv -f chromedriver $HOME/.composer/vendor/bin/
   - rm chromedriver_linux64.zip
 
-  # Update Chrome.
+  # Update to latest Chrome browser.
   - export CHROME_BIN=/usr/bin/google-chrome
   - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  - sudo apt-get clean
+  - sudo apt-get update
+  - sudo apt-get install dpkg
   - sudo dpkg -i google-chrome-stable_current_amd64.deb
   - rm google-chrome-stable_current_amd64.deb
   - google-chrome --version
@@ -83,11 +78,14 @@ before_install:
 install:
   - git checkout $TRAVIS_COMMIT
   ## Build with the composer.
+  - cp -R /home/travis/build/webship/cucumber /home/travis/build/webship/cucumber-profile
   - composer install --no-interaction
+  - composer require "drupal/coder:@stable" "drupal/drupal-extension:@stable" "behat/behat:@stable" "behat/mink:@stable" "behat/mink-extension:@stable" "behat/mink-goutte-driver:@stable" "behat/mink-zombie-driver:@stable" "behat/mink-selenium2-driver:@stable" "behatch/contexts:@stable" "emuse/behat-html-formatter:@stable"
+  - mv /home/travis/build/webship/cucumber-profile /home/travis/build/webship/cucumber/web/profiles/cucumber
 
   ## Install with drush.
   - cd web
-  - drush site-install cucumber --yes --site-name='Cucumber' --account-name=admin --account-pass=dD.123123ddd --account-mail=cucumber@webship.org --db-url="mysql://root:@localhost/test_cucumber" 
+  - drush site-install cucumber --yes --site-name='VDO' --account-name=admin --account-pass=dD.123123ddd --account-mail=cucumber@webship.org --db-url="mysql://root:@localhost/test_cucumber" 
   - drush config-set system.performance css.preprocess 0 --yes
   - drush config-set system.performance js.preprocess 0 --yes
   - drush config-set system.logging error_level all --yes
@@ -96,8 +94,8 @@ before_script:
   - drush runserver --default-server=builtin 8080 &>/dev/null &
   - sleep 5
 script:
-  - cd ./profiles/cucumber
-  - behat --strict tests/features/cucumber
+  - cd /home/travis/build/webship/cucumber/web/profiles/cucumber/
+  - ../../../bin/behat tests/features/cucumber/
 
 matrix:
   fast_finish: true
