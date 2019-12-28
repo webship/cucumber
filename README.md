@@ -2,6 +2,8 @@
 # Cucumber
 Cucumber Management System
 
+[![Cucumber](https://www.drupal.org/files/project-images/drupal-cucumber.png)](https://www.drupal.org/project/cucumber)
+
 To make use of cucumber ideas, http://cucumber.io
 
 Following the path of:
