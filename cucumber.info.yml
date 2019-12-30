@@ -13,7 +13,7 @@ themes:
   - uikit
   - uikit_admin
   - cucumber
-dependencies:
+install:
   - config
   - user
   - tracker
@@ -74,3 +74,4 @@ dependencies:
   - field_group
   - smart_trim
   - pathauto
+  - behat_ui

@@ -8,7 +8,11 @@
 .toolbar-icon.toolbar-icon-admin-toolbar-tools-help:hover:before {
   background-color: #437100;
   background-image: url(../../logo-wight.svg);
-  color: #ffffff
+  color: #ffffff;
+  width: 70%;
+  height: 95%;
+  background-position-y: -5px;
+  background-size: contain;
 }
 
 .toolbar,
