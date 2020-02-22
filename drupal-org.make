@@ -3,7 +3,6 @@ core = 8.x
 defaults[projects][subdir] = "contrib"
 
 projects[] = config_update
-projects[] = libraries
 projects[] = admin_toolbar
 projects[] = ctools
 projects[] = entity

@@ -29,10 +29,8 @@
     "drupal/core-composer-scaffold": "^8.8.0",
     "drupal/drupal-library-installer-plugin": "^0.3",
     "webflo/drupal-finder": "~1.0",
-    "drupal/core-composer-scaffold": "^8.8",
-    "drupal/core-recommended": "^8.8",
+    "drupal/core-recommended": "~8.8.0",
     "drupal/config_update": "~1.0",
-    "drupal/libraries": "~3.0",
     "drupal/admin_toolbar": "~2.0",
     "drupal/ctools": "~3.0",
     "drupal/entity": "~1.0",
@@ -87,11 +85,7 @@
       "web/profiles/{$name}": ["type:drupal-profile"],
       "web/modules/contrib/{$name}": ["type:drupal-module"],
       "web/themes/contrib/{$name}": ["type:drupal-theme"],
-      "web/libraries/{$name}": [
-        "type:drupal-library",
-        "type:bower-asset",
-        "type:npm-asset"
-      ],
+      "web/libraries/{$name}": ["type:drupal-library"],
       "web/modules/custom/{$name}": ["type:drupal-custom-module"],
       "web/themes/custom/{$name}": ["type:drupal-custom-theme"],
       "drush/contrib/{$name}": ["type:drupal-drush"]
