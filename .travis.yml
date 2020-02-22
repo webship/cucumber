@@ -81,9 +81,7 @@ before_install:
 install:
   - git checkout $TRAVIS_COMMIT
   ## Build with the composer.
-  - cp -R /home/travis/build/webship/cucumber /home/travis/build/webship/cucumber-profile
   - composer install --no-interaction
-  - mv /home/travis/build/webship/cucumber-profile /home/travis/build/webship/cucumber/web/profiles/cucumber
 
   ## Install with drush.
   - cd web
@@ -96,8 +94,8 @@ before_script:
   - drush runserver --default-server=builtin 8080 &>/dev/null &
   - sleep 5
 script:
-  - cd /home/travis/build/webship/cucumber/web/profiles/cucumber/
-  - ../../../bin/behat tests/features/cucumber/
+  - cd profiles/cucumber/
+  - behat --strict tests/features/cucumber/
 
 matrix:
   fast_finish: true
