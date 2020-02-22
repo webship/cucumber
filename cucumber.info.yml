@@ -75,3 +75,4 @@ install:
   - smart_trim
   - pathauto
   - behat_ui
+  - ace_editor

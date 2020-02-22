@@ -8,7 +8,7 @@
 phpqa:
   analyzedDirs: ./
   buildDir: ./tests/code-quality
-  ignoredDirs: ".gitlab-ci,.git,.idea,bin,docroot,node_modules,private,.tests/assets,vendor,web"
+  ignoredDirs: ".gitlab-ci,.git,.idea,bin,node_modules,private,.tests/assets,vendor,web"
   ignoredFiles: ""
   report: true
   # verbose: true
