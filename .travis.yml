@@ -10,8 +10,6 @@ cache:
     - "$HOME/.selenium/cache"
 
 php:
-  - 7.1
-  - 7.2
   - 7.3
   - 7.4
 
@@ -21,8 +19,6 @@ mysql:
   encoding: utf8
 
 before_install:
-  - phpenv config-rm xdebug.ini
-  - phpenv rehash
   - composer self-update
   - composer --version
 
@@ -33,19 +29,6 @@ before_install:
   # MySQL Configurations.
   - mysql -e 'SET GLOBAL wait_timeout = 5400;'
   - mysql -e "SHOW VARIABLES LIKE 'wait_timeout'"
-
-  # PHP Configurations.
-  - echo 'max_execution_time = 4200' >> cucumber.php.ini;
-  - echo 'max_input_time = 480' >> cucumber.php.ini;
-  - echo 'max_input_vars = 20000' >> cucumber.php.ini;
-  - echo 'memory_limit = 8000M' >> cucumber.php.ini;
-  - echo 'error_reporting = E_ALL' >> cucumber.php.ini;
-  - echo 'post_max_size = 64M' >> cucumber.php.ini;
-  - echo 'upload_max_filesize = 32M' >> cucumber.php.ini;
-  - echo 'max_file_uploads = 40' >> cucumber.php.ini;
-  - echo 'sendmail_path = /bin/true' >> cucumber.php.ini;
-  - phpenv config-add cucumber.php.ini
-  - phpenv rehash
 
   # Configure and run the virtual display.
   - export DISPLAY=:99
