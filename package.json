@@ -1,0 +1,25 @@
+{
+  "name": "cucumber",
+  "private": true,
+  "version": "8.1.0",
+  "description": "Cucumber Management System",
+  "keywords": [
+    "Drupal",
+    "Cucumber",
+    "Behat",
+    "Drupal profile"
+  ],
+  "author": "Webship.org",
+  "license": "GPL-2.0",
+  "scripts": {
+    "install-libraries": "npm install && bower install"
+  },
+  "dependencies": {
+    "bower": ">=1.8.8"
+  },
+  "license": "GPL-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:webship/cucumber.git"
+  }
+}

@@ -94,7 +94,7 @@ before_script:
   - drush runserver --default-server=builtin 8080 &>/dev/null &
   - sleep 5
 script:
-  - cd profiles/cucumber/
+  - cd ./profiles/cucumber
   - behat --strict tests/features/cucumber/
 
 matrix:
