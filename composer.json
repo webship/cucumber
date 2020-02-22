@@ -59,6 +59,14 @@
     "bin-dir": "bin/",
     "secure-http": false
   },
+  "scripts": {
+    "post-install-cmd": [
+      "./bin/phing push"
+    ],
+    "post-update-cmd": [
+      "./bin/phing push"
+    ]
+  },
   "extra": {
     "drupal-scaffold": {
       "locations": {

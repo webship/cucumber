@@ -13,6 +13,7 @@ php:
   - 7.1
   - 7.2
   - 7.3
+  - 7.4
 
 mysql:
   database: test_cucumber
@@ -20,6 +21,8 @@ mysql:
   encoding: utf8
 
 before_install:
+  - phpenv config-rm xdebug.ini
+  - phpenv rehash
   - composer self-update
   - composer --version
 
@@ -32,10 +35,10 @@ before_install:
   - mysql -e "SHOW VARIABLES LIKE 'wait_timeout'"
 
   # PHP Configurations.
-  - echo 'max_execution_time = 5200' >> cucumber.php.ini;
-  - echo 'max_input_time = 580' >> cucumber.php.ini;
+  - echo 'max_execution_time = 1200' >> cucumber.php.ini;
+  - echo 'max_input_time = 180' >> cucumber.php.ini;
   - echo 'max_input_vars = 10000' >> cucumber.php.ini;
-  - echo 'memory_limit = 8000M' >> cucumber.php.ini;
+  - echo 'memory_limit = 3000M' >> cucumber.php.ini;
   - echo 'error_reporting = E_ALL' >> cucumber.php.ini;
   - echo 'post_max_size = 64M' >> cucumber.php.ini;
   - echo 'upload_max_filesize = 32M' >> cucumber.php.ini;
