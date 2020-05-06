@@ -7,9 +7,14 @@
   "prefer-stable": true,
   "authors": [
     {
+      "name": "Vardot",
+      "homepage": "https://www.drupal.org/vardot",
+      "role": "Initial building, ongoing maintenance and development"
+    },
+    {
       "name": "Webship",
       "homepage": "https://www.drupal.org/webship",
-      "role": "Maintainer"
+      "role": "Volunteer contributions"
     }
   ],
   "support": {
@@ -47,7 +52,6 @@
     "drupal/smart_trim": "~1.0",
     "drupal/pathauto": "~1.0",
     "drupal/uikit_admin": "~3.0",
-    "drupal/behat_ui": "~3.0",
     "npm-asset/ace-builds": "~1.0",
     "drupal/ace_editor": "~1.0",
     "drupal/webtest": "^8.1"
