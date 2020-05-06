@@ -33,6 +33,7 @@
     "drupal/core-composer-scaffold": "^8.8.0",
     "drupal/drupal-library-installer-plugin": "^0.3",
     "webflo/drupal-finder": "~1.0",
+    "drupal/core": "^8.8.0 || ~9.0.0",
     "drupal/core-recommended": "~8.8.0",
     "drupal/config_update": "~1.0",
     "drupal/admin_toolbar": "~2.0",
@@ -48,22 +49,8 @@
     "drupal/uikit_admin": "~3.0",
     "drupal/behat_ui": "~3.0",
     "npm-asset/ace-builds": "~1.0",
-    "drupal/ace_editor": "~1.0"
-  },
-  "require-dev": {
-    "drupal/console": "~1.0",
-    "drush/drush": "~9.0",
-    "drupal/coder": "~8.0",
-    "drupal/drupal-extension": "~3.0",
-    "phing/phing": "~2.0",
-    "behat/behat": "~3.0",
-    "behat/mink": "~1.0",
-    "behat/mink-extension": "~2.0",
-    "behat/mink-goutte-driver": "~1.0",
-    "behat/mink-zombie-driver": "~1.0",
-    "behat/mink-selenium2-driver": "~1.0",
-    "behatch/contexts": "~3.0",
-    "emuse/behat-html-formatter": "^0.2.0"
+    "drupal/ace_editor": "~1.0",
+    "drupal/webtest": "~1.0"
   },
   "config": {
     "bin-dir": "bin/",
@@ -106,7 +93,7 @@
       "drush/contrib/{$name}": ["type:drupal-drush"]
     },
     "drupal-libraries": {
-      "library-directory": "docroot/libraries",
+      "library-directory": "web/libraries",
       "libraries": [
         {"name": "ace", "package": "npm-asset/ace-builds"}
       ]
@@ -114,7 +101,7 @@
     "enable-patching": true,
     "composer-exit-on-patch-failure": true,
     "patchLevel": {
-       "drupal/core": "-p2"
+      "drupal/core": "-p2"
     }
   }
 }
