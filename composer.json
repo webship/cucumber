@@ -50,7 +50,7 @@
     "drupal/behat_ui": "~3.0",
     "npm-asset/ace-builds": "~1.0",
     "drupal/ace_editor": "~1.0",
-    "drupal/webtest": "~1.0"
+    "drupal/webtest": "^8.1"
   },
   "config": {
     "bin-dir": "bin/",
