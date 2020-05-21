@@ -10,6 +10,7 @@ distribution:
   install:
     theme: vartheme_claro
 themes:
+  - claro
   - vartheme_claro
 install:
   - config

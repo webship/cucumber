@@ -4,10 +4,40 @@
  *
  */
 
-body.install-page {
-  background: #0074bd;
-  background-color: #0074bd;
-  background-image: url(../../images/logo-wight.svg);
+html body,
+html body a,
+html body a:hover,
+html body a:focus,
+html body a:active,
+html body.install-page .site-version,
+html body .claro-details,
+html body .claro-details__summary,
+html body .form-item__description,
+html body .task-list li {
+  color: #437100;
+}
+
+html body .task-list .is-active,
+html body .button--primary,
+html body .claro-details__summary:hover {
+  background: #437100;
+  color: #ffffff;
+}
+
+html body .button--primary:hover,
+html body .button--primary:focus,
+html body .button--primary:active {
+  background: #2c4b00;
+}
+
+html body .task-list .is-active:after {
+  border-left-color: #437100;
+}
+
+html body.install-page {
+  background: #437100 !important;
+  background-color: #437100 !important;
+  background-image: url(../../logo-wight.svg) !important;
   background-position: center center;
   background-repeat: no-repeat;
   -webkit-background-size: 22%;
@@ -18,21 +48,22 @@ body.install-page {
   -webkit-animation: logo-animation 40s infinite;
   animation: logo-animation 40s infinite;
   animation-delay: 5s;
+  object-fit: none;
 }
 
-body .install-logo {
-  width: 100px;
-  float: left;
+html body .installer-logo {
+  width: 100px !important;
+  float: left !important;
 }
 
-body .page-title {
-  width: 100%;
+html body .page-title {
+  width: 100% !important;
 }
 
-body .install-site-name,
-body .site-version {
-  margin-left: 60px;
-  margin-top: 1em;
+html body .install-site-name,
+html body .site-version {
+  margin-left: 60px !important;
+  margin-top: 1em !important;
 }
 
 @keyframes logo-animation {
@@ -75,9 +106,13 @@ body .site-version {
 }
 
 @media screen and (min-width: 38em) {
-  .toolbar-tray-open:not(.toolbar-vertical) .layout-container,
-  body:not(.toolbar-tray-open) .layout-container {
+  html .toolbar-tray-open:not(.toolbar-vertical) .layout-container,
+  html body:not(.toolbar-tray-open) .layout-container {
     margin-right: auto !important;
     margin-left: auto !important;
   }
+}
+
+html footer.installer-footer #credit {
+  display: none;
 }

@@ -1,11 +1,10 @@
 install-page:
-  js:
-    js/mobile.install.js: {}
   css:
     theme:
-      css/theme/install-page.css: {}
+      css/theme/install-page.css: { }
   dependencies:
     - system/maintenance
+    - claro/install-page
 
 toolbar-icon:
   css:
