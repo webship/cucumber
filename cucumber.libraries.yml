@@ -1,13 +1,13 @@
 install-page:
   js:
-    themes/cucumber/js/mobile.install.js: {}
+    js/mobile.install.js: {}
   css:
     theme:
-      themes/cucumber/css/theme/install-page.css: {}
+      css/theme/install-page.css: {}
   dependencies:
     - system/maintenance
 
 toolbar-icon:
   css:
     theme:
-      themes/cucumber/css/theme/admin-toolbar-tools.css: {}
+      css/theme/admin-toolbar-tools.css: {}

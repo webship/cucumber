@@ -51,7 +51,7 @@
     "drupal/field_group": "~3.0",
     "drupal/smart_trim": "~1.0",
     "drupal/pathauto": "~1.0",
-    "drupal/uikit_admin": "~3.0",
+    "drupal/vartheme_claro": "^8.1",
     "npm-asset/ace-builds": "~1.0",
     "drupal/ace_editor": "~1.0",
     "drupal/webtest": "^8.1"
