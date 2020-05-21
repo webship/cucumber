@@ -1,6 +1,7 @@
 name: Cucumber
 type: profile
 description: 'Cucumber Managment system'
+core_version_requirement: ^8 || ^9
 version: 8.x-1.x-dev
 package: Cucumber
 project: cucumber
