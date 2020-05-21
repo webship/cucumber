@@ -39,7 +39,7 @@
     "drupal/drupal-library-installer-plugin": "^0.3",
     "webflo/drupal-finder": "~1.0",
     "drupal/core": "^8.8.0 || ~9.0.0",
-    "drupal/webadev": "^8.1",
+    "drupal/webdev": "^8.1",
     "drupal/webadmin": "^8.1",
     "drupal/webtest": "^8.1",
     "drupal/vartheme_claro": "^8.1",
