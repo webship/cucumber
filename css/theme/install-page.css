@@ -113,6 +113,12 @@ html body .site-version {
   }
 }
 
-html footer.installer-footer #credit {
+html body footer.installer-footer #credit {
   display: none;
+}
+
+html body .progress__bar {
+  border: 1px #437100 solid ;
+  background: #437100;
+  height: 1.5em;
 }

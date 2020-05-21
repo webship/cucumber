@@ -20,14 +20,12 @@ install:
   - comment
   - taxonomy
   - block
-  - block_content
   - menu_link_content
   - menu_ui
   - help
   - action
   - dynamic_page_cache
   - page_cache
-  - big_pipe
   - automated_cron
   - color
   - field
@@ -45,7 +43,6 @@ install:
   - shortcut
   - toolbar
   - views
-  - views_ui
   - datetime_range
   - layout_discovery
   - field_layout
@@ -61,13 +58,8 @@ install:
   - ctools_block
   - ctools_views
   - config_update
-  - config_update_ui
   - entity
   - token
-  - page_manager
-  - page_manager_ui
-  - panels
-  - panels_ipe
   - ds
   - ds_extras
   - field_group
@@ -75,3 +67,5 @@ install:
   - pathauto
   - behat_ui
   - ace_editor
+  - webdev
+  - webadmin
