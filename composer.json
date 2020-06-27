@@ -34,22 +34,14 @@
   "require": {
     "composer/installers": "~1.0",
     "oomphinc/composer-installers-extender": "~1.0",
-    "cweagans/composer-patches": "~1.0",
-    "drupal/core-composer-scaffold": "^8.8.0",
+    "drupal/core-composer-scaffold": "~9.0",
+    "drupal/core-project-message": "~9.0",
     "drupal/drupal-library-installer-plugin": "^0.3",
-    "webflo/drupal-finder": "~1.0",
-    "drupal/core": "^8.8.0 || ~9.0.0",
-    "drupal/webdev": "^8.1",
-    "drupal/webadmin": "^8.1",
-    "drupal/webtest": "^8.1",
-    "drupal/vartheme_claro": "^8.1",
-    "drupal/ctools": "~3.0",
-    "drupal/entity": "~1.0",
-    "drupal/token": "~1.0",
-    "drupal/ds": "~3.0",
-    "drupal/field_group": "~3.0",
-    "drupal/smart_trim": "~1.0",
-    "drupal/pathauto": "~1.0",
+    "drupal/core": "~9.0",
+    "drupal/webdev": "~9.0",
+    "drupal/webadmin": "~9.0",
+    "drupal/webtest": "~2.0",
+    "drupal/vartheme_claro": "~2.0",
     "npm-asset/ace-builds": "~1.0",
     "drupal/ace_editor": "~1.0"
   },
@@ -70,9 +62,6 @@
       "locations": {
         "web-root": "web/"
       }
-    },
-    "branch-alias": {
-      "dev-8.x-1.x": "8.1.x-dev"
     },
     "installer-types": [
       "bower-asset",
