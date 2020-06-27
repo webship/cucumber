@@ -22,6 +22,10 @@
     "source": "http://cgit.drupalcode.org/cucumber"
   },
   "repositories": {
+    "packagist.org": {
+      "type": "composer",
+      "url": "https://packagist.org"
+    },
     "drupal": {
       "type": "composer",
       "url": "https://packages.drupal.org/8"
@@ -51,7 +55,10 @@
     "optimize-autoloader": true,
     "preferred-install": {
       "drupal/core": "dist"
-    }
+    },
+    "github-protocols": [
+      "https,ssh"
+    ]
   },
   "scripts": {
     "post-install-cmd": ["./bin/phing push"],
