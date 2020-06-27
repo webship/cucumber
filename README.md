@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/webship/cucumber.svg?branch=8.x-1.x)](https://travis-ci.org/webship/cucumber)
+[![Build Status](https://travis-ci.org/webship/cucumber.svg?branch=9.0.x)](https://travis-ci.org/webship/cucumber)
 # Cucumber
 Cucumber Management System
 
@@ -15,5 +15,5 @@ for your setup.
 After that you can create the project:
 
 ```
-composer create-project webship/cucumber-project:8.1.x-dev CUCUMBER_PROJECT_FOLDER_NAME --stability dev --no-interaction
+composer create-project webship/cucumber-project:9.0.x-dev CUCUMBER_PROJECT_FOLDER_NAME --stability dev --no-interaction
 ```
