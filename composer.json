@@ -22,7 +22,7 @@
     "source": "http://cgit.drupalcode.org/cucumber"
   },
   "repositories": {
-    "packagist.org": {
+    "packagist": {
       "type": "composer",
       "url": "https://packagist.org"
     },
@@ -52,10 +52,7 @@
   "config": {
     "bin-dir": "bin/",
     "secure-http": false,
-    "optimize-autoloader": true,
-    "preferred-install": {
-      "drupal/core": "dist"
-    },
+    "process-timeout": 1800,
     "github-protocols": [
       "https,ssh"
     ]
