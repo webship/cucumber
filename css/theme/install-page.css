@@ -37,13 +37,13 @@ html body .task-list .is-active:after {
 html body.install-page {
   background: #437100 !important;
   background-color: #437100 !important;
-  background-image: url(../../logo-wight.svg) !important;
+  background-image: url(../../images/logo-wight.svg) !important;
   background-position: center center;
   background-repeat: no-repeat;
-  -webkit-background-size: 22%;
-  -moz-background-size: 22%;
-  -o-background-size: 22%;
-  background-size: 22%;
+  -webkit-background-size: 50px;
+  -moz-background-size: 50px;
+  -o-background-size: 50px;
+  background-size: 50px;
   background-position: 95% 5%;
   -webkit-animation: logo-animation 40s infinite;
   animation: logo-animation 40s infinite;
@@ -52,7 +52,7 @@ html body.install-page {
 }
 
 html body .installer-logo {
-  width: 100px !important;
+  width: 120px !important;
   float: left !important;
 }
 
