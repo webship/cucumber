@@ -40,15 +40,6 @@ html body.install-page {
   background-image: url(../../images/logo-wight.svg) !important;
   background-position: center center;
   background-repeat: no-repeat;
-  -webkit-background-size: 50px;
-  -moz-background-size: 50px;
-  -o-background-size: 50px;
-  background-size: 50px;
-  background-position: 95% 5%;
-  -webkit-animation: logo-animation 40s infinite;
-  animation: logo-animation 40s infinite;
-  animation-delay: 5s;
-  object-fit: none;
 }
 
 html body .installer-logo {
@@ -63,46 +54,17 @@ html body .page-title {
 html body .install-site-name,
 html body .site-version {
   margin-left: 60px !important;
-  margin-top: 1em !important;
+  margin-top: 1rem !important;
 }
 
-@keyframes logo-animation {
-  10% {
-    background-size: 22%;
-    background-position: 95% 5%;
-  }
-  20% {
-    background-size: 50%;
-    background-position: 50%;
-  }
-  30% {
-    background-size: 22%;
-    background-position: 5% 95%;
-  }
-  40% {
-    background-size: 22%;
-    background-position: 50%;
-  }
-  50% {
-    background-size: 22%;
-    background-position: 95% 5%;
-  }
-  60% {
-    background-size: 50%;
-    background-position: 50%;
-  }
-  70% {
-    background-size: 22%;
-    background-position: 5% 95%;
-  }
-  80% {
-    background-size: 50%;
-    background-position: 50%;
-  }
-  90% {
-    background-size: 22%;
-    background-position: 95% 5%;
-  }
+html body.install-page .site-version {
+  font-size: 5rem !important;
+  display: inline-block !important;
+  margin-top: 4rem !important;
+}
+
+html body.install-page .site-version::before {
+  content: 'Cucumber ';
 }
 
 @media screen and (min-width: 38em) {
@@ -120,5 +82,10 @@ html body footer.installer-footer #credit {
 html body .progress__bar {
   border: 1px #437100 solid ;
   background: #437100;
-  height: 1.5em;
+  height: 1.5rem;
+}
+
+html body .progress__track {
+  height: 1.6rem;
+  padding: 0.2rem;
 }

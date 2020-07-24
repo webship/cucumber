@@ -9,4 +9,4 @@ install-page:
 toolbar-icon:
   css:
     theme:
-      css/theme/admin-toolbar-tools.css: {}
+      css/theme/admin-toolbar-tools.css: { }

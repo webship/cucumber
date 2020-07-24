@@ -25,8 +25,5 @@ function cucumber_preprocess_install_page(&$variables) {
  * Implements hook_toolbar_alter().
  */
 function cucumber_toolbar_alter(&$items) {
-  if (\Drupal::currentUser()->hasPermission('access toolbar')
-    && !empty($items['admin_toolbar_tools'])) {
-    $items['admin_toolbar_tools']['#attached']['library'][] = 'cucumber/toolbar-icon';
-  }
+  $items['admin_toolbar_tools']['#attached']['library'][] = 'cucumber/toolbar-icon';
 }
