@@ -65,6 +65,7 @@ html body.install-page .site-version {
 
 html body.install-page .site-version::before {
   content: 'Cucumber ';
+  display: inline-block;
 }
 
 @media screen and (min-width: 38em) {
@@ -86,6 +87,6 @@ html body .progress__bar {
 }
 
 html body .progress__track {
-  height: 1.6rem;
-  padding: 0.2rem;
+  height: 1.6rem !important;
+  padding: 0.2rem !important;
 }

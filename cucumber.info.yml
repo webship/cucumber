@@ -41,7 +41,6 @@ install:
   - path
   - search
   - shortcut
-  - toolbar
   - views
   - datetime_range
   - layout_discovery
@@ -51,18 +50,7 @@ install:
   - update
   - history
 ## Contrib Modules
-  - admin_toolbar
-  - admin_toolbar_tools
-  - admin_toolbar_links_access_filter
-  - ctools
-  - ctools_block
-  - ctools_views
-  - config_update
-  - token
-  - field_group
-  - smart_trim
-  - pathauto
-  - behat_ui
-  - ace_editor
   - webdev
   - webadmin
+  - behat_ui
+  - ace_editor
