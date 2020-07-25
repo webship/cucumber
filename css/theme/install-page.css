@@ -66,6 +66,7 @@ html body.install-page .site-version {
 html body.install-page .site-version::before {
   content: 'Cucumber ';
   display: inline-block;
+  padding-right: 1rem;
 }
 
 @media screen and (min-width: 38em) {
