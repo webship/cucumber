@@ -58,7 +58,7 @@ html body .site-version {
 }
 
 html body.install-page .site-version {
-  font-size: 5rem !important;
+  font-size: 4rem !important;
   display: inline-block !important;
   margin-top: 4rem !important;
 }
