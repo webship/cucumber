@@ -12,8 +12,12 @@ First you need to [install composer](https://getcomposer.org/doc/00-intro.md#ins
 You might need to replace `composer` with `php composer.phar` (or similar) 
 for your setup.
 
-After that you can create the project:
-
+To install the most recent stable release of Cucumber 9.0.x run this command:
 ```
-composer create-project webship/cucumber-project:9.0.x-dev CUCUMBER_PROJECT_FOLDER_NAME --stability dev --no-interaction
+composer create-project webship/cucumber-project:^9.0.0-alpha1 WEBSITE_NAME --no-dev --no-interaction
+```
+
+To install the dev version of Cucumber 9.0.x run this command:
+```
+composer create-project webship/cucumber-project:9.0.x-dev WEBSITE_NAME --stability dev --no-interaction
 ```
