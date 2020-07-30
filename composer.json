@@ -45,7 +45,7 @@
     "drupal/webdev": "9.0.x-dev",
     "drupal/webadmin": "9.0.x-dev",
     "drupal/behat_ui": "4.0.x-dev",
-    "drupal/vartheme_claro": "2.0.x-dev",
+    "drupal/vartheme_claro": "~2.0",
     "npm-asset/ace-builds": "~1.0",
     "drupal/ace_editor": "~1.0"
   },
