@@ -29,37 +29,32 @@
     "drupal": {
       "type": "composer",
       "url": "https://packages.drupal.org/8"
-    },
-    "assets": {
-      "type": "composer",
-      "url": "https://asset-packagist.org"
     }
   },
   "require": {
-    "composer/installers": "~1.0",
-    "oomphinc/composer-installers-extender": "~1.0",
+    "composer/installers": "~1.0 || ~2.0",
+    "oomphinc/composer-installers-extender": "~1.0 || ~2.0",
     "drupal/core-composer-scaffold": "~9.0",
     "drupal/core-project-message": "~9.0",
-    "drupal/drupal-library-installer-plugin": "^0.3",
+    "cweagans/composer-patches": "~1.0",
     "drupal/core": "~9.0",
-    "drupal/webdev": "9.0.x-dev",
-    "drupal/webadmin": "9.0.x-dev",
-    "drupal/behat_ui": "4.0.x-dev",
+    "drupal/webdev": "~9.0",
+    "drupal/webadmin": "~9.0",
+    "drupal/behat_ui": "~4.0",
     "drupal/vartheme_claro": "~2.0",
-    "npm-asset/ace-builds": "~1.0",
-    "drupal/ace_editor": "~1.0"
+    "drush/drush": "~10.0"
+  },
+  "conflict": {
+    "drupal/drupal": "*"
   },
   "config": {
     "bin-dir": "bin/",
     "secure-http": false,
     "process-timeout": 1800,
+    "vendor-dir": "web/vendor",
     "github-protocols": [
       "https,ssh"
     ]
-  },
-  "scripts": {
-    "post-install-cmd": ["./bin/phing push"],
-    "post-update-cmd": ["./bin/phing push"]
   },
   "extra": {
     "drupal-scaffold": {
@@ -67,30 +62,15 @@
         "web-root": "web/"
       }
     },
-    "installer-types": [
-      "bower-asset",
-      "npm-asset"
-    ],
     "installer-paths": {
       "web/core": ["type:drupal-core"],
-      "web/profiles/{$name}": ["type:drupal-profile"],
+      "web/profiles/contrib/{$name}": ["type:drupal-profile"],
       "web/modules/contrib/{$name}": ["type:drupal-module"],
       "web/themes/contrib/{$name}": ["type:drupal-theme"],
-      "web/libraries/ace": ["npm-asset/ace-builds"],
-      "web/libraries/{$name}": [
-        "type:drupal-library",
-        "type:bower-asset",
-        "type:npm-asset"
-      ],
+      "web/libraries/{$name}": ["type:drupal-library"],
       "web/modules/custom/{$name}": ["type:drupal-custom-module"],
       "web/themes/custom/{$name}": ["type:drupal-custom-theme"],
       "drush/contrib/{$name}": ["type:drupal-drush"]
-    },
-    "drupal-libraries": {
-      "library-directory": "web/libraries",
-      "libraries": [
-        {"name": "ace", "package": "npm-asset/ace-builds"}
-      ]
     },
     "enable-patching": true,
     "composer-exit-on-patch-failure": true,
