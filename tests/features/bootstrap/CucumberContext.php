@@ -14,12 +14,17 @@ use Behat\Behat\Context\SnippetAcceptingContext;
 class CucumberContext extends RawDrupalContext implements SnippetAcceptingContext {
 
   /**
-  * Hold all passed parameters.
-  */
-  protected $parameters = array();
+   * Hold all passed parameters.
+   *
+   * @var array
+   */
+  protected $parameters = [];
 
   /**
    * Initializes context.
+   *
+   * @param array $parameters
+   *   The parameters.
    */
   public function __construct(array $parameters) {
 
@@ -28,16 +33,11 @@ class CucumberContext extends RawDrupalContext implements SnippetAcceptingContex
 
   }
 
+  /**
+   * Clean users.
+   */
   public function cleanUsers() {
 
   }
 
-  /**
-   * Maximize the window before scenario.
-   *
-   * @BeforeScenario @javascript
-   */
-  public function maximizeWindow() {
-    $this->getSession()->getDriver()->maximizeWindow();
-  }
 }
