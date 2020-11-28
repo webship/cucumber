@@ -1,3 +1,9 @@
+# 9.0.0-alpha2
+
+* Issue [#3183878](https://www.drupal.org/i/3183878):
+         Fixed Cucumber composer and .info.yml to work with Drupal 9 ( ^9.0 )
+         only. To work with Composer 2.0 , PHP7.4, and MySQL 8
+
 # 9.0.0-alpha1
 
 * Issue [#3118432](https://www.drupal.org/i/3118432):
