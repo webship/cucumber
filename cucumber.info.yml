@@ -2,7 +2,7 @@ name: Cucumber
 type: profile
 description: 'Cucumber Managment system'
 core_version_requirement: ^9.0
-version: 9.0.0-alpha2
+version: 9.0.x-dev
 package: Cucumber
 project: cucumber
 distribution:
