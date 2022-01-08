@@ -22,13 +22,13 @@
     "source": "http://cgit.drupalcode.org/cucumber"
   },
   "repositories": {
-    "packagist": {
-      "type": "composer",
-      "url": "https://packagist.org"
-    },
     "drupal": {
       "type": "composer",
       "url": "https://packages.drupal.org/8"
+    },
+    "assets": {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
     }
   },
   "require": {
@@ -50,11 +50,16 @@
   "config": {
     "bin-dir": "bin/",
     "secure-http": false,
-    "process-timeout": 1800,
-    "vendor-dir": "web/vendor",
-    "github-protocols": [
-      "https,ssh"
-    ]
+    "optimize-autoloader": true,
+    "preferred-install": {
+      "drupal/core": "dist"
+    },
+    "allow-plugins": {
+      "composer/installers": true,
+      "cweagans/composer-patches": true,
+      "oomphinc/composer-installers-extender": true,
+      "drupal/core-composer-scaffold": true
+    }
   },
   "extra": {
     "drupal-scaffold": {
