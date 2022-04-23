@@ -1,7 +1,10 @@
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: pgPb4mfzVSE0MxwTEMlc77k-hWwzXAkVJEqnvlp5r7Q
 id: project_manager
 label: 'Project Manager'
 weight: -4
 is_admin: null
+permissions: {  }
