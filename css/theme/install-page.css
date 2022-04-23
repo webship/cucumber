@@ -1,8 +1,8 @@
 /**
- * @file
- * Installation styling.
- *
- */
+* @file
+* Installation styling.
+*
+*/
 
 html body,
 html body a,
@@ -27,7 +27,7 @@ html body .claro-details__summary:hover {
 html body .button--primary:hover,
 html body .button--primary:focus,
 html body .button--primary:active {
-  background: #2c4b00;
+  background: #3c3d41;
 }
 
 html body .task-list .is-active:after {
@@ -37,36 +37,25 @@ html body .task-list .is-active:after {
 html body.install-page {
   background: #437100 !important;
   background-color: #437100 !important;
-  background-image: url(../../images/logo-wight.svg) !important;
-  background-position: center center;
+}
+
+html body .layout-container header {
+  background-image: url("../../images/logo.svg") !important;
+  background-position: left center;
   background-repeat: no-repeat;
+  background-size: contain;
+  height: 15rem;
+  margin-bottom: 2rem;
 }
 
-html body .installer-logo {
-  width: 120px !important;
-  float: left !important;
+html body.install-page .page-title {
+  margin-left: 17rem;
 }
 
-html body .page-title {
-  width: 100% !important;
-}
-
-html body .install-site-name,
-html body .site-version {
-  margin-left: 60px !important;
-  margin-top: 1rem !important;
-}
-
-html body.install-page .site-version {
-  font-size: 4rem !important;
+html body.install-page .page-title {
+  font-size: 3rem !important;
   display: inline-block !important;
   margin-top: 4rem !important;
-}
-
-html body.install-page .site-version::before {
-  content: 'Cucumber ';
-  display: inline-block;
-  padding-right: 1rem;
 }
 
 @media screen and (min-width: 38em) {
@@ -75,10 +64,6 @@ html body.install-page .site-version::before {
     margin-right: auto !important;
     margin-left: auto !important;
   }
-}
-
-html body footer.installer-footer #credit {
-  display: none;
 }
 
 html body .progress__bar {
@@ -90,4 +75,17 @@ html body .progress__bar {
 html body .progress__track {
   height: 1.6rem !important;
   padding: 0.2rem !important;
+}
+
+@media (min-width: 48em) {
+  html body .layout-sidebar-first {
+    float: left;
+    width: 25%;
+    margin-right: 3rem;
+  }
+
+  html body main {
+    float: left;
+    width: 65%;
+  }
 }
