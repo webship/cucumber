@@ -8,8 +8,9 @@ project: cucumber
 distribution:
   name: Cucumber
   install:
-    theme: gin
+    theme: claro
 themes:
+  - claro
   - gin
 install:
   - config
