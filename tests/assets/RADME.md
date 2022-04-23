@@ -1,1 +1,0 @@
-# Cucumber Tests Assets

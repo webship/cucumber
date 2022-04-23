@@ -52,4 +52,3 @@ install:
 ## Contrib Modules
   - webdev
   - webadmin
-  - behat_ui

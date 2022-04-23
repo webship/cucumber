@@ -6,19 +6,17 @@
   "keywords": [
     "Drupal",
     "Cucumber",
-    "Behat",
     "Drupal profile"
   ],
   "author": "Webship.org",
   "license": "GPL-2.0",
   "scripts": {
-    "install-libraries": "npm install && bower install"
+    "test-cucumber": "cucumber-js --require conf.js --require tests/step-definitions --format node_modules/cucumber-pretty"
   },
   "dependencies": {
-    "bower": ">=1.8.8"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:webship/cucumber.git"
+    "chromedriver": "^99.0.0",
+    "cucumber": "~6",
+    "cucumber-pretty": "~6",
+    "nightwatch": "^2.1.0"
   }
 }

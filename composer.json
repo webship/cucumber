@@ -40,7 +40,6 @@
     "drupal/core": "~9.0",
     "drupal/webdev": "~9.0",
     "drupal/webadmin": "~9.0",
-    "drupal/behat_ui": "~4.0",
     "drupal/vartheme_claro": "~3.0",
     "drush/drush": "~10.0"
   },
