@@ -8,10 +8,9 @@ project: cucumber
 distribution:
   name: Cucumber
   install:
-    theme: vartheme_claro
+    theme: gin
 themes:
-  - claro
-  - vartheme_claro
+  - gin
 install:
   - config
   - user
@@ -52,3 +51,6 @@ install:
 ## Contrib Modules
   - webdev
   - webadmin
+  - gin_toolbar
+  - gin_login
+  - gin_lb

@@ -20,10 +20,3 @@ function cucumber_preprocess_install_page(&$variables) {
   // Cucumber has custom styling for the install page.
   $variables['#attached']['library'][] = 'cucumber/install-page';
 }
-
-/**
- * Implements hook_toolbar_alter().
- */
-function cucumber_toolbar_alter(&$items) {
-  $items['admin_toolbar_tools']['#attached']['library'][] = 'cucumber/toolbar-icon';
-}
