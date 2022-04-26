@@ -11,7 +11,7 @@
   "author": "Webship.org",
   "license": "GPL-2.0",
   "scripts": {
-    "test-cucumber": "cucumber-js --require conf.js --require tests/step-definitions --format node_modules/cucumber-pretty"
+    "test-cucumber": "cucumber-js --require tests/cucumber.config.js --require tests/nightwatch.confg.js --require tests/step-definitions --format node_modules/cucumber-pretty"
   },
   "dependencies": {
     "chromedriver": "^99.0.0",

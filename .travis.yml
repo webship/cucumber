@@ -96,6 +96,7 @@ before_script:
   - sleep 5
 script:
   - cd profiles/contrib/cucumber/
+  - npm install
   - npm run test-cucumber
 matrix:
   fast_finish: true
