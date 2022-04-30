@@ -71,6 +71,14 @@ before_install:
   - rm google-chrome-stable_current_amd64.deb
   - google-chrome --version
 
+   # Install node js, npm, yarn
+  - curl -sL https://deb.nodesource.com/setup_16.x | sudo bash -
+  - sudo apt install -y nodejs 
+  - curl -L https://npmjs.com/install.sh | sudo -E bash -
+  - sudo apt update
+  - sudo apt install npm
+  - sudo npm install -g yarn
+
 install:
   - git checkout $TRAVIS_COMMIT
   ## Build with the composer.
