@@ -11,12 +11,13 @@
   "author": "Webship.org",
   "license": "GPL-2.0",
   "scripts": {
-    "test-cucumber": "cucumber-js --require tests/cucumber.config.js --require tests/nightwatch.confg.js --require tests/step-definitions --format node_modules/cucumber-pretty"
+    "test-cucumber": "nightwatch"
   },
   "dependencies": {
-    "chromedriver": "^99.0.0",
-    "cucumber": "~6",
-    "cucumber-pretty": "~6",
-    "nightwatch": "^2.1.0"
+    "nightwatch": "~2",
+    "@cucumber/cucumber": "*",
+    "chromedriver": "*",
+    "cucumber-pretty": "*",
+    "geckodriver": "*"
   }
 }

@@ -16,7 +16,6 @@ cache:
     - "$HOME/.composer/cache"
     - "$HOME/.drush/cache"
     - "$HOME/.npm"
-    - "$HOME/.selenium/cache"
 
 before_install:
   # Upgrade to MySQL 8.0.X
@@ -72,11 +71,6 @@ before_install:
   - rm google-chrome-stable_current_amd64.deb
   - google-chrome --version
 
-  # Run selenium standalone server.
-  - SELENIUM="$HOME/.selenium/cache/selenium-server-standalone-2.53.1.jar";
-  - if [[ ! -f $SELENIUM ]]; then wget -O $SELENIUM http://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.1.jar; fi
-  - java -jar $SELENIUM -port 4445 > /dev/null 2>&1 &
-  - echo "[  OK  ] Starting Selenium on the 4445 port ..."
 install:
   - git checkout $TRAVIS_COMMIT
   ## Build with the composer.

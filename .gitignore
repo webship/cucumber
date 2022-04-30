@@ -34,3 +34,9 @@ ehthumbs.db
 .bash_history
 .bashrc
 errors.log
+
+
+# Tests
+node_modules
+*.log
+.vscode
