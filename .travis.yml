@@ -75,8 +75,8 @@ before_install:
   - curl -sL https://deb.nodesource.com/setup_16.x | sudo bash -
   - sudo apt install -y nodejs 
   - curl -L https://npmjs.com/install.sh | sudo -E bash -
-  - sudo apt update
-  - sudo apt install npm
+  - sudo apt-get update
+  - sudo apt-get install npm
   - sudo npm install -g yarn
 
 install:
