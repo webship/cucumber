@@ -85,8 +85,6 @@ install:
   - composer install --no-interaction
   - mkdir web/profiles/contrib
   - git clone --branch 9.0.x https://github.com/webship/cucumber.git web/profiles/contrib/cucumber
-  - cd web/profiles/contrib/cucumber
-  - yarn install
 
   ## Install with drush.
   - cd web
