@@ -71,12 +71,12 @@ before_install:
   - rm google-chrome-stable_current_amd64.deb
   - google-chrome --version
 
-  # install v16.x of nodejs
-  - nvm install 16
-  #install yarn globally
-  - npm install - g yarn
-  # yarn install is like npm install
-  - yarn install
+   # Install node js, npm, yarn
+  - curl -sL https://deb.nodesource.com/setup_16.x | sudo bash -
+  - sudo apt install -y nodejs 
+  - curl -sL https://npmjs.com/install.sh | sudo bash -
+  - npm install -g npm@latest
+  - sudo npm install -g yarn
 
 install:
   - git checkout $TRAVIS_COMMIT
@@ -88,6 +88,7 @@ install:
   - yarn install
 
   ## Install with drush.
+  - cd web
   - drush site-install cucumber --yes --site-name='Cucumber' --account-name=admin --account-pass=dD.123123ddd --account-mail=cucumber@webship.org --db-url="mysql://root:@localhost/test_cucumber" 
   - drush config-set system.performance css.preprocess 0 --yes
   - drush config-set system.performance js.preprocess 0 --yes
