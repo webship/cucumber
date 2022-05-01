@@ -88,7 +88,6 @@ install:
   - yarn install
 
   ## Install with drush.
-  - cd web
   - drush site-install cucumber --yes --site-name='Cucumber' --account-name=admin --account-pass=dD.123123ddd --account-mail=cucumber@webship.org --db-url="mysql://root:@localhost/test_cucumber" 
   - drush config-set system.performance css.preprocess 0 --yes
   - drush config-set system.performance js.preprocess 0 --yes
