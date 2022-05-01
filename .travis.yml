@@ -18,6 +18,14 @@ cache:
     - "$HOME/.npm"
 
 before_install:
+
+  # install v16.x of nodejs
+  - nvm install 16
+  #install yarn globally
+  - npm install - g yarn
+  # yarn install is like npm install
+  - yarn install
+
   # Upgrade to MySQL 8.0.X
   - wget https://repo.mysql.com//mysql-apt-config_0.8.16-1_all.deb
   - sudo dpkg -i mysql-apt-config_0.8.16-1_all.deb
@@ -70,14 +78,6 @@ before_install:
   - sudo dpkg -i google-chrome-stable_current_amd64.deb
   - rm google-chrome-stable_current_amd64.deb
   - google-chrome --version
-
-  # install v16.x of nodejs
-  - nvm install 16
-  
-   # Install node js, npm, yarn
-  - curl -sL https://npmjs.com/install.sh | sudo bash -
-  - npm install -g npm@latest
-  - sudo npm install -g yarn
 
 install:
   - git checkout $TRAVIS_COMMIT
