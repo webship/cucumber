@@ -7,7 +7,7 @@ services:
   - mysql
   - xvfb
 mysql:
-  database: test_webship
+  database: test_cucumber
   username: root
   encoding: utf8
 cache:
@@ -85,11 +85,11 @@ install:
   ## Build with the composer.
   - composer install --no-interaction
   - mkdir web/profiles/contrib
-  - git clone --branch 9.1.x https://github.com/webship/webship.git web/profiles/contrib/webship
+  - git clone --branch 9.0.x https://github.com/webship/cucumber.git web/profiles/contrib/cucumber
 
   ## Install with drush.
   - cd web
-  - drush site-install webship --yes --site-name='Webship' --account-name=admin --account-pass=dD.123123ddd --account-mail=webship@webship.org --db-url="mysql://root:@localhost/test_webship" 
+  - drush site-install cucumber --yes --site-name='cucumber' --account-name=admin --account-pass=dD.123123ddd --account-mail=webship@webship.org --db-url="mysql://root:@localhost/test_cucumber" 
   - drush config-set system.performance css.preprocess 0 --yes
   - drush config-set system.performance js.preprocess 0 --yes
   - drush config-set system.logging error_level all --yes
@@ -98,9 +98,9 @@ before_script:
   - drush runserver --default-server=builtin 8080 &>/dev/null &
   - sleep 5
 script:
-  - cd profiles/contrib/webship/
+  - cd profiles/contrib/cucumber/
   - yarn install
-  - yarn test-webship
+  - yarn test-cucumber
 
 matrix:
   fast_finish: true
