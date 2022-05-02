@@ -7,7 +7,7 @@ services:
   - mysql
   - xvfb
 mysql:
-  database: test_cucumber
+  database: test_webship
   username: root
   encoding: utf8
 cache:
@@ -18,14 +18,13 @@ cache:
     - "$HOME/.npm"
 
 before_install:
-
   # install v16.x of nodejs
   - nvm install 16
   #install yarn globally
   - npm install - g yarn
   # yarn install is like npm install
   - yarn install
-
+  
   # Upgrade to MySQL 8.0.X
   - wget https://repo.mysql.com//mysql-apt-config_0.8.16-1_all.deb
   - sudo dpkg -i mysql-apt-config_0.8.16-1_all.deb
@@ -79,16 +78,18 @@ before_install:
   - rm google-chrome-stable_current_amd64.deb
   - google-chrome --version
 
+ 
+
 install:
   - git checkout $TRAVIS_COMMIT
   ## Build with the composer.
   - composer install --no-interaction
   - mkdir web/profiles/contrib
-  - git clone --branch 9.0.x https://github.com/webship/cucumber.git web/profiles/contrib/cucumber
+  - git clone --branch 9.1.x https://github.com/webship/webship.git web/profiles/contrib/webship
 
   ## Install with drush.
   - cd web
-  - drush site-install cucumber --yes --site-name='Cucumber' --account-name=admin --account-pass=dD.123123ddd --account-mail=cucumber@webship.org --db-url="mysql://root:@localhost/test_cucumber" 
+  - drush site-install webship --yes --site-name='Webship' --account-name=admin --account-pass=dD.123123ddd --account-mail=webship@webship.org --db-url="mysql://root:@localhost/test_webship" 
   - drush config-set system.performance css.preprocess 0 --yes
   - drush config-set system.performance js.preprocess 0 --yes
   - drush config-set system.logging error_level all --yes
@@ -97,7 +98,9 @@ before_script:
   - drush runserver --default-server=builtin 8080 &>/dev/null &
   - sleep 5
 script:
-  - cd profiles/contrib/cucumber/
-  - yarn test-cucumber
+  - cd profiles/contrib/webship/
+  - yarn install
+  - yarn test-webship
+
 matrix:
   fast_finish: true
