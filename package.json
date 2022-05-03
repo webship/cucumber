@@ -6,7 +6,9 @@
   "keywords": [
     "Drupal",
     "Cucumber",
-    "Drupal profile"
+    "Drupal profile",
+    "testing",
+    "test"
   ],
   "author": "Webship.org",
   "license": "GPL-2.0",
