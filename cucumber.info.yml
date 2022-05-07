@@ -55,3 +55,6 @@ install:
   - gin_toolbar
   - gin_login
   - gin_lb
+  - dashboards
+  - dashboards_statistic
+  - dashboards_views

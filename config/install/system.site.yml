@@ -1,11 +1,11 @@
-name: Cucumber
+langcode: en
+name: 'Cucumber'
+mail: admin@webship.com
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /node
+  front: /dashboard/default_dashboard
 admin_compact_mode: false
 weight_select_max: 100
-langcode: en
 default_langcode: en
-

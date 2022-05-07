@@ -3,9 +3,10 @@ status: true
 dependencies:
   module:
     - dashboards
-id: tester
-label: Tester
-weight: -7
+id: coordinator
+label: Coordinator
+weight: -5
 is_admin: null
 permissions:
   - 'can view automated_testing_dashboard dashboard'
+  - 'can view management_dashboard dashboard'

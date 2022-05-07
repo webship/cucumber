@@ -44,6 +44,7 @@
     "drupal/gin_toolbar": "~1.0",
     "drupal/gin_login": "~1.2",
     "drupal/gin_lb": "~1.0",
+    "drupal/dashboards": "~2.0",
     "drush/drush": "~10.0"
   },
   "conflict": {

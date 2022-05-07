@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: product_manager
-label: 'Product Manager'
-weight: -3
-is_admin: null

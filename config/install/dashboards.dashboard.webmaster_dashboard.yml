@@ -1,0 +1,109 @@
+langcode: en
+status: true
+dependencies: {  }
+id: webmaster_dashboard
+admin_label: 'Webmaster Dashboard'
+category: ''
+frontend: false
+weight: 4
+sections:
+  -
+    layout_id: layout_3
+    layout_settings:
+      label: ''
+      context_mapping: {  }
+      reverse: 0
+    components:
+      765493a3-b8df-4947-b85c-d93085cd37e4:
+        uuid: 765493a3-b8df-4947-b85c-d93085cd37e4
+        region: one
+        configuration:
+          id: 'views_block:who_s_online-who_s_online_block'
+          label: ''
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: ''
+          items_per_page: none
+        weight: 1
+        additional: {  }
+      f0c05820-fad6-463f-b7e7-f1981a4b96c5:
+        uuid: f0c05820-fad6-463f-b7e7-f1981a4b96c5
+        region: two
+        configuration:
+          id: 'views_block:content_recent-block_1'
+          label: ''
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: ''
+          items_per_page: none
+        weight: 0
+        additional: {  }
+      a091f99c-909e-4425-8234-8b8d954f1323:
+        uuid: a091f99c-909e-4425-8234-8b8d954f1323
+        region: one
+        configuration:
+          id: 'dashboards_block:dashboard:add_content_menu'
+          label: 'Add content'
+          label_display: visible
+          provider: dashboards
+          context_mapping: {  }
+          items:
+            webpage:
+              weight: '0'
+        weight: 0
+        additional: {  }
+      a12d472e-e2c9-42fb-a796-6ad6b68b9767:
+        uuid: a12d472e-e2c9-42fb-a796-6ad6b68b9767
+        region: two
+        configuration:
+          id: 'dashboards_block:dashboard:view_embed'
+          label: 'My content'
+          label_display: visible
+          provider: dashboards
+          context_mapping: {  }
+          view: 'dashboard_last_content:embed_2'
+        weight: 1
+        additional: {  }
+    third_party_settings: {  }
+  -
+    layout_id: layout_2
+    layout_settings:
+      label: ''
+      context_mapping: {  }
+    components:
+      bb0d530b-b4af-4091-8b21-ff38b074cf0f:
+        uuid: bb0d530b-b4af-4091-8b21-ff38b074cf0f
+        region: three
+        configuration:
+          id: 'dashboards_block:dashboard:system_info'
+          label: 'Show system info'
+          label_display: visible
+          provider: dashboards
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+      a2e3b879-8eea-419e-aac2-f191500ebcff:
+        uuid: a2e3b879-8eea-419e-aac2-f191500ebcff
+        region: two
+        configuration:
+          id: 'dashboards_block:dashboard:error_report'
+          label: 'Show error info'
+          label_display: visible
+          provider: dashboards
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+      c43e1bb2-e420-4537-8754-d995cfccfb7c:
+        uuid: c43e1bb2-e420-4537-8754-d995cfccfb7c
+        region: one
+        configuration:
+          id: 'dashboards_block:dashboard:status_updates'
+          label: 'Update status'
+          label_display: visible
+          provider: dashboards
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+    third_party_settings: {  }

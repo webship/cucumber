@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: business_analysts_manager
-label: 'Business Analysts Manager'
-weight: 1
-is_admin: null

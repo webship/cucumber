@@ -1,7 +1,11 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - dashboards
 id: analyst
 label: Analyst
-weight: 0
+weight: -6
 is_admin: null
+permissions:
+  - 'can view automated_testing_dashboard dashboard'
