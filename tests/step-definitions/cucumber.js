@@ -8,8 +8,8 @@ Given(/^I go to "([^"]*)?"$/, function(url) {
 
 Then(/^I should( not)* see "([^"]*)?"$/, function(negativeCase, text) {
   if (negativeCase) {
-    return browser.assert.not.textContains(text);
+    return browser.assert.not.textContains("body", text);
   }
   
-  return browser.assert.textContains(text);
+  return browser.assert.textContains("body", text);
 });
