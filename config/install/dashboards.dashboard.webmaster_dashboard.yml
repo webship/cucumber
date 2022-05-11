@@ -50,7 +50,7 @@ sections:
           provider: dashboards
           context_mapping: {  }
           items:
-            webpage:
+            project:
               weight: '0'
         weight: 0
         additional: {  }
