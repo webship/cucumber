@@ -5,4 +5,4 @@ So that I know it is working
 
   Scenario: Check the cucumber site
     Given I go to "http://localhost:8080"
-     Then I should see "Access denied"
+     Then I should see "Log in"
