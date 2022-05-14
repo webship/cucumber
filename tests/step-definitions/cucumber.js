@@ -3,11 +3,13 @@ const {When, Before} = require('@cucumber/cucumber');
 const {Then} = require('@cucumber/cucumber');
 
 Given(/^I go to "([^"]*)?"$/, function(url) {
-  return browser.url(url)
-                .waitForElementVisible('body', 1000);
+  return browser.url(url);
 });
 
 Then(/^I should( not)* see "([^"]*)?"$/, function(negativeCase, text) {
+  
+  browser.waitForElementVisible('body', 1000);
+  
   if (negativeCase) {
     return browser.assert.not.textContains("body", text);
   }
