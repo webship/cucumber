@@ -1,0 +1,50 @@
+distribution:
+  name: cucumber
+  title: Cucumber
+  webroot: web
+  profile_repo: webship/cucumber
+  project_template: webship/cucumber-project
+users:
+  - authenticated
+  - developer
+  - tester
+  - analyst
+  - coordinator
+  - product_owner
+  - administrator
+user:
+  authenticated:
+    name: Authenticated user
+    mail: test.authenticated@webship.org
+    password: dD.123123ddd
+    role: _none_
+  developer:
+    name: Developer
+    mail: test.developer@webship.org
+    password: dD.123123ddd
+    role: developer
+  tester:
+    name: Tester
+    mail: test.tester@webship.org
+    password: dD.123123ddd
+    role: tester
+  analyst:
+    name: Analyst
+    mail: test.analyst@webship.org
+    password: dD.123123ddd
+    role: analyst
+  coordinator:
+    name: Coordinator
+    mail: test.coordinator@webship.org
+    password: dD.123123ddd
+    role: coordinator
+  product_owner:
+    name: Product Owner
+    mail: test.product_owner@webship.org
+    password: dD.123123ddd
+    role: product_owner
+  administrator:
+    name: Administrator
+    mail: test.administrator@webship.org
+    password: dD.123123ddd
+    role: administrator

@@ -47,7 +47,7 @@
     "drupal/dashboards": "~2.0",
     "drupal/anonymous_redirect": "~2.0",
     "drupal/user_redirect": "~2.0",
-    "drush/drush": "~10.0"
+    "drush/drush": "~11.0"
   },
   "conflict": {
     "drupal/drupal": "*"
