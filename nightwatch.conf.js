@@ -33,7 +33,7 @@ module.exports = {
     options: {
       feature_path: 'tests/features/*.feature',
       additional_config: '',
-      parallel: 2
+      parallel: 0
     }
    
   },
@@ -41,7 +41,7 @@ module.exports = {
   test_settings: {
     default: {
       disable_error_log: false,
-      launch_url: 'https://nightwatchjs.org',
+      launch_url: 'http://localhost:8080',
 
       screenshots: {
         enabled: false,
