@@ -1,6 +1,9 @@
+uuid: 4c03491a-85a0-4797-a1ad-5d3c256d604d
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: qcV1Aip6R1Z0JCyx1rrfUVLLg4P9xPAqvH3p0MMyfGw
 id: webmaster_dashboard
 admin_label: 'Webmaster Dashboard'
 category: ''
@@ -38,20 +41,6 @@ sections:
           context_mapping: {  }
           views_label: ''
           items_per_page: none
-        weight: 0
-        additional: {  }
-      a091f99c-909e-4425-8234-8b8d954f1323:
-        uuid: a091f99c-909e-4425-8234-8b8d954f1323
-        region: one
-        configuration:
-          id: 'dashboards_block:dashboard:add_content_menu'
-          label: 'Add content'
-          label_display: visible
-          provider: dashboards
-          context_mapping: {  }
-          items:
-            project:
-              weight: '0'
         weight: 0
         additional: {  }
       a12d472e-e2c9-42fb-a796-6ad6b68b9767:
