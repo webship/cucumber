@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: A2jscwnoS095ddZyp-UShKwAFOI32e6Su3uJ9UKdRJ4
 features:
   node_user_picture: true
   comment_user_picture: true
