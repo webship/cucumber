@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/webship/cucumber.svg?branch=9.0.x)](https://travis-ci.com/github/webship/cucumber/builds) Cucumber 9.0.x
+[![CircleCI](https://circleci.com/gh/webship/cucumber/tree/9.0.x.svg?style=svg)](https://circleci.com/gh/webship/cucumber/tree/9.0.x) Cucumber 9.0.x
 
 # Cucumber
 Cucumber Management System

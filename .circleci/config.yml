@@ -189,11 +189,11 @@ commands:
             mysql -h 127.0.0.1 -uroot -prootpw --execute="DROP DATABASE IF EXISTS test_cucumber;" -vvv
             mysql -h 127.0.0.1 -uroot -prootpw --execute="CREATE DATABASE test_cucumber;" -vvv
             cd /var/www/html/test/cucumber/web
-            ../bin/drush site-install cucumber --yes --site-name='Cucumber' --account-name=admin --account-pass=dD.123123ddd --account-mail=webship@webship.org --db-url="mysql://root:rootpw@127.0.0.1/test_cucumber"" 
-            ../bin/drush config-set system.performance css.preprocess 0 --yes
-            ../bin/drush config-set system.performance js.preprocess 0 --yes
-            ../bin/drush config-set system.logging error_level all --yes
-            ../bin/drush cr
+            ../vendor/drush/drush/drush site-install cucumber --yes --site-name='Cucumber' --account-name=admin --account-pass=dD.123123ddd --account-mail=webship@webship.org --db-url="mysql://root:rootpw@127.0.0.1/test_cucumber"" 
+            ../vendor/drush/drush/drush config-set system.performance css.preprocess 0 --yes
+            ../vendor/drush/drush/drush config-set system.performance js.preprocess 0 --yes
+            ../vendor/drush/drush/drush config-set system.logging error_level all --yes
+            ../vendor/drush/drush/drush cr
 
       ## Run Selenium Standalone server.
       - run:
