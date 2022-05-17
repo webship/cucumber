@@ -8,7 +8,7 @@ source ${current_path}/libs/bash-yaml.sh || exit 1 ;
 # Load the list of default users for Cucumber.
 eval $(parse_yaml ${current_path}/cucumber.users.yml);
 
-cd ../../../../../;
+cd ../../../../;
 
 # Add Drush if it was not in the system.
 if [ ! -d "vendor/drush/drush" ]; then
