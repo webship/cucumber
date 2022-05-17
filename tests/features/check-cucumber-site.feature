@@ -4,5 +4,5 @@ I want to be able to test the cucumber site
 So that I know it is working
 
   Scenario: Check the cucumber site
-    Given I go to "http://localhost:8080"
-     Then I should see "Username"
+    Given I go to "http://cucumber.test"
+     Then I should see "Log in"

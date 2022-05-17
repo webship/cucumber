@@ -41,7 +41,7 @@ module.exports = {
   test_settings: {
     default: {
       disable_error_log: false,
-      launch_url: 'http://localhost:8080',
+      launch_url: 'http://cucumber.test',
 
       screenshots: {
         enabled: false,
