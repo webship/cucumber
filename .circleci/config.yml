@@ -123,14 +123,6 @@ commands:
             chmod +x geckodriver &&
             sudo mv geckodriver /usr/local/bin
 
-      - run:
-          name: Install the latest firefox
-          command: |
-            sudo sh -c "echo 'deb http://ftp.hr.debian.org/debian sid main' >> /etc/apt/sources.list" &&
-            sudo apt-get update &&
-            sudo apt-get install -t sid firefox &&
-            firefox --version
-
       ## List tools versions.
       - run:
           name: List tools versions
