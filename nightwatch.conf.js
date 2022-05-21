@@ -40,22 +40,44 @@ module.exports = {
 
   test_settings: {
     default: {
-      disable_error_log: false,
-      launch_url: 'http://cucumber.test',
-
+      launch_url: "http://cucumber.test",
+      selenium_port: 4444,
+      selenium_host: "127.0.0.1",
+      silent: true,
       screenshots: {
-        enabled: false,
-        path: 'screens',
-        on_failure: true
+          enabled: true,
+          path: "./reports/screenshots"
       },
-
+      
       desiredCapabilities: {
-        browserName: 'firefox'
-      },
-
-      webdriver: {
-        start_process: true,
-        server_path: ''
+        browserName: 'chrome',
+        'goog:chromeOptions': {
+          // More info on Chromedriver: https://sites.google.com/a/chromium.org/chromedriver/
+          //
+          // w3c:false tells Chromedriver to run using the legacy JSONWire protocol (not required in Chrome 78)
+          w3c: false,
+          args: [
+            '--headless',
+            '--start-maximized',
+            '--disable-gpu',
+            '--window-size=1600,1200',
+            '--no-sandbox',
+            '--disable-dev-shm-usage',
+            '--disable-setuid-sandbox',
+            '--disable-web-security',
+            '--DNS-prefetch-disable',
+            '--disable-translate',
+            '--ignore-certificate-errors',
+            '--test-type',
+            '--disable-extensions',
+            '--incognito',
+            '--disable-infobars',
+            '--remote-debugging-port=9222',
+            '--allowed-ips=*',
+            '--whitelisted-ips=*',
+            '--allow-insecure-localhost'
+          ]
+        }
       }
     },
 
