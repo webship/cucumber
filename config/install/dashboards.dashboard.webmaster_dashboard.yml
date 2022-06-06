@@ -1,14 +1,12 @@
-uuid: 4c03491a-85a0-4797-a1ad-5d3c256d604d
+uuid: b5b8287b-428f-447f-96c1-46ad64e15257
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: qcV1Aip6R1Z0JCyx1rrfUVLLg4P9xPAqvH3p0MMyfGw
 id: webmaster_dashboard
 admin_label: 'Webmaster Dashboard'
 category: ''
 frontend: false
-weight: 4
+weight: 0
 sections:
   -
     layout_id: layout_3
@@ -17,24 +15,11 @@ sections:
       context_mapping: {  }
       reverse: 0
     components:
-      765493a3-b8df-4947-b85c-d93085cd37e4:
-        uuid: 765493a3-b8df-4947-b85c-d93085cd37e4
+      6b59088e-8d84-4a2c-8f27-2139781963b3:
+        uuid: 6b59088e-8d84-4a2c-8f27-2139781963b3
         region: one
         configuration:
           id: 'views_block:who_s_online-who_s_online_block'
-          label: ''
-          label_display: visible
-          provider: views
-          context_mapping: {  }
-          views_label: ''
-          items_per_page: none
-        weight: 1
-        additional: {  }
-      f0c05820-fad6-463f-b7e7-f1981a4b96c5:
-        uuid: f0c05820-fad6-463f-b7e7-f1981a4b96c5
-        region: two
-        configuration:
-          id: 'views_block:content_recent-block_1'
           label: ''
           label_display: visible
           provider: views
@@ -50,34 +35,23 @@ sections:
       label: ''
       context_mapping: {  }
     components:
-      bb0d530b-b4af-4091-8b21-ff38b074cf0f:
-        uuid: bb0d530b-b4af-4091-8b21-ff38b074cf0f
-        region: three
-        configuration:
-          id: 'dashboards_block:dashboard:system_info'
-          label: 'Show system info'
-          label_display: visible
-          provider: dashboards
-          context_mapping: {  }
-        weight: 0
-        additional: {  }
-      a2e3b879-8eea-419e-aac2-f191500ebcff:
-        uuid: a2e3b879-8eea-419e-aac2-f191500ebcff
-        region: two
-        configuration:
-          id: 'dashboards_block:dashboard:error_report'
-          label: 'Show error info'
-          label_display: visible
-          provider: dashboards
-          context_mapping: {  }
-        weight: 0
-        additional: {  }
-      c43e1bb2-e420-4537-8754-d995cfccfb7c:
-        uuid: c43e1bb2-e420-4537-8754-d995cfccfb7c
+      83b1c9d2-7d4f-446d-9be6-a8e41efed78e:
+        uuid: 83b1c9d2-7d4f-446d-9be6-a8e41efed78e
         region: one
         configuration:
           id: 'dashboards_block:dashboard:status_updates'
           label: 'Update status'
+          label_display: visible
+          provider: dashboards
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+      642df1a6-7bd4-435e-ac2e-b0bb56b8e755:
+        uuid: 642df1a6-7bd4-435e-ac2e-b0bb56b8e755
+        region: three
+        configuration:
+          id: 'dashboards_block:dashboard:system_info'
+          label: 'Show system info'
           label_display: visible
           provider: dashboards
           context_mapping: {  }
