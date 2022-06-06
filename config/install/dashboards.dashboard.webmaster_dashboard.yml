@@ -43,18 +43,6 @@ sections:
           items_per_page: none
         weight: 0
         additional: {  }
-      a12d472e-e2c9-42fb-a796-6ad6b68b9767:
-        uuid: a12d472e-e2c9-42fb-a796-6ad6b68b9767
-        region: two
-        configuration:
-          id: 'dashboards_block:dashboard:view_embed'
-          label: 'My content'
-          label_display: visible
-          provider: dashboards
-          context_mapping: {  }
-          view: 'dashboard_last_content:embed_2'
-        weight: 1
-        additional: {  }
     third_party_settings: {  }
   -
     layout_id: layout_2
