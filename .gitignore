@@ -41,3 +41,4 @@ node_modules
 *.log
 .vscode
 package-lock.json
+yarn.lock
