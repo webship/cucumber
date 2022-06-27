@@ -1,3 +1,4 @@
+uuid: b5e1dd4d-42b5-4b5b-82b2-d21f3add6bc1
 langcode: en
 status: true
 dependencies:
@@ -7,9 +8,11 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
+_core:
+  default_config_hash: sSVy22RNv4M1M_jDySNAaHHNRqBgbHpRhtu3nE1bmgo
 name: Project
 type: project
-description: ''
+description: "<h4>Add Project</h4>\r\n<p>Add project details want to test</p>"
 help: ''
 new_revision: true
 preview_mode: 0

@@ -1,8 +1,11 @@
+uuid: d0a846e3-bf9d-46a2-951d-c70313a4bed9
 langcode: en
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: d6WfTLeEQV-iMqBryfumNf63o2ZiOGAfdGTTJtFWCcA
 id: project_pattern
 label: 'Project pattern'
 type: 'canonical_entities:node'
