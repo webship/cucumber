@@ -1,11 +1,24 @@
+uuid: 247013a8-6192-41cb-9195-6a3538acc538
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.category
+    - node.type.feature
   module:
     - dashboards
+    - node
+_core:
+  default_config_hash: 46i6QEnaIdNQh8sSm1mWo1W_Vez0jOEXanG1Py4RWuM
 id: developer
 label: Developer
 weight: -8
 is_admin: null
 permissions:
   - 'can view automated_testing_dashboard dashboard'
+  - 'create category content'
+  - 'create feature content'
+  - 'delete own category content'
+  - 'delete own feature content'
+  - 'edit own category content'
+  - 'edit own feature content'

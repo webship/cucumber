@@ -1,6 +1,9 @@
+uuid: e3bb6f92-164d-40f5-ac58-6135dd4d7109
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: BJoiyzPrWKBMqH4g99JioiFiswa1-11Fs-hei67hrYw
 id: management_dashboard
 admin_label: 'Management Dashboard'
 category: ''
@@ -39,21 +42,26 @@ sections:
           items_per_page: none
         weight: 0
         additional: {  }
-      edfd1bf6-69f5-4ee3-8106-e4e3f5d1c12f:
-        uuid: edfd1bf6-69f5-4ee3-8106-e4e3f5d1c12f
-        region: three
+      19aeb4af-b087-4890-bfb4-b2c2c43a740e:
+        uuid: 19aeb4af-b087-4890-bfb4-b2c2c43a740e
+        region: two
         configuration:
-          id: 'views_block:content_recent-block_1'
-          label: ''
+          id: 'dashboards_block:dashboard:add_content_menu'
+          label: 'Add content'
           label_display: visible
-          provider: views
+          provider: dashboards
           context_mapping: {  }
-          views_label: ''
-          items_per_page: none
-        weight: 0
+          items:
+            project:
+              weight: '-10'
+            category:
+              weight: '-9'
+            feature:
+              weight: '-8'
+        weight: 1
         additional: {  }
-      c98856b4-e710-48d9-8814-df3a7ea480ca:
-        uuid: c98856b4-e710-48d9-8814-df3a7ea480ca
+      5be4caa3-3527-4253-a229-fab3064caace:
+        uuid: 5be4caa3-3527-4253-a229-fab3064caace
         region: three
         configuration:
           id: 'dashboards_block:dashboard:view_embed'
@@ -61,7 +69,7 @@ sections:
           label_display: visible
           provider: dashboards
           context_mapping: {  }
-          view: 'dashboard_last_content:embed_1'
-        weight: 1
+          view: 'dashboard_last_content:embed_2'
+        weight: 0
         additional: {  }
     third_party_settings: {  }

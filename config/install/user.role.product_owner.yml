@@ -1,12 +1,36 @@
+uuid: 8a85a6eb-e8a1-476d-bf44-dc9ea192ee4e
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.category
+    - node.type.feature
+    - node.type.project
   module:
     - dashboards
+    - node
+_core:
+  default_config_hash: HOM3FApq0jpoDzRlt2b2oekQ6IdXDrdthTX-XF0Ozgo
 id: product_owner
 label: 'Product Owner'
 weight: -4
 is_admin: null
 permissions:
+  - 'access content overview'
   - 'can view automated_testing_dashboard dashboard'
   - 'can view management_dashboard dashboard'
+  - 'create category content'
+  - 'create feature content'
+  - 'create project content'
+  - 'delete any category content'
+  - 'delete any feature content'
+  - 'delete any project content'
+  - 'delete own category content'
+  - 'delete own feature content'
+  - 'delete own project content'
+  - 'edit any category content'
+  - 'edit any feature content'
+  - 'edit any project content'
+  - 'edit own category content'
+  - 'edit own feature content'
+  - 'edit own project content'

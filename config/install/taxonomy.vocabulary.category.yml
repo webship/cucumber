@@ -1,8 +1,0 @@
-uuid: 2d028fe4-73a8-408f-9da2-fa9c40ef49eb
-langcode: en
-status: true
-dependencies: {  }
-name: Category
-vid: category
-description: 'A category that user can add it to classify their own features'
-weight: 0
