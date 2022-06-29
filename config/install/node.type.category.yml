@@ -1,0 +1,18 @@
+uuid: 703f2618-8b53-41a2-862f-5fa80fb3e394
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Category
+type: category
+description: "<h4>Add Category</h4>\r\n<p>A category that user can add it to classify their own features</p>"
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true
