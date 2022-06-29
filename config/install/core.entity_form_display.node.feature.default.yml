@@ -16,6 +16,8 @@ third_party_settings:
     id: layout_onecol
     settings:
       label: ''
+_core:
+  default_config_hash: 3Nq4xv_Rdq_XSi6zaAna8ILItbnGWwnR-GAkSfjY_B0
 id: node.feature.default
 targetEntityType: node
 bundle: feature
