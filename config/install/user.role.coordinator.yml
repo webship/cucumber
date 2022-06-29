@@ -1,12 +1,9 @@
-uuid: 9c682733-901b-48ba-bc5c-f1cdb639bf47
+uuid: 1fc21a44-2dca-4bde-94e9-acf2fa558f80
 langcode: en
 status: true
 dependencies:
-  config:
-    - taxonomy.vocabulary.feature_category
   module:
     - dashboards
-    - taxonomy
 _core:
   default_config_hash: gX8MEvSXzcDhMctr_eaKS_8tEdguFPxZrFLdZsDmsw4
 id: coordinator
@@ -14,9 +11,5 @@ label: Coordinator
 weight: -5
 is_admin: null
 permissions:
-  - 'administer taxonomy'
   - 'can view automated_testing_dashboard dashboard'
   - 'can view management_dashboard dashboard'
-  - 'create terms in feature_category'
-  - 'delete terms in feature_category'
-  - 'edit terms in feature_category'
