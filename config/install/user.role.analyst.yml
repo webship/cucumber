@@ -1,8 +1,11 @@
+uuid: 315ffcc9-a1b7-4692-9b3b-9021a79d0ed5
 langcode: en
 status: true
 dependencies:
   module:
     - dashboards
+_core:
+  default_config_hash: 2Lzh5D5-6qzCydvwiv9wECF8igAZoUcT1dwuLq69pZc
 id: analyst
 label: Analyst
 weight: -6

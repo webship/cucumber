@@ -3,34 +3,34 @@ langcode: en
 status: true
 dependencies:
   config:
-    - node.type.category
     - node.type.feature
     - node.type.project
+    - taxonomy.vocabulary.feature_category
   module:
     - dashboards
     - node
+    - taxonomy
 _core:
-  default_config_hash: HOM3FApq0jpoDzRlt2b2oekQ6IdXDrdthTX-XF0Ozgo
+  default_config_hash: T2ZdDnuj0OiYj-1DkIwmSaC8OyMNcYMbaDDfPELQtOk
 id: product_owner
 label: 'Product Owner'
 weight: -4
 is_admin: null
 permissions:
   - 'access content overview'
+  - 'administer taxonomy'
   - 'can view automated_testing_dashboard dashboard'
   - 'can view management_dashboard dashboard'
-  - 'create category content'
   - 'create feature content'
   - 'create project content'
-  - 'delete any category content'
+  - 'create terms in feature_category'
   - 'delete any feature content'
   - 'delete any project content'
-  - 'delete own category content'
   - 'delete own feature content'
   - 'delete own project content'
-  - 'edit any category content'
+  - 'delete terms in feature_category'
   - 'edit any feature content'
   - 'edit any project content'
-  - 'edit own category content'
   - 'edit own feature content'
   - 'edit own project content'
+  - 'edit terms in feature_category'
