@@ -52,6 +52,7 @@ install:
 ## Contrib Modules
   - webdev
   - webadmin
+  - admin_toolbar_search
   - gin_toolbar
   - gin_login
   - gin_lb
