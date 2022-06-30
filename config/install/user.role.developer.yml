@@ -3,22 +3,24 @@ langcode: en
 status: true
 dependencies:
   config:
-    - node.type.category
     - node.type.feature
+    - taxonomy.vocabulary.feature_category
   module:
     - dashboards
     - node
+    - taxonomy
 _core:
-  default_config_hash: 46i6QEnaIdNQh8sSm1mWo1W_Vez0jOEXanG1Py4RWuM
+  default_config_hash: 0bpnmVOsN_NA-gO7wR_s_h4_swKKfOjrwhvSrKKBF7A
 id: developer
 label: Developer
 weight: -8
 is_admin: null
 permissions:
+  - 'administer taxonomy'
   - 'can view automated_testing_dashboard dashboard'
-  - 'create category content'
   - 'create feature content'
-  - 'delete own category content'
+  - 'create terms in feature_category'
   - 'delete own feature content'
-  - 'edit own category content'
+  - 'delete terms in feature_category'
   - 'edit own feature content'
+  - 'edit terms in feature_category'
