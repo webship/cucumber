@@ -1,20 +1,19 @@
+uuid: 9e8a7e43-7520-4268-adb7-cb63c02209de
 langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: '-K07O-BkK7g11UZYlA79wPD1zikerTuetp4kS_PiKJE'
+  default_config_hash: BJoiyzPrWKBMqH4g99JioiFiswa1-11Fs-hei67hrYw
 id: management_dashboard
 admin_label: 'Management Dashboard'
 category: ''
-frontend: false
-weight: 0
 sections:
   -
     layout_id: layout_1
     layout_settings:
       label: ''
-      context_mapping: {  }
       reverse: 0
+      context_mapping: {  }
     components:
       c3e1616e-c87c-4421-b269-5f2c93172849:
         uuid: c3e1616e-c87c-4421-b269-5f2c93172849
@@ -41,20 +40,31 @@ sections:
           items_per_page: none
         weight: 0
         additional: {  }
-      19aeb4af-b087-4890-bfb4-b2c2c43a740e:
-        uuid: 19aeb4af-b087-4890-bfb4-b2c2c43a740e
-        region: two
+      edfd1bf6-69f5-4ee3-8106-e4e3f5d1c12f:
+        uuid: edfd1bf6-69f5-4ee3-8106-e4e3f5d1c12f
+        region: three
         configuration:
-          id: 'dashboards_block:dashboard:add_content_menu'
-          label: 'Add content'
+          id: 'views_block:content_recent-block_1'
+          label: ''
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: ''
+          items_per_page: none
+        weight: 0
+        additional: {  }
+      c98856b4-e710-48d9-8814-df3a7ea480ca:
+        uuid: c98856b4-e710-48d9-8814-df3a7ea480ca
+        region: three
+        configuration:
+          id: 'dashboards_block:dashboard:view_embed'
+          label: 'Last Content'
           label_display: visible
           provider: dashboards
           context_mapping: {  }
-          items:
-            project:
-              weight: '-10'
-            feature:
-              weight: '-9'
+          view: 'dashboard_last_content:embed_1'
         weight: 1
         additional: {  }
     third_party_settings: {  }
+frontend: false
+weight: 0

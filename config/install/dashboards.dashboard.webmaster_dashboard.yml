@@ -1,8 +1,9 @@
+uuid: b5b8287b-428f-447f-96c1-46ad64e15257
 langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: wWsRnYiuMjacyArTE-hcsG3Yksm63VldM6491zr45ag
+  default_config_hash: dyvTcNjZaA0iKtZgs58oSrTxD_dyFlxS43YVenrJnIw
 id: webmaster_dashboard
 admin_label: 'Webmaster Dashboard'
 category: ''
@@ -25,34 +26,6 @@ sections:
           context_mapping: {  }
           views_label: ''
           items_per_page: none
-        weight: 0
-        additional: {  }
-      4f684f1f-99cf-4fd3-89d6-ea67cf707b7d:
-        uuid: 4f684f1f-99cf-4fd3-89d6-ea67cf707b7d
-        region: one
-        configuration:
-          id: 'dashboards_block:dashboard:add_content_menu'
-          label: 'Add content'
-          label_display: visible
-          provider: dashboards
-          context_mapping: {  }
-          items:
-            project:
-              weight: '-10'
-            feature:
-              weight: '-9'
-        weight: 1
-        additional: {  }
-      c28a1e40-bd66-4196-a629-97d62a6c3b8a:
-        uuid: c28a1e40-bd66-4196-a629-97d62a6c3b8a
-        region: two
-        configuration:
-          id: 'dashboards_block:dashboard:view_embed'
-          label: 'Last content'
-          label_display: visible
-          provider: dashboards
-          context_mapping: {  }
-          view: 'dashboard_last_content:embed_2'
         weight: 0
         additional: {  }
     third_party_settings: {  }

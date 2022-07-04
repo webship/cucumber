@@ -1,26 +1,14 @@
-uuid: 247013a8-6192-41cb-9195-6a3538acc538
+uuid: 622b75da-fc7a-48db-b481-dd85d5b8cfd3
 langcode: en
 status: true
 dependencies:
-  config:
-    - node.type.feature
-    - taxonomy.vocabulary.feature_category
   module:
     - dashboards
-    - node
-    - taxonomy
 _core:
-  default_config_hash: 0bpnmVOsN_NA-gO7wR_s_h4_swKKfOjrwhvSrKKBF7A
+  default_config_hash: 46i6QEnaIdNQh8sSm1mWo1W_Vez0jOEXanG1Py4RWuM
 id: developer
 label: Developer
 weight: -8
 is_admin: null
 permissions:
-  - 'administer taxonomy'
   - 'can view automated_testing_dashboard dashboard'
-  - 'create feature content'
-  - 'create terms in feature_category'
-  - 'delete own feature content'
-  - 'delete terms in feature_category'
-  - 'edit own feature content'
-  - 'edit terms in feature_category'
