@@ -3,7 +3,6 @@ status: true
 dependencies: {  }
 id: automated_testing_dashboard
 admin_label: 'Automated Testing Dashboard'
-category: ''
 frontend: false
 weight: 0
 sections:
