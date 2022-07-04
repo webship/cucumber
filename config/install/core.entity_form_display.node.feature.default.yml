@@ -1,3 +1,4 @@
+uuid: b102b575-4f43-487b-a110-870c0c951e24
 langcode: en
 status: true
 dependencies:
@@ -15,8 +16,6 @@ third_party_settings:
     id: layout_onecol
     settings:
       label: ''
-_core:
-  default_config_hash: 3Nq4xv_Rdq_XSi6zaAna8ILItbnGWwnR-GAkSfjY_B0
 id: node.feature.default
 targetEntityType: node
 bundle: feature

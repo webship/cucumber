@@ -1,3 +1,4 @@
+uuid: 96b486e3-8c5e-4fa4-bbb8-92b5b6ea00bb
 langcode: en
 status: true
 dependencies:
@@ -8,8 +9,6 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-_core:
-  default_config_hash: bDyJNIAMgtrJD6fY5lHQ7BNFVx2_-CDpOlJFRuDLhbA
 name: Feature
 type: feature
 description: "<h4>Add Feature</h4>\r\n<p>Features needed that the user adds to test his site</p>"

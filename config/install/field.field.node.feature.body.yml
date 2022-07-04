@@ -1,3 +1,4 @@
+uuid: 8d7f2bff-b816-4b19-9829-4477c9d268f5
 langcode: en
 status: true
 dependencies:
@@ -6,8 +7,6 @@ dependencies:
     - node.type.feature
   module:
     - text
-_core:
-  default_config_hash: QvGWdgju2afjBEiEA_RrKpza41AuXnKlOOjVcjSnUSE
 id: node.feature.body
 field_name: body
 entity_type: node
