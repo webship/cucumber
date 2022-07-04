@@ -1,14 +1,14 @@
+uuid: 098eae9a-24ba-4662-8b7f-6a22080f9051
 langcode: en
 status: true
 dependencies:
   module:
     - dashboards
 _core:
-  default_config_hash: ahygcG2LupROPp8NueukDxOdLEVfEHWQ9iDFMYDuHuo
+  default_config_hash: dM8MRupEA4JP72TePtQKEP3TDe0WLjpJPYDqh6CP3VU
 id: authenticated
 label: 'Authenticated user'
 weight: -9
 is_admin: false
 permissions:
-  - 'administer dashboards'
   - 'can view default_dashboard dashboard'

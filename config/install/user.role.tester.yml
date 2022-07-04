@@ -1,14 +1,14 @@
+uuid: b9b5181a-df0e-4f3d-8054-64714bfc9685
 langcode: en
 status: true
 dependencies:
   module:
     - dashboards
 _core:
-  default_config_hash: 5Vb90haCapnhFU-ZU_5X8xlYtC7zTTI-klQWSXbN-Vc
+  default_config_hash: YygolgKURrrdRgz0rnlZS3JeVEdqdOJWQBSDOrys2RQ
 id: tester
 label: Tester
 weight: -7
 is_admin: null
 permissions:
-  - 'administer dashboards'
   - 'can view automated_testing_dashboard dashboard'
