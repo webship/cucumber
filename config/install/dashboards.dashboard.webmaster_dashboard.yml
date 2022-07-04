@@ -1,4 +1,3 @@
-uuid: b5b8287b-428f-447f-96c1-46ad64e15257
 langcode: en
 status: true
 dependencies: {  }
@@ -18,7 +17,6 @@ sections:
       reverse: 0
     components:
       6b59088e-8d84-4a2c-8f27-2139781963b3:
-        uuid: 6b59088e-8d84-4a2c-8f27-2139781963b3
         region: one
         configuration:
           id: 'views_block:who_s_online-who_s_online_block'
@@ -31,7 +29,6 @@ sections:
         weight: 0
         additional: {  }
       4f684f1f-99cf-4fd3-89d6-ea67cf707b7d:
-        uuid: 4f684f1f-99cf-4fd3-89d6-ea67cf707b7d
         region: one
         configuration:
           id: 'dashboards_block:dashboard:add_content_menu'
@@ -49,7 +46,6 @@ sections:
         weight: 1
         additional: {  }
       c28a1e40-bd66-4196-a629-97d62a6c3b8a:
-        uuid: c28a1e40-bd66-4196-a629-97d62a6c3b8a
         region: two
         configuration:
           id: 'dashboards_block:dashboard:view_embed'
@@ -68,7 +64,6 @@ sections:
       context_mapping: {  }
     components:
       83b1c9d2-7d4f-446d-9be6-a8e41efed78e:
-        uuid: 83b1c9d2-7d4f-446d-9be6-a8e41efed78e
         region: one
         configuration:
           id: 'dashboards_block:dashboard:status_updates'
@@ -79,7 +74,6 @@ sections:
         weight: 0
         additional: {  }
       642df1a6-7bd4-435e-ac2e-b0bb56b8e755:
-        uuid: 642df1a6-7bd4-435e-ac2e-b0bb56b8e755
         region: three
         configuration:
           id: 'dashboards_block:dashboard:system_info'

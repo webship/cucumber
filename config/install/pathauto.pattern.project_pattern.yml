@@ -1,4 +1,3 @@
-uuid: d0a846e3-bf9d-46a2-951d-c70313a4bed9
 langcode: en
 status: true
 dependencies:
@@ -14,7 +13,6 @@ selection_criteria:
   59583daf-3f25-4697-8e08-ee423cf6cd87:
     id: node_type
     negate: false
-    uuid: 59583daf-3f25-4697-8e08-ee423cf6cd87
     context_mapping:
       node: node
     bundles:
