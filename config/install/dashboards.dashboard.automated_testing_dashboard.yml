@@ -15,7 +15,6 @@ sections:
       context_mapping: {  }
     components:
       d75db52c-a07e-4a50-9580-11aa7feb6112:
-        uuid: d75db52c-a07e-4a50-9580-11aa7feb6112
         region: two
         configuration:
           id: 'views_block:who_s_online-who_s_online_block'
@@ -28,7 +27,6 @@ sections:
         weight: 0
         additional: {  }
       d2adfccd-6d81-4f1e-9af8-d3bbd3d80f64:
-        uuid: d2adfccd-6d81-4f1e-9af8-d3bbd3d80f64
         region: one
         configuration:
           id: 'dashboards_block:dashboard:account'
@@ -40,7 +38,6 @@ sections:
         weight: 0
         additional: {  }
       2ab04c9d-9b57-4a07-a173-26c7234e4745:
-        uuid: 2ab04c9d-9b57-4a07-a173-26c7234e4745
         region: three
         configuration:
           id: 'views_block:content_recent-block_1'
