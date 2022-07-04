@@ -14,7 +14,6 @@ sections:
       context_mapping: {  }
       reverse: 0
     components:
-      e5232f2d-adce-421f-a7ae-a9f328b14800:
         region: two
         configuration:
           id: 'views_block:who_s_online-who_s_online_block'
@@ -26,7 +25,6 @@ sections:
           items_per_page: none
         weight: 0
         additional: {  }
-      4b3d3acb-ac5f-4a60-ae46-3c493281c592:
         region: one
         configuration:
           id: 'dashboards_block:dashboard:account'

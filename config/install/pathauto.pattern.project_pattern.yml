@@ -10,7 +10,6 @@ label: 'Project pattern'
 type: 'canonical_entities:node'
 pattern: 'projects/[node:title]'
 selection_criteria:
-  59583daf-3f25-4697-8e08-ee423cf6cd87:
     id: node_type
     negate: false
     context_mapping:

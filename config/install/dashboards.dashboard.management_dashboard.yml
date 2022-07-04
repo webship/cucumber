@@ -16,7 +16,6 @@ sections:
       context_mapping: {  }
       reverse: 0
     components:
-      c3e1616e-c87c-4421-b269-5f2c93172849:
         region: one
         configuration:
           id: 'dashboards_block:dashboard:account'
@@ -27,7 +26,6 @@ sections:
           context_mapping: {  }
         weight: 0
         additional: {  }
-      08d90b61-212a-46ed-aef0-def102a9a09f:
         region: two
         configuration:
           id: 'views_block:who_s_online-who_s_online_block'
@@ -39,7 +37,6 @@ sections:
           items_per_page: none
         weight: 0
         additional: {  }
-      19aeb4af-b087-4890-bfb4-b2c2c43a740e:
         region: two
         configuration:
           id: 'dashboards_block:dashboard:add_content_menu'
@@ -56,7 +53,6 @@ sections:
               weight: '-8'
         weight: 1
         additional: {  }
-      5be4caa3-3527-4253-a229-fab3064caace:
         region: three
         configuration:
           id: 'dashboards_block:dashboard:view_embed'
