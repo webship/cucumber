@@ -1,9 +1,7 @@
-uuid: 247013a8-6192-41cb-9195-6a3538acc538
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.category
     - node.type.feature
   module:
     - dashboards
