@@ -1,19 +1,22 @@
+uuid: ae66a328-beba-40dc-bcdd-94d2db5b8779
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: z_e7H82Nj8Zj7ejLQPbp6c3jcI7U6Kl3ldOO7ACQ1rk
 id: default_dashboard
 admin_label: 'Default Dashboard'
 category: ''
-frontend: false
-weight: 0
 sections:
   -
     layout_id: layout_1
     layout_settings:
       label: ''
-      context_mapping: {  }
       reverse: 0
+      context_mapping: {  }
     components:
+      e5232f2d-adce-421f-a7ae-a9f328b14800:
+        uuid: e5232f2d-adce-421f-a7ae-a9f328b14800
         region: two
         configuration:
           id: 'views_block:who_s_online-who_s_online_block'
@@ -25,6 +28,8 @@ sections:
           items_per_page: none
         weight: 0
         additional: {  }
+      4b3d3acb-ac5f-4a60-ae46-3c493281c592:
+        uuid: 4b3d3acb-ac5f-4a60-ae46-3c493281c592
         region: one
         configuration:
           id: 'dashboards_block:dashboard:account'
@@ -36,3 +41,5 @@ sections:
         weight: 0
         additional: {  }
     third_party_settings: {  }
+frontend: false
+weight: 0
