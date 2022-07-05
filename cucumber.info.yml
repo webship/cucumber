@@ -61,4 +61,3 @@ install:
   - dashboards_views
   - anonymous_redirect
   - user_redirect
-  - admin_toolbar_search
