@@ -1,0 +1,44 @@
+login:
+  authenticated:
+    redirect_url: /dashboard/default_dashboard
+    weight: '-10'
+  developer:
+    redirect_url: /dashboard/automated_testing_dashboard
+    weight: '-10'
+  tester:
+    redirect_url: /dashboard/automated_testing_dashboard
+    weight: '-10'
+  analyst:
+    redirect_url: /dashboard/automated_testing_dashboard
+    weight: '-10'
+  coordinator:
+    redirect_url: /dashboard/management_dashboard
+    weight: '-10'
+  product_owner:
+    redirect_url: /dashboard/management_dashboard
+    weight: '-10'
+  administrator:
+    redirect_url: /dashboard/management_dashboard
+    weight: '-10'
+logout:
+  authenticated:
+    redirect_url: /user/login
+    weight: '-10'
+  developer:
+    redirect_url: /user/login
+    weight: '-10'
+  tester:
+    redirect_url: /user/login
+    weight: '-10'
+  analyst:
+    redirect_url: /user/login
+    weight: '-10'
+  coordinator:
+    redirect_url: /user/login
+    weight: '-10'
+  product_owner:
+    redirect_url: /user/login
+    weight: '-10'
+  administrator:
+    redirect_url: /user/login
+    weight: '-10'

@@ -1,0 +1,91 @@
+{
+  "name": "webship/cucumber",
+  "description": "Cucumber Management System",
+  "type": "drupal-profile",
+  "license": "GPL-2.0-or-later",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "authors": [
+    {
+      "name": "Vardot",
+      "homepage": "https://www.drupal.org/vardot",
+      "role": "Initial building, ongoing maintenance and development"
+    },
+    {
+      "name": "Webship",
+      "homepage": "https://www.drupal.org/webship",
+      "role": "Volunteer contributions"
+    }
+  ],
+  "support": {
+    "issues": "http://drupal.org/project/issues/cucumber",
+    "source": "http://cgit.drupalcode.org/cucumber"
+  },
+  "repositories": {
+    "drupal": {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    },
+    "assets": {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  },
+  "require": {
+    "composer/installers": "~1.0 || ~2.0",
+    "oomphinc/composer-installers-extender": "~1.0 || ~2.0",
+    "drupal/core-composer-scaffold": "~9.0",
+    "drupal/core-project-message": "~9.0",
+    "cweagans/composer-patches": "~1.0",
+    "drupal/core": "~9.0",
+    "drupal/webdev": "~9.0",
+    "drupal/webadmin": "~9.0",
+    "drupal/gin": "~3.0",
+    "drupal/gin_toolbar": "~1.0",
+    "drupal/gin_login": "~1.2",
+    "drupal/gin_lb": "~1.0",
+    "drupal/dashboards": "~2.0",
+    "drupal/anonymous_redirect": "~2.0",
+    "drupal/user_redirect": "~2.0",
+    "drush/drush": "~11.0"
+  },
+  "conflict": {
+    "drupal/drupal": "*"
+  },
+  "config": {
+    "bin-dir": "bin/",
+    "secure-http": false,
+    "optimize-autoloader": true,
+    "preferred-install": {
+      "drupal/core": "dist"
+    },
+    "allow-plugins": {
+      "composer/installers": true,
+      "cweagans/composer-patches": true,
+      "oomphinc/composer-installers-extender": true,
+      "drupal/core-composer-scaffold": true
+    }
+  },
+  "extra": {
+    "drupal-scaffold": {
+      "locations": {
+        "web-root": "web/"
+      }
+    },
+    "installer-paths": {
+      "web/core": ["type:drupal-core"],
+      "web/profiles/contrib/{$name}": ["type:drupal-profile"],
+      "web/modules/contrib/{$name}": ["type:drupal-module"],
+      "web/themes/contrib/{$name}": ["type:drupal-theme"],
+      "web/libraries/{$name}": ["type:drupal-library"],
+      "web/modules/custom/{$name}": ["type:drupal-custom-module"],
+      "web/themes/custom/{$name}": ["type:drupal-custom-theme"],
+      "drush/contrib/{$name}": ["type:drupal-drush"]
+    },
+    "enable-patching": true,
+    "composer-exit-on-patch-failure": true,
+    "patchLevel": {
+      "drupal/core": "-p2"
+    }
+  }
+}

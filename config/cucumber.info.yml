@@ -1,0 +1,63 @@
+name: Cucumber
+type: profile
+description: 'Cucumber Managment system'
+core_version_requirement: ^9.0
+version: 9.0.x-dev
+package: Cucumber
+project: cucumber
+distribution:
+  name: Cucumber
+  install:
+    theme: claro
+themes:
+  - claro
+  - gin
+install:
+  - config
+  - user
+  - tracker
+  - node
+  - comment
+  - taxonomy
+  - block
+  - menu_link_content
+  - menu_ui
+  - help
+  - action
+  - dynamic_page_cache
+  - page_cache
+  - automated_cron
+  - color
+  - field
+  - field_ui
+  - file
+  - image
+  - text
+  - datetime
+  - options
+  - contextual
+  - editor
+  - filter
+  - path
+  - search
+  - shortcut
+  - views
+  - datetime_range
+  - layout_discovery
+  - field_layout
+  - statistics
+  - syslog
+  - update
+  - history
+## Contrib Modules
+  - webdev
+  - webadmin
+  - gin_toolbar
+  - gin_login
+  - gin_lb
+  - views_ui
+  - dashboards
+  - dashboards_statistic
+  - dashboards_views
+  - anonymous_redirect
+  - user_redirect

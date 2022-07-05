@@ -1,0 +1,14 @@
+uuid: f17a00fd-f00d-4262-8fa0-b31e42b338a8
+langcode: en
+status: true
+dependencies:
+  module:
+    - dashboards
+_core:
+  default_config_hash: YygolgKURrrdRgz0rnlZS3JeVEdqdOJWQBSDOrys2RQ
+id: tester
+label: Tester
+weight: -7
+is_admin: null
+permissions:
+  - 'can view automated_testing_dashboard dashboard'

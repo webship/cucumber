@@ -1,0 +1,29 @@
+uuid: ef682af8-3b65-4d8d-9e23-70ace6d25e7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.project.field_description
+    - node.type.project
+  module:
+    - user
+_core:
+  default_config_hash: WHOR_zICXO7CvDF-OdnvDbiImv56fOHOObIq4Od3kf4
+id: node.project.default
+targetEntityType: node
+bundle: project
+mode: default
+content:
+  field_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }
