@@ -1,19 +1,18 @@
-uuid: 0f28bb2a-abae-483c-a0d2-14931873c4b5
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: z_e7H82Nj8Zj7ejLQPbp6c3jcI7U6Kl3ldOO7ACQ1rk
 id: default_dashboard
 admin_label: 'Default Dashboard'
 category: ''
+frontend: false
+weight: 0
 sections:
   -
     layout_id: layout_1
     layout_settings:
       label: ''
-      reverse: 0
       context_mapping: {  }
+      reverse: 0
     components:
       e5232f2d-adce-421f-a7ae-a9f328b14800:
         uuid: e5232f2d-adce-421f-a7ae-a9f328b14800
@@ -41,5 +40,3 @@ sections:
         weight: 0
         additional: {  }
     third_party_settings: {  }
-frontend: false
-weight: 0

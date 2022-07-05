@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: 7f4KwtNF7L9F-eyKTpjbTg2p6QR3447VW2YIMwfufn0
+  default_config_hash: dyvTcNjZaA0iKtZgs58oSrTxD_dyFlxS43YVenrJnIw
 id: webmaster_dashboard
 admin_label: 'Webmaster Dashboard'
 category: ''
@@ -45,6 +45,18 @@ sections:
             feature:
               weight: '-8'
         weight: 1
+        additional: {  }
+      c28a1e40-bd66-4196-a629-97d62a6c3b8a:
+        uuid: c28a1e40-bd66-4196-a629-97d62a6c3b8a
+        region: two
+        configuration:
+          id: 'dashboards_block:dashboard:view_embed'
+          label: 'Last content'
+          label_display: visible
+          provider: dashboards
+          context_mapping: {  }
+          view: 'dashboard_last_content:embed_2'
+        weight: 0
         additional: {  }
     third_party_settings: {  }
   -

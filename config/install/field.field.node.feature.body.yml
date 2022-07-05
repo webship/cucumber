@@ -8,18 +8,18 @@ dependencies:
   module:
     - text
 _core:
-  default_config_hash: WgH5o_NbqJ9jvb2_2145e7v7jGf8sMTq5V8HbXNhj2g
+  default_config_hash: QvGWdgju2afjBEiEA_RrKpza41AuXnKlOOjVcjSnUSE
 id: node.feature.body
 field_name: body
 entity_type: node
 bundle: feature
-label: 'Feature text'
+label: Body
 description: ''
 required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  display_summary: false
+  display_summary: true
   required_summary: false
 field_type: text_with_summary

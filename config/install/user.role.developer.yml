@@ -10,13 +10,13 @@ dependencies:
     - node
     - taxonomy
 _core:
-  default_config_hash: cpW0L_W-K2iYeAj-OQfi0ve2RseF1AcVXxLv-U9MKoM
+  default_config_hash: 0bpnmVOsN_NA-gO7wR_s_h4_swKKfOjrwhvSrKKBF7A
 id: developer
 label: Developer
 weight: -8
 is_admin: null
 permissions:
-  - 'access taxonomy overview'
+  - 'administer taxonomy'
   - 'can view automated_testing_dashboard dashboard'
   - 'create feature content'
   - 'create terms in feature_category'
