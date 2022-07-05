@@ -16,35 +16,35 @@ user:
   authenticated:
     name: Authenticated user
     mail: test.authenticated@webship.org
-    password: d
+    password: dD.123123ddd
     role: _none_
   developer:
     name: Developer
     mail: test.developer@webship.org
-    password: d
+    password: dD.123123ddd
     role: developer
   tester:
     name: Tester
     mail: test.tester@webship.org
-    password: d
+    password: dD.123123ddd
     role: tester
   analyst:
     name: Analyst
     mail: test.analyst@webship.org
-    password: d
+    password: dD.123123ddd
     role: analyst
   coordinator:
     name: Coordinator
     mail: test.coordinator@webship.org
-    password: d
+    password: dD.123123ddd
     role: coordinator
   product_owner:
     name: Product Owner
     mail: test.product_owner@webship.org
-    password: d
+    password: dD.123123ddd
     role: product_owner
   administrator:
     name: Administrator
     mail: test.administrator@webship.org
-    password: d
+    password: dD.123123ddd
     role: administrator

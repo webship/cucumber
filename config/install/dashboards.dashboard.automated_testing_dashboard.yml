@@ -1,19 +1,18 @@
-uuid: 4abba562-a69c-4877-8db9-a7b5d03d3cf0
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: 6YInfJ0WKwNuSzm8c_hzSvrvTfOYgJ0mrr-BK5M1jHg
 id: automated_testing_dashboard
 admin_label: 'Automated Testing Dashboard'
 category: ''
+frontend: false
+weight: 0
 sections:
   -
     layout_id: layout_1
     layout_settings:
       label: ''
-      reverse: 0
       context_mapping: {  }
+      reverse: 0
     components:
       d75db52c-a07e-4a50-9580-11aa7feb6112:
         uuid: d75db52c-a07e-4a50-9580-11aa7feb6112
@@ -66,5 +65,3 @@ sections:
         weight: 1
         additional: {  }
     third_party_settings: {  }
-frontend: false
-weight: 0

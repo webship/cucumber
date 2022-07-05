@@ -10,6 +10,8 @@ dependencies:
   module:
     - text
     - user
+_core:
+  default_config_hash: bqYpIQ-F5XicjI9AQ91cTEzEeHKOaLwaCSgJjjmtGWM
 id: node.feature.teaser
 targetEntityType: node
 bundle: feature
