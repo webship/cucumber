@@ -8,13 +8,13 @@ dependencies:
     - dashboards
     - taxonomy
 _core:
-  default_config_hash: IQOB-VXfkT6nk_jhGsgyOBC79aqg9rt6AwmtCULXBOI
+  default_config_hash: h3h8zel5in1YDjZT76DFhrzsWJXf9cCs9moX65bBeDE
 id: coordinator
 label: Coordinator
 weight: -5
 is_admin: null
 permissions:
-  - 'administer taxonomy'
+  - 'access taxonomy overview'
   - 'can view automated_testing_dashboard dashboard'
   - 'can view management_dashboard dashboard'
   - 'create terms in feature_category'

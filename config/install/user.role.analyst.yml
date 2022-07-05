@@ -5,7 +5,7 @@ dependencies:
   module:
     - dashboards
 _core:
-  default_config_hash: hpB798GxWzz8tH6bYZuDvUZxFvZy033D-jW0SuP91hA
+  default_config_hash: SK1RqjlpUYrwuO2-eWFvNRomzEihMBHBqijIUAVYB3M
 id: analyst
 label: Analyst
 weight: -6

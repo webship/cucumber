@@ -9,17 +9,18 @@ dependencies:
   module:
     - dashboards
     - node
+    - system
     - taxonomy
 _core:
-  default_config_hash: GiRUnYVHWpe1rb4LR2cDWzbFe7_JJki0dgqnzyB-s9I
+  default_config_hash: tjuihomwFT4CQRUzc7QdrCDIh9PE5sZMh9azqQsnpnE
 id: product_owner
 label: 'Product Owner'
 weight: -4
 is_admin: null
 permissions:
+  - 'access content'
   - 'access content overview'
-  - 'administer nodes'
-  - 'administer taxonomy'
+  - 'access taxonomy overview'
   - 'can view automated_testing_dashboard dashboard'
   - 'can view management_dashboard dashboard'
   - 'create feature content'
@@ -35,3 +36,4 @@ permissions:
   - 'edit own feature content'
   - 'edit own project content'
   - 'edit terms in feature_category'
+  - 'view own unpublished content'
