@@ -1,14 +1,23 @@
-uuid: f90d4e81-0262-4cdb-aa56-f26fbe01e4b3
+uuid: 5af2503f-49c5-4e4b-a53e-e0f31cfa2a37
 langcode: en
 status: true
 dependencies:
   module:
     - dashboards
+    - toolbar
 _core:
-  default_config_hash: dM8MRupEA4JP72TePtQKEP3TDe0WLjpJPYDqh6CP3VU
+  default_config_hash: ahygcG2LupROPp8NueukDxOdLEVfEHWQ9iDFMYDuHuo
 id: authenticated
 label: 'Authenticated user'
 weight: -9
 is_admin: false
 permissions:
+  - 'access toolbar'
+  - 'can override automated_testing_dashboard dashboard'
+  - 'can override default_dashboard dashboard'
+  - 'can override management_dashboard dashboard'
+  - 'can override webmaster_dashboard dashboard'
+  - 'can view automated_testing_dashboard dashboard'
   - 'can view default_dashboard dashboard'
+  - 'can view management_dashboard dashboard'
+  - 'can view webmaster_dashboard dashboard'

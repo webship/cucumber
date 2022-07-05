@@ -10,7 +10,7 @@ dependencies:
     - node
     - taxonomy
 _core:
-  default_config_hash: 0bpnmVOsN_NA-gO7wR_s_h4_swKKfOjrwhvSrKKBF7A
+  default_config_hash: gvJflMsGA0Zv-Ph-CVDs2VAd9FNZb7musjWjmVE-3zI
 id: developer
 label: Developer
 weight: -8

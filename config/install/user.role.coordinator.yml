@@ -8,7 +8,7 @@ dependencies:
     - dashboards
     - taxonomy
 _core:
-  default_config_hash: gX8MEvSXzcDhMctr_eaKS_8tEdguFPxZrFLdZsDmsw4
+  default_config_hash: IQOB-VXfkT6nk_jhGsgyOBC79aqg9rt6AwmtCULXBOI
 id: coordinator
 label: Coordinator
 weight: -5

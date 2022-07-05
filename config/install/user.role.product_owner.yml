@@ -11,13 +11,14 @@ dependencies:
     - node
     - taxonomy
 _core:
-  default_config_hash: T2ZdDnuj0OiYj-1DkIwmSaC8OyMNcYMbaDDfPELQtOk
+  default_config_hash: GiRUnYVHWpe1rb4LR2cDWzbFe7_JJki0dgqnzyB-s9I
 id: product_owner
 label: 'Product Owner'
 weight: -4
 is_admin: null
 permissions:
   - 'access content overview'
+  - 'administer nodes'
   - 'administer taxonomy'
   - 'can view automated_testing_dashboard dashboard'
   - 'can view management_dashboard dashboard'

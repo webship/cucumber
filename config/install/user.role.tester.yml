@@ -5,7 +5,7 @@ dependencies:
   module:
     - dashboards
 _core:
-  default_config_hash: YygolgKURrrdRgz0rnlZS3JeVEdqdOJWQBSDOrys2RQ
+  default_config_hash: 5Vb90haCapnhFU-ZU_5X8xlYtC7zTTI-klQWSXbN-Vc
 id: tester
 label: Tester
 weight: -7
