@@ -42,8 +42,6 @@ sections:
           items:
             project:
               weight: '-10'
-            category:
-              weight: '-9'
             feature:
               weight: '-8'
         weight: 1
