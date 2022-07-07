@@ -62,3 +62,4 @@ install:
   - anonymous_redirect
   - user_redirect
   - admin_toolbar_search
+  - autocomplete_deluxe

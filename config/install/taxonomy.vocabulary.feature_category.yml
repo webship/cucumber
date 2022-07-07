@@ -2,6 +2,8 @@ uuid: 8e6f4f5e-c2de-4701-99e1-96c82c005931
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: 3ZNTM2grMlbBmHwDf-dk4dK-ROlBW9d7dGiZNq1hbgk
 name: 'Feature Category'
 vid: feature_category
 description: 'A category that user can add it to classify their own features'

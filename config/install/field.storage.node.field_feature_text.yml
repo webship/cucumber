@@ -1,10 +1,11 @@
+uuid: 82013fff-28ed-4eab-b906-62e2ebf5cb07
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_description
-field_name: field_description
+id: node.field_feature_text
+field_name: field_feature_text
 entity_type: node
 type: string_long
 settings:
