@@ -1,8 +1,9 @@
+uuid: d4b87f1e-0366-43fd-853d-353af6a0b4c4
 langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: 6YInfJ0WKwNuSzm8c_hzSvrvTfOYgJ0mrr-BK5M1jHg
+  default_config_hash: 7EZMCdpZ0ru2mFov-VzKhk5eKyaqq-x0sQQWby6l0Hs
 id: automated_testing_dashboard
 admin_label: 'Automated Testing Dashboard'
 category: ''
@@ -38,31 +39,6 @@ sections:
           view_mode: default
           context_mapping: {  }
         weight: 0
-        additional: {  }
-      2ab04c9d-9b57-4a07-a173-26c7234e4745:
-        uuid: 2ab04c9d-9b57-4a07-a173-26c7234e4745
-        region: three
-        configuration:
-          id: 'views_block:content_recent-block_1'
-          label: ''
-          label_display: visible
-          provider: views
-          context_mapping: {  }
-          views_label: ''
-          items_per_page: none
-        weight: 0
-        additional: {  }
-      6d58e60b-2f13-4360-becd-1784a32348fa:
-        uuid: 6d58e60b-2f13-4360-becd-1784a32348fa
-        region: three
-        configuration:
-          id: 'dashboards_block:dashboard:view_embed'
-          label: 'My Content'
-          label_display: visible
-          provider: dashboards
-          context_mapping: {  }
-          view: 'dashboard_last_content:embed_2'
-        weight: 1
         additional: {  }
     third_party_settings: {  }
 frontend: false

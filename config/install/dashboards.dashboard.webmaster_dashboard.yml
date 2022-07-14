@@ -3,19 +3,17 @@ langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: dyvTcNjZaA0iKtZgs58oSrTxD_dyFlxS43YVenrJnIw
+  default_config_hash: 1_4XQmtef1YYbJy3tYgzHBJXbsyn4ITinMMEYH7vgkc
 id: webmaster_dashboard
 admin_label: 'Webmaster Dashboard'
 category: ''
-frontend: false
-weight: 0
 sections:
   -
     layout_id: layout_3
     layout_settings:
       label: ''
-      context_mapping: {  }
       reverse: 0
+      context_mapping: {  }
     components:
       6b59088e-8d84-4a2c-8f27-2139781963b3:
         uuid: 6b59088e-8d84-4a2c-8f27-2139781963b3
@@ -45,18 +43,6 @@ sections:
             feature:
               weight: '-8'
         weight: 1
-        additional: {  }
-      c28a1e40-bd66-4196-a629-97d62a6c3b8a:
-        uuid: c28a1e40-bd66-4196-a629-97d62a6c3b8a
-        region: two
-        configuration:
-          id: 'dashboards_block:dashboard:view_embed'
-          label: 'Last content'
-          label_display: visible
-          provider: dashboards
-          context_mapping: {  }
-          view: 'dashboard_last_content:embed_2'
-        weight: 0
         additional: {  }
     third_party_settings: {  }
   -
@@ -88,3 +74,5 @@ sections:
         weight: 0
         additional: {  }
     third_party_settings: {  }
+frontend: false
+weight: 0
