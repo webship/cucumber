@@ -4,18 +4,27 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.feature.body
     - field.field.node.feature.field_category
-    - field.field.node.feature.field_feature_text
     - node.type.feature
   module:
+    - text
     - user
 _core:
-  default_config_hash: q2M7KFddAJxHvJLVRHiIC9fv78KcIqOzJ-VW62gxabo
+  default_config_hash: bqYpIQ-F5XicjI9AQ91cTEzEeHKOaLwaCSgJjjmtGWM
 id: node.feature.teaser
 targetEntityType: node
 bundle: feature
 mode: teaser
 content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -23,4 +32,3 @@ content:
     region: content
 hidden:
   field_category: true
-  field_feature_text: true

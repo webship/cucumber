@@ -1,18 +1,21 @@
+uuid: e3bb6f92-164d-40f5-ac58-6135dd4d7109
 langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: dVn7dc5DneyFAhS3UZHNvImuIXMVErmRg0GprfLRCv0
+  default_config_hash: BJoiyzPrWKBMqH4g99JioiFiswa1-11Fs-hei67hrYw
 id: management_dashboard
 admin_label: 'Management Dashboard'
 category: ''
+frontend: false
+weight: 0
 sections:
   -
     layout_id: layout_1
     layout_settings:
       label: ''
-      reverse: 0
       context_mapping: {  }
+      reverse: 0
     components:
       c3e1616e-c87c-4421-b269-5f2c93172849:
         uuid: c3e1616e-c87c-4421-b269-5f2c93172849
@@ -55,6 +58,16 @@ sections:
               weight: '-9'
         weight: 1
         additional: {  }
+      5be4caa3-3527-4253-a229-fab3064caace:
+        uuid: 5be4caa3-3527-4253-a229-fab3064caace
+        region: three
+        configuration:
+          id: 'dashboards_block:dashboard:view_embed'
+          label: 'Last Content'
+          label_display: visible
+          provider: dashboards
+          context_mapping: {  }
+          view: 'dashboard_last_content:embed_2'
+        weight: 0
+        additional: {  }
     third_party_settings: {  }
-frontend: false
-weight: 0

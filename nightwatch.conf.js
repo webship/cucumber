@@ -57,7 +57,7 @@ module.exports = {
           // w3c:false tells Chromedriver to run using the legacy JSONWire protocol (not required in Chrome 78)
           w3c: false,
           args: [
-            // '--headless',
+            '--headless',
             '--start-maximized',
             '--disable-gpu',
             '--window-size=1600,1200',

@@ -3,18 +3,26 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.feature.body
     - field.field.node.feature.field_category
-    - field.field.node.feature.field_feature_text
     - node.type.feature
   module:
+    - text
     - user
 _core:
-  default_config_hash: GfvtJsYtqLFaiQ2SqdAo33bMBxkOydkzsDE7Y9oWzV0
+  default_config_hash: EmTSfPhXbZda0eDX-X0S6M_Ee7_15kZ9agi9Yg8_U6Q
 id: node.feature.default
 targetEntityType: node
 bundle: feature
 mode: default
 content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
   field_category:
     type: entity_reference_label
     label: above
@@ -22,13 +30,6 @@ content:
       link: true
     third_party_settings: {  }
     weight: 102
-    region: content
-  field_feature_text:
-    type: basic_string
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 103
     region: content
   links:
     settings: {  }
