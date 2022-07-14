@@ -64,7 +64,10 @@
       "composer/installers": true,
       "cweagans/composer-patches": true,
       "oomphinc/composer-installers-extender": true,
-      "drupal/core-composer-scaffold": true
+      "drupal/core-composer-scaffold": true,
+      "third-party/required-plugin": true,
+      "my-organization/*": true,
+      "unnecessary/plugin": false
     }
   },
   "extra": {
