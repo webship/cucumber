@@ -40,7 +40,7 @@ user:
     role: coordinator
   product_owner:
     name: Product Owner
-    mail: test.product_owner@webship.org
+    mail: test.product_owner@web    ship.org
     password: d
     role: product_owner
   administrator:
