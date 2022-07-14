@@ -7,11 +7,6 @@
   "prefer-stable": true,
   "authors": [
     {
-      "name": "Vardot",
-      "homepage": "https://www.drupal.org/vardot",
-      "role": "Initial building, ongoing maintenance and development"
-    },
-    {
       "name": "Webship",
       "homepage": "https://www.drupal.org/webship",
       "role": "Volunteer contributions"
@@ -47,7 +42,6 @@
     "drupal/dashboards": "~2.0",
     "drupal/anonymous_redirect": "~2.0",
     "drupal/user_redirect": "~2.0",
-    "drupal/autocomplete_deluxe": "^2.0",
     "drush/drush": "~11.0"
   },
   "conflict": {
@@ -64,10 +58,7 @@
       "composer/installers": true,
       "cweagans/composer-patches": true,
       "oomphinc/composer-installers-extender": true,
-      "drupal/core-composer-scaffold": true,
-      "third-party/required-plugin": true,
-      "my-organization/*": true,
-      "unnecessary/plugin": false
+      "drupal/core-composer-scaffold": true
     }
   },
   "extra": {
