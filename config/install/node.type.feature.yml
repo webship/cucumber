@@ -10,7 +10,7 @@ third_party_settings:
       - main
     parent: 'main:'
 _core:
-  default_config_hash: 20y7RRO1enKpogVEcRjCiLAsT9DLKIjcibP2yU7Z9aQ
+  default_config_hash: bPQ0EM3-IGaZbIBKDONqme83Hf066KwkPhtn9L6UiCg
 name: Feature
 type: feature
 description: "<h4>Add Feature</h4>\r\n<p>Features needed that the user adds to test his site</p>"

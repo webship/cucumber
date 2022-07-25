@@ -3,21 +3,23 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.feature.body
     - field.field.node.feature.field_category
-    - field.field.node.feature.field_feature_text
+    - field.field.node.feature.field_feature_code
     - node.type.feature
   module:
     - autocomplete_deluxe
     - field_layout
     - layout_discovery
     - path
+    - text
 third_party_settings:
   field_layout:
     id: layout_onecol
     settings:
       label: ''
 _core:
-  default_config_hash: idg_UGXiU7IhGBHGpHEEC8kkejaRbXTMOL80g2TFBGg
+  default_config_hash: 8lTpJ1Nq_3oJ6QwMUIzXK7slsSGDmWfM5nSdgKeCX3c
 id: node.feature.default
 targetEntityType: node
 bundle: feature
@@ -46,8 +48,8 @@ content:
       new_terms: false
       no_empty_message: 'No terms could be found. Please type in order to add a new term.'
     third_party_settings: {  }
-  field_feature_text:
-    type: string_textarea
+  field_feature_code:
+    type: text_textarea
     weight: 123
     region: content
     settings:
@@ -99,4 +101,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  body: true

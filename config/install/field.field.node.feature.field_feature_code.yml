@@ -1,19 +1,21 @@
-uuid: 1d37e368-3184-4555-9b7f-824df2fe5d19
+uuid: 5d6f39a5-9347-4cc5-ab1f-e01affd47999
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_feature_text
+    - field.storage.node.field_feature_code
     - node.type.feature
-id: node.feature.field_feature_text
-field_name: field_feature_text
+  module:
+    - text
+id: node.feature.field_feature_code
+field_name: field_feature_code
 entity_type: node
 bundle: feature
-label: 'Feature text'
+label: 'Feature code'
 description: ''
 required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string_long
+field_type: text_long

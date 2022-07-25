@@ -4,13 +4,14 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.feature.body
     - field.field.node.feature.field_category
-    - field.field.node.feature.field_feature_text
+    - field.field.node.feature.field_feature_code
     - node.type.feature
   module:
     - user
 _core:
-  default_config_hash: q2M7KFddAJxHvJLVRHiIC9fv78KcIqOzJ-VW62gxabo
+  default_config_hash: znKQQ5boFjJW-l9x2IXiTzvyIBqmFwSyHFwwMcg75Z4
 id: node.feature.teaser
 targetEntityType: node
 bundle: feature
@@ -22,5 +23,6 @@ content:
     weight: 100
     region: content
 hidden:
+  body: true
   field_category: true
-  field_feature_text: true
+  field_feature_code: true
