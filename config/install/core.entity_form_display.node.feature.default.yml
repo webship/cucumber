@@ -6,20 +6,21 @@ dependencies:
     - field.field.node.feature.body
     - field.field.node.feature.field_category
     - field.field.node.feature.field_feature_code
+    - field.field.node.feature.field_project
     - node.type.feature
   module:
     - autocomplete_deluxe
     - field_layout
+    - gherkin
     - layout_discovery
     - path
-    - text
 third_party_settings:
   field_layout:
     id: layout_onecol
     settings:
       label: ''
 _core:
-  default_config_hash: 8lTpJ1Nq_3oJ6QwMUIzXK7slsSGDmWfM5nSdgKeCX3c
+  default_config_hash: npxa5gcdWCuJriW4XkJQbIywCMFN9bEXVmvw7--A6N0
 id: node.feature.default
 targetEntityType: node
 bundle: feature
@@ -49,11 +50,21 @@ content:
       no_empty_message: 'No terms could be found. Please type in order to add a new term.'
     third_party_settings: {  }
   field_feature_code:
-    type: text_textarea
-    weight: 7
+    type: gherkin_default_widget
+    weight: 27
     region: content
     settings:
-      rows: 5
+      size: 15
+      theme: dark
+    third_party_settings: {  }
+  field_project:
+    type: entity_reference_autocomplete
+    weight: 26
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
       placeholder: ''
     third_party_settings: {  }
   path:

@@ -7,11 +7,12 @@ dependencies:
     - field.field.node.feature.body
     - field.field.node.feature.field_category
     - field.field.node.feature.field_feature_code
+    - field.field.node.feature.field_project
     - node.type.feature
   module:
     - user
 _core:
-  default_config_hash: znKQQ5boFjJW-l9x2IXiTzvyIBqmFwSyHFwwMcg75Z4
+  default_config_hash: hJ5113-hVYYpTaTXF9wzKdgqwuguUAc_pQUveQuNdHk
 id: node.feature.teaser
 targetEntityType: node
 bundle: feature
@@ -26,3 +27,4 @@ hidden:
   body: true
   field_category: true
   field_feature_code: true
+  field_project: true

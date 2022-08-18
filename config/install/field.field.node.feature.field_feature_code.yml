@@ -1,4 +1,4 @@
-uuid: 5d6f39a5-9347-4cc5-ab1f-e01affd47999
+uuid: 13805bb3-6242-4334-80cd-80b911583f44
 langcode: en
 status: true
 dependencies:
@@ -6,16 +6,19 @@ dependencies:
     - field.storage.node.field_feature_code
     - node.type.feature
   module:
-    - text
+    - gherkin
 id: node.feature.field_feature_code
 field_name: field_feature_code
 entity_type: node
 bundle: feature
 label: 'Feature code'
 description: ''
-required: true
+required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    value:
+      - ''
 default_value_callback: ''
 settings: {  }
-field_type: text_long
+field_type: gherkin_script

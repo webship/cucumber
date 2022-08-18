@@ -6,12 +6,13 @@ dependencies:
     - field.field.node.feature.body
     - field.field.node.feature.field_category
     - field.field.node.feature.field_feature_code
+    - field.field.node.feature.field_project
     - node.type.feature
   module:
-    - text
+    - gherkin
     - user
 _core:
-  default_config_hash: 0QxNS4nBVZ9_nT0L9yPd06Y880mNafMFbTfWcFde3Zc
+  default_config_hash: aBkraQeQKGKAqmhS6TElEmtDtmsvjbC3InpeIK4goPk
 id: node.feature.default
 targetEntityType: node
 bundle: feature
@@ -26,11 +27,19 @@ content:
     weight: 2
     region: content
   field_feature_code:
-    type: text_default
+    type: gherkin_default_formatter
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 4
+    region: content
+  field_project:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
     region: content
   links:
     settings: {  }

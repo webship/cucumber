@@ -1,16 +1,16 @@
-uuid: 7bdb6a02-558f-4d66-8032-5c1f2c7f954e
+uuid: 38e867f8-9aba-4d65-9ba3-cf8d4a71cf70
 langcode: en
 status: true
 dependencies:
   module:
-    - gherkin
     - node
-id: node.field_feature_code
-field_name: field_feature_code
+id: node.field_project
+field_name: field_project
 entity_type: node
-type: gherkin_script
-settings: {  }
-module: gherkin
+type: entity_reference
+settings:
+  target_type: node
+module: core
 locked: false
 cardinality: 1
 translatable: true

@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: LmBjjUHHFMRlGxQCI-3cNbuvHyojLDrJHJI97MCVSrQ
+  default_config_hash: XKWGosZ6BNVj9QOBKBo_hJUCxCx8zh_IGRp5vX6Q6I4
 name: 'Feature Category'
 vid: feature_category
 description: 'A category that user can add it to classify their own features'
