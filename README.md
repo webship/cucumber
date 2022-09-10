@@ -1,9 +1,19 @@
 [![CircleCI](https://circleci.com/gh/webship/cucumber/tree/9.0.x.svg?style=svg)](https://circleci.com/gh/webship/cucumber/tree/9.0.x) Cucumber 9.0.x
 
 # Cucumber
-Cucumber Management System
+Cucumber Automated Functional Acceptance Testing Management system
+
+The app.webship.co console dashboard system was built on top of Drupal, as it has many options, tools, frameworks, and configuration management, which are needed in building solutions.
+
+Helps in speeding up the work of having Functional Automated Acceptance Testing for products to ship websites in a swift way.
 
 [![Cucumber](https://www.drupal.org/files/project-images/drupal-cucumber.png)](https://www.drupal.org/project/cucumber)
+
+### We LOVE to help with:
+* Setup of Automated Functional Testing configurations for projects.
+* Writing Cucumber descriptions, Gherkin scripts for web apps.
+* Development of Webship-js using Nightwatch.js, Cucumber-js with custom and advanced general step definitions.
+* Setup Selenium robot servers, and Web-drivers to work on a local development, CircleCI, Github Actions, Gitlab-CI, Travis-CI, Bitbucket Pipelines and private CI/CD servers.
 
 ## Usage
 

@@ -10,10 +10,10 @@
     "testing",
     "test"
   ],
-  "author": "Webship.org",
+  "author": "Webship.co",
   "license": "GPL-2.0",
   "scripts": {
-    "test-cucumber": "nightwatch"
+    "test": "nightwatch"
   },
   "dependencies": {
     "webship-js": "~1.0"

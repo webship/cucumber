@@ -3,24 +3,22 @@
   "description": "Cucumber Management System",
   "type": "drupal-profile",
   "license": "GPL-2.0-or-later",
+  "homepage": "https://webship.co",
+  "support": {
+    "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
+    "chat": "https://app.slack.com/client/T06GX3JTS/C7MAHMJRE",
+    "issues": "http://drupal.org/project/issues/cucumber",
+    "source": "http://cgit.drupalcode.org/cucumber"
+  },
   "minimum-stability": "dev",
   "prefer-stable": true,
   "authors": [
-    {
-      "name": "Vardot",
-      "homepage": "https://www.drupal.org/vardot",
-      "role": "Initial building, ongoing maintenance and development"
-    },
     {
       "name": "Webship",
       "homepage": "https://www.drupal.org/webship",
       "role": "Volunteer contributions"
     }
   ],
-  "support": {
-    "issues": "http://drupal.org/project/issues/cucumber",
-    "source": "http://cgit.drupalcode.org/cucumber"
-  },
   "repositories": {
     "drupal": {
       "type": "composer",
@@ -34,13 +32,18 @@
   "require": {
     "composer/installers": "~2.0",
     "oomphinc/composer-installers-extender": "~2.0",
-    "drupal/core-composer-scaffold": "~9.0",
-    "drupal/core-project-message": "~9.0",
     "cweagans/composer-patches": "~1.0",
+    "drupal/core-composer-scaffold": "~9.0",
     "drupal/core": "~9.0",
-    "drupal/webdev": "~9.0",
-    "drupal/webadmin": "~9.0",
-    "drush/drush": "~11.0"
+    "drush/drush": "~11.0",
+    "vardot/entity-definition-update-manager": "~1.0",
+    "vardot/module-installer-factory": "~1.0",
+    "drupal/webconfig": "1.0.x-dev",
+    "drupal/webdev": "9.1.x-dev",
+    "drupal/webadmin": "9.0.x-dev"
+  },
+  "require-dev": {
+    "drupal/core-dev": "~9.0"
   },
   "conflict": {
     "drupal/drupal": "*"
@@ -57,11 +60,16 @@
       "cweagans/composer-patches": true,
       "oomphinc/composer-installers-extender": true,
       "drupal/core-composer-scaffold": true,
-      "drupal/core-project-message": true
+      "dealerdirect/phpcodesniffer-composer-installer": true
     }
   },
   "extra": {
     "drupal-scaffold": {
+      "allowed-packages": [
+        "drupal/core",
+        "webship/cucumber"
+      ],
+      "gitignore": true,
       "locations": {
         "web-root": "web/"
       }
@@ -80,6 +88,7 @@
     "composer-exit-on-patch-failure": true,
     "patchLevel": {
       "drupal/core": "-p2"
-    }
+    },
+    "patches": {}
   }
 }

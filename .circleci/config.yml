@@ -224,7 +224,7 @@ jobs:
           command: |
             cd /var/www/html/test/cucumber/web/profiles/cucumber
             yarn install
-            yarn test-cucumber
+            yarn test
 
 workflows:
   version: 2

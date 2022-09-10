@@ -50,6 +50,7 @@ install:
   - update
   - history
 ## Contrib Modules
+  - webconfig
   - webdev
   - webadmin
   - gin_toolbar
@@ -60,3 +61,6 @@ install:
   - dashboards_statistic
   - dashboards_views
   - admin_toolbar_search
+  - anonymous_redirect
+  - user_redirect
+  - autocomplete_deluxe
