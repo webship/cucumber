@@ -38,7 +38,8 @@
     "drush/drush": "~11.0",
     "drupal/webconfig": "1.0.x-dev",
     "drupal/webdev": "9.1.x-dev",
-    "drupal/webadmin": "9.0.x-dev"
+    "drupal/webadmin": "9.0.x-dev",
+    "drupal/cucumber_ui": "1.0.x-dev"
   },
   "require-dev": {
     "drupal/core-dev": "~9.0"
