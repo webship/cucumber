@@ -7,7 +7,7 @@ dependencies:
     - node.type.feature
     - taxonomy.vocabulary.feature_category
 _core:
-  default_config_hash: KPjT-0m0_3x_20_SwrwkqeliIZ5Yh7gPx7GcFoL-VNo
+  default_config_hash: 9Mo9fxCln4dRZwu1NqhJ8YGp8Ga4WEJijVgCi96qdR4
 id: node.feature.field_category
 field_name: field_category
 entity_type: node
