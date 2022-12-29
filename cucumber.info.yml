@@ -27,7 +27,6 @@ install:
   - dynamic_page_cache
   - page_cache
   - automated_cron
-  - color
   - field
   - field_ui
   - file
