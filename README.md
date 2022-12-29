@@ -1,11 +1,11 @@
-[![CircleCI](https://circleci.com/gh/webship/cucumber/tree/9.0.x.svg?style=svg)](https://circleci.com/gh/webship/cucumber/tree/9.0.x) Cucumber 9.0.x
+[![CircleCI](https://circleci.com/gh/webship/cucumber/tree/10.0.x.svg?style=svg)](https://circleci.com/gh/webship/cucumber/tree/10.0.x) Cucumber 10.0.x
 
 # Cucumber
 Cucumber Automated Functional Acceptance Testing Management system
 
 The app.webship.co console dashboard system was built on top of Drupal, as it has many options, tools, frameworks, and configuration management, which are needed in building solutions.
 
-Helps in speeding up the work of having Functional Automated Acceptance Testing for products to ship websites in a swift way.
+Helps in speeding up the work of having Automated Functional Acceptance Testing for products to ship websites in a swift way.
 
 [![Cucumber](https://www.drupal.org/files/project-images/drupal-cucumber.png)](https://www.drupal.org/project/cucumber)
 
@@ -23,7 +23,7 @@ First you need to [install composer](https://getcomposer.org/doc/00-intro.md#ins
 You might need to replace `composer` with `php composer.phar` (or similar) 
 for your setup.
 
-To install the dev version of Cucumber 9.0.x run this command:
+To install the dev version of Cucumber 10.0.x run this command:
 ```
-composer create-project webship/cucumber-project:9.0.x-dev WEBSITE_NAME --stability dev --no-interaction
+composer create-project webship/cucumber-project:10.0.x-dev WEBSITE_NAME --stability dev --no-interaction
 ```

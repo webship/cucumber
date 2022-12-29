@@ -146,7 +146,7 @@ commands:
             cd /var/www/html/test/
             sudo chmod 775 .
             sudo chown www-data:circleci .
-            git clone --branch '9.0.x' https://github.com/webship/cucumber.git /var/www/html/test/cucumber-code
+            git clone --branch '10.0.x' https://github.com/webship/cucumber.git /var/www/html/test/cucumber-code
             cp -r /var/www/html/test/cucumber-code /var/www/html/test/cucumber
             cd /var/www/html/test/cucumber
             composer install --no-interaction -vvv
@@ -233,6 +233,6 @@ workflows:
       - cucumber-testing:
           filters:
             tags:
-              only: /^9.0.*/
+              only: /^10.0.*/
             branches:
-              only: /^9.0.x/
+              only: /^10.0.x/
