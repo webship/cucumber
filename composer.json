@@ -1,6 +1,6 @@
 {
   "name": "webship/cucumber",
-  "description": "Cucumber Management System",
+  "description": "Cucumber Automated Functional Acceptance Testing Management system",
   "type": "drupal-profile",
   "license": "GPL-2.0-or-later",
   "support": {

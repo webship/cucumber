@@ -2,7 +2,7 @@
   "name": "cucumber",
   "private": true,
   "version": "10.0.0",
-  "description": "Cucumber Management System",
+  "description": "Cucumber Automated Functional Acceptance Testing Management system",
   "keywords": [
     "Drupal",
     "Cucumber",
