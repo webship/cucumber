@@ -44,48 +44,17 @@ html body .layout-container header {
   background-position: left center;
   background-repeat: no-repeat;
   background-size: contain;
-  height: 15rem;
-  margin-bottom: 2rem;
+  height: 10rem;
 }
 
-html body.install-page .page-title {
-  margin-left: 17rem;
-}
-
-html body.install-page .page-title {
+html body.install-page .site-name {
+  color: #437100;
   font-size: 3rem !important;
   display: inline-block !important;
   margin-top: 4rem !important;
+  margin-left: 10rem;
 }
 
-@media screen and (min-width: 38em) {
-  html .toolbar-tray-open:not(.toolbar-vertical) .layout-container,
-  html body:not(.toolbar-tray-open) .layout-container {
-    margin-right: auto !important;
-    margin-left: auto !important;
-  }
-}
-
-html body .progress__bar {
-  border: 1px #437100 solid ;
-  background: #437100;
-  height: 1.5rem;
-}
-
-html body .progress__track {
-  height: 1.6rem !important;
-  padding: 0.2rem !important;
-}
-
-@media (min-width: 48em) {
-  html body .layout-sidebar-first {
-    float: left;
-    width: 25%;
-    margin-right: 3rem;
-  }
-
-  html body main {
-    float: left;
-    width: 65%;
-  }
+html body.install-page .site-version {
+  vertical-align: middle;
 }
