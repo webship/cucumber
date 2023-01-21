@@ -1,9 +1,6 @@
-uuid: e3bb6f92-164d-40f5-ac58-6135dd4d7109
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: dVn7dc5DneyFAhS3UZHNvImuIXMVErmRg0GprfLRCv0
 id: management_dashboard
 admin_label: 'Management Dashboard'
 category: ''

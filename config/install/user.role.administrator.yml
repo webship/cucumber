@@ -1,9 +1,6 @@
-uuid: 2e109999-6a93-44f5-bb51-bcf6320f556b
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: ymxn379j8RVWZE5hhx6Yc3whhXKKrJ2N7aKqUu1aCYs
 id: administrator
 label: Administrator
 weight: 3

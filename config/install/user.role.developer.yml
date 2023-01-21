@@ -1,4 +1,3 @@
-uuid: 247013a8-6192-41cb-9195-6a3538acc538
 langcode: en
 status: true
 dependencies:
@@ -9,8 +8,6 @@ dependencies:
     - dashboards
     - node
     - taxonomy
-_core:
-  default_config_hash: cpW0L_W-K2iYeAj-OQfi0ve2RseF1AcVXxLv-U9MKoM
 id: developer
 label: Developer
 weight: -8

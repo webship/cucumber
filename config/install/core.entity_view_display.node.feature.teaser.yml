@@ -1,4 +1,3 @@
-uuid: 9467570e-dc92-4dc7-a321-f282c80caeb1
 langcode: en
 status: true
 dependencies:
@@ -9,8 +8,6 @@ dependencies:
     - node.type.feature
   module:
     - user
-_core:
-  default_config_hash: hJ5113-hVYYpTaTXF9wzKdgqwuguUAc_pQUveQuNdHk
 id: node.feature.teaser
 targetEntityType: node
 bundle: feature

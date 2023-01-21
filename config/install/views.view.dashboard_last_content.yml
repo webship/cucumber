@@ -1,4 +1,3 @@
-uuid: a7a0d722-b796-468f-9107-e757f8e28402
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
   enforced:
     module:
       - dashboards_views
-_core:
-  default_config_hash: xOBPvZPp3YTO3MaLjuUwAbwMbhyY4eZ3FD3tgcUWCJ0
 id: dashboard_last_content
 label: 'Dashboard: Last content'
 module: views

@@ -1,4 +1,3 @@
-uuid: 8a85a6eb-e8a1-476d-bf44-dc9ea192ee4e
 langcode: en
 status: true
 dependencies:
@@ -11,8 +10,6 @@ dependencies:
     - node
     - system
     - taxonomy
-_core:
-  default_config_hash: tjuihomwFT4CQRUzc7QdrCDIh9PE5sZMh9azqQsnpnE
 id: product_owner
 label: 'Product Owner'
 weight: -4

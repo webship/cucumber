@@ -1,11 +1,8 @@
-uuid: f17a00fd-f00d-4262-8fa0-b31e42b338a8
 langcode: en
 status: true
 dependencies:
   module:
     - dashboards
-_core:
-  default_config_hash: J-7CBXTPc42eRGC9BtRGb4xYyZruajN7TncJADQXmmo
 id: tester
 label: Tester
 weight: -7

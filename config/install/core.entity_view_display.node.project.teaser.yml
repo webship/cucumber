@@ -1,4 +1,3 @@
-uuid: f2b7cf51-78a5-49b4-b0a8-bf3dc35034d7
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
     - node.type.project
   module:
     - user
-_core:
-  default_config_hash: 1-80L9N5PwY1b5OZIc8WLybzGDM3Nt0OD_S9-WpbLCc
 id: node.project.teaser
 targetEntityType: node
 bundle: project

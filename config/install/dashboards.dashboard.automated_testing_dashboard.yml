@@ -1,9 +1,6 @@
-uuid: d4b87f1e-0366-43fd-853d-353af6a0b4c4
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: 7EZMCdpZ0ru2mFov-VzKhk5eKyaqq-x0sQQWby6l0Hs
 id: automated_testing_dashboard
 admin_label: 'Automated Testing Dashboard'
 category: ''

@@ -1,4 +1,3 @@
-uuid: dbf69ffb-4ea0-4dde-8bf7-e1518f2e80b5
 langcode: en
 status: true
 dependencies:
@@ -14,8 +13,6 @@ third_party_settings:
     id: layout_onecol
     settings:
       label: ''
-_core:
-  default_config_hash: 6hKsmOhoT7xTKSsS7tY9G8z1BBrwHN-7EJ4KkmHS7Oc
 id: node.project.default
 targetEntityType: node
 bundle: project

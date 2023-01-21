@@ -1,11 +1,8 @@
-uuid: ce7fc625-fcd2-4a71-bf92-fd0adb414168
 langcode: en
 status: true
 dependencies:
   config:
     - node.type.project
-_core:
-  default_config_hash: rsHJbx_E6TNT3BTO8oqzMdMh0z_PV3fGGC724bwkC-4
 id: node.project.title
 field_name: title
 entity_type: node

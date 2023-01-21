@@ -1,12 +1,9 @@
-uuid: 862b2ae4-697c-4d82-859e-99b0dfe42bc9
 langcode: en
 status: true
 dependencies:
   module:
     - dashboards
     - toolbar
-_core:
-  default_config_hash: 0KcfF1oTxOLBuaP5XbNWARjVvdar2fRFReewnneciGI
 id: authenticated
 label: 'Authenticated user'
 weight: -9

@@ -1,4 +1,3 @@
-uuid: 9c682733-901b-48ba-bc5c-f1cdb639bf47
 langcode: en
 status: true
 dependencies:
@@ -7,8 +6,6 @@ dependencies:
   module:
     - dashboards
     - taxonomy
-_core:
-  default_config_hash: h3h8zel5in1YDjZT76DFhrzsWJXf9cCs9moX65bBeDE
 id: coordinator
 label: Coordinator
 weight: -5
