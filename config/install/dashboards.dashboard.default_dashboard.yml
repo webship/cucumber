@@ -2,8 +2,6 @@ uuid: 0f28bb2a-abae-483c-a0d2-14931873c4b5
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: YJmcSszy9IBLYG2O4YJpoyLXKKQdFnen2L3D5y0rr58
 id: default_dashboard
 admin_label: 'Default Dashboard'
 category: ''

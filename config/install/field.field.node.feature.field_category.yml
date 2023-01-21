@@ -5,8 +5,6 @@ dependencies:
     - field.storage.node.field_category
     - node.type.feature
     - taxonomy.vocabulary.feature_category
-_core:
-  default_config_hash: 9Mo9fxCln4dRZwu1NqhJ8YGp8Ga4WEJijVgCi96qdR4
 id: node.feature.field_category
 field_name: field_category
 entity_type: node
