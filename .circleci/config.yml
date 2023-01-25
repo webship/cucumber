@@ -232,6 +232,10 @@ jobs:
           command: |
             yarn install
       - run:
+          name: Build webpack
+          command: |
+            yarn build
+      - run:
           name: Start virtual server
           command: |
             yarn start
