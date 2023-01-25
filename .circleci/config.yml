@@ -232,10 +232,6 @@ jobs:
           command: |
             yarn install
       - run:
-          name: Configure nightwatch.conf.js for Circle CI
-          command: |
-            node webship-init -ci circleci -os linux -b chrome
-      - run:
           name: Start virtual server
           command: |
             yarn start
