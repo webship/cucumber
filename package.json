@@ -13,7 +13,9 @@
   "author": "Webship.co",
   "license": "GPL-2.0",
   "scripts": {
-    "test": "nightwatch"
+    "test": "nightwatch",
+    "start": "npm run devServer",
+    "devServer": "webpack serve --port 8080"
   },
   "dependencies": {
     "webship-js": "~1.0"

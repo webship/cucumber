@@ -11,11 +11,6 @@
   "prefer-stable": true,
   "authors": [
     {
-      "name": "Vardot",
-      "homepage": "https://www.drupal.org/vardot",
-      "role": "Supporting organization"
-    },
-    {
       "name": "Webship",
       "homepage": "https://www.drupal.org/webship",
       "role": "Supporting organization"
