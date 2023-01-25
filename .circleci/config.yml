@@ -226,7 +226,7 @@ jobs:
           name: Automated Functional Acceptance Testing
           no_output_timeout: 30m
           command: |
-            cd /var/www/html/test/cucumber/web/profiles/cucumber
+            cd /var/www/html/test/cucumber/web
       - run:
           name: Install yarn
           command: |
