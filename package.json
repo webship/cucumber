@@ -14,11 +14,14 @@
   "license": "GPL-2.0",
   "scripts": {
     "test": "nightwatch",
-    "build": "webpack",
     "start": "npm run devServer",
     "devServer": "webpack serve --port 8080"
   },
   "dependencies": {
     "webship-js": "~1.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "~5.0",
+    "webpack-dev-server": "~4.0"
   }
 }
