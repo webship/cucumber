@@ -4,6 +4,5 @@ Feature: First test for cucumber
   So that I know it is working
 
   Scenario: Check the cucumber site
-    Given I am on homepage
-    When I go to "user/login"
+    Given I am on "user/login"
     Then I should see "Log in"
