@@ -13,7 +13,7 @@
   "author": "Webship.co",
   "license": "GPL-2.0",
   "scripts": {
-    "test": "nightwatch --format json:./tests/reports/cucumber-report-$( date '+%Y-%m-%d_%H-%M' ).json --format html:./tests/reports/cucumber-report-$( date '+%Y-%m-%d_%H-%M' ).html"
+    "test": "nightwatch"
   },
   "dependencies": {
     "webship-js": "~1.0"
