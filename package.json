@@ -13,15 +13,9 @@
   "author": "Webship.co",
   "license": "GPL-2.0",
   "scripts": {
-    "test": "nightwatch",
-    "start": "npm run devServer",
-    "devServer": "webpack serve --port 8080"
+    "test": "nightwatch --format json:./tests/reports/cucumber-report-$( date '+%Y-%m-%d_%H-%M' ).json --format html:./tests/reports/cucumber-report-$( date '+%Y-%m-%d_%H-%M' ).html"
   },
   "dependencies": {
     "webship-js": "~1.0"
-  },
-  "devDependencies": {
-    "webpack-cli": "~5.0",
-    "webpack-dev-server": "~4.0"
   }
 }
