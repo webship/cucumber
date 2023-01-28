@@ -177,14 +177,14 @@ commands:
             sudo chmod 775 -R .
             sudo chown www-data:circleci -R .
 
-      ## Point localhost at /var/www/html/test/cucumber/web
+      ## Point cucumber.test at /var/www/html/test/cucumber/web
       - run:
-          name: Point localhost at /var/www/html/test/cucumber/web
+          name: Point cucumber.test at /var/www/html/test/cucumber/web
           command: |
             sudo a2enmod headers rewrite env mime expires ssl
-            sudo cp /home/circleci/project/.circleci/env/localhost.conf /etc/apache2/sites-available/localhost.conf
-            sudo a2ensite localhost
-            echo 127.0.0.1 localhost | sudo tee -a /etc/hosts
+            sudo cp /home/circleci/project/.circleci/env/cucumber.test.conf /etc/apache2/sites-available/cucumber.test.conf
+            sudo a2ensite cucumber.test
+            echo 127.0.0.1 cucumber.test | sudo tee -a /etc/hosts
             sudo service apache2 restart
 
       ## Install Cucumber with drush.
@@ -227,18 +227,7 @@ jobs:
           no_output_timeout: 30m
           command: |
             cd /var/www/html/test/cucumber
-      - run:
-          name: Install yarn
-          command: |
             yarn install
-      - run:
-          name: Start virtual server
-          command: |
-            yarn start
-          background: true
-      - run:
-          name: Test
-          command: |
             yarn test
 
 workflows:

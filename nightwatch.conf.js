@@ -19,7 +19,7 @@ module.exports = {
 
   test_settings: {
     default: {
-      launch_url: 'http://localhost:8080/',
+      launch_url: 'http://cucumber.test/',
       selenium_port: 4444,
       selenium_host: '127.0.0.1',
       silent: true,
