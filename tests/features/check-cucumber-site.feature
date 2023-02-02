@@ -6,3 +6,4 @@ Feature: First test for cucumber
   Scenario: Check the cucumber site
     Given I am on "user/login"
     Then I should see "Log in"
+    And I go to homepage
