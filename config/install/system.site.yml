@@ -1,14 +1,10 @@
-_core:
-  default_config_hash: x3or44TebXNadfqLP79M-J1BxpkAqz0QCN5EDyIJJtg
-langcode: en
-uuid: 934b1049-d456-4618-98fe-da0d28a00c47
 name: 'Cucumber app.webship.co'
 mail: admin@webship.co
 slogan: ''
 page:
-  403: ''
+  403: '/user'
   404: ''
-  front: /user
+  front: /dashboard/default_dashboard
 admin_compact_mode: false
 weight_select_max: 100
 default_langcode: en
