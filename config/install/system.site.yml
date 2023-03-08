@@ -2,7 +2,7 @@ name: 'Cucumber app.webship.co'
 mail: admin@webship.co
 slogan: ''
 page:
-  403: '/user'
+  403: '/user/login'
   404: ''
   front: /dashboard/default_dashboard
 admin_compact_mode: false
