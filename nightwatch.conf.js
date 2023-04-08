@@ -3,10 +3,13 @@ const Services = {}; loadServices();
 module.exports = {
   // An array of folders (excluding subfolders) where your tests are located;
   // if this is not specified, the test source must be passed as the second argument to the test runner.
-  src_folders: ['node_modules/webship-js/tests/step-definitions'],
+  src_folders: ['tests/step-definitions','node_modules/webship-js/tests/step-definitions'],
 
-   // See https://nightwatchjs.org/guide/extending-nightwatch/#writing-custom-commands
-   custom_commands_path: './node_modules/webship-js/lib/custom-commands',
+  // See https://nightwatchjs.org/guide/extending-nightwatch/adding-custom-commands.html
+  custom_commands_path: './node_modules/webship-js/lib/custom-commands',
+
+  // See https://nightwatchjs.org/guide/extending-nightwatch/adding-custom-assertions.html
+  custom_assertions_path: './node_modules/webship-js/lib/custom-assertions',
 
   test_runner: {
     type: 'cucumber',
@@ -19,7 +22,7 @@ module.exports = {
 
   test_settings: {
     default: {
-      launch_url: 'http://cucumber.test/',
+      launch_url: 'http://localhost/dev/cucumber_ui_cucumber10x2',
       selenium_port: 4444,
       selenium_host: '127.0.0.1',
       silent: true,
@@ -88,13 +91,13 @@ module.exports = {
 function loadServices() {
   try {
     Services.seleniumServer = require('selenium-server');
-  } catch (err) {}
+  } catch (err) { }
 
   try {
     Services.chromedriver = require('chromedriver');
-  } catch (err) {}
+  } catch (err) { }
 
   try {
     Services.geckodriver = require('geckodriver');
-  } catch (err) {}
+  } catch (err) { }
 }
