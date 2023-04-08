@@ -13,7 +13,7 @@
   "author": "Webship.co",
   "license": "GPL-2.0",
   "scripts": {
-    "test": "nightwatch"
+    "test": "nightwatch --format html:./tests/reports/index.html"
   },
   "dependencies": {
     "webship-js": "~1.0"
