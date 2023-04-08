@@ -22,7 +22,7 @@ module.exports = {
 
   test_settings: {
     default: {
-      launch_url: 'http://localhost/dev/cucumber_ui_cucumber10x2',
+      launch_url: 'http://cucumber.test',
       selenium_port: 4444,
       selenium_host: '127.0.0.1',
       silent: true,
