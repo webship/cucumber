@@ -4,5 +4,5 @@ Feature: First test for cucumber
   So that I know it is working
 
   Scenario: Check the cucumber site
-    Given I am on "http://cucumber.test"
+    Given I am on "/user/login"
     Then I should see "Log in"
