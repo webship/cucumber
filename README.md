@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/webship/cucumber/tree/10.x.svg?style=svg)](https://circleci.com/gh/webship/cucumber/tree/10.0.x) Cucumber 10.0.x-dev
+[![CircleCI](https://circleci.com/gh/webship/cucumber/tree/10.0.x.svg?style=svg)](https://circleci.com/gh/webship/cucumber/tree/10.0.x) Cucumber 10.0.x-dev
 
 # Cucumber
 Cucumber Automated Functional Acceptance Testing Management system
