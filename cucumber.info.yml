@@ -61,4 +61,3 @@ install:
   - admin_toolbar_search
   - user_redirect
   - autocomplete_deluxe
-  - sqlite
