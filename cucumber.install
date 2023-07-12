@@ -26,11 +26,14 @@ function cucumber_install() {
     'database' => '/database/cucumber.sqlite',
     ];
 
-    // Save the changes.
-    $settings_file = DRUPAL_ROOT . '/sites/default/settings.php';
-    $serialized_settings = var_export($databases, true);
-    file_put_contents($settings_file, "<?php\n\n\$databases = $serialized_settings;\n");
+    // // Save the changes.
+    // $settings_file = DRUPAL_ROOT . '/sites/default/settings.php';
+    // $serialized_settings = var_export($databases, true);
+    // file_put_contents($settings_file, "<?php\n\n\$databases = $serialized_settings;\n");
 
+    // // Clear the cached configuration.
+    // \Drupal::service('config.storage')->deleteAll();
+    
   // Full flash and clear cash and rebuilding newly created routes.
   // After install of extra modules by install: in the .info.yml files.
   // In Varbase profile and all Varbase components.
