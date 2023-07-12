@@ -34,3 +34,10 @@ function cucumber_preprocess_install_page(&$variables) {
   // Cucumber has custom styling for the install page.
   $variables['#attached']['library'][] = 'cucumber/install-page';
 }
+
+function cucumber_edited_install_settings_defaults(&$install_state){
+  $databases['default']['default'] = [
+    'driver' => 'sqlite',
+    'database' => '/database/cucumber.sqlite',
+   ];  
+}
