@@ -37,24 +37,3 @@ function cucumber_preprocess_install_page(&$variables)
     // Cucumber has custom styling for the install page.
     $variables['#attached']['library'][] = 'cucumber/install-page';
 }
-
-function cucumber_install()
-{
-
-    // Modify default database settings.
-    $databases['default']['default'] = [
-    'driver' => 'sqlite',
-    'database' => '/database/cucumber.sqlite',
-    ];
-
-    // Save the changes.
-    $settings_file = DRUPAL_ROOT . '/sites/default/settings.php';
-    $serialized_settings = var_export($databases, true);
-    file_put_contents($settings_file, "<?php\n\n\$databases = $serialized_settings;\n");
-
-    // Clear the cached configuration.
-    \Drupal::service('config.storage')->deleteAll();
-
-    // Clear all caches.
-    drupal_flush_all_caches();
-}
