@@ -58,15 +58,20 @@ function cucumber_install_tasks() {
  * Sets SQLite as the default database.
  */
 function cucumber_set_sqlite_default() {
-  // Get the path to the settings.php file.
-  $settings_file = DRUPAL_ROOT . '/sites/default/settings.php';
+  // Modify default database settings.
+  $databases['default']['default'] = [
+    'driver' => 'sqlite',
+    'database' => '../database/cucumber.sqlite',
+    ];
   
-  // Read the contents of the settings.php file.
-  $settings_contents = file_get_contents($settings_file);
-  
-  // Replace the default database driver.
-  $settings_contents = str_replace("'mysql'", "'sqlite'", $settings_contents);
-  
-  // Write the modified contents back to the settings.php file.
-  file_put_contents($settings_file, $settings_contents);
+  // Save the changes.
+  $settings_file = DRUPAL_ROOT . 'web/sites/default/settings.php';
+  $serialized_settings = var_export($databases, TRUE);
+  file_put_contents($settings_file, "<?php\n\n\$databases = $serialized_settings;\n");
+
+  // Clear the cached configuration.
+  \Drupal::service('config.storage')->deleteAll();
+
+  // Clear all caches.
+  drupal_flush_all_caches();
 }
