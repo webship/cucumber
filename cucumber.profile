@@ -37,3 +37,36 @@ function cucumber_preprocess_install_page(&$variables)
     // Cucumber has custom styling for the install page.
     $variables['#attached']['library'][] = 'cucumber/install-page';
 }
+
+/**
+ * Implements hook_install_tasks().
+ */
+function cucumber_install_tasks() {
+  $tasks = array();
+  
+  // Define the task to set SQLite as the default database.
+  $tasks['cucumber_set_sqlite_default'] = array(
+    'display_name' => 'Set SQLite as default database',
+    'type' => 'function',
+    'function' => 'cucumber_set_sqlite_default',
+  );
+  
+  return $tasks;
+}
+
+/**
+ * Sets SQLite as the default database.
+ */
+function cucumber_set_sqlite_default() {
+  // Get the path to the settings.php file.
+  $settings_file = DRUPAL_ROOT . '/sites/default/settings.php';
+  
+  // Read the contents of the settings.php file.
+  $settings_contents = file_get_contents($settings_file);
+  
+  // Replace the default database driver.
+  $settings_contents = str_replace("'mysql'", "'sqlite'", $settings_contents);
+  
+  // Write the modified contents back to the settings.php file.
+  file_put_contents($settings_file, $settings_contents);
+}
