@@ -20,8 +20,16 @@ function cucumber_install() {
   // Enable the admin theme.
   \Drupal::configFactory()->getEditable('node.settings')->set('use_admin_theme', TRUE)->save(TRUE);
   
-  // Enable the admin theme.
-  \Drupal::databases()->getConnection('database')->set('driver', 'sqlite')->save(TRUE);
+  $settings_file = DRUPAL_ROOT . '/sites/default/settings.php';
+
+  // Read the contents of the settings.php file.
+  $settings_contents = file_get_contents($settings_file);
+
+  // Replace the default database driver.
+  $settings_contents = str_replace("'mysql'", "'sqlite'", $settings_contents);
+
+  // Write the modified contents back to the settings.php file.
+  file_put_contents($settings_file, $settings_contents);
 
   // * Necessary inlitilization for the entire system.
   // * Account for changed config by the end install.
