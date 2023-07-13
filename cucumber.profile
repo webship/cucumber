@@ -39,39 +39,14 @@ function cucumber_preprocess_install_page(&$variables)
 }
 
 /**
- * Implements hook_install_tasks().
+ * Implements hook_form_alter().
  */
-function cucumber_install_tasks() {
-  $tasks = array();
-  
-  // Define the task to set SQLite as the default database.
-  $tasks['cucumber_set_sqlite_default'] = array(
-    'display_name' => 'Set SQLite as default database',
-    'type' => 'function',
-    'function' => 'cucumber_set_sqlite_default',
-  );
-  
-  return $tasks;
-}
+function cucumber_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'install_select_locale_form') {
+    // Modify the database type options in the form.
+    $form['install_locale']['install_locale_settings']['database']['#options']['sqlite'] = t('SQLite');
 
-/**
- * Sets SQLite as the default database.
- */
-function cucumber_set_sqlite_default() {
-  // Modify default database settings.
-  $databases['default']['default'] = [
-    'driver' => 'sqlite',
-    'database' => '../database/cucumber.sqlite',
-    ];
-  
-  // Save the changes.
-  $settings_file = DRUPAL_ROOT . 'web/sites/default/settings.php';
-  $serialized_settings = var_export($databases, TRUE);
-  file_put_contents($settings_file, "<?php\n\n\$databases = $serialized_settings;\n");
-
-  // Clear the cached configuration.
-  \Drupal::service('config.storage')->deleteAll();
-
-  // Clear all caches.
-  drupal_flush_all_caches();
+    // Set the SQLite database file path.
+    $form['install_locale']['install_locale_settings']['database']['#default_value'] = '../database/cucumber.sqlite';
+  }
 }
