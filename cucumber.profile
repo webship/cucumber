@@ -18,6 +18,8 @@ function cucumber_form_install_configure_form_alter(&$form, FormStateInterface $
     $form['site_information']['site_mail']['#default_value'] = 'admin@webship.co';
     $form['admin_account']['account']['name']['#default_value'] = 'webmaster';
     $form['admin_account']['account']['mail']['#default_value'] = 'admin@webship.co';
+
+    
 }
 
 /**
@@ -27,6 +29,12 @@ function cucumber_install_tasks_alter(&$tasks, $install_state)
 {
     unset($tasks['install_select_language']);
     unset($tasks['install_download_translation']);
+
+    // Modify the database type options in the form.
+    $tasks['install_locale']['install_locale_settings']['database']['#options']['sqlite'] = t('SQLite');
+
+    // Set the SQLite database file path.
+    $tasks['install_locale']['install_locale_settings']['database']['#default_value'] = '../database/cucumber.sqlite';
 }
 
 /**
@@ -37,16 +45,28 @@ function cucumber_preprocess_install_page(&$variables)
     // Cucumber has custom styling for the install page.
     $variables['#attached']['library'][] = 'cucumber/install-page';
 }
-
+  
 /**
- * Implements hook_form_alter().
+ * Implements hook_requirements().
  */
-function cucumber_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_id == 'install_select_locale_form') {
-    // Modify the database type options in the form.
-    $form['install_locale']['install_locale_settings']['database']['#options']['sqlite'] = t('SQLite');
+function cucumber_requirements($phase)
+{
+    $requirements = [];
+    if (!extension_loaded('yaml')) {
+        $requirements['php_yaml_extension'] = [
+          'title' => 'PHP YAML extension',
+          'description' => t('The PHP YAML extension is not enabled. It is recommended that you enable the PHP YAML extension for your server.'),
+          'severity' => REQUIREMENT_WARNING,
+        ];
+    }
 
-    // Set the SQLite database file path.
-    $form['install_locale']['install_locale_settings']['database']['#default_value'] = '../database/cucumber.sqlite';
-  }
+    if (!extension_loaded('sqlite')) {
+        $requirements['sqlite_extension'] = [
+        'title' => 'SQLite extension',
+        'description' => t('SQLite extension is not install. It is recommended that you install the SQLite extension for your server.'),
+        'severity' => REQUIREMENT_WARNING,
+        ];
+    }
+
+    return $requirements;
 }
