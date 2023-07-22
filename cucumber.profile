@@ -29,12 +29,6 @@ function cucumber_install_tasks_alter(&$tasks, $install_state)
 {
     unset($tasks['install_select_language']);
     unset($tasks['install_download_translation']);
-
-    // Modify the database type options in the form.
-    $tasks['install_locale']['install_locale_settings']['database']['#options']['sqlite'] = t('SQLite');
-
-    // Set the SQLite database file path.
-    $tasks['install_locale']['install_locale_settings']['database']['#default_value'] = '../database/cucumber.sqlite';
 }
 
 /**
