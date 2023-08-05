@@ -36,6 +36,7 @@ function cucumber_install_tasks_alter(&$tasks, $install_state)
  */
 function cucumber_preprocess_install_page(&$variables)
 {
+    $variables['page']['content']['driver']['#default_value'] = 'sqlite';
     // Cucumber has custom styling for the install page.
     $variables['#attached']['library'][] = 'cucumber/install-page';
 }
@@ -54,13 +55,13 @@ function cucumber_requirements($phase)
         ];
     }
 
-    if (!extension_loaded('sqlite')) {
-        $requirements['sqlite_extension'] = [
-        'title' => 'SQLite extension',
-        'description' => t('SQLite extension is not install. It is recommended that you install the SQLite extension for your server.'),
-        'severity' => REQUIREMENT_WARNING,
-        ];
-    }
+    // if (!extension_loaded('sqlite')) {
+    //     $requirements['sqlite_extension'] = [
+    //     'title' => 'SQLite extension',
+    //     'description' => t('SQLite extension is not install. It is recommended that you install the SQLite extension for your server.'),
+    //     'severity' => REQUIREMENT_WARNING,
+    //     ];
+    // }
 
     return $requirements;
 }
