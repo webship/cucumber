@@ -18,8 +18,6 @@ function cucumber_form_install_configure_form_alter(&$form, FormStateInterface $
     $form['site_information']['site_mail']['#default_value'] = 'admin@webship.co';
     $form['admin_account']['account']['name']['#default_value'] = 'webmaster';
     $form['admin_account']['account']['mail']['#default_value'] = 'admin@webship.co';
-
-    
 }
 
 /**
@@ -29,6 +27,7 @@ function cucumber_install_tasks_alter(&$tasks, $install_state)
 {
     unset($tasks['install_select_language']);
     unset($tasks['install_download_translation']);
+    $tasks['install_configure_form']['function'] = 'Drupal\Cucumber\Installer\Form\CucumberSiteSettingsForm';
 }
 
 /**
@@ -36,7 +35,6 @@ function cucumber_install_tasks_alter(&$tasks, $install_state)
  */
 function cucumber_preprocess_install_page(&$variables)
 {
-    $variables['page']['content']['driver']['#default_value'] = 'sqlite';
     // Cucumber has custom styling for the install page.
     $variables['#attached']['library'][] = 'cucumber/install-page';
 }
