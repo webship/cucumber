@@ -27,7 +27,7 @@ function cucumber_install_tasks_alter(&$tasks, $install_state)
 {
     unset($tasks['install_select_language']);
     unset($tasks['install_download_translation']);
-    // $tasks['install_configure_form']['function'] = 'Drupal\Cucumber\Installer\Form\CucumberSiteSettingsForm';
+    $tasks['install_configure_form']['function'] = 'Drupal\Cucumber\Installer\Form\CucumberSiteSettingsForm';
 }
 
 /**
