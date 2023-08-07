@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\Cucmber\Installer\Form;
+namespace Drupal\Cucmber\src\Installer\Form;
 
 use Drupal\Component\Utility\Crypt;
 use Drupal\Core\Database\Database;
