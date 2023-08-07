@@ -54,7 +54,7 @@ class CucumberSiteSettingsForm extends SiteSettingsForm {
     // for writing all $settings to settings.php (not limited to $databases).
     $input = &$form_state->getUserInput();
     if (!isset($input['driver']) && $database = Database::getConnectionInfo()) {
-      $database['default']['driver'] = 'sqlite';
+      // $database['default']['driver'] = 'sqlite';
       $input['driver'] = $database['default']['driver'];
       $input[$database['default']['driver']] = $database['default'];
     }
