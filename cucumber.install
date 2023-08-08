@@ -20,6 +20,10 @@ function cucumber_install() {
   // Enable the admin theme.
   \Drupal::configFactory()->getEditable('node.settings')->set('use_admin_theme', TRUE)->save(TRUE);
   
+  // Change default database to SQLite.
+  $this->database = $connection;
+  Database::setActiveConnection('sqlite');
+
   // * Necessary inlitilization for the entire system.
   // * Account for changed config by the end install.
   // * Flush all persistent caches.
