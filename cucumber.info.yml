@@ -61,3 +61,6 @@ install:
   - admin_toolbar_search
   - user_redirect
   - autocomplete_deluxe
+  - media
+  - media_library
+  - ace_editor
