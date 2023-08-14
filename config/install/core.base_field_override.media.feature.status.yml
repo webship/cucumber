@@ -1,0 +1,22 @@
+uuid: 6bc8d4f5-de5e-448c-b2bb-07389bc6e36b
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.feature
+id: media.feature.status
+field_name: status
+entity_type: media
+bundle: feature
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

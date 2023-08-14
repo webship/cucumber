@@ -1,0 +1,13 @@
+uuid: c175822f-b559-4e60-a9db-6bed68ae57a1
+langcode: en
+status: false
+dependencies: {  }
+id: feature
+label: Feature
+description: ''
+source: file
+queue_thumbnail_downloads: false
+new_revision: true
+source_configuration:
+  source_field: field_media_file
+field_map: {  }
