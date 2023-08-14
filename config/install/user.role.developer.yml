@@ -14,9 +14,6 @@ is_admin: null
 permissions:
   - 'access taxonomy overview'
   - 'can view automated_testing_dashboard dashboard'
-  - 'create feature content'
   - 'create terms in feature_category'
-  - 'delete own feature content'
   - 'delete terms in feature_category'
-  - 'edit own feature content'
   - 'edit terms in feature_category'
