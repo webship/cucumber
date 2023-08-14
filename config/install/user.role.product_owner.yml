@@ -2,13 +2,19 @@ langcode: en
 status: true
 dependencies:
   config:
+    - dashboards.dashboard.automated_testing_dashboard
+    - dashboards.dashboard.management_dashboard
+    - filter.format.gherkin
     - node.type.project
     - taxonomy.vocabulary.feature_category
   module:
     - dashboards
+    - filter
     - node
     - system
     - taxonomy
+_core:
+  default_config_hash: 8Xe5eIBXDSfn6K914C1_TA7jxCt785ua1WVRWLYbgFI
 id: product_owner
 label: 'Product Owner'
 weight: -4
@@ -27,4 +33,5 @@ permissions:
   - 'edit any project content'
   - 'edit own project content'
   - 'edit terms in feature_category'
+  - 'use text format gherkin'
   - 'view own unpublished content'

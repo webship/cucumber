@@ -1,9 +1,19 @@
 langcode: en
 status: true
 dependencies:
+  config:
+    - dashboards.dashboard.automated_testing_dashboard
+    - dashboards.dashboard.default_dashboard
+    - dashboards.dashboard.management_dashboard
+    - dashboards.dashboard.webmaster_dashboard
+    - filter.format.gherkin
   module:
     - dashboards
+    - filter
+    - media
     - toolbar
+_core:
+  default_config_hash: Q5MhqvlpATGOF_exU6xt1RYEwXMzm7J16DK-E4GF8mM
 id: authenticated
 label: 'Authenticated user'
 weight: -9
@@ -18,3 +28,5 @@ permissions:
   - 'can view default_dashboard dashboard'
   - 'can view management_dashboard dashboard'
   - 'can view webmaster_dashboard dashboard'
+  - 'use text format gherkin'
+  - 'view media'

@@ -2,10 +2,16 @@ langcode: en
 status: true
 dependencies:
   config:
+    - dashboards.dashboard.automated_testing_dashboard
+    - dashboards.dashboard.management_dashboard
+    - filter.format.gherkin
     - taxonomy.vocabulary.feature_category
   module:
     - dashboards
+    - filter
     - taxonomy
+_core:
+  default_config_hash: jd7qBo7RaydibgDL80xSXMLPVkD_bdBPbLVaixX2loQ
 id: coordinator
 label: Coordinator
 weight: -5
@@ -17,3 +23,4 @@ permissions:
   - 'create terms in feature_category'
   - 'delete terms in feature_category'
   - 'edit terms in feature_category'
+  - 'use text format gherkin'
