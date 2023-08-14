@@ -49,8 +49,6 @@ sections:
           items:
             project:
               weight: '-10'
-            feature:
-              weight: '-9'
         weight: 1
         additional: {  }
     third_party_settings: {  }
