@@ -3,9 +3,12 @@ status: true
 dependencies:
   config:
     - field.field.node.project.field_description
+    - field.field.node.project.field_features
     - node.type.project
   module:
     - user
+_core:
+  default_config_hash: WNRQ4V6ppgZDcz14Z77tQRXgJN-9RF7NAMAUii28bqs
 id: node.project.default
 targetEntityType: node
 bundle: project
@@ -17,6 +20,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_features:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 102
     region: content
   links:
     settings: {  }
