@@ -32,6 +32,8 @@ filters:
     settings:
       default_view_mode: default
       allowed_view_modes: {  }
+      allowed_media_types:
+        feature: feature
   token_filter:
     id: token_filter
     provider: token_filter
