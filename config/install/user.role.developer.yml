@@ -2,7 +2,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - node.type.feature
     - taxonomy.vocabulary.feature_category
   module:
     - dashboards
