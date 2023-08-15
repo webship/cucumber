@@ -1,3 +1,4 @@
+uuid: 800801ef-6b6a-40ad-a97e-8ec8dad6f934
 langcode: en
 status: true
 dependencies:
@@ -9,6 +10,7 @@ dependencies:
   module:
     - field_layout
     - layout_discovery
+    - text
 third_party_settings:
   field_layout:
     id: layout_onecol
@@ -19,6 +21,14 @@ targetEntityType: media
 bundle: feature
 mode: media_library
 content:
+  field_feature:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
   name:
     type: string_textfield
     weight: 0
@@ -29,7 +39,6 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_feature: true
   field_media_file: true
   path: true
   status: true
