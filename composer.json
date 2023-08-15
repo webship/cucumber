@@ -39,7 +39,9 @@
     "drupal/webpatches": "10.0.x-dev",
     "drupal/cucumber_ui": "1.0.x-dev",
     "drupal/ace_editor": "~2.0.0",
-    "drupal/cucumber_default_content": "10.0.x-dev"
+    "drupal/cucumber_default_content": "10.0.x-dev",
+    "drupal/media_directories": "~2.0.0"
+
   },
   "conflict": {
     "drupal/drupal": "*"
