@@ -36,6 +36,7 @@
     "drupal/webconfig": "10.0.x-dev",
     "drupal/webdev": "10.0.x-dev",
     "drupal/webadmin": "10.0.x-dev",
+    "drupal/webpatches": "10.0.x-dev",
     "drupal/cucumber_ui": "1.0.x-dev",
     "drupal/ace_editor": "~2.0.0",
     "drupal/cucumber_default_content": "10.0.x-dev"
