@@ -1,3 +1,4 @@
+uuid: be1b88b6-679a-4ede-993d-430d19a01897
 langcode: en
 status: true
 dependencies:
@@ -6,7 +7,21 @@ dependencies:
     - field.field.node.project.field_features
     - node.type.project
   module:
+    - layout_builder
+    - layout_discovery
     - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components: {  }
+        third_party_settings: {  }
 _core:
   default_config_hash: WNRQ4V6ppgZDcz14Z77tQRXgJN-9RF7NAMAUii28bqs
 id: node.project.default
