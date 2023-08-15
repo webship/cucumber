@@ -64,3 +64,4 @@ install:
   - media
   - media_library
   - ace_editor
+  - cucumber_default_content
