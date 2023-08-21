@@ -1,0 +1,84 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.project.field_description
+    - field.field.node.project.field_features
+    - node.type.project
+  module:
+    - layout_builder
+    - layout_discovery
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          bd30c5e6-084f-4ba4-8e0d-d5dfb95bab3d:
+            uuid: bd30c5e6-084f-4ba4-8e0d-d5dfb95bab3d
+            region: content
+            configuration:
+              id: 'field_block:node:project:field_description'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: basic_string
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          5a29e2ed-ee2d-462b-b3f7-42d24638f811:
+            uuid: 5a29e2ed-ee2d-462b-b3f7-42d24638f811
+            region: content
+            configuration:
+              id: 'field_block:node:project:field_features'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: false
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
+_core:
+  default_config_hash: WNRQ4V6ppgZDcz14Z77tQRXgJN-9RF7NAMAUii28bqs
+id: node.project.full
+targetEntityType: node
+bundle: project
+mode: full
+content:
+  field_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_features:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }
