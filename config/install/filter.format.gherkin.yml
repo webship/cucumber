@@ -1,3 +1,4 @@
+uuid: d3c41bbc-fd57-4d30-bbdd-b3246c45d70e
 langcode: en
 status: true
 dependencies:
@@ -7,7 +8,7 @@ dependencies:
     - token_filter
 name: 'Gherkin Script'
 format: gherkin
-weight: 0
+weight: 1
 filters:
   ace_filter:
     id: ace_filter
@@ -21,8 +22,9 @@ filters:
       width: 700px
       font_size: 12pt
       line_numbers: '1'
-      print_margins: '1'
       show_invisibles: '0'
+      print_margins: '1'
+      auto_complete: '1'
       use_wrap_mode: '1'
   media_embed:
     id: media_embed
