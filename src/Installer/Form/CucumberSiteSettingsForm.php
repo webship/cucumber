@@ -4,13 +4,10 @@ namespace Drupal\Cucmber\src\Installer\Form;
 
 use Drupal\Component\Utility\Crypt;
 use Drupal\Core\Database\Database;
-use Drupal\Core\File\FileSystemInterface;
-use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\RendererInterface;
 use Drupal\Core\Site\Settings;
 use Drupal\Core\Site\SettingsEditor;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a form to configure and rewrite settings.php.
@@ -19,7 +16,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  */
 class CucumberSiteSettingsForm extends SiteSettingsForm {
 
-  
   /**
    * Constructs a new SiteSettingsForm.
    *
@@ -172,4 +168,5 @@ class CucumberSiteSettingsForm extends SiteSettingsForm {
     $install_state['database_verified'] = TRUE;
     $install_state['completed_task'] = install_verify_completed_task();
   }
+
 }

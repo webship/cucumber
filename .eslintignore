@@ -1,0 +1,3 @@
+node_modules/**/*
+# Ignore deliberately malformed YAML files.
+drupalci.yml
