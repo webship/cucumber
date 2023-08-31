@@ -40,8 +40,8 @@
     "drupal/cucumber_ui": "1.0.x-dev",
     "drupal/ace_editor": "~2.0.0",
     "drupal/cucumber_default_content": "10.0.x-dev",
-    "drupal/media_directories": "2.1.0-beta2"
-
+    "drupal/media_directories": "2.1.0-beta2",
+    "drupal/gherkin": "1.0.x-dev"
   },
   "conflict": {
     "drupal/drupal": "*"
