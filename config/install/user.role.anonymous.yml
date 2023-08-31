@@ -1,8 +1,13 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: ZKV6dDsC6baQ4eVbllwE1uPbEXYGCJB0ghpFzQNuR3g
 id: anonymous
 label: 'Anonymous user'
 weight: -10
 is_admin: false
-permissions: {  }
+permissions:
+  - 'view media'
