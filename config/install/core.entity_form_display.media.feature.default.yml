@@ -22,7 +22,7 @@ mode: default
 content:
   directory:
     type: autocomplete_deluxe
-    weight: 1
+    weight: 2
     region: content
     settings:
       match_operator: CONTAINS
@@ -38,8 +38,8 @@ content:
       no_empty_message: 'No terms could be found. Please type in order to add a new term.'
     third_party_settings: {  }
   field_description:
-    type: string_textarea
-    weight: 2
+    type: text_textarea
+    weight: 1
     region: content
     settings:
       rows: 5

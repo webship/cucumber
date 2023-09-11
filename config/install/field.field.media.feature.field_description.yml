@@ -1,9 +1,13 @@
+uuid: 79cc48bb-8ead-4c30-ac94-76722732b62a
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.media.field_description
+    - filter.format.plain_text
     - media.type.feature
+  module:
+    - text
 id: media.feature.field_description
 field_name: field_description
 entity_type: media
@@ -14,5 +18,7 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: string_long
+settings:
+  allowed_formats:
+    - plain_text
+field_type: text_long

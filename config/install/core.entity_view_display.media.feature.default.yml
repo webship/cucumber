@@ -7,14 +7,15 @@ dependencies:
     - media.type.feature
   module:
     - ace_editor
+    - text
 id: media.feature.default
 targetEntityType: media
 bundle: feature
 mode: default
 content:
   field_description:
-    type: basic_string
-    label: above
+    type: text_default
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 1

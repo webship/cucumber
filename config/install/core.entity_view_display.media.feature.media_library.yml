@@ -13,13 +13,6 @@ targetEntityType: media
 bundle: feature
 mode: media_library
 content:
-  field_description:
-    type: basic_string
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_media_gherkin:
     type: ace_formatter
     label: hidden
@@ -213,7 +206,7 @@ content:
         yaml: YAML
       auto_complete: true
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   name:
     type: string
@@ -225,5 +218,6 @@ content:
     region: content
 hidden:
   created: true
+  field_description: true
   thumbnail: true
   uid: true
