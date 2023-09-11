@@ -53,8 +53,6 @@ third_party_settings:
             weight: 2
             additional: {  }
         third_party_settings: {  }
-_core:
-  default_config_hash: WNRQ4V6ppgZDcz14Z77tQRXgJN-9RF7NAMAUii28bqs
 id: node.project.full
 targetEntityType: node
 bundle: project

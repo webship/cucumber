@@ -10,8 +10,6 @@ dependencies:
     - dashboards
     - filter
     - taxonomy
-_core:
-  default_config_hash: jd7qBo7RaydibgDL80xSXMLPVkD_bdBPbLVaixX2loQ
 id: coordinator
 label: Coordinator
 weight: -5

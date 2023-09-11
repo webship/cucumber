@@ -8,8 +8,6 @@ dependencies:
     - node.type.project
   module:
     - user
-_core:
-  default_config_hash: zzqRlKn2MZU7qLi2FjJ_8Avm1XoJt0uu2neAkm2gS-M
 id: node.project.teaser
 targetEntityType: node
 bundle: project

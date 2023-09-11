@@ -4,6 +4,7 @@ dependencies:
   config:
     - core.entity_view_mode.media.media_library
     - image.style.media_library
+    - taxonomy.vocabulary.feature_category
   module:
     - image
     - media
@@ -13,8 +14,6 @@ dependencies:
   enforced:
     module:
       - media_library
-_core:
-  default_config_hash: 0WeWvFAfYGQRUX2FROBExMK5TQDkcqPpPnUZdT4Hy7k
 id: media_library
 label: 'Media library'
 module: views

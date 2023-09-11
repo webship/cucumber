@@ -14,8 +14,6 @@ dependencies:
     - node
     - system
     - taxonomy
-_core:
-  default_config_hash: 8Xe5eIBXDSfn6K914C1_TA7jxCt785ua1WVRWLYbgFI
 id: product_owner
 label: 'Product Owner'
 weight: -4

@@ -9,8 +9,6 @@ dependencies:
     - dashboards
     - filter
     - taxonomy
-_core:
-  default_config_hash: ADHl_MYvXMy2Oo7pSqz3NKeEmPTeRid3bcRKJXPIfHg
 id: developer
 label: Developer
 weight: -8

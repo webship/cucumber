@@ -15,8 +15,6 @@ third_party_settings:
     id: layout_onecol
     settings:
       label: ''
-_core:
-  default_config_hash: RDQNWrT4Mo5vWPIPFbcjDeLxz-W6r2NHCfhXZIin6T4
 id: node.project.default
 targetEntityType: node
 bundle: project
