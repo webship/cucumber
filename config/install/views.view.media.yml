@@ -3,7 +3,6 @@ status: true
 dependencies:
   config:
     - image.style.thumbnail
-    - taxonomy.vocabulary.feature_category
   module:
     - image
     - media
@@ -602,13 +601,13 @@ display:
           exposed: true
           expose:
             operator_id: directory_op
-            label: Category
+            label: Directory
             description: ''
             use_operator: false
             operator: directory_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: category
+            identifier: directory
             required: false
             remember: false
             multiple: false
@@ -636,7 +635,6 @@ display:
             group_items: {  }
           reduce_duplicates: false
           error_message: true
-          vid: feature_category
         name:
           id: name
           table: media_field_data

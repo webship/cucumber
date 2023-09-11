@@ -4,7 +4,6 @@ dependencies:
   config:
     - core.entity_view_mode.media.media_library
     - image.style.media_library
-    - taxonomy.vocabulary.feature_category
   module:
     - image
     - media
@@ -245,7 +244,7 @@ display:
           exposed: true
           expose:
             operator_id: directory_op
-            label: Category
+            label: Directory
             description: ''
             use_operator: false
             operator: directory_op
@@ -986,7 +985,7 @@ display:
           exposed: true
           expose:
             operator_id: directory_op
-            label: Category
+            label: Directory
             description: ''
             use_operator: false
             operator: directory_op
@@ -1310,7 +1309,7 @@ display:
           exposed: true
           expose:
             operator_id: directory_op
-            label: Category
+            label: Directory
             description: ''
             use_operator: false
             operator: directory_op

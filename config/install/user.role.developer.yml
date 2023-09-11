@@ -4,7 +4,6 @@ dependencies:
   config:
     - dashboards.dashboard.automated_testing_dashboard
     - filter.format.gherkin
-    - taxonomy.vocabulary.feature_category
   module:
     - dashboards
     - filter
@@ -16,7 +15,4 @@ is_admin: null
 permissions:
   - 'access taxonomy overview'
   - 'can view automated_testing_dashboard dashboard'
-  - 'create terms in feature_category'
-  - 'delete terms in feature_category'
-  - 'edit terms in feature_category'
   - 'use text format gherkin'

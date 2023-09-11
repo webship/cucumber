@@ -1,4 +1,3 @@
-uuid: d0d9fd16-5e17-4f2f-858c-11cf0f73ca30
 langcode: en
 status: true
 dependencies:
@@ -7,7 +6,6 @@ dependencies:
     - dashboards.dashboard.management_dashboard
     - filter.format.gherkin
     - node.type.project
-    - taxonomy.vocabulary.feature_category
   module:
     - dashboards
     - filter
@@ -25,12 +23,9 @@ permissions:
   - 'can view automated_testing_dashboard dashboard'
   - 'can view management_dashboard dashboard'
   - 'create project content'
-  - 'create terms in feature_category'
   - 'delete any project content'
   - 'delete own project content'
-  - 'delete terms in feature_category'
   - 'edit any project content'
   - 'edit own project content'
-  - 'edit terms in feature_category'
   - 'use text format gherkin'
   - 'view own unpublished content'
