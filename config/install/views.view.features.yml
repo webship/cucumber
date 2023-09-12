@@ -517,14 +517,14 @@ display:
         type: views_accordion
         options:
           grouping: {  }
-          row_class: ''
+          row_class: gherkin-script
           default_row_class: true
           disableifone: 0
           row-start-open: '0'
           collapsible: 1
           animated: swing
           animation_time: '300'
-          heightStyle: auto
+          heightStyle: content
           event: click
           use_header_icons: 1
           icon_header: ui-icon-triangle-1-e
