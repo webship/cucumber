@@ -401,7 +401,7 @@ display:
           type: ace_formatter
           settings:
             theme: cobalt
-            syntax: html
+            syntax: gherkin
             height: 300px
             width: 100%
             font_size: 12pt
