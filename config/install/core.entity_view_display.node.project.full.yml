@@ -6,10 +6,12 @@ dependencies:
     - field.field.node.project.field_description
     - field.field.node.project.field_features
     - node.type.project
+    - views.view.features
   module:
     - layout_builder
     - layout_discovery
     - user
+    - views
 third_party_settings:
   layout_builder:
     enabled: true
@@ -35,21 +37,17 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
-          5a29e2ed-ee2d-462b-b3f7-42d24638f811:
-            uuid: 5a29e2ed-ee2d-462b-b3f7-42d24638f811
+          1bd74642-9a66-4e70-b4a5-af38b6523d55:
+            uuid: 1bd74642-9a66-4e70-b4a5-af38b6523d55
             region: content
             configuration:
-              id: 'field_block:node:project:field_features'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_entity_view
-                label: above
-                settings:
-                  view_mode: default
-                  link: false
-                third_party_settings: {  }
+              id: 'views_block:features-features'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
             weight: 2
             additional: {  }
         third_party_settings: {  }
