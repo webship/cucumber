@@ -68,3 +68,4 @@ install:
   - cucumber_default_content
   - media_directories
   - views_accordion
+  - views_advanced_role

@@ -4,12 +4,17 @@ dependencies:
   config:
     - field.storage.media.field_media_gherkin
     - media.type.feature
+    - user.role.administrator
+    - user.role.analyst
+    - user.role.coordinator
+    - user.role.developer
+    - user.role.product_owner
   module:
     - ace_editor
     - media
     - node
-    - user
     - views_accordion
+    - views_advanced_role
 id: features
 label: Features
 module: views
@@ -436,9 +441,16 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
-        type: perm
+        type: AdvancedRoleAccess
         options:
-          perm: 'view media'
+          role:
+            developer: developer
+            analyst: analyst
+            coordinator: coordinator
+            product_owner: product_owner
+            administrator: administrator
+          conjunction: '0'
+          negate: 1
       cache:
         type: tag
         options: {  }
@@ -639,7 +651,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - user.permissions
+        - user.roles
       tags:
         - 'config:field.storage.media.field_media_gherkin'
   features:
@@ -1053,6 +1065,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - user.permissions
+        - user.roles
       tags:
         - 'config:field.storage.media.field_media_gherkin'
