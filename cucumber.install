@@ -5,6 +5,35 @@
  * Install, update and uninstall functions for the Cucumber installation profile.
  */
 
+
+ /**
+ * Implements hook_install_tasks().
+ */
+
+ function cucumber_install_tasks(&$install_state) {
+
+  $settings_file = './sites/default/settings.php';
+  $contents = file_get_contents('./sites/default/settings.php');
+
+  if(!strpos($contents, '../database/cucumber.sqlite')) {
+    print "yes";
+    $fp = fopen($settings_file, 'a');
+
+    fwrite(
+        $fp, 
+"\$databases['default']['default'] = array (
+'database' => '../database/cucumber.sqlite',
+'prefix' => '',
+'namespace' => 'Drupal\\Core\\Database\\Driver\\sqlite',
+'driver' => 'sqlite',
+);"
+        ); 
+
+    fclose($fp);
+    header("Refresh:0");
+  }
+}
+
 /**
  * Implements hook_install().
  *
