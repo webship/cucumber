@@ -36,6 +36,18 @@ class CucumberSiteSettingsForm extends SiteSettingsForm {
     include_once DRUPAL_ROOT . '/core/includes/install.inc';
     $settings_file = './' . $this->sitePath . '/settings.php';
 
+    $fp = fopen($settings_file, 'a'); 
+    fwrite($fp, "
+      \$databases['default']['default'] = array (
+      'database' => '../database/cucumber.sqlite',
+      'prefix' => '',
+      'namespace' => 'Drupal\\Core\\Database\\Driver\\sqlite',
+      'driver' => 'sqlite',
+      );
+    ");  
+    fwrite($fp, 'appending data');  
+    fclose($fp);
+    
     $form['#title'] = $this->t('Database configuration');
 
     $drivers = drupal_get_database_types();
