@@ -69,3 +69,5 @@ install:
   - media_directories
   - views_accordion
   - views_advanced_role
+  - media_directories_editor
+  - media_directories_ui
