@@ -25,16 +25,17 @@ function cucumber_form_install_configure_form_alter(&$form, FormStateInterface $
 function cucumber_install_tasks_alter(&$tasks, $install_state) {
   unset($tasks['install_select_language']);
   unset($tasks['install_download_translation']);
-  
+
   $settings_file = './sites/default/settings.php';
   $contents = file_get_contents('./sites/default/settings.php');
 
-  if(!strpos($contents, '../database/cucumber.sqlite')) {
+  if(!strpos($contents, 'Drupal\\Core\\Database\\Driver\\sqlite')) {
     $fp = fopen($settings_file, 'a');
 
     fwrite(
         $fp, 
-"\$databases['default']['default'] = array (
+"
+\$databases['default']['default'] = array (
 'database' => '../database/cucumber.sqlite',
 'prefix' => '',
 'namespace' => 'Drupal\\Core\\Database\\Driver\\sqlite',
@@ -45,6 +46,8 @@ function cucumber_install_tasks_alter(&$tasks, $install_state) {
     fclose($fp);
     header("Refresh:0");
   }
+
+
 }
 
 /**
@@ -67,14 +70,6 @@ function cucumber_requirements($phase) {
       'severity' => REQUIREMENT_WARNING,
     ];
   }
-
-  // if (!extension_loaded('sqlite')) {
-  //     $requirements['sqlite_extension'] = [
-  //     'title' => 'SQLite extension',
-  //     'description' => t('SQLite extension is not install. It is recommended that you install the SQLite extension for your server.'),
-  //     'severity' => REQUIREMENT_WARNING,
-  //     ];
-  // }
 
   return $requirements;
 }
