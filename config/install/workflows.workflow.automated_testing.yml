@@ -24,7 +24,7 @@ type_settings:
     in_progress:
       label: 'In Progress'
       weight: -2
-      published: false
+      published: true
       default_revision: false
     published:
       label: Published
@@ -34,16 +34,9 @@ type_settings:
     to_do:
       label: 'To Do'
       weight: -3
-      published: false
+      published: true
       default_revision: false
   transitions:
-    create_new_draft:
-      label: 'Create New Draft'
-      from:
-        - draft
-        - published
-      to: draft
-      weight: 0
     implemented:
       label: Implemented
       from:
@@ -59,7 +52,6 @@ type_settings:
     publish:
       label: Publish
       from:
-        - draft
         - published
       to: published
       weight: 1
