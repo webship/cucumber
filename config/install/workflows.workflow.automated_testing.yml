@@ -37,30 +37,41 @@ type_settings:
       published: true
       default_revision: false
   transitions:
+    create_new_task:
+      label: 'Create New Task'
+      from:
+        - draft
+        - implemented
+        - in_progress
+        - published
+        - to_do
+      to: to_do
+      weight: -2
     implemented:
       label: Implemented
       from:
         - implemented
-      to: implemented
-      weight: -1
+        - in_progress
+        - published
+        - to_do
+      to: published
+      weight: 1
     in_progress:
       label: 'In Progress'
       from:
+        - implemented
         - in_progress
-      to: in_progress
-      weight: -2
-    publish:
-      label: Publish
-      from:
-        - published
-      to: published
-      weight: 1
+        - to_do
+      to: implemented
+      weight: 0
     to_do:
       label: 'To Do'
       from:
+        - implemented
+        - in_progress
         - to_do
-      to: to_do
-      weight: -3
+      to: in_progress
+      weight: -1
   entity_types:
     media:
       - feature
