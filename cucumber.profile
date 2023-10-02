@@ -38,29 +38,6 @@ function cucumber_form_install_settings_form_alter(&$form, FormStateInterface $f
 function cucumber_install_tasks_alter(&$tasks, $install_state) {
   unset($tasks['install_select_language']);
   unset($tasks['install_download_translation']);
-
-  $settings_file = './sites/default/settings.php';
-  $contents = file_get_contents('./sites/default/settings.php');
-
-  if(!strpos($contents, 'Drupal\\Core\\Database\\Driver\\sqlite')) {
-    $fp = fopen($settings_file, 'a');
-
-    fwrite(
-        $fp, 
-"
-\$databases['default']['default'] = array (
-'database' => '../database/cucumber.sqlite',
-'prefix' => '',
-'namespace' => 'Drupal\\Core\\Database\\Driver\\sqlite',
-'driver' => 'sqlite',
-);"
-        ); 
-
-    fclose($fp);
-    header("Refresh:0");
-  }
-
-
 }
 
 /**
@@ -82,6 +59,26 @@ function cucumber_requirements($phase) {
       'description' => t('The PHP YAML extension is not enabled. It is recommended that you enable the PHP YAML extension for your server.'),
       'severity' => REQUIREMENT_WARNING,
     ];
+  }
+
+  if ($phase === 'install') {
+    // Check if the SQLite database driver is available.
+    if (!extension_loaded('pdo_sqlite')) {
+      $requirements['cucumber_sqlite'] = [
+        'title' => t('SQLite Database Driver'),
+        'value' => t('Enabled'),
+        'severity' => REQUIREMENT_ERROR,
+        'description' => t('The PDO SQLite extension is not enabled on your server. SQLite database is required for this site.'),
+      ];
+    }
+    else {
+      $requirements['cucumber_sqlite'] = [
+        'title' => t('SQLite Database Driver'),
+        'value' => t('Enabled'),
+        'severity' => REQUIREMENT_OK,
+        'description' => t('The PDO SQLite extension is enabled on your server. SQLite database is available.'),
+      ];
+    }
   }
 
   return $requirements;
