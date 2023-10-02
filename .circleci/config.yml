@@ -72,6 +72,11 @@ commands:
             done
             echo Failed waiting for MySQL && exit 1
 
+      ## Install SQLite.
+      - run:
+          name: Install SQLite
+          command: sudo apt install -y php8.1-sqlite3
+          
       ## Install composer ~2
       - run:
           name: Install composer ~2
