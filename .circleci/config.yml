@@ -109,7 +109,6 @@ commands:
             java -version
             google-chrome --version
             chromedriver --version
-            sqlite --version
             composer --version
             php -m
             php -i | grep "Loaded Configuration File"
