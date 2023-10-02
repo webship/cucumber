@@ -160,7 +160,7 @@ commands:
           name: Install Cucumber with drush
           command: |
             cd /var/www/html/test/cucumber/web
-            ../bin/drush site-install cucumber --yes --site-name='cucumber' --account-name=admin --account-pass=dD.123123ddd --account-mail=cucumber@cucumber.org"
+            ../bin/drush site-install cucumber --yes --site-name='cucumber' --account-name=admin --account-pass=dD.123123ddd --account-mail=cucumber@cucumber.org
             ../bin/drush config-set system.performance css.preprocess 0 --yes
             ../bin/drush config-set system.performance js.preprocess 0 --yes
             ../bin/drush config-set system.logging error_level all --yes
