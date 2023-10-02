@@ -20,6 +20,19 @@ function cucumber_form_install_configure_form_alter(&$form, FormStateInterface $
 }
 
 /**
+ * Implements hook_form_FORM_ID_alter() for install_settings_form().
+ *
+ * Allows the profile to alter the site settings form.
+ */
+function cucumber_form_install_settings_form_alter(&$form, FormStateInterface $form_state)
+{
+  $form['driver']['#default_value'] = 'sqlite';
+  $form['settings']['sqlite']['database']['#default_value'] = '../database/cucumber.sqlite';
+  
+  return $form;
+}
+
+/**
  * Implements hook_install_tasks_alter().
  */
 function cucumber_install_tasks_alter(&$tasks, $install_state) {
