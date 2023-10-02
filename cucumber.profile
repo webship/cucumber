@@ -28,6 +28,9 @@ function cucumber_form_install_settings_form_alter(&$form, FormStateInterface $f
 {
   $form['driver']['#default_value'] = 'sqlite';
   $form['settings']['sqlite']['database']['#default_value'] = '../database/cucumber.sqlite';
+  if($form['driver']['#options']['mysql']) {
+    unset($form['driver']['#options']['mysql']);
+  }
   
   return $form;
 }
