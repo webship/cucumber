@@ -5,21 +5,6 @@ defaults: &defaults
       auth:
         username: mydockerhub-user
         password: $DOCKERHUB_PASSWORD # context / project UI env-var reference
-    - image: circleci/mysql:8.0.23
-      auth:
-        username: mydockerhub-user
-        password: $DOCKERHUB_PASSWORD # context / project UI env-var reference
-      entrypoint:
-        [
-          "docker-entrypoint.sh",
-          "--default-authentication-plugin=mysql_native_password",
-        ]
-      environment:
-        MYSQL_ROOT_PASSWORD: rootpw
-        MYSQL_ROOT_HOST: "%"
-        MYSQL_DATABASE: test_cucumber
-        MYSQL_USER: user
-        MYSQL_PASSWORD: passw0rd
 commands:
   cucumber-build:
     steps:
@@ -30,7 +15,7 @@ commands:
           command: |
             sudo apt -qq update
             sudo apt -qqy upgrade
-            sudo apt -yqq install vim links lynx git diffutils htop curl wget p7zip-full unzip zip sed gcc g++ make libfreetype6-dev libaio1 libaio-dev libonig-dev libpng-dev mysql-client default-mysql-client
+            sudo apt -yqq install vim links lynx git diffutils htop curl wget p7zip-full unzip zip sed gcc g++ make libfreetype6-dev libaio1 libaio-dev libonig-dev libpng-dev
             sudo apt -yqq install xvfb libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 libnss3
 
       ## Configure and run the virtual display.
@@ -46,7 +31,7 @@ commands:
             sudo add-apt-repository ppa:ondrej/php -y
             sudo apt update
             sudo apt upgrade
-            sudo apt install -yqq apache2 php8.1 libapache2-mod-php8.1 php8.1-mbstring php8.1-mysql php8.1-xml php8.1-cgi php8.1-cli php8.1-common php8.1-curl php8.1-gd php8.1-imap php8.1-intl php8.1-pspell php8.1-sqlite3 php8.1-tidy php8.1-opcache php8.1-yaml php8.1-bz2 php8.1-readline php8.1-xmlrpc php8.1-enchant php8.1-xsl php8.1-zip php8.1-bcmath php-pear
+            sudo apt install -yqq apache2 php8.1 libapache2-mod-php8.1 php8.1-mbstring php8.1-xml php8.1-cgi php8.1-cli php8.1-common php8.1-curl php8.1-gd php8.1-imap php8.1-intl php8.1-pspell php8.1-sqlite3 php8.1-tidy php8.1-opcache php8.1-yaml php8.1-bz2 php8.1-readline php8.1-xmlrpc php8.1-enchant php8.1-xsl php8.1-zip php8.1-bcmath php-pear
             sudo a2enmod php8.1
             sudo a2enmod headers rewrite env mime expires ssl
             sudo update-alternatives --set php /usr/bin/php8.1
@@ -60,23 +45,11 @@ commands:
             echo -e "max_file_uploads = 40" | sudo tee /etc/php/8.1/apache2/php.ini > /dev/null
             sudo service apache2 restart
 
-      ## Waiting for MySQL to be ready.
-      - run:
-          name: Waiting for MySQL to be ready
-          command: |
-            for i in `seq 1 10`;
-            do
-              nc -z 127.0.0.1 3306 && echo Success && exit 0
-              echo -n .
-              sleep 1
-            done
-            echo Failed waiting for MySQL && exit 1
-
       ## Install SQLite.
       - run:
           name: Install SQLite
           command: sudo apt install -y php8.1-sqlite3
-          
+
       ## Install composer ~2
       - run:
           name: Install composer ~2
@@ -136,7 +109,7 @@ commands:
             java -version
             google-chrome --version
             chromedriver --version
-            mysql --version
+            sqlite --version
             composer --version
             php -m
             php -i | grep "Loaded Configuration File"
@@ -166,16 +139,6 @@ commands:
             sudo chmod 775 -R .
             sudo chown www-data:circleci -R .
             cp /var/www/html/test/cucumber/web/sites/default/default.settings.php /var/www/html/test/cucumber/web/sites/default/settings.php
-            echo "\$databases['default']['default'] = [
-              'database' => 'test_cucumber',
-              'username' => 'root',
-              'password' => 'rootpw',
-              'host' => '127.0.0.1',
-              'port' => '3306',
-              'driver' => 'mysql',
-              'prefix' => '',
-              'collation' => 'utf8mb4_general_ci',
-            ];" >> /var/www/html/test/cucumber/web/sites/default/settings.php
             mkdir /var/www/html/test/cucumber/config
             mkdir /var/www/html/test/cucumber/config/sync
             echo "\$settings['config_sync_directory'] = '../config/sync';" >> /var/www/html/test/cucumber/web/sites/default/settings.php
@@ -197,10 +160,8 @@ commands:
       - run:
           name: Install Cucumber with drush
           command: |
-            mysql -h 127.0.0.1 -uroot -prootpw --execute="DROP DATABASE IF EXISTS test_cucumber;" -vvv
-            mysql -h 127.0.0.1 -uroot -prootpw --execute="CREATE DATABASE test_cucumber;" -vvv
             cd /var/www/html/test/cucumber/web
-            ../bin/drush site-install cucumber --yes --site-name='cucumber' --account-name=admin --account-pass=dD.123123ddd --account-mail=cucumber@cucumber.org --db-url="mysql://root:rootpw@127.0.0.1/test_cucumber"
+            ../bin/drush site-install cucumber --yes --site-name='cucumber' --account-name=admin --account-pass=dD.123123ddd --account-mail=cucumber@cucumber.org"
             ../bin/drush config-set system.performance css.preprocess 0 --yes
             ../bin/drush config-set system.performance js.preprocess 0 --yes
             ../bin/drush config-set system.logging error_level all --yes
