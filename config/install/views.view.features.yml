@@ -441,7 +441,7 @@ display:
       access:
         type: perm
         options:
-          perm: 'access projects page'
+          perm: 'access features page'
       cache:
         type: tag
         options: {  }
