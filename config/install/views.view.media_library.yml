@@ -4,6 +4,7 @@ dependencies:
   config:
     - core.entity_view_mode.media.media_library
     - image.style.media_library
+    - taxonomy.vocabulary.feature_directory
   module:
     - image
     - media

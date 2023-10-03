@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - image.style.thumbnail
+    - taxonomy.vocabulary.feature_directory
   module:
     - image
     - media
