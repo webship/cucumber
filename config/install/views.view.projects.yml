@@ -3,17 +3,11 @@ status: true
 dependencies:
   config:
     - node.type.project
-    - user.role.administrator
-    - user.role.analyst
-    - user.role.coordinator
-    - user.role.product_owner
-    - user.role.tester
   module:
     - content_moderation
     - node
     - tracker
     - user
-    - views_advanced_role
 id: projects
 label: projects
 module: views
@@ -532,16 +526,9 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
-        type: AdvancedRoleAccess
+        type: perm
         options:
-          role:
-            tester: tester
-            analyst: analyst
-            coordinator: coordinator
-            product_owner: product_owner
-            administrator: administrator
-          conjunction: '0'
-          negate: 1
+          perm: 'access projects page'
       cache:
         type: tag
         options: {  }
@@ -717,7 +704,7 @@ display:
         - url
         - url.query_args
         - 'user.node_grants:view'
-        - user.roles
+        - user.permissions
       tags: {  }
   projects:
     id: projects
@@ -736,5 +723,5 @@ display:
         - url
         - url.query_args
         - 'user.node_grants:view'
-        - user.roles
+        - user.permissions
       tags: {  }

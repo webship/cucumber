@@ -5,6 +5,7 @@ dependencies:
     - dashboards.dashboard.automated_testing_dashboard
     - filter.format.gherkin
   module:
+    - cucumber_core
     - dashboards
     - filter
 id: analyst
@@ -12,5 +13,7 @@ label: Analyst
 weight: -6
 is_admin: null
 permissions:
+  - 'access features page'
+  - 'access projects page'
   - 'can view automated_testing_dashboard dashboard'
   - 'use text format gherkin'

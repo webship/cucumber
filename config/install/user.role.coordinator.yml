@@ -6,6 +6,7 @@ dependencies:
     - dashboards.dashboard.management_dashboard
     - filter.format.gherkin
   module:
+    - cucumber_core
     - dashboards
     - filter
     - taxonomy
@@ -14,6 +15,8 @@ label: Coordinator
 weight: -5
 is_admin: null
 permissions:
+  - 'access features page'
+  - 'access projects page'
   - 'access taxonomy overview'
   - 'can view automated_testing_dashboard dashboard'
   - 'can view management_dashboard dashboard'
