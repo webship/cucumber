@@ -40,11 +40,11 @@
     "drupal/webpatches": "10.0.x-dev",
     "drupal/cucumber_ui": "1.0.x-dev",
     "drupal/ace_editor": "~2.0.0",
-    "drupal/cucumber_default_content": "10.0.x-dev",
     "drupal/media_directories": "2.1.0-beta2",
     "drupal/gherkin": "1.0.x-dev",
     "drupal/views_accordion": "~2.0.1",
-    "drupal/views_advanced_role": "~1.0.1"
+    "drupal/cucumber_default_content": "10.0.x-dev",
+    "drupal/cucumber_demo": "10.0.x-dev"
   },
   "conflict": {
     "drupal/drupal": "*"
