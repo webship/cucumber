@@ -14,10 +14,8 @@ use Drupal\Core\Form\FormStateInterface;
  */
 function cucumber_form_install_configure_form_alter(&$form, FormStateInterface $form_state)
 {
-  $form['site_information']['site_name']['#default_value'] = t('Cucumber app.webship.co');
-  $form['site_information']['site_mail']['#default_value'] = 'admin@webship.co';
+  $form['site_information']['site_mail']['#default_value'] = '';
   $form['admin_account']['account']['name']['#default_value'] = 'webmaster';
-  $form['admin_account']['account']['mail']['#default_value'] = 'admin@webship.co';
 }
 
 /**
