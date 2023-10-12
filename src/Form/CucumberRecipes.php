@@ -26,6 +26,7 @@ class CucumberRecipes extends FormBase {
     ];
 
     $form['recipes'] = [
+      "#name" => "recipes",
       '#type' => 'fieldset',
       '#title' => $this->t('Site Recipes'),
     ];
@@ -66,7 +67,22 @@ class CucumberRecipes extends FormBase {
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
-    parent::validateForm($form, $form_state);
+    $recipes_file = DRUPAL_ROOT . '/' . \Drupal::service('extension.list.profile')->getPath('cucumber') . '/configRecipes/recipes.cucumber.yml';
+
+    $recipes_content = file_get_contents($recipes_file);
+    $recipes = (array) Yaml::parse($recipes_content);
+
+    $recipes_selected = 0;
+    foreach ($recipes as $recipe_key => $recipe_info) {
+      if ($form_state->getValue($recipe_key) == 1) {
+        $recipes_selected += 1;
+      }
+    }
+
+    if($recipes_selected == 0) {
+      $form_state->setErrorByName('recipes', $this->t('Please select at least one recipe'));
+      $form_state->setRebuild();
+    }
   }
 
   /**
