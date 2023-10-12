@@ -16,7 +16,6 @@ weight: -5
 is_admin: null
 permissions:
   - 'access features page'
-  - 'access projects page'
   - 'access taxonomy overview'
   - 'can view automated_testing_dashboard dashboard'
   - 'can view management_dashboard dashboard'

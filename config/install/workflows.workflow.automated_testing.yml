@@ -3,7 +3,6 @@ status: true
 dependencies:
   config:
     - media.type.feature
-    - node.type.project
   module:
     - content_moderation
 id: automated_testing
@@ -75,6 +74,4 @@ type_settings:
   entity_types:
     media:
       - feature
-    node:
-      - project
   default_moderation_state: to_do

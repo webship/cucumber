@@ -35,8 +35,6 @@ sections:
           provider: dashboards
           context_mapping: {  }
           items:
-            project:
-              weight: '-10'
             feature:
               weight: '-8'
         weight: 1

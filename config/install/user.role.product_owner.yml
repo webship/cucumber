@@ -5,7 +5,6 @@ dependencies:
     - dashboards.dashboard.automated_testing_dashboard
     - dashboards.dashboard.management_dashboard
     - filter.format.gherkin
-    - node.type.project
   module:
     - cucumber_core
     - dashboards
@@ -21,14 +20,8 @@ permissions:
   - 'access content'
   - 'access content overview'
   - 'access features page'
-  - 'access projects page'
   - 'access taxonomy overview'
   - 'can view automated_testing_dashboard dashboard'
   - 'can view management_dashboard dashboard'
-  - 'create project content'
-  - 'delete any project content'
-  - 'delete own project content'
-  - 'edit any project content'
-  - 'edit own project content'
   - 'use text format gherkin'
   - 'view own unpublished content'

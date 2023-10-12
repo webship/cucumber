@@ -14,6 +14,5 @@ weight: -6
 is_admin: null
 permissions:
   - 'access features page'
-  - 'access projects page'
   - 'can view automated_testing_dashboard dashboard'
   - 'use text format gherkin'

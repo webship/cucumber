@@ -37,20 +37,6 @@ sections:
           items_per_page: none
         weight: 0
         additional: {  }
-      19aeb4af-b087-4890-bfb4-b2c2c43a740e:
-        uuid: 19aeb4af-b087-4890-bfb4-b2c2c43a740e
-        region: two
-        configuration:
-          id: 'dashboards_block:dashboard:add_content_menu'
-          label: 'Add content'
-          label_display: visible
-          provider: dashboards
-          context_mapping: {  }
-          items:
-            project:
-              weight: '-10'
-        weight: 1
-        additional: {  }
     third_party_settings: {  }
 frontend: false
 weight: 0
