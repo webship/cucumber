@@ -1,0 +1,16 @@
+# ==============================================================================
+# List of cucumber recipes, which they will be listed in the
+# Cucumber Recipes form, when we install cucumber.
+# ==============================================================================
+products:
+  title: "Products"
+  description: "Products testing management"
+  selected: false
+projects:
+  title: "Projects"
+  description: 'Projects testing management'
+  selected: true
+componentes:
+  title: "Components"
+  description: 'Components testing management'
+  selected: false

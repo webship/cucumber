@@ -6,6 +6,8 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\cucumber\Form\CucumberRecipes;
+use Drupal\varbase\Config\ConfigBit;
 
 /**
  * Implements hook_form_FORM_ID_alter() for install_configure_form().
@@ -63,6 +65,20 @@ function cucumber_install_tasks_alter(&$tasks, $install_state) {
 
     fclose($fp);
   }
+}
+
+/**
+ * Implements hook_install_tasks().
+ */
+function cucumber_install_tasks(&$install_state) {
+  return [
+    'cucumber_recipes' => [
+      'display_name' => t('Cucumber Recipes'),
+      'display' => TRUE,
+      'type' => 'form',
+      'function' => CucumberRecipes::class,
+    ]
+  ];
 }
 
 /**
