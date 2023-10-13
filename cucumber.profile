@@ -7,7 +7,7 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\cucumber\Form\CucumberRecipes;
-use Drupal\varbase\Config\ConfigBit;
+use Drupal\cucumber\Form\CucumberDemos;
 
 /**
  * Implements hook_form_FORM_ID_alter() for install_configure_form().
@@ -77,6 +77,12 @@ function cucumber_install_tasks(&$install_state) {
       'display' => TRUE,
       'type' => 'form',
       'function' => CucumberRecipes::class,
+    ],
+    'cucumber_demos' => [
+      'display_name' => t('Cucumber Demos'),
+      'display' => TRUE,
+      'type' => 'form',
+      'function' => CucumberDemos::class,
     ]
   ];
 }

@@ -1,0 +1,16 @@
+# ==============================================================================
+# List of cucumber Demos, which they will be listed in the
+# Cucumber Demos form, when we install cucumber.
+# ==============================================================================
+non_demo:
+  title: "N/A"
+  description: "Do not generate any of demo content"
+cucumber_demo_small:
+  title: "Cucumber Demo Small"
+  description: "Generate a small demo content"
+cucumber_demo_medium:
+  title: "Cucumber Demo Medium"
+  description: 'Generate a medium demo content'
+cucumber_demo_big:
+  title: "Cucumber Demo Big"
+  description: 'Generate a Big demo content'
