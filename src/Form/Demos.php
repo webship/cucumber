@@ -6,7 +6,7 @@ use Symfony\Component\Yaml\Yaml;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
-class CucumberDemos extends FormBase {
+class Demos extends FormBase {
 
   /**
    * {@inheritdoc}
@@ -32,7 +32,7 @@ class CucumberDemos extends FormBase {
     
 
     // Cucumber Demo list.
-    $demos_file = DRUPAL_ROOT . '/' . \Drupal::service('extension.list.profile')->getPath('cucumber') . '/configBit/demos.cucumber.yml';
+    $demos_file = DRUPAL_ROOT . '/' . \Drupal::service('extension.list.profile')->getPath('cucumber') . '/config/install_tasks/demos.cucumber.yml';
 
     if (file_exists($demos_file)) {
       $demos_content = file_get_contents($demos_file);

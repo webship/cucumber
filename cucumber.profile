@@ -6,16 +6,15 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\cucumber\Form\CucumberRecipes;
-use Drupal\cucumber\Form\CucumberDemos;
+use Drupal\cucumber\Form\Recipes;
+use Drupal\cucumber\Form\Demos;
 
 /**
  * Implements hook_form_FORM_ID_alter() for install_configure_form().
  *
  * Allows the profile to alter the site configuration form.
  */
-function cucumber_form_install_configure_form_alter(&$form, FormStateInterface $form_state)
-{
+function cucumber_form_install_configure_form_alter(&$form, FormStateInterface $form_state) {
   $form['site_information']['site_mail']['#default_value'] = '';
   $form['admin_account']['account']['name']['#default_value'] = 'webmaster';
 }
@@ -25,8 +24,8 @@ function cucumber_form_install_configure_form_alter(&$form, FormStateInterface $
  *
  * Allows the profile to alter the site settings form.
  */
-function cucumber_form_install_settings_form_alter(&$form, FormStateInterface $form_state)
-{
+function cucumber_form_install_settings_form_alter(&$form, FormStateInterface $form_state) {
+
   $form['driver']['#default_value'] = 'sqlite';
   $form['settings']['sqlite']['database']['#default_value'] = '../database/cucumber.sqlite';
   
@@ -73,16 +72,16 @@ function cucumber_install_tasks_alter(&$tasks, $install_state) {
 function cucumber_install_tasks(&$install_state) {
   return [
     'cucumber_recipes' => [
-      'display_name' => t('Cucumber Recipes'),
+      'display_name' => t('Recipes'),
       'display' => TRUE,
       'type' => 'form',
-      'function' => CucumberRecipes::class,
+      'function' => Recipes::class,
     ],
     'cucumber_demos' => [
-      'display_name' => t('Cucumber Demos'),
+      'display_name' => t('Demos'),
       'display' => TRUE,
       'type' => 'form',
-      'function' => CucumberDemos::class,
+      'function' => Demos::class,
     ]
   ];
 }
@@ -90,8 +89,7 @@ function cucumber_install_tasks(&$install_state) {
 /**
  * Implements hook_preprocess_install_page().
  */
-function cucumber_preprocess_install_page(&$variables)
-{
+function cucumber_preprocess_install_page(&$variables) {
     // Cucumber has custom styling for the install page.
     $variables['#attached']['library'][] = 'cucumber/install-page';
 }
@@ -99,8 +97,7 @@ function cucumber_preprocess_install_page(&$variables)
 /**
  * Implements hook_requirements().
  */
-function cucumber_requirements($phase)
-{
+function cucumber_requirements($phase) {
     $requirements = [];
     if (!extension_loaded('yaml')) {
         $requirements['php_yaml_extension'] = [

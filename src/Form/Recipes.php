@@ -6,7 +6,7 @@ use Symfony\Component\Yaml\Yaml;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
-class CucumberRecipes extends FormBase {
+class Recipes extends FormBase {
 
   /**
    * {@inheritdoc}
@@ -32,7 +32,7 @@ class CucumberRecipes extends FormBase {
     
 
     // Cucumber Recipes.
-    $recipes_file = DRUPAL_ROOT . '/' . \Drupal::service('extension.list.profile')->getPath('cucumber') . '/configBit/recipes.cucumber.yml';
+    $recipes_file = DRUPAL_ROOT . '/' . \Drupal::service('extension.list.profile')->getPath('cucumber') . '/config/install_tasks/recipes.yml';
 
     if (file_exists($recipes_file)) {
       $recipes_content = file_get_contents($recipes_file);
@@ -66,7 +66,7 @@ class CucumberRecipes extends FormBase {
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
-    $recipes_file = DRUPAL_ROOT . '/' . \Drupal::service('extension.list.profile')->getPath('cucumber') . '/configBit/recipes.cucumber.yml';
+    $recipes_file = DRUPAL_ROOT . '/' . \Drupal::service('extension.list.profile')->getPath('cucumber') . '/config/install_tasks/recipes.yml';
 
     $recipes_content = file_get_contents($recipes_file);
     $recipes = (array) Yaml::parse($recipes_content);
@@ -90,7 +90,7 @@ class CucumberRecipes extends FormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
 
      // Cucumber Recipes.
-     $recipes_file = DRUPAL_ROOT . '/' . \Drupal::service('extension.list.profile')->getPath('cucumber') . '/configBit/recipes.cucumber.yml';
+     $recipes_file = DRUPAL_ROOT . '/' . \Drupal::service('extension.list.profile')->getPath('cucumber') . '/config/install_tasks/recipes.yml';
 
       $recipes_content = file_get_contents($recipes_file);
       $recipes = (array) Yaml::parse($recipes_content);
