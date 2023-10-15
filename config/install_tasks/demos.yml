@@ -3,7 +3,7 @@
 # Cucumber Demos form, when we install cucumber.
 # ==============================================================================
 non_demo:
-  title: "N/A"
+  title: "- None -"
   description: "Do not generate any of demo content"
 cucumber_demo_small:
   title: "Cucumber Demo Small"

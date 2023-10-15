@@ -32,7 +32,7 @@ class Demos extends FormBase {
     
 
     // Cucumber Demo list.
-    $demos_file = DRUPAL_ROOT . '/' . \Drupal::service('extension.list.profile')->getPath('cucumber') . '/config/install_tasks/demos.cucumber.yml';
+    $demos_file = DRUPAL_ROOT . '/' . \Drupal::service('extension.list.profile')->getPath('cucumber') . '/config/install_tasks/demos.yml';
 
     if (file_exists($demos_file)) {
       $demos_content = file_get_contents($demos_file);
@@ -44,7 +44,7 @@ class Demos extends FormBase {
       }
 
       $form['demos']['cucumber_demos'] = array(
-        '#type' => 'radios',
+        '#type' => 'select',
         '#name' => 'cucumber_demos',
         '#default_value' => 'non_demo',
         '#options' => $options
