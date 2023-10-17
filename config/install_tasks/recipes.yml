@@ -19,5 +19,5 @@ recipes:
     componentes:
       title: "Components"
       description: 'Components testing management'
-      source_name: "cucumber_componentes"
+      source_name: "cucumber_components"
       selected: false
