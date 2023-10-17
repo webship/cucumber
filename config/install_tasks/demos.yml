@@ -2,15 +2,23 @@
 # List of cucumber Demos, which they will be listed in the
 # Cucumber Demos form, when we install cucumber.
 # ==============================================================================
-non_demo:
-  title: "- None -"
-  description: "Do not generate any of demo content"
-cucumber_demo_small:
-  title: "Cucumber Demo Small"
-  description: "Generate a small demo content"
-cucumber_demo_medium:
-  title: "Cucumber Demo Medium"
-  description: 'Generate a medium demo content'
-cucumber_demo_big:
-  title: "Cucumber Demo Big"
-  description: 'Generate a Big demo content'
+demos:
+  display_name: "Demos"
+  description: "Install demos of content in your site."
+  options:
+    non_demo:
+      title: "- None -"
+      description: "Do not generate any of demo content"
+      source_name: ""
+    small:
+      title: "Small"
+      description: "Generate a small demo content"
+      source_name: "cucumber_demo_small"
+    medium:
+      title: "Medium"
+      description: 'Generate a medium demo content'
+      source_name: "cucumber_demo_medium"
+    big:
+      title: "Big"
+      description: 'Generate a Big demo content'
+      source_name: "cucumber_demo_big"

@@ -16,21 +16,7 @@ class Demos extends FormBase {
   }
 
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $form['#title'] = $this->t('Cucumber Demos');
-    $form['cucumber_demos_introduction'] = [
-      '#weight' => -1,
-      '#prefix' => '<p>',
-      '#markup' => $this->t("Install demos of content in your site."),
-      '#suffix' => '</p>',
-    ];
-
-    $form['demos'] = [
-      "#name" => "demos",
-      '#type' => 'fieldset',
-      '#title' => $this->t('Site Demos'),
-    ];
     
-
     // Cucumber Demo list.
     $demos_file = DRUPAL_ROOT . '/' . \Drupal::service('extension.list.profile')->getPath('cucumber') . '/config/install_tasks/demos.yml';
 
@@ -38,8 +24,23 @@ class Demos extends FormBase {
       $demos_content = file_get_contents($demos_file);
       $demos = (array) Yaml::parse($demos_content);
       
+      $form['#title'] = $this->t($demos['demos']['display_name']);
+      $form['description'] = [
+        '#weight' => -1,
+        '#prefix' => '<p>',
+        '#markup' => $this->t($demos['demos']['description']),
+        '#suffix' => '</p>',
+      ];
+
+      $form['demos'] = [
+        "#name" => "demos",
+        '#type' => 'fieldset',
+      ];
+    
       $options = array();
-      foreach ($demos as $demo_key => $demo_info) {
+      $demo_options = $demos['demos']['options'];
+
+      foreach ($demo_options as $demo_key => $demo_info) {
         $options[$demo_key] = t($demo_info['title']);
       }
 
@@ -75,12 +76,18 @@ class Demos extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-      
+    
+    $demos_file = DRUPAL_ROOT . '/' . \Drupal::service('extension.list.profile')->getPath('cucumber') . '/config/install_tasks/demos.yml';
+
+    $demos_content = file_get_contents($demos_file);
+    $demos = (array) Yaml::parse($demos_content);
+    
     $demo_key = $form_state->getValue('cucumber_demos');
-      
+    $source_name = $demos['demos']['options'][$demo_key]['source_name'];
+
     if ($demo_key != 'non_demo') {
       $installer = \Drupal::service('module_installer');
-      $installer->install([$demo_key]);
+      $installer->install([$source_name]);
     }
   }
 }
