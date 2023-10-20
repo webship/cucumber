@@ -1,30 +1,7 @@
 langcode: en
 status: true
-dependencies:
-  config:
-    - dashboards.dashboard.automated_testing_dashboard
-    - dashboards.dashboard.default_dashboard
-    - dashboards.dashboard.management_dashboard
-    - dashboards.dashboard.webmaster_dashboard
-    - filter.format.gherkin
-  module:
-    - dashboards
-    - filter
-    - media
-    - toolbar
 id: authenticated
 label: 'Authenticated user'
 weight: -9
 is_admin: false
-permissions:
-  - 'access toolbar'
-  - 'can override automated_testing_dashboard dashboard'
-  - 'can override default_dashboard dashboard'
-  - 'can override management_dashboard dashboard'
-  - 'can override webmaster_dashboard dashboard'
-  - 'can view automated_testing_dashboard dashboard'
-  - 'can view default_dashboard dashboard'
-  - 'can view management_dashboard dashboard'
-  - 'can view webmaster_dashboard dashboard'
-  - 'use text format gherkin'
-  - 'view media'
+permissions: { }

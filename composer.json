@@ -45,7 +45,8 @@
     "drupal/views_accordion": "~2.0.1",
     "drupal/cucumber_default_content": "10.0.x-dev",
     "drupal/cucumber_recipes": "10.0.x-dev",
-    "drupal/cucumber_demos": "10.0.x-dev"
+    "drupal/cucumber_demos": "10.0.x-dev",
+    "drupal/cucumber_user_roles": "10.0.x-dev"
   },
   "conflict": {
     "drupal/drupal": "*"

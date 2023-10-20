@@ -1,0 +1,38 @@
+# ==============================================================================
+# List of cucumber user roles, which they will be listed in the
+# Cucumber User Roles form, when we install cucumber.
+# ==============================================================================
+user_roles:
+  display_name: "User Roles"
+  description: "Install user roles that have separate permissions based on the role rank and the roles can be modified later."
+  options:
+    tester:
+      title: "Tester"
+      description: "The role of the tester is to write features for projects, products, and components, implement testing, and ensure that all testing is done correctly."
+      source_config: "cucumber_user_role_tester"
+      selected: false
+      disabled: false
+    analyst:
+      title: "Analyst"
+      description: "System analyst"
+      source_config: "cucumber_user_role_analyst"
+      selected: false
+      disabled: false
+    developer:
+      title: "Developer"
+      description: "System developer"
+      source_config: "cucumber_user_role_developer"
+      selected: false
+      disabled: false
+    product_owner:
+      title: "Product Owner"
+      description: "System supervisor"
+      source_config: "cucumber_user_role_product_owner"
+      selected: false
+      disabled: false
+    admin:
+      title: "Admin"
+      description: "System manager"
+      source_config: "cucumber_user_role_admin"
+      selected: true
+      disabled: true

@@ -8,6 +8,7 @@
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\cucumber\Form\Recipes;
 use Drupal\cucumber\Form\Demos;
+use Drupal\cucumber\Form\UserRoles;
 
 /**
  * Implements hook_form_FORM_ID_alter() for install_configure_form().
@@ -76,6 +77,12 @@ function cucumber_install_tasks(&$install_state) {
       'display' => TRUE,
       'type' => 'form',
       'function' => Recipes::class,
+    ],
+    'cucumber_user_roles' => [
+      'display_name' => t('User Roles'),
+      'display' => TRUE,
+      'type' => 'form',
+      'function' => UserRoles::class,
     ],
     'cucumber_demos' => [
       'display_name' => t('Demos'),
