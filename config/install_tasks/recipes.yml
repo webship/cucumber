@@ -1,7 +1,3 @@
-# ==============================================================================
-# List of cucumber recipes, which they will be listed in the
-# Cucumber Recipes form, when we install cucumber.
-# ==============================================================================
 recipes:
   display_name: "Recipes"
   description: "Install recipes of works in your site."

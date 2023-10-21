@@ -1,7 +1,3 @@
-# ==============================================================================
-# List of cucumber Demos, which they will be listed in the
-# Cucumber Demos form, when we install cucumber.
-# ==============================================================================
 demos:
   display_name: "Demos"
   description: "Install demos of content in your site."
