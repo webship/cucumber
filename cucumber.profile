@@ -72,17 +72,17 @@ function cucumber_install_tasks_alter(&$tasks, $install_state) {
  */
 function cucumber_install_tasks(&$install_state) {
   return [
-    'cucumber_recipes' => [
-      'display_name' => t('Recipes'),
-      'display' => TRUE,
-      'type' => 'form',
-      'function' => Recipes::class,
-    ],
     'cucumber_user_roles' => [
       'display_name' => t('User Roles'),
       'display' => TRUE,
       'type' => 'form',
       'function' => UserRoles::class,
+    ],
+    'cucumber_recipes' => [
+      'display_name' => t('Recipes'),
+      'display' => TRUE,
+      'type' => 'form',
+      'function' => Recipes::class,
     ],
     'cucumber_demos' => [
       'display_name' => t('Demos'),

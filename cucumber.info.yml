@@ -12,6 +12,7 @@ distribution:
 themes:
   - claro
   - gin
+  - webtheme_admin
 install:
   - config
   - user
