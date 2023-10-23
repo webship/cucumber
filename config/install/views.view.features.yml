@@ -565,12 +565,7 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
-              developer: '0'
-              tester: '0'
-              analyst: '0'
-              coordinator: '0'
-              product_owner: '0'
-              administrator: '0'
+              admin: '0'
             placeholder: ''
           is_grouped: false
           group_info:
@@ -613,12 +608,8 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
-              developer: '0'
-              tester: '0'
-              analyst: '0'
-              coordinator: '0'
-              product_owner: '0'
-              administrator: '0'
+              admin: '0'
+              super_admin: '0'
             reduce: false
           is_grouped: false
           group_info:

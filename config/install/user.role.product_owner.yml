@@ -1,7 +1,0 @@
-langcode: en
-status: true
-id: product_owner
-label: 'Product Owner'
-weight: -4
-is_admin: false
-permissions: { }

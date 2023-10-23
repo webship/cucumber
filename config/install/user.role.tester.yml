@@ -1,7 +1,0 @@
-langcode: en
-status: true
-id: tester
-label: Tester
-weight: -8
-is_admin: false
-permissions: { }

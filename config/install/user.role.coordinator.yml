@@ -1,7 +1,0 @@
-langcode: en
-status: true
-id: coordinator
-label: Coordinator
-weight: -6
-is_admin: false
-permissions: { }

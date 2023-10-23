@@ -1,7 +1,0 @@
-langcode: en
-status: true
-id: developer
-label: Developer
-weight: -7
-is_admin: false
-permissions: { }
