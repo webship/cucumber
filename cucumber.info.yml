@@ -72,3 +72,4 @@ install:
   - views_accordion
   - media_directories_editor
   - media_directories_ui
+  - cucumber_user_roles
