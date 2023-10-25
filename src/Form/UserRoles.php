@@ -105,6 +105,8 @@ class UserRoles extends FormBase {
       if ($user_roles_key != "admin" && $form_state->getValue($user_roles_key) == 1) {
         $installer = \Drupal::service('module_installer');
         $installer->install([$user_roles_info['source_config']]);
+      
+        \Drupal::configFactory()->getEditable('cucumber_user_roles.settings')->set($user_roles_key, TRUE)->save(TRUE);
       }
     }
   }
