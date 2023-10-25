@@ -16,8 +16,10 @@ use Drupal\cucumber\Form\UserRoles;
  * Allows the profile to alter the site configuration form.
  */
 function cucumber_form_install_configure_form_alter(&$form, FormStateInterface $form_state) {
-  $form['site_information']['site_mail']['#default_value'] = '';
-  $form['admin_account']['account']['name']['#default_value'] = 'webmaster';
+  $form['site_information']['site_name']['#default_value'] = 'Site name';
+  $form['site_information']['site_mail']['#default_value'] = 'info@webship.co';
+  $form['admin_account']['account']['name']['#default_value'] = 'Super Admin';
+  $form['admin_account']['account']['mail']['#default_value'] = 'info@webship.co';
 }
 
 /**
