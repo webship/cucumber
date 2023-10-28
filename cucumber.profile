@@ -49,23 +49,26 @@ function cucumber_install_tasks_alter(&$tasks, $install_state) {
   unset($tasks['install_download_translation']);
 
   $settings_file = './sites/default/settings.php';
-  $contents = file_get_contents('./sites/default/settings.php');
+  if(file_exists($settings_file)) {
 
-  if(!strpos($contents, 'Drupal\\Core\\Database\\Driver\\sqlite')) {
-      $fp = fopen($settings_file, 'a');
+    $contents = file_get_contents('./sites/default/settings.php');
 
-      fwrite(
-          $fp, 
-          "
-  \$databases['default']['default'] = array (
-  'database' => '../database/cucumber.sqlite',
-  'prefix' => '',
-  'namespace' => 'Drupal\\Core\\Database\\Driver\\sqlite',
-  'driver' => 'sqlite',
-  );"
-    );
+    if(!strpos($contents, 'Drupal\\Core\\Database\\Driver\\sqlite')) {
+        $fp = fopen($settings_file, 'a');
 
-    fclose($fp);
+        fwrite(
+            $fp, 
+            "
+    \$databases['default']['default'] = array (
+    'database' => '../database/cucumber.sqlite',
+    'prefix' => '',
+    'namespace' => 'Drupal\\Core\\Database\\Driver\\sqlite',
+    'driver' => 'sqlite',
+    );"
+      );
+
+      fclose($fp);
+    }
   }
 }
 
