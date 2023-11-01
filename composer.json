@@ -48,7 +48,8 @@
     "drupal/cucumber_recipes": "10.0.x-dev",
     "drupal/cucumber_demos": "10.0.x-dev",
     "drupal/cucumber_user_roles": "10.0.x-dev",
-    "vardot/module-installer-factory": "~1.0"
+    "vardot/module-installer-factory": "~1.0",
+    "drupal/editoria11y": "~2.1.0"
   },
   "conflict": {
     "drupal/drupal": "*"
