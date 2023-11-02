@@ -14,7 +14,7 @@
   "license": "GPL-2.0",
   "engines": {
     "yarn": ">= 1.6",
-    "node": ">= 18.17.1"
+    "node": ">= 18.0"
   },
   "scripts": {
     "test": "nightwatch --format html:./tests/reports/index.html",
