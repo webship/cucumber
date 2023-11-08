@@ -2,6 +2,6 @@ langcode: en
 status: true
 id: authenticated
 label: 'Authenticated user'
-weight: 1
+weight: -9
 is_admin: false
 permissions: { }
