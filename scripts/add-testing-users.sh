@@ -13,7 +13,7 @@ cd ../../../../;
 # Add Drush if it was not in the system.
 if [ ! -d "vendor/drush/drush" ]; then
   echo "Add Drush if it was not in the system.";
-  composer require "drush/drush:~11.0";
+  composer require "drush/drush:~12.0";
 fi
 
 cd web;
