@@ -32,7 +32,7 @@
     "cweagans/composer-patches": "~1.0",
     "drupal/core-composer-scaffold": "~10.0",
     "drupal/core": "~10.1.0",
-    "drush/drush": "~11.0",
+    "drush/drush": "12.0.0",
     "drupal/cucumber_core": "10.0.x-dev",
     "drupal/webconfig": "10.0.x-dev",
     "drupal/webdev": "10.0.x-dev",
