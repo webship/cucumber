@@ -1,9 +1,0 @@
-langcode: en
-status: true
-dependencies:
-  module:
-    - dashboards
-id: dashboard.token
-label: Token
-targetEntityType: dashboard
-cache: true

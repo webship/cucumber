@@ -50,10 +50,10 @@ install:
   - update
   - history
 ## Contrib Modules
-  - cucumber_core
   - webconfig
   - webdev
   - webadmin
+  - cucumber_core
   - gin_toolbar
   - gin_login
   - views_ui
@@ -72,4 +72,3 @@ install:
   - views_accordion
   - media_directories_editor
   - media_directories_ui
-  - cucumber_user_roles
