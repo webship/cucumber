@@ -1,0 +1,58 @@
+langcode: en
+status: true
+dependencies: {  }
+id: admin_dashboard
+admin_label: 'Admin Dashboard'
+category: ''
+sections:
+  - layout_id: layout_3
+    layout_settings:
+      label: ''
+      reverse: 0
+      context_mapping: {  }
+    components:
+      4f684f1f-99cf-4fd3-89d6-ea67cf707b7d:
+        uuid: 4f684f1f-99cf-4fd3-89d6-ea67cf707b7d
+        region: one
+        configuration:
+          id: 'dashboards_block:dashboard:add_content_menu'
+          label: 'Add content'
+          label_display: visible
+          provider: dashboards
+          context_mapping: {  }
+          items:
+            feature:
+              weight: '-8'
+        weight: 1
+        additional: {  }
+    third_party_settings: {  }
+  - layout_id: layout_2
+    layout_settings:
+      label: ''
+      context_mapping: {  }
+    components:
+      83b1c9d2-7d4f-446d-9be6-a8e41efed78e:
+        uuid: 83b1c9d2-7d4f-446d-9be6-a8e41efed78e
+        region: one
+        configuration:
+          id: 'dashboards_block:dashboard:status_updates'
+          label: 'Update status'
+          label_display: visible
+          provider: dashboards
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+      642df1a6-7bd4-435e-ac2e-b0bb56b8e755:
+        uuid: 642df1a6-7bd4-435e-ac2e-b0bb56b8e755
+        region: three
+        configuration:
+          id: 'dashboards_block:dashboard:system_info'
+          label: 'Show system info'
+          label_display: visible
+          provider: dashboards
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+    third_party_settings: {  }
+frontend: false
+weight: 0

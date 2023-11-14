@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies: {  }
+id: default_dashboard
+admin_label: 'Default Dashboard'
+category: ''
+sections:
+  -
+    layout_id: layout_1
+    layout_settings:
+      label: ''
+      reverse: 0
+      context_mapping: {  }
+    components:
+      4b3d3acb-ac5f-4a60-ae46-3c493281c592:
+        uuid: 4b3d3acb-ac5f-4a60-ae46-3c493281c592
+        region: one
+        configuration:
+          id: 'dashboards_block:dashboard:account'
+          label: 'Show current user'
+          label_display: '0'
+          provider: dashboards
+          view_mode: default
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+    third_party_settings: {  }
+frontend: false
+weight: 0
