@@ -1,0 +1,14 @@
+login:
+  authenticated:
+    redirect_url: /dashboard/default_dashboard
+  admin:
+    redirect_url: /dashboard/admin_dashboard
+  super_admin:
+    redirect_url: /dashboard/admin_dashboard
+logout:
+  authenticated:
+    redirect_url: /user/login
+  admin:
+    redirect_url: /user/login
+  super_admin:
+    redirect_url: /user/login

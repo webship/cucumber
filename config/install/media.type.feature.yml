@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - gherkin
+id: feature
+label: Feature
+description: 'Feature type to write gherkin script'
+source: gherkin
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_gherkin
+field_map: {  }
