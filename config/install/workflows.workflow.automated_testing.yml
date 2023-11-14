@@ -1,0 +1,77 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.feature
+  module:
+    - content_moderation
+id: automated_testing
+label: 'Automated testing'
+type: content_moderation
+type_settings:
+  states:
+    draft:
+      label: Draft
+      weight: 1
+      published: false
+      default_revision: false
+    implemented:
+      label: Implemented
+      weight: -1
+      published: true
+      default_revision: false
+    in_progress:
+      label: 'In Progress'
+      weight: -2
+      published: true
+      default_revision: false
+    published:
+      label: Published
+      weight: 0
+      published: true
+      default_revision: true
+    to_do:
+      label: 'To Do'
+      weight: -3
+      published: true
+      default_revision: false
+  transitions:
+    create_new_task:
+      label: 'Create New Task'
+      from:
+        - draft
+        - implemented
+        - in_progress
+        - published
+        - to_do
+      to: to_do
+      weight: -2
+    implemented:
+      label: Implemented
+      from:
+        - implemented
+        - in_progress
+        - published
+        - to_do
+      to: published
+      weight: 1
+    in_progress:
+      label: 'In Progress'
+      from:
+        - implemented
+        - in_progress
+        - to_do
+      to: implemented
+      weight: 0
+    to_do:
+      label: 'To Do'
+      from:
+        - implemented
+        - in_progress
+        - to_do
+      to: in_progress
+      weight: -1
+  entity_types:
+    media:
+      - feature
+  default_moderation_state: to_do
