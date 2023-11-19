@@ -86,45 +86,6 @@ sections:
           items_per_page: none
         weight: 0
         additional: {  }
-      5dca85ee-5b1f-4c65-bc26-d06a16fb6c66:
-        uuid: 5dca85ee-5b1f-4c65-bc26-d06a16fb6c66
-        region: content
-        configuration:
-          id: 'views_block:dashboard_references-dashboard_products'
-          label: ''
-          label_display: visible
-          provider: views
-          context_mapping: {  }
-          views_label: ''
-          items_per_page: none
-        weight: 1
-        additional: {  }
-      f6cd775c-0ee5-42a3-9406-c6d4d16d6816:
-        uuid: f6cd775c-0ee5-42a3-9406-c6d4d16d6816
-        region: content
-        configuration:
-          id: 'views_block:dashboard_references-dashboard_projects'
-          label: ''
-          label_display: visible
-          provider: views
-          context_mapping: {  }
-          views_label: ''
-          items_per_page: none
-        weight: 2
-        additional: {  }
-      ed177534-845d-44a5-9a31-5539a8110c7c:
-        uuid: ed177534-845d-44a5-9a31-5539a8110c7c
-        region: content
-        configuration:
-          id: 'views_block:dashboard_references-dashboard_components'
-          label: ''
-          label_display: visible
-          provider: views
-          context_mapping: {  }
-          views_label: ''
-          items_per_page: none
-        weight: 3
-        additional: {  }
     third_party_settings: {  }
   -
     layout_id: layout_2
