@@ -32,7 +32,7 @@
     "cweagans/composer-patches": "~1",
     "drupal/core-composer-scaffold": "~10",
     "drupal/core": "~10",
-    "drush/drush": "~12",
+    "drush/drush": "~11",
     "drupal/cucumber_core": "10.0.x-dev",
     "drupal/webtheme_admin": "10.0.x-dev",
     "drupal/cucumber_user_roles": "10.0.x-dev",
