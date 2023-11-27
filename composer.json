@@ -27,12 +27,12 @@
     }
   },
   "require": {
-    "composer/installers": "~2.0",
-    "oomphinc/composer-installers-extender": "~2.0",
-    "cweagans/composer-patches": "~1.0",
-    "drupal/core-composer-scaffold": "~10.0",
-    "drupal/core": "~10.1.0",
-    "drush/drush": "12.0.0",
+    "composer/installers": "~2",
+    "oomphinc/composer-installers-extender": "~2",
+    "cweagans/composer-patches": "~1",
+    "drupal/core-composer-scaffold": "~10",
+    "drupal/core": "~10",
+    "drush/drush": "~12",
     "drupal/cucumber_core": "10.0.x-dev",
     "drupal/webtheme_admin": "10.0.x-dev",
     "drupal/cucumber_user_roles": "10.0.x-dev",

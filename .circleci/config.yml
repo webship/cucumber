@@ -164,6 +164,7 @@ commands:
             ../bin/drush config-set system.performance css.preprocess 0 --yes
             ../bin/drush config-set system.performance js.preprocess 0 --yes
             ../bin/drush config-set system.logging error_level all --yes
+            ../bin/drush pm:enable cucumber_core --yes
             ../bin/drush cr
 
       ## Run Selenium Standalone server.
