@@ -6,14 +6,14 @@ recipes:
       title: "Products"
       description: "Products testing management"
       source_name: "cucumber_products"
-      selected: false
-    projects:
-      title: "Projects"
-      description: 'Projects testing management'
-      source_name: "cucumber_projects"
       selected: true
     componentes:
       title: "Components"
       description: 'Components testing management'
       source_name: "cucumber_components"
+      selected: false
+    projects:
+      title: "Projects"
+      description: 'Projects testing management'
+      source_name: "cucumber_projects"
       selected: false
