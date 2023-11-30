@@ -1,6 +1,6 @@
 favicon:
   mimetype: image/png
-  path: 'profiles/contrib/cucumber/images/cucumber-logo.png'
+  path: 'profiles/contrib/cucumber/images/favicon.ico'
   use_default: false
 features:
   comment_user_picture: true
