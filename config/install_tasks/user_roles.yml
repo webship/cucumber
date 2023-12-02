@@ -10,31 +10,31 @@ user_roles:
       disabled: false
     developer:
       title: "Developer"
-      description: "System developer"
+      description: "Write and perform productive code, keep and update existing rules."
       source_config: "cucumber_user_role_developer"
       selected: false
       disabled: false
     designer:
       title: "Designer"
-      description: "System designer"
+      description: "Analyse research findings to inform design directions. Evaluate new design ideas or concepts. Provide on-the-job training to direct reports and junior team "
       source_config: "cucumber_user_role_designer"
       selected: false
       disabled: false
     analyst:
       title: "Analyst"
-      description: "System analyst"
+      description: "Analyse the defects and bugs to identify what is causing them, keep software and systems documentation up to date."
       source_config: "cucumber_user_role_analyst"
       selected: false
       disabled: false
     coordinator:
       title: "Coordinator"
-      description: "System Coordinator"
+      description: "Day-to-day coordination of test activities, Executing work distribution, Establishing plans, Monitoring progress."
       source_config: "cucumber_user_role_coordinator"
       selected: false
       disabled: false
     product_owner:
       title: "Product Owner"
-      description: "System supervisor"
+      description: "Managing the product backlog and prioritizing them based on changing requirements. Overseeing all stages of product creation including design and development."
       source_config: "cucumber_user_role_product_owner"
       selected: false
       disabled: false
