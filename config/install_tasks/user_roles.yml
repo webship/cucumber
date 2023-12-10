@@ -4,31 +4,31 @@ user_roles:
   options:
     tester:
       title: "Tester"
-      description: "The role of the tester is to write features for projects, products, and components, implement testing, and ensure that all testing is done correctly."
+      description: "Ensure that the testing is carried out as per the defined standards and procedures, Analyze the testing results, and submit the report to the development team."
       source_config: "cucumber_user_role_tester"
       selected: false
       disabled: false
     developer:
       title: "Developer"
-      description: "Write and perform productive code, keep and update existing rules."
+      description: "Write and perform productive code, and keep and update existing rules."
       source_config: "cucumber_user_role_developer"
       selected: false
       disabled: false
     designer:
       title: "Designer"
-      description: "Analyse research findings to inform design directions. Evaluate new design ideas or concepts. Provide on-the-job training to direct reports and junior team "
+      description: "Analyse research findings to inform design directions. Evaluate new design ideas or concepts. Provide on-the-job training to direct reports and junior teams."
       source_config: "cucumber_user_role_designer"
       selected: false
       disabled: false
     analyst:
       title: "Analyst"
-      description: "Analyse the defects and bugs to identify what is causing them, keep software and systems documentation up to date."
+      description: "Analyze the defects and bugs to identify what is causing them, and keep software and systems documentation up to date."
       source_config: "cucumber_user_role_analyst"
       selected: false
       disabled: false
     coordinator:
       title: "Coordinator"
-      description: "Day-to-day coordination of test activities, Executing work distribution, Establishing plans, Monitoring progress."
+      description: "Day-to-day coordination of test activities, Executing work distribution, Establishing plans, and Monitoring progress."
       source_config: "cucumber_user_role_coordinator"
       selected: false
       disabled: false
@@ -40,7 +40,7 @@ user_roles:
       disabled: false
     admin:
       title: "Admin"
-      description: "System manager"
+      description: "Can log in to all projects, view them and make changes, add/remove users to/from a company, as well as assign roles and read-only."
       source_config: "cucumber_user_role_admin"
       selected: true
       disabled: true
