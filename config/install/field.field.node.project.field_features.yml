@@ -1,0 +1,31 @@
+uuid: 0df433d8-3f49-4559-8337-0b0480ea500a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_features
+    - media.type.feature
+    - node.type.project
+_core:
+  default_config_hash: Xi2N598W92mZh4SXV7Ig16yFATRBZloJGztX6bXXl1s
+id: node.project.field_features
+field_name: field_features
+entity_type: node
+bundle: project
+label: Features
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      feature: feature
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
