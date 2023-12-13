@@ -1,11 +1,11 @@
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: lv7xIE5OuRWE3o619q2WGrESmng8f6yvYbfSzbZoEtE
 id: admin_dashboard
 admin_label: 'Admin Dashboard'
 category: ''
-frontend: false
-weight: 0
 sections:
   -
     layout_id: layout_2
@@ -63,8 +63,8 @@ sections:
     layout_id: layout_3
     layout_settings:
       label: ''
-      context_mapping: {  }
       reverse: 0
+      context_mapping: {  }
     components: {  }
     third_party_settings: {  }
   -
@@ -94,3 +94,5 @@ sections:
       context_mapping: {  }
     components: {  }
     third_party_settings: {  }
+frontend: false
+weight: 0
