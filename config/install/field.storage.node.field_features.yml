@@ -4,6 +4,8 @@ dependencies:
   module:
     - media
     - node
+_core:
+  default_config_hash: EgQ65dPvBX0PeaTbKutQ3Kc0I4KAtDF8U812aaI9Ff8
 id: node.field_features
 field_name: field_features
 entity_type: node
