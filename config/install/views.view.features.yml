@@ -1892,7 +1892,7 @@ display:
           plugin_id: entity_reverse
           required: true
       display_extenders: {  }
-      path: Features
+      path: features
     cache_metadata:
       max-age: -1
       contexts:
