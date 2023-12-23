@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-name: 'Feature Directory'
-vid: feature_directory
-description: 'A directory that user can add it to classify their own features'
-weight: 0

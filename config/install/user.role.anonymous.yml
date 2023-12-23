@@ -1,7 +1,0 @@
-langcode: en
-status: true
-id: anonymous
-label: 'Anonymous user'
-weight: -10
-is_admin: false
-permissions: { }

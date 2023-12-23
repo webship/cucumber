@@ -1,7 +1,0 @@
-langcode: en
-status: true
-id: authenticated
-label: 'Authenticated user'
-weight: -9
-is_admin: false
-permissions: { }
