@@ -21,7 +21,7 @@ function cucumber_install() {
   // Enable the admin theme.
   \Drupal::configFactory()->getEditable('node.settings')->set('use_admin_theme', TRUE)->save(TRUE);
 
-  // * Necessary inlitilization for the entire system.
+  // * Necessary initialization for the entire system.
   // * Account for changed config by the end install.
   // * Flush all persistent caches.
   // * Flush asset file caches.

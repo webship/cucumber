@@ -31,13 +31,7 @@ function cucumber_form_install_settings_form_alter(&$form, FormStateInterface $f
 
   $form['driver']['#default_value'] = 'sqlite';
   $form['settings']['sqlite']['database']['#default_value'] = '../database/cucumber.sqlite';
-  
-  foreach ($form['driver']['#options'] as $key => $value) {
-    if($key != "sqlite"){
-      unset($form['driver']['#options'][$key]);
-    }
-  }
-  
+
   return $form;
 }
 
@@ -47,29 +41,6 @@ function cucumber_form_install_settings_form_alter(&$form, FormStateInterface $f
 function cucumber_install_tasks_alter(&$tasks, $install_state) {
   unset($tasks['install_select_language']);
   unset($tasks['install_download_translation']);
-
-  $settings_file = './sites/default/settings.php';
-  if(file_exists($settings_file)) {
-
-    $contents = file_get_contents('./sites/default/settings.php');
-
-    if(!strpos($contents, 'Drupal\\Core\\Database\\Driver\\sqlite')) {
-        $fp = fopen($settings_file, 'a');
-
-        fwrite(
-            $fp, 
-            "
-    \$databases['default']['default'] = array (
-    'database' => '../database/cucumber.sqlite',
-    'prefix' => '',
-    'namespace' => 'Drupal\\Core\\Database\\Driver\\sqlite',
-    'driver' => 'sqlite',
-    );"
-      );
-
-      fclose($fp);
-    }
-  }
 }
 
 /**
