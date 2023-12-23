@@ -1,7 +1,7 @@
 name: Cucumber
 type: profile
-description: 'Cucumber Automated Functional Acceptance Testing Management system'
-core_version_requirement: ~10.1.0
+description: Cucumber Automated Functional Acceptance Testing Management system
+core_version_requirement: ~10.2.0
 version: 10.0.x-dev
 package: Cucumber
 project: cucumber
@@ -14,61 +14,17 @@ themes:
   - gin
   - webtheme_admin
 install:
-  - config
-  - user
-  - tracker
-  - node
-  - comment
-  - taxonomy
-  - block
-  - menu_link_content
-  - menu_ui
-  - help
+  - system
   - action
-  - dynamic_page_cache
-  - page_cache
-  - automated_cron
-  - field
-  - field_ui
-  - file
-  - image
-  - text
+  - user
+  - node
+  - block
+  - block_content
   - datetime
-  - options
-  - contextual
-  - editor
-  - filter
-  - path
-  - search
-  - shortcut
+  - help
+  - image
   - views
-  - datetime_range
-  - layout_discovery
-  - field_layout
-  - statistics
-  - syslog
-  - update
-  - history
+  - file
 ## Contrib Modules
-  - webconfig
-  - webdev
-  - webadmin
   - cucumber_core
-  - gin_toolbar
-  - gin_login
-  - views_ui
-  - dashboards
-  - dashboards_statistic
-  - dashboards_views
-  - admin_toolbar_search
-  - user_redirect
-  - autocomplete_deluxe
-  - media
-  - media_library
-  - ace_editor
-  - gherkin
   - cucumber_default_content
-  - media_directories
-  - views_accordion
-  - media_directories_editor
-  - media_directories_ui

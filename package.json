@@ -25,10 +25,9 @@
     "lint:yaml": "node ./node_modules/eslint/bin/eslint.js --ext .yml ."
 
   },
-  "dependencies": {
-    "webship-js": "~1.0"
-  },
-  "devDependencies": { 
+  "dependencies": { },
+  "devDependencies": {
+    "webship-js": "~1",
     "eslint": "^8.9.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.4.0",
