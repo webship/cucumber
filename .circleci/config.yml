@@ -152,11 +152,13 @@ commands:
           name: Install Cucumber with drush
           command: |
             cd /var/www/html/test/cucumber/web
-            ../bin/drush site-install cucumber --yes --site-name='Cucumber' --db-url='sqlite://../database/cucumber.sqlite' --account-name=admin --account-pass=dD.123123ddd --account-mail=info@webship.co
-            ../bin/drush config-set system.performance css.preprocess 0 --yes
-            ../bin/drush config-set system.performance js.preprocess 0 --yes
-            ../bin/drush config-set system.logging error_level all --yes
-            ../bin/drush cr
+            ../bin/drush site-install cucumber --yes --site-name='Cucumber' --db-url='sqlite://sites/default/files/.ht.sqlite' --account-name=admin --account-pass=dD.123123ddd --account-mail=info@webship.co
+            sudo chmod 775 -R /var/www/html/test/cucumber
+            sudo chown www-data:circleci -R /var/www/html/test/cucumber
+            ../bin/drush config:set system.performance css.preprocess 0 --yes
+            ../bin/drush config:set system.performance js.preprocess 0 --yes
+            ../bin/drush config:set system.logging error_level all --yes
+            ../bin/drush cache:rebuild
 
       ## Run Selenium Standalone server.
       - run:
