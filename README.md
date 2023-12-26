@@ -13,7 +13,7 @@ Helps in speeding up the work of having Automated Functional Acceptance Testing 
 * Setup of Automated Functional Testing configurations for projects.
 * Writing Cucumber descriptions, Gherkin scripts for web apps.
 * Development of Webship-js using Nightwatch.js, Cucumber-js with custom and advanced general step definitions.
-* Setup Selenium robot servers, and Web-drivers to work on a local development, CircleCI, Github Actions, Gitlab-CI, Travis-CI, Bitbucket Pipelines and private CI/CD servers.
+* Setup Selenium robot servers, and Web-drivers to work on a local or remote public/private CI/CD servers.
 
 ## Usage
 
