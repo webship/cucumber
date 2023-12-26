@@ -15,7 +15,7 @@ class Recipes extends FormBase {
     return 'cucumber_recipes';
   }
 
-  public function buildForm(array $form, FormStateInterface $form_state) {    
+  public function buildForm(array $form, FormStateInterface $form_state) {
 
     // Cucumber Recipes.
     $recipes_file = DRUPAL_ROOT . '/' . \Drupal::service('extension.list.profile')->getPath('cucumber') . '/config/install_tasks/recipes.yml';
@@ -44,7 +44,7 @@ class Recipes extends FormBase {
           '#type' => 'checkbox',
           '#title' => $recipe_info['title'],
           '#description' => $recipe_info['description'],
-          '#default_value' => (bool)$recipe_info['selected'],
+          '#default_value' => (bool) $recipe_info['selected'],
         ];
       }
     }
@@ -58,11 +58,11 @@ class Recipes extends FormBase {
       '#type' => 'actions',
       '#weight' => 5,
     ];
-    
+
     return $form;
   }
 
-   /**
+  /**
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
@@ -80,7 +80,7 @@ class Recipes extends FormBase {
       }
     }
 
-    if($recipes_selected == 0) {
+    if ($recipes_selected == 0) {
       $form_state->setErrorByName('recipes', $this->t('Please select at least one recipe'));
       $form_state->setRebuild();
     }
@@ -100,11 +100,12 @@ class Recipes extends FormBase {
     $recipe_options = $recipes['recipes']['options'];
 
     foreach ($recipe_options as $recipe_key => $recipe_info) {
-     
+
       if ($form_state->getValue($recipe_key) == 1) {
         $installer = \Drupal::service('module_installer');
         $installer->install([$recipe_info['source_name']]);
       }
     }
   }
+
 }

@@ -65,7 +65,7 @@ function cucumber_install_tasks(&$install_state) {
       'display' => TRUE,
       'type' => 'form',
       'function' => Demos::class,
-    ]
+    ],
   ];
 }
 
@@ -73,42 +73,42 @@ function cucumber_install_tasks(&$install_state) {
  * Implements hook_preprocess_install_page().
  */
 function cucumber_preprocess_install_page(&$variables) {
-    // Cucumber has custom styling for the install page.
-    $variables['#attached']['library'][] = 'cucumber/install-page';
+  // Cucumber has custom styling for the install page.
+  $variables['#attached']['library'][] = 'cucumber/install-page';
 }
 
 /**
  * Implements hook_requirements().
  */
 function cucumber_requirements($phase) {
-    $requirements = [];
-    if (!extension_loaded('yaml')) {
-        $requirements['php_yaml_extension'] = [
-        'title' => 'PHP YAML extension',
-        'description' => t('The PHP YAML extension is not enabled. It is recommended that you enable the PHP YAML extension for your server.'),
-        'severity' => REQUIREMENT_WARNING,
-        ];
-    }
+  $requirements = [];
+  if (!extension_loaded('yaml')) {
+    $requirements['php_yaml_extension'] = [
+      'title' => 'PHP YAML extension',
+      'description' => t('The PHP YAML extension is not enabled. It is recommended that you enable the PHP YAML extension for your server.'),
+      'severity' => REQUIREMENT_WARNING,
+    ];
+  }
 
-    if ($phase === 'install') {
-        // Check if the SQLite database driver is available.
-        if (!extension_loaded('pdo_sqlite')) {
-            $requirements['cucumber_sqlite'] = [
-            'title' => t('SQLite Database Driver'),
-            'value' => t('Enabled'),
-            'severity' => REQUIREMENT_ERROR,
-            'description' => t('The PDO SQLite extension is not enabled on your server. SQLite database is required for this site.'),
-            ];
-        }
-        else {
-            $requirements['cucumber_sqlite'] = [
-            'title' => t('SQLite Database Driver'),
-            'value' => t('Enabled'),
-            'severity' => REQUIREMENT_OK,
-            'description' => t('The PDO SQLite extension is enabled on your server. SQLite database is available.'),
-            ];
-        }
+  if ($phase === 'install') {
+    // Check if the SQLite database driver is available.
+    if (!extension_loaded('pdo_sqlite')) {
+      $requirements['cucumber_sqlite'] = [
+        'title' => t('SQLite Database Driver'),
+        'value' => t('Enabled'),
+        'severity' => REQUIREMENT_ERROR,
+        'description' => t('The PDO SQLite extension is not enabled on your server. SQLite database is required for this site.'),
+      ];
     }
+    else {
+      $requirements['cucumber_sqlite'] = [
+        'title' => t('SQLite Database Driver'),
+        'value' => t('Enabled'),
+        'severity' => REQUIREMENT_OK,
+        'description' => t('The PDO SQLite extension is enabled on your server. SQLite database is available.'),
+      ];
+    }
+  }
 
-    return $requirements;
+  return $requirements;
 }

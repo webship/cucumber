@@ -4,17 +4,17 @@ demos:
   options:
     non_demo:
       title: "- None -"
-      description: "Do not generate any of demo content"
+      description: "No demo"
       source_name: ""
     small:
-      title: "Small"
-      description: "Generate a small demo content"
+      title: "Small Company"
+      description: "Example for a small company demo"
       source_name: "cucumber_demo_small"
     medium:
-      title: "Medium"
-      description: 'Generate a medium demo content'
+      title: "Medium Company"
+      description: 'Example for a medium company demo'
       source_name: "cucumber_demo_medium"
-    big:
-      title: "Big"
-      description: 'Generate a Big demo content'
-      source_name: "cucumber_demo_big"
+    large:
+      title: "Large Company"
+      description: 'Example for a large company demo'
+      source_name: "cucumber_demo_large"

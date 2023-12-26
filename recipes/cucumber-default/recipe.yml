@@ -1,0 +1,14 @@
+name: Cucumber Default
+description: A recipe to manage default configs for the Cucumber installation profile.
+type: Testing
+config:
+  actions:
+    user.settings:
+      simple_config_update:
+        register: admin_only
+    system.site:
+      simple_config_update:
+        page.front: '/dashboard/default_dashboard'
+    node.settings:
+      simple_config_update:
+        use_admin_theme: true

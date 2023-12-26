@@ -5,7 +5,8 @@
  * Install, update and uninstall functions for the Cucumber installation profile.
  */
 
-
+use Drupal\Core\Recipe\Recipe;
+use Drupal\Core\Recipe\RecipeRunner;
 
 /**
  * Implements hook_install().
@@ -15,11 +16,9 @@
  * @see system_install()
  */
 function cucumber_install() {
-  // Set front page to "node".
-  \Drupal::configFactory()->getEditable('system.site')->set('page.front', '/dashboard/default_dashboard')->save(TRUE);
 
-  // Enable the admin theme.
-  \Drupal::configFactory()->getEditable('node.settings')->set('use_admin_theme', TRUE)->save(TRUE);
+  $cucumber_default_recipe = Recipe::createFromDirectory(__DIR__ . '/recipes/cucumber-default');
+  RecipeRunner::processRecipe($cucumber_default_recipe);
 
   // * Necessary initialization for the entire system.
   // * Account for changed config by the end install.

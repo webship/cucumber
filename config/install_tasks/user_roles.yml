@@ -1,46 +1,46 @@
 user_roles:
-  display_name: "User Roles"
-  description: "Install user roles that have separate permissions based on the role rank and the roles can be modified later."
+  display_name: User Roles
+  description: Install user roles that have separate permissions based on the role rank and the roles can be modified later.
   options:
     tester:
-      title: "Tester"
-      description: "Ensure that the testing is carried out as per the defined standards and procedures, Analyze the testing results, and submit the report to the development team."
-      source_config: "cucumber_user_role_tester"
+      title: Tester
+      description: Ensure that the testing is carried out as per the defined standards and procedures, Analyze the testing results, and submit the report to the development team.
+      source_config: cucumber_user_role_tester
       selected: false
       disabled: false
     developer:
-      title: "Developer"
-      description: "Write and perform productive code, and keep and update existing rules."
-      source_config: "cucumber_user_role_developer"
+      title: Developer
+      description: Write and perform productive code, and keep and update existing rules.
+      source_config: cucumber_user_role_developer
       selected: false
       disabled: false
     designer:
-      title: "Designer"
-      description: "Analyse research findings to inform design directions. Evaluate new design ideas or concepts. Provide on-the-job training to direct reports and junior teams."
-      source_config: "cucumber_user_role_designer"
+      title: Designer
+      description: Analyze research findings to inform design directions. Evaluate new design ideas or concepts. Provide on-the-job training to direct reports and junior teams.
+      source_config: cucumber_user_role_designer
       selected: false
       disabled: false
     analyst:
-      title: "Analyst"
-      description: "Analyze the defects and bugs to identify what is causing them, and keep software and systems documentation up to date."
-      source_config: "cucumber_user_role_analyst"
+      title: Analyst
+      description: Analyze the defects and bugs to identify what is causing them, and keep software and systems documentation up to date.
+      source_config: cucumber_user_role_analyst
       selected: false
       disabled: false
     coordinator:
-      title: "Coordinator"
-      description: "Day-to-day coordination of test activities, Executing work distribution, Establishing plans, and Monitoring progress."
-      source_config: "cucumber_user_role_coordinator"
+      title: Coordinator
+      description: Day-to-day coordination of test activities, Executing work distribution, Establishing plans, and Monitoring progress.
+      source_config: cucumber_user_role_coordinator
       selected: false
       disabled: false
     product_owner:
-      title: "Product Owner"
-      description: "Managing the product backlog and prioritizing them based on changing requirements. Overseeing all stages of product creation including design and development."
-      source_config: "cucumber_user_role_product_owner"
+      title: Product Owner
+      description: Managing the product backlog and prioritizing them based on changing requirements. Overseeing all stages of product creation including design and development.
+      source_config: cucumber_user_role_product_owner
       selected: false
       disabled: false
     admin:
-      title: "Admin"
-      description: "Can log in to all projects, view them and make changes, add/remove users to/from a company, as well as assign roles and read-only."
-      source_config: "cucumber_user_role_admin"
+      title: Admin
+      description: Can log in to all projects, view them and make changes, add/remove users to/from a company, as well as assign roles and read-only.
+      source_config: cucumber_user_role_admin
       selected: true
       disabled: true

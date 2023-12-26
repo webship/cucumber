@@ -1,19 +1,19 @@
 recipes:
-  display_name: "Recipes"
-  description: "Install recipes of works in your site."
+  display_name: Recipes
+  description: Install recipes of works in your site.
   options:
     products:
-      title: "Products"
-      description: "Products testing management"
-      source_name: "cucumber_products"
+      title: Products
+      description: Products testing management
+      source_name: cucumber_products
       selected: true
-    componentes:
-      title: "Components"
+    components:
+      title: Components
       description: 'Components testing management'
-      source_name: "cucumber_components"
+      source_name: cucumber_components
       selected: true
     projects:
-      title: "Projects"
+      title: Projects
       description: 'Projects testing management'
-      source_name: "cucumber_projects"
+      source_name: cucumber_projects
       selected: true

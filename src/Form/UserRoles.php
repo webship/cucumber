@@ -15,7 +15,7 @@ class UserRoles extends FormBase {
     return 'cucumber_user_roles';
   }
 
-  public function buildForm(array $form, FormStateInterface $form_state) {    
+  public function buildForm(array $form, FormStateInterface $form_state) {
 
     // Cucumber User Roles.
     $user_roles_file = DRUPAL_ROOT . '/' . \Drupal::service('extension.list.profile')->getPath('cucumber') . '/config/install_tasks/user_roles.yml';
@@ -44,7 +44,7 @@ class UserRoles extends FormBase {
           '#type' => 'checkbox',
           '#title' => $user_roles_info['title'],
           '#description' => $user_roles_info['description'],
-          '#default_value' => (bool)$user_roles_info['selected'],
+          '#default_value' => (bool) $user_roles_info['selected'],
           '#disabled' => $user_roles_info['disabled'],
         ];
       }
@@ -59,11 +59,11 @@ class UserRoles extends FormBase {
       '#type' => 'actions',
       '#weight' => 5,
     ];
-    
+
     return $form;
   }
 
-   /**
+  /**
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
@@ -81,7 +81,7 @@ class UserRoles extends FormBase {
       }
     }
 
-    if($user_roles_selected == 0) {
+    if ($user_roles_selected == 0) {
       $form_state->setErrorByName('user_roles', $this->t('Please select at least one user roles'));
       $form_state->setRebuild();
     }
@@ -101,11 +101,12 @@ class UserRoles extends FormBase {
     $user_roles_options = $user_roles['user_roles']['options'];
 
     foreach ($user_roles_options as $user_roles_key => $user_roles_info) {
-     
+
       if ($user_roles_key != "admin" && $form_state->getValue($user_roles_key) == 1) {
         $installer = \Drupal::service('module_installer');
         $installer->install([$user_roles_info['source_config']]);
       }
     }
   }
+
 }
