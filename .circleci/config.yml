@@ -152,7 +152,7 @@ commands:
           name: Install Cucumber with drush
           command: |
             cd /var/www/html/test/cucumber/web
-            ../bin/drush site-install cucumber --yes --site-name='Cucumber' --db-url='sqlite://sites/default/files/.ht.sqlite' --account-name=admin --account-pass=dD.123123ddd --account-mail=info@webship.co
+            ../bin/drush site-install cucumber --yes --site-name='Cucumber' --db-url='sqlite://sites/default/files/.ht.sqlite' --account-name=admin --account-pass=dD.123123ddd --account-mail=info@webship.co cucumber_user_roles.tester=true cucumber_user_roles.developer=true cucumber_user_roles.analyst=true cucumber_user_roles.coordinator=true cucumber_user_roles.designer=true cucumber_user_roles.product_owner=true cucumber_recipes.products=true cucumber_recipes.components=true cucumber_recipes.projects=true
             cd /var/www/html/test/cucumber
             sudo chmod 775 -R .
             sudo chown www-data:circleci -R .

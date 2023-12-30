@@ -4,9 +4,12 @@ dependencies: {  }
 id: admin
 label: Admin
 weight: 99
-is_admin: true
+is_admin: null
 permissions:
   - 'access content'
+  - 'access content overview'
+  - 'revert all revisions'
+  - 'view all revisions'
   - 'access features page'
   - 'create feature media'
   - 'edit any feature media'
