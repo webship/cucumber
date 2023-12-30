@@ -14,12 +14,6 @@ user_roles:
       source_config: cucumber_user_role_developer
       selected: false
       disabled: false
-    designer:
-      title: Designer
-      description: Analyze research findings to inform design directions. Evaluate new design ideas or concepts. Provide on-the-job training to direct reports and junior teams.
-      source_config: cucumber_user_role_designer
-      selected: false
-      disabled: false
     analyst:
       title: Analyst
       description: Analyze the defects and bugs to identify what is causing them, and keep software and systems documentation up to date.
@@ -30,6 +24,12 @@ user_roles:
       title: Coordinator
       description: Day-to-day coordination of test activities, Executing work distribution, Establishing plans, and Monitoring progress.
       source_config: cucumber_user_role_coordinator
+      selected: false
+      disabled: false
+    designer:
+      title: Designer
+      description: Analyze research findings to inform design directions. Evaluate new system design ideas or concepts. Provide on-the-job training to direct reports and junior teams.
+      source_config: cucumber_user_role_designer
       selected: false
       disabled: false
     product_owner:

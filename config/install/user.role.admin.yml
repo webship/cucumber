@@ -5,4 +5,9 @@ id: admin
 label: Admin
 weight: 99
 is_admin: true
-permissions: {  }
+permissions:
+  - 'access content'
+  - 'access features page'
+  - 'create feature media'
+  - 'edit any feature media'
+  - 'can view admin_dashboard dashboard'
