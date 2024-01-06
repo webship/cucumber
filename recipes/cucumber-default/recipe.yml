@@ -2,33 +2,7 @@ name: Cucumber Default
 description: A recipe to manage default configs for the Cucumber installation profile.
 type: Testing
 config:
-  import:
-    cucumber: '*'
   actions:
-    user.role.anonymous:
-      simple_config_update:
-        weight: -100
-        permissions: {  }
-    user.role.authenticated:
-      simple_config_update:
-        weight: -99
-        permissions: {  }
-      grantPermissions:
-        - 'access content'
-        - 'view media'
-    user.role.admin:
-      simple_config_update:
-        weight: 99
-        permissions: {  }
-      grantPermissions:
-        - 'access content'
-        - 'access content overview'
-        - 'revert all revisions'
-        - 'view all revisions'
-        - 'access features page'
-        - 'create feature media'
-        - 'edit any feature media'
-        - 'can view admin_dashboard dashboard'
     user.settings:
       simple_config_update:
         register: admin_only
