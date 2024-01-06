@@ -2,6 +2,8 @@ name: Cucumber Default
 description: A recipe to manage default configs for the Cucumber installation profile.
 type: Testing
 config:
+  import:
+    cucumber: '*'
   actions:
     user.settings:
       simple_config_update:
