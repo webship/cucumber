@@ -29,10 +29,11 @@
   "require": {
     "composer/installers": "~2",
     "oomphinc/composer-installers-extender": "~2",
-    "cweagans/composer-patches": "~1",
     "drupal/core-composer-scaffold": "~10",
+    "symplify/vendor-patches": "~11",
     "drupal/core": "~10.2.0",
     "drush/drush": "~12.0",
+    "drupal/webpatches": "~10",
     "drupal/cucumber_core": "10.0.x-dev",
     "drupal/cucumber_default_content": "10.0.x-dev",
     "drupal/cucumber_user_roles": "10.0.x-dev",
