@@ -29,7 +29,7 @@
   "require": {
     "composer/installers": "~2",
     "oomphinc/composer-installers-extender": "~2",
-    "drupal/core-composer-scaffold": "~10",
+    "drupal/core-composer-scaffold": "^11",
     "drupal/core": "~11.0.0",
     "drush/drush": "~12.0",
     "drupal/webpatches": "11.0.x-dev",
