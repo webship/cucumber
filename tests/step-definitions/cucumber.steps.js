@@ -50,8 +50,11 @@ Given(
       );
     }
     await this.page.goto(`${this.parameters.launchUrl}/user/login`);
-    await this.page.getByLabel('Username').fill(username);
-    await this.page.getByLabel('Password').fill(password);
+    // Target the form controls by their name attribute: Web Admin 12.0.x
+    // brings in View Password, whose "Show password" toggle carries an
+    // aria-label of "Password" and makes getByLabel('Password') ambiguous.
+    await this.page.locator('input[name="name"]').fill(username);
+    await this.page.locator('input[name="pass"]').fill(password);
     await this.page.locator('input[value="Log in"]').click();
     await this.page.waitForLoadState('networkidle');
   },
