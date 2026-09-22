@@ -32,8 +32,7 @@
     "drupal/cucumber_default_content": "11.0.x-dev",
     "drupal/cucumber_user_roles": "11.0.x-dev",
     "drupal/cucumber_recipes": "11.0.x-dev",
-    "drupal/cucumber_demos": "11.0.x-dev",
-    "drupal/webtheme_admin": "11.0.x-dev"
+    "drupal/cucumber_demos": "11.0.x-dev"
   },
   "conflict": {
     "drupal/drupal": "*"
