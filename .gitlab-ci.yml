@@ -91,6 +91,8 @@ stylelint:
     - name: $_CONFIG_DOCKERHUB_ROOT/$_TARGET_DB_TYPE-$_TARGET_DB_VERSION:$_TARGET_DB_IMAGE_TAG
       alias: database
   variables:
+    # composer.json sets bin-dir to bin/, so drush is not under vendor/bin.
+    DRUSH_BIN: "bin/drush"
     DRUPAL_ADMIN_USERNAME: "webmaster"
     DRUPAL_ADMIN_PASSWORD: "dD.123123ddd"
     DRUPAL_TEST_BASE_URL: "http://localhost"
@@ -109,7 +111,7 @@ stylelint:
     - export SIMPLETEST_DB=mysql://$MYSQL_USER:$MYSQL_PASSWORD@database/$MYSQL_DATABASE
     # Drupal site install with the cucumber profile, answering its install
     # tasks: every user role (Admin is always on), all recipes, no demo.
-    - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT site:install cucumber
+    - $CI_PROJECT_DIR/$DRUSH_BIN --root=$CI_PROJECT_DIR/$_WEB_ROOT site:install cucumber
         --db-url=$SIMPLETEST_DB
         --account-name=webmaster
         --account-pass=dD.123123ddd
@@ -122,7 +124,7 @@ stylelint:
         cucumber_user_roles.designer=1
         cucumber_user_roles.product_owner=1
         -y
-    - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT cache:rebuild
+    - $CI_PROJECT_DIR/$DRUSH_BIN --root=$CI_PROJECT_DIR/$_WEB_ROOT cache:rebuild
     # Node.js 20.
     - curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
     - apt-get install -y nodejs
