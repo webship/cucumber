@@ -24,6 +24,6 @@ install:
   - image
   - views
   - file
-## Contrib Modules
+  # Contrib modules.
   - cucumber_core
   - cucumber_default_content
