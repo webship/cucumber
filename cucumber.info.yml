@@ -15,7 +15,6 @@ themes:
   - webtheme_admin
 install:
   - system
-  - action
   - user
   - node
   - block
