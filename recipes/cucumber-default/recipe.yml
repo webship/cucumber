@@ -28,3 +28,8 @@ config:
         - 'create feature media'
         - 'edit any feature media'
         - 'can view admin_dashboard dashboard'
+    user.role.authenticated:
+      # The front page and the login redirect for authenticated users are the
+      # default dashboard, so every signed-in user must be able to view it.
+      grantPermissions:
+        - 'can view default_dashboard dashboard'
