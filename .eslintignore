@@ -1,3 +1,17 @@
-node_modules/**/*
+node_modules/
+.yarn/
+vendor/
+web/
 # Ignore deliberately malformed YAML files.
 drupalci.yml
+# Build and cache artefacts.
+*.min.js
+*.map
+.eslintcache
+# Per-developer gitlab-ci-local runtime and generated test artefacts.
+.gitlab-ci-local/
+tests/reports/
+tests/screenshots/
+tests/videos/
+# TypeScript config (no TS parser configured).
+*.ts

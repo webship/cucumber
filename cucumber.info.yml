@@ -12,7 +12,6 @@ distribution:
 themes:
   - claro
   - gin
-  - webtheme_admin
 install:
   - system
   - user
@@ -24,6 +23,6 @@ install:
   - image
   - views
   - file
-## Contrib Modules
+  # Contrib modules.
   - cucumber_core
   - cucumber_default_content

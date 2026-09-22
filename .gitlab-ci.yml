@@ -1,0 +1,158 @@
+include:
+  - project: $_GITLAB_TEMPLATES_REPO
+    ref: $_GITLAB_TEMPLATES_REF
+    file:
+      - "/includes/include.drupalci.main.yml"
+      - "/includes/include.drupalci.variables.yml"
+      - "/includes/include.drupalci.workflows.yml"
+
+# Default build: Drupal 11 on PHP 8.4. Drupal 12 and the newest PHP run as
+# opt-in variant jobs, allowed to fail, until they become the default.
+variables:
+  _TARGET_PHP: "8.4"
+  OPT_IN_TEST_NEXT_MAJOR: "1"
+  OPT_IN_TEST_MAX_PHP: "1"
+
+cspell:
+  stage: validate
+  image: node:20
+  before_script:
+    - npm install -g cspell
+  script:
+    - cspell "**/*.{php,module,inc,install,test,profile,theme,js,css,md,yml,txt}" --no-progress || true
+  allow_failure: true
+
+# Shared setup for the fast lint jobs (eslint, stylelint).
+#
+# package.json keeps webship-js as its only devDependency, so the linters are
+# installed here, for the lint jobs only:
+#   1. `dependencies: []`: the lint jobs do NOT need the composer job's build
+#      artifact (the full Drupal tree).
+#   2. `npm install --no-save --ignore-scripts`: adds the linters without
+#      touching package.json or yarn.lock, and skips webship-js's postinstall
+#      (no Playwright browsers).
+# The paired .eslintignore excludes vendor/, .yarn/, web/ and node_modules/ so
+# `eslint .` only lints the profile's own source.
+.lint-node:
+  image: node:20
+  dependencies: []
+  before_script:
+    - npm install --no-save --no-package-lock --ignore-scripts --no-audit --no-fund
+        eslint@8
+        eslint-config-airbnb-base@15
+        eslint-config-prettier@8
+        eslint-plugin-import@2
+        eslint-plugin-jquery@1
+        eslint-plugin-prettier@4
+        eslint-plugin-yml@1
+        prettier@2
+        stylelint@15
+        stylelint-config-standard@33
+
+eslint:
+  extends: .lint-node
+  stage: validate
+  script:
+    - npx --no-install eslint .
+    - npx --no-install eslint --ext .yml .
+  after_script:
+    - touch junit.xml _eslint.patch
+  allow_failure: false
+
+stylelint:
+  extends: .lint-node
+  stage: validate
+  script:
+    - npx --no-install stylelint "**/*.css" || true
+  after_script:
+    - echo '[]' > gl-codequality.json
+  allow_failure: true
+
+# Shared Drupal + Node.js setup for browser tests.
+#
+# How it works:
+#   1. The drupalci `composer` job builds a full Drupal site (the cucumber
+#      profile plus its dependencies) and passes its artifact to this job via
+#      `needs: [composer]`.
+#   2. This job runs inside the drupalci PHP-Apache image (inherited from
+#      `.testing-job-base`) which already has PHP, Apache, Drush, and MySQL.
+#   3. before_script installs Drupal with the cucumber profile itself, then
+#      Node.js + yarn deps + Playwright Chromium. Test jobs only override
+#      `script:`.
+#   4. Per-role test users are provisioned by the first suite scenario, so
+#      drush only installs Drupal with the Webmaster account.
+# ------------------------------------------------------------------------------
+.drupal-node-base:
+  extends: .testing-job-base
+  needs: [composer]
+  # Override the parent's services. We only need the database. Playwright
+  # bundles its own Chromium, so Selenium and chromedriver are not needed.
+  services:
+    - name: $_CONFIG_DOCKERHUB_ROOT/$_TARGET_DB_TYPE-$_TARGET_DB_VERSION:$_TARGET_DB_IMAGE_TAG
+      alias: database
+  variables:
+    # composer.json sets bin-dir to bin/, so drush is not under vendor/bin.
+    DRUSH_BIN: "bin/drush"
+    DRUPAL_ADMIN_USERNAME: "webmaster"
+    DRUPAL_ADMIN_PASSWORD: "dD.123123ddd"
+    DRUPAL_TEST_BASE_URL: "http://localhost"
+    LAUNCH_URL: "http://localhost"
+    FORCE_COLOR: "1"
+  before_script:
+    # Web server.
+    - mkdir -pv $CI_PROJECT_DIR/$_WEB_ROOT/sites/default/files
+    - mkdir -pv $CI_PROJECT_DIR/$_WEB_ROOT/sites/simpletest
+    - chmod -R 777 $CI_PROJECT_DIR/$_WEB_ROOT/sites/default/files
+    - chmod -R 777 $CI_PROJECT_DIR/$_WEB_ROOT/sites/simpletest
+    - rm -rf /var/www/html && ln -s $CI_PROJECT_DIR/$_WEB_ROOT /var/www/html
+    - chown -R www-data:www-data $CI_PROJECT_DIR
+    - service apache2 start
+    # Database.
+    - export SIMPLETEST_DB=mysql://$MYSQL_USER:$MYSQL_PASSWORD@database/$MYSQL_DATABASE
+    # Drupal site install with the cucumber profile, answering its install
+    # tasks: every user role (Admin is always on), all recipes, no demo.
+    - $CI_PROJECT_DIR/$DRUSH_BIN --root=$CI_PROJECT_DIR/$_WEB_ROOT site:install cucumber
+        --db-url=$SIMPLETEST_DB
+        --account-name=webmaster
+        --account-pass=dD.123123ddd
+        --account-mail=webmaster@example.test
+        --site-name="Cucumber Test"
+        cucumber_user_roles.tester=1
+        cucumber_user_roles.developer=1
+        cucumber_user_roles.analyst=1
+        cucumber_user_roles.coordinator=1
+        cucumber_user_roles.designer=1
+        cucumber_user_roles.product_owner=1
+        -y
+    - $CI_PROJECT_DIR/$DRUSH_BIN --root=$CI_PROJECT_DIR/$_WEB_ROOT cache:rebuild
+    # Node.js 20.
+    - curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+    - apt-get install -y nodejs
+    - node --version && npm --version
+    # Yarn deps + Playwright Chromium.
+    # Force node_modules layout so node_modules/.bin/* is populated.
+    - 'test -f .yarnrc.yml || echo "nodeLinker: node-modules" > .yarnrc.yml'
+    # Back up cucumber.js. webship-js's postinstall can clobber it under yarn 4
+    # because INIT_CWD may differ from our project root inside the container.
+    - cp cucumber.js .cucumber.js.bak
+    - corepack enable
+    - yarn install
+    # Restore cucumber.js if postinstall overwrote it with the init-webship template.
+    - cp .cucumber.js.bak cucumber.js && rm .cucumber.js.bak
+    - ./node_modules/.bin/playwright install --with-deps chromium
+
+# webship-js BDD functional tests.
+webship-js-test:
+  extends: .drupal-node-base
+  script:
+    - ./node_modules/.bin/cucumber-js --config cucumber.js --tags "not @wip"
+  artifacts:
+    when: always
+    paths:
+      - tests/reports/
+      - tests/screenshots/
+      - tests/videos/
+    expire_in: 7 days
+    reports:
+      junit: tests/reports/junit.xml
+  allow_failure: false

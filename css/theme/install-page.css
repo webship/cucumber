@@ -21,7 +21,7 @@ html body .task-list .is-active,
 html body .button--primary,
 html body .claro-details__summary:hover {
   background: #437100;
-  color: #ffffff;
+  color: #fff;
 }
 
 html body .button--primary:hover,
@@ -30,7 +30,7 @@ html body .button--primary:active {
   background: #3c3d41;
 }
 
-html body .task-list .is-active:after {
+html body .task-list .is-active::after {
   border-left-color: #437100;
 }
 

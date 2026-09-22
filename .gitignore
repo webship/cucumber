@@ -42,4 +42,18 @@ node_modules
 *.log
 .vscode
 package-lock.json
-yarn.lock
+
+# Yarn 4 install state (the lockfile and .yarnrc.yml are tracked).
+.yarn/
+.cucumber.js.bak
+
+# Test artefacts: ignore generated files but keep the folders and READMEs.
+tests/reports/**
+tests/screenshots/**
+tests/videos/**
+!tests/reports/
+!tests/reports/README.md
+!tests/screenshots/
+!tests/screenshots/README.md
+!tests/videos/
+!tests/videos/README.md
