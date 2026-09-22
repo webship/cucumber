@@ -5,6 +5,7 @@
  * Site configuration for Cucumber app.webship.co site installation.
  */
 
+use Drupal\Core\Extension\Requirement\RequirementSeverity;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\cucumber\Form\Recipes;
 use Drupal\cucumber\Form\Demos;
@@ -86,7 +87,7 @@ function cucumber_requirements($phase) {
     $requirements['php_yaml_extension'] = [
       'title' => 'PHP YAML extension',
       'description' => t('The PHP YAML extension is not enabled. It is recommended that you enable the PHP YAML extension for your server.'),
-      'severity' => REQUIREMENT_WARNING,
+      'severity' => RequirementSeverity::Warning,
     ];
   }
 
@@ -96,7 +97,7 @@ function cucumber_requirements($phase) {
       $requirements['cucumber_sqlite'] = [
         'title' => t('SQLite Database Driver'),
         'value' => t('Enabled'),
-        'severity' => REQUIREMENT_ERROR,
+        'severity' => RequirementSeverity::Error,
         'description' => t('The PDO SQLite extension is not enabled on your server. SQLite database is required for this site.'),
       ];
     }
@@ -104,7 +105,7 @@ function cucumber_requirements($phase) {
       $requirements['cucumber_sqlite'] = [
         'title' => t('SQLite Database Driver'),
         'value' => t('Enabled'),
-        'severity' => REQUIREMENT_OK,
+        'severity' => RequirementSeverity::OK,
         'description' => t('The PDO SQLite extension is enabled on your server. SQLite database is available.'),
       ];
     }
