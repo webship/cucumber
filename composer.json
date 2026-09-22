@@ -24,9 +24,9 @@
   },
   "require": {
     "composer/installers": "~2",
-    "drupal/core-composer-scaffold": "^11",
-    "drupal/core": "~11.0.0",
-    "drush/drush": "~12.0",
+    "drupal/core-composer-scaffold": "^11.4 || ^12",
+    "drupal/core": "^11.4 || ^12",
+    "drush/drush": "^13 || ^14",
     "drupal/webpatches": "11.0.x-dev",
     "drupal/cucumber_core": "11.0.x-dev",
     "drupal/cucumber_default_content": "11.0.x-dev",
