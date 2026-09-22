@@ -28,24 +28,75 @@
   },
   "rules": {
     "prettier/prettier": "error",
-    "consistent-return": ["off"],
-    "no-underscore-dangle": ["off"],
-    "max-nested-callbacks": ["warn", 3],
-    "import/no-mutable-exports": ["warn"],
-    "no-plusplus": ["warn", {
-      "allowForLoopAfterthoughts": true
-    }],
-    "no-param-reassign": ["off"],
-    "no-prototype-builtins": ["off"],
-    "valid-jsdoc": ["warn", {
-      "prefer": {
-        "returns": "return",
-        "property": "prop"
-      },
-      "requireReturn": false
-    }],
-    "no-unused-vars": ["warn"],
-    "operator-linebreak": ["error", "after", { "overrides": { "?": "ignore", ":": "ignore" } }],
-    "yml/indent": ["error", 2]
-  }
+    "consistent-return": [
+      "off"
+    ],
+    "no-underscore-dangle": [
+      "off"
+    ],
+    "max-nested-callbacks": [
+      "warn",
+      3
+    ],
+    "import/no-mutable-exports": [
+      "warn"
+    ],
+    "no-plusplus": [
+      "warn",
+      {
+        "allowForLoopAfterthoughts": true
+      }
+    ],
+    "no-param-reassign": [
+      "off"
+    ],
+    "no-prototype-builtins": [
+      "off"
+    ],
+    "valid-jsdoc": [
+      "warn",
+      {
+        "prefer": {
+          "returns": "return",
+          "property": "prop"
+        },
+        "requireReturn": false
+      }
+    ],
+    "no-unused-vars": [
+      "warn"
+    ],
+    "operator-linebreak": [
+      "error",
+      "after",
+      {
+        "overrides": {
+          "?": "ignore",
+          ":": "ignore"
+        }
+      }
+    ],
+    "yml/indent": [
+      "error",
+      2
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "cucumber.js",
+        "playwright.config.ts",
+        "tests/**/*.js"
+      ],
+      "rules": {
+        "no-restricted-syntax": "off",
+        "no-await-in-loop": "off",
+        "no-continue": "off",
+        "func-names": "off",
+        "valid-jsdoc": "off",
+        "import/no-extraneous-dependencies": "off",
+        "no-console": "off"
+      }
+    }
+  ]
 }
