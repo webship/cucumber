@@ -32,7 +32,8 @@ final class SiteTemplateInstallTest extends QuickStartTestBase {
     // single template it would submit the form programmatically, and the step
     // asserted below would never be displayed.
     foreach (['test_site_template' => 'node', 'test_site_template_alt' => 'help'] as $name => $module) {
-      $recipe = $this->getWorkingPath("recipes/$name");
+      // The installer scans the `type:drupal-recipe` installer path.
+      $recipe = $this->getWorkingPath("web/recipes/contrib/$name");
       file_put_contents("$recipe/recipe.yml", <<<YAML
       name: '$name'
       description: 'A site template used by the Cucumber installer test.'
@@ -84,7 +85,7 @@ final class SiteTemplateInstallTest extends QuickStartTestBase {
     } while (isset($refresh));
 
     // The site template was applied, and the profile uninstalled itself.
-    $this->assertFileExists("$directory/recipes/test_site_template/recipe.yml");
+    $this->assertFileExists("$directory/web/recipes/contrib/test_site_template/recipe.yml");
     $assert_session->statusCodeEquals(200);
   }
 
