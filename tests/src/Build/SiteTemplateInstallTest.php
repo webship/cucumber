@@ -47,7 +47,8 @@ final class SiteTemplateInstallTest extends QuickStartTestBase {
     $assert_session = $mink->assertSession();
 
     // The database step, then the two steps this issue adds.
-    $page->selectFieldOption('driver', 'SQLite');
+    // The driver options are keyed by the driver's class name.
+    $page->selectFieldOption('driver', 'Drupal\\sqlite\\Driver\\Database\\sqlite');
     $page->pressButton('Save and continue');
     $assert_session->pageTextContains('Give your site a name');
     $page->fillField('Site name', 'Cucumber Test');
