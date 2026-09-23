@@ -27,16 +27,20 @@ final class SiteTemplateInstallTest extends QuickStartTestBase {
     $this->copyCodebase();
     $directory = $this->getWorkspaceDirectory();
 
-    // Provide a site template that is physically present in the code base, so
-    // that the installer offers it without having to require it.
-    $recipe = $this->getWorkingPath('recipes/test_site_template');
-    file_put_contents("$recipe/recipe.yml", <<<'YAML'
-    name: 'Test Site Template'
-    description: 'A site template used by the Cucumber installer test.'
-    type: 'Site'
-    install:
-      - node
-    YAML);
+    // Provide two site templates that are physically present in the code base,
+    // so the installer offers them without having to require anything. With a
+    // single template it would submit the form programmatically, and the step
+    // asserted below would never be displayed.
+    foreach (['test_site_template' => 'node', 'test_site_template_alt' => 'help'] as $name => $module) {
+      $recipe = $this->getWorkingPath("recipes/$name");
+      file_put_contents("$recipe/recipe.yml", <<<YAML
+      name: '$name'
+      description: 'A site template used by the Cucumber installer test.'
+      type: 'Site'
+      install:
+        - $module
+      YAML);
+    }
 
     // Limit the curated list, so the test never reaches out to the network.
     $site_directory = $this->getWorkingPath('web/sites/default');
@@ -54,7 +58,7 @@ final class SiteTemplateInstallTest extends QuickStartTestBase {
     $page->fillField('Site name', 'Cucumber Test');
     $page->pressButton('Next');
     $assert_session->pageTextContains('Choose a site template');
-    $assert_session->pageTextContains('Test Site Template');
+    $assert_session->pageTextContains('test_site_template_alt');
     $page->selectFieldOption('add_ons', 'test_site_template');
     $page->pressButton('Next');
 
