@@ -49,7 +49,7 @@ stable release yet:
 Composer only honours stability flags such as `@beta`, `@rc` and
 `@alpha` in the **root** `composer.json`, so a flag written inside a
 dependency is ignored. That is why the project root has to relax the
-stability itself. `webship/cucumber-project` already does it; if you
+stability itself. `drupal/cucumber_project` already does it; if you
 add Cucumber to a `composer.json` of your own, it needs:
 
 ```json
@@ -68,16 +68,56 @@ Cucumber install locks 9 non-stable packages out of 186.
 
 ## Installation
 
-Create a project from the Cucumber project template:
+### With the project template (recommended)
 
+Start from the
+[Cucumber Project](https://www.drupal.org/project/cucumber_project) template.
+It requires this distribution and relaxes the stability flags for you, so there
+is nothing else to configure. Composer, PHP, Drush and the database all run
+inside [DDEV](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/):
+
+```shell
+mkdir my-site && cd my-site
+ddev config --project-type=drupal --docroot=web
+ddev start
+ddev composer create-project drupal/cucumber_project:~12.0
+ddev restart
+ddev drush site:install cucumber --account-name=webmaster --account-pass=<password> -y
+ddev launch
 ```
-composer create-project webship/cucumber-project:~12.0 cucumber --no-interaction
-cd cucumber
-bin/drush site:install cucumber --account-name=webmaster --account-pass=<password> -y
+
+`ddev restart` picks up the `.ddev/config.yaml` the template ships (PHP 8.3,
+Node.js 22, MariaDB 10.11), which replaces the one `ddev config` wrote. The
+site is at `https://<directory>.ddev.site`.
+
+### On an existing DDEV project
+
+Add the distribution to a Drupal project of your own, then install its profile:
+
+```shell
+ddev composer require webship/cucumber:~12.0
+ddev drush site:install cucumber --account-name=webmaster --account-pass=<password> -y
 ```
+
+The root `composer.json` has to relax the stability first, as described under
+Requirements — otherwise Composer refuses the non-stable dependencies.
 
 The installer asks which user roles, recipes and demo to add. The
 defaults install the Admin role and all three recipes, with no demo.
+To answer in a browser instead, run `ddev launch` and follow the installer.
+
+### Without DDEV
+
+The same two paths work with a Composer, PHP and database stack of your own:
+
+```shell
+composer create-project drupal/cucumber_project:~12.0 my-site --no-interaction
+cd my-site
+bin/drush site:install cucumber --account-name=webmaster --account-pass=<password> -y
+```
+
+Drush lives at `bin/drush`, not `vendor/bin/drush`: the profile sets the
+Composer `bin-dir` to `bin/`.
 
 
 ## Usage
