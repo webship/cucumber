@@ -7,6 +7,7 @@
     "issues": "http://drupal.org/project/issues/cucumber",
     "source": "http://cgit.drupalcode.org/cucumber"
   },
+  "minimum-stability": "alpha",
   "prefer-stable": true,
   "authors": [
     {
@@ -45,6 +46,9 @@
     },
     "allow-plugins": {
       "composer/installers": true,
+      "symfony/runtime": true,
+      "php-http/discovery": true,
+      "tbachert/spi": true,
       "cweagans/composer-patches": true,
       "drupal/core-composer-scaffold": true,
       "dealerdirect/phpcodesniffer-composer-installer": true
@@ -62,14 +66,30 @@
       }
     },
     "installer-paths": {
-      "web/core": ["type:drupal-core"],
-      "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-      "web/modules/contrib/{$name}": ["type:drupal-module"],
-      "web/themes/contrib/{$name}": ["type:drupal-theme"],
-      "web/libraries/{$name}": ["type:drupal-library"],
-      "web/modules/custom/{$name}": ["type:drupal-custom-module"],
-      "web/themes/custom/{$name}": ["type:drupal-custom-theme"],
-      "drush/contrib/{$name}": ["type:drupal-drush"]
+      "web/core": [
+        "type:drupal-core"
+      ],
+      "web/profiles/contrib/{$name}": [
+        "type:drupal-profile"
+      ],
+      "web/modules/contrib/{$name}": [
+        "type:drupal-module"
+      ],
+      "web/themes/contrib/{$name}": [
+        "type:drupal-theme"
+      ],
+      "web/libraries/{$name}": [
+        "type:drupal-library"
+      ],
+      "web/modules/custom/{$name}": [
+        "type:drupal-custom-module"
+      ],
+      "web/themes/custom/{$name}": [
+        "type:drupal-custom-theme"
+      ],
+      "drush/contrib/{$name}": [
+        "type:drupal-drush"
+      ]
     },
     "enable-patching": true,
     "composer-exit-on-patch-failure": true,

@@ -9,6 +9,10 @@ include:
 # Default build: Drupal 11 on PHP 8.4. Drupal 12 and the newest PHP run as
 # opt-in variant jobs, allowed to fail, until they become the default.
 variables:
+  # The distribution depends on Display Builder (beta), Media Directories (rc) and,
+  # through Web Config, Config Update (alpha);
+  # drupalci builds its own root project, so our root stability does not apply there.
+  MINIMUM_STABILITY_OVERRIDE: "alpha"
   _TARGET_PHP: "8.4"
   OPT_IN_TEST_NEXT_MAJOR: "1"
   OPT_IN_TEST_MAX_PHP: "1"
