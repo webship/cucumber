@@ -1,6 +1,6 @@
 {
   "name": "webship/cucumber",
-  "description": "Cucumber Automated Functional Acceptance Testing Management system",
+  "description": "The Cucumber installer: choose a site template for the Cucumber Automated Functional Acceptance Testing Management system",
   "type": "drupal-profile",
   "license": "GPL-2.0-or-later",
   "support": {
@@ -23,6 +23,7 @@
     }
   },
   "require": {
+    "composer/composer": "^2.8",
     "composer/installers": "~2",
     "drupal/core-composer-scaffold": "^11.4 || ^12",
     "drupal/core": "^11.4 || ^12",
@@ -32,7 +33,7 @@
     "drupal/cucumber_default_content": "~12.0",
     "drupal/cucumber_user_roles": "~12.0",
     "drupal/cucumber_recipes": "~12.0",
-    "drupal/cucumber_demos": "~12.0"
+    "drupal/cucumber_starter": "~1.0"
   },
   "conflict": {
     "drupal/drupal": "*"
@@ -77,6 +78,9 @@
       ],
       "web/themes/contrib/{$name}": [
         "type:drupal-theme"
+      ],
+      "web/recipes/contrib/{$name}": [
+        "type:drupal-recipe"
       ],
       "web/libraries/{$name}": [
         "type:drupal-library"

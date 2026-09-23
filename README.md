@@ -16,16 +16,28 @@ directories, with dashboards for each team role.
 
 ## Features
 
+Cucumber is an installer. It asks for a site name, offers the site
+templates it can find, applies the one you choose, and then uninstalls
+itself — the same way Webship and Drupal CMS install.
+
+A site template is a recipe of `type: Site`. The default one is
+[Cucumber Starter](https://www.drupal.org/project/cucumber_starter),
+which sets up:
+
 - A "Feature" media type that stores a Gherkin script, edited with the
   Ace editor ([Gherkin Script](https://www.drupal.org/project/gherkin)).
 - A features page, a feature directory and default and admin
   dashboards ([Cucumber Core](https://www.drupal.org/project/cucumber_core)).
-- Optional user roles, each with its own dashboard
+- The user roles, each with its own dashboard
   ([Cucumber User Roles](https://www.drupal.org/project/cucumber_user_roles)).
-- Products, components and projects recipes
-  ([Cucumber Recipes](https://www.drupal.org/project/cucumber_recipes)),
-  and optional demo content
-  ([Cucumber Demos](https://www.drupal.org/project/cucumber_demos)).
+- Products, components and projects
+  ([Cucumber Recipes](https://www.drupal.org/project/cucumber_recipes)).
+
+Site templates the installer offers come from three places, in order: the
+`Site` recipes already in the project's recipe directory, a
+`sites/default/site-templates.php` file (an official extension point for
+hosts and for testing), and the curated `site-templates.yml` list kept in
+this project.
 
 
 ## Requirements

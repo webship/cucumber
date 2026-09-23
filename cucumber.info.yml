@@ -1,28 +1,16 @@
 name: Cucumber
 type: profile
-description: Cucumber Automated Functional Acceptance Testing Management system
+description: 'The Cucumber installer: choose a site template for the Cucumber Automated Functional Acceptance Testing Management system.'
 core_version_requirement: ^11.4 || ^12
-version: 11.0.x-dev
 package: Cucumber
-project: cucumber
+
+# Use the `distribution` key to skip the installer's profile selection step.
 distribution:
   name: Cucumber
   install:
     theme: claro
+
+# The site template installs everything else; the installer itself only needs
+# the administration theme it runs in.
 themes:
   - claro
-  - gin
-install:
-  - system
-  - user
-  - node
-  - block
-  - block_content
-  - datetime
-  - help
-  - image
-  - views
-  - file
-  # Contrib modules.
-  - cucumber_core
-  - cucumber_default_content

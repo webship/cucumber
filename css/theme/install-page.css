@@ -58,3 +58,38 @@ html body.install-page .site-name {
 html body.install-page .site-version {
   vertical-align: middle;
 }
+
+/* Site template choices. */
+#edit-add-ons--wrapper .fieldset-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1.5rem;
+}
+
+.site-template {
+  border: 1px solid #d3d4d9;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.site-template__label img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 10rem;
+  object-fit: contain;
+}
+
+.site-template__title {
+  margin: 0.5rem 0 0;
+}
+
+.site-template .badge {
+  display: inline-block;
+  margin-top: 0.5rem;
+  border-radius: 1rem;
+  background: #437100;
+  padding: 0.125rem 0.75rem;
+  color: #fff;
+  font-size: 0.75rem;
+}

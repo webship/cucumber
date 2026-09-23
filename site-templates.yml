@@ -1,0 +1,11 @@
+# Site templates listed by the Cucumber installer, in addition to the `Site`
+# recipes in the recipes directory of the project, like the Cucumber Starter.
+# @see \Drupal\cucumber\Form\SiteTemplateForm::getCuratedList()
+cucumber_starter:
+  name: 'Cucumber Starter'
+  description: 'The Cucumber Automated Functional Acceptance Testing Management system: features with their Gherkin scripts, components, products and projects, the Cucumber user roles and the Cucumber dashboards.'
+  creator: Webship
+  package: drupal/cucumber_starter
+  links:
+    - text: 'Project page'
+      url: 'https://www.drupal.org/project/cucumber_starter'

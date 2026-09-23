@@ -2,31 +2,18 @@
 
 /**
  * @file
- * Install, update and uninstall functions for the Cucumber installation profile.
+ * Install, update and uninstall functions for the Cucumber installer.
  */
-
-use Drupal\Core\Recipe\Recipe;
-use Drupal\Core\Recipe\RecipeRunner;
 
 /**
  * Implements hook_install().
  *
- * Perform actions to set up the site for this profile.
+ * The site configuration is owned by the chosen site template, so there is
+ * nothing to do here beyond rebuilding the caches once the profile module is
+ * installed.
  *
- * @see system_install()
+ * @see \Drupal\cucumber\Form\SiteTemplateForm
  */
-function cucumber_install() {
-
-  $cucumber_default_recipe = Recipe::createFromDirectory(__DIR__ . '/recipes/cucumber-default');
-  RecipeRunner::processRecipe($cucumber_default_recipe);
-
-  // * Necessary initialization for the entire system.
-  // * Account for changed config by the end install.
-  // * Flush all persistent caches.
-  // * Flush asset file caches.
-  // * Wipe the Twig PHP Storage cache.
-  // * Rebuild module and theme data.
-  // * Clear all plugin caches.
-  // * Rebuild the menu router based on all rebuilt data.
+function cucumber_install(): void {
   drupal_flush_all_caches();
 }

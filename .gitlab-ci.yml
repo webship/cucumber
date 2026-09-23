@@ -113,20 +113,15 @@ stylelint:
     - service apache2 start
     # Database.
     - export SIMPLETEST_DB=mysql://$MYSQL_USER:$MYSQL_PASSWORD@database/$MYSQL_DATABASE
-    # Drupal site install with the cucumber profile, answering its install
-    # tasks: every user role (Admin is always on), all recipes, no demo.
+    # Drupal site install with the cucumber profile. The installer applies the
+    # Cucumber Starter site template, which is the only site template offered
+    # and is therefore selected automatically when installing non-interactively.
     - $CI_PROJECT_DIR/$DRUSH_BIN --root=$CI_PROJECT_DIR/$_WEB_ROOT site:install cucumber
         --db-url=$SIMPLETEST_DB
         --account-name=webmaster
         --account-pass=dD.123123ddd
         --account-mail=webmaster@example.test
         --site-name="Cucumber Test"
-        cucumber_user_roles.tester=1
-        cucumber_user_roles.developer=1
-        cucumber_user_roles.analyst=1
-        cucumber_user_roles.coordinator=1
-        cucumber_user_roles.designer=1
-        cucumber_user_roles.product_owner=1
         -y
     - $CI_PROJECT_DIR/$DRUSH_BIN --root=$CI_PROJECT_DIR/$_WEB_ROOT cache:rebuild
     # Node.js 20.
