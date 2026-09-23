@@ -51,6 +51,10 @@ function cucumber_form_install_configure_form_alter(array &$form, FormStateInter
  * Implements hook_install_tasks_alter().
  */
 function cucumber_install_tasks_alter(array &$tasks, array $install_state): void {
+  // Cucumber is installed in English. Translations are not downloaded, so
+  // there is nothing to choose between.
+  unset($tasks['install_select_language'], $tasks['install_download_translation']);
+
   $insert_before = function (string $key, array $additions) use (&$tasks): void {
     $key = array_search($key, array_keys($tasks), TRUE);
     if ($key === FALSE) {
