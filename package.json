@@ -27,7 +27,7 @@
     "test:chromium": "BROWSER=chromium cucumber-js --config cucumber.js"
   },
   "devDependencies": {
-    "webship-js": "~2.0"
+    "webship-js": "^2.0.6"
   },
   "resolutions": {
     "@cucumber/cucumber": "10.0.1"

@@ -876,7 +876,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "cucumber@workspace:."
   dependencies:
-    webship-js: "npm:~2.0"
+    webship-js: "npm:^2.0.6"
   languageName: unknown
   linkType: soft
 
@@ -2641,9 +2641,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webship-js@npm:~2.0":
-  version: 2.0.5
-  resolution: "webship-js@npm:2.0.5"
+"webship-js@npm:^2.0.6":
+  version: 2.0.6
+  resolution: "webship-js@npm:2.0.6"
   dependencies:
     "@axe-core/playwright": "npm:^4.11.3"
     "@cucumber/cucumber": "npm:*"
@@ -2662,7 +2662,7 @@ __metadata:
   bin:
     generate-reports: bin/generate-reports.js
     init-webship-js: bin/init-webship.js
-  checksum: 10c0/5bc1cb56533ab2cdb5d54ef1e19a5e31a8af714a26b3626919ee591340857d9f6e6350b42c8d7186a39f04eba69e2b6c3066bb054163757d8e789f26b084575e
+  checksum: 10c0/bf1f8ef686259fd31bbaba97f81bf1933ac216b8100bb44acc4a8a29712e9c1335b6e73a59c345bc40d16ca87872e15fc86be44e0f162ac68323cc7c2b96bddf
   languageName: node
   linkType: hard
 
