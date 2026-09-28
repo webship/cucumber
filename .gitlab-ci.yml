@@ -160,3 +160,10 @@ webship-js-test:
     reports:
       junit: tests/reports/junit.xml
   allow_failure: false
+
+# Drupal 11.4.8 carries the fix for the Twig 3.30 escape TypeError
+# (https://www.drupal.org/i/3625969), which 11.4.6 does not: pages rendered
+# by UIkit Admin, the log in page included, fail on 11.4.6.
+composer:
+  variables:
+    DRUPAL_CORE: "11.4.8"

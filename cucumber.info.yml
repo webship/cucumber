@@ -11,7 +11,7 @@ distribution:
     theme: claro
 themes:
   - claro
-  - gin
+  - uikit_admin
 install:
   - system
   - user

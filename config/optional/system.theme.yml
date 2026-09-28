@@ -1,2 +1,4 @@
-admin: gin
-default: gin
+# Cucumber is an administration application: UIkit Admin is the theme of
+# the whole site, so the dashboards and the test screens look the same.
+admin: uikit_admin
+default: uikit_admin
