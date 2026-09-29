@@ -2,7 +2,6 @@ name: Cucumber
 type: profile
 description: Cucumber Automated Functional Acceptance Testing Management system
 core_version_requirement: ^11.4 || ^12
-version: 11.0.x-dev
 package: Cucumber
 project: cucumber
 distribution:

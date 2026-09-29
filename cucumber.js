@@ -58,7 +58,7 @@ module.exports = {
         css: {},
         xpath: {},
         filesPath: './tests/selectors/',
-        files: ['cms-drupal-cms-gin.json'],
+        files: ['cms-drupal-uikit-admin.json'],
         offset: 60,
         breakpoints: {
           xs: { width: 375, height: 667 },

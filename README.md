@@ -38,7 +38,7 @@ Cucumber depends on three contributed projects that have not reached a
 stable release yet:
 
 - [Display Builder](https://www.drupal.org/project/display_builder) —
-  newest release `1.0.0-beta7` (**beta**), pulled in by Webassets.
+  newest release `1.0.0-beta8` (**beta**), pulled in by Webassets.
 - [Media Directories](https://www.drupal.org/project/media_directories)
   and its `_ui` / `_editor` components — newest release `3.0.0-rc1`
   (**rc**). The stable `2.0.x` line only supports Drupal 8 and 9, so
@@ -82,7 +82,7 @@ ddev config --project-type=drupal --docroot=web
 ddev start
 ddev composer create-project drupal/cucumber_project:~12.0
 ddev restart
-ddev drush site:install cucumber --account-name=webmaster --account-pass=<password> -y
+ddev drush site:install cucumber --account-name=webmaster --account-pass=<password> --site-name="<site name>" -y
 ddev launch
 ```
 
@@ -96,7 +96,7 @@ Add the distribution to a Drupal project of your own, then install its profile:
 
 ```shell
 ddev composer require webship/cucumber:~12.0
-ddev drush site:install cucumber --account-name=webmaster --account-pass=<password> -y
+ddev drush site:install cucumber --account-name=webmaster --account-pass=<password> --site-name="<site name>" -y
 ```
 
 The root `composer.json` has to relax the stability first, as described under
@@ -113,7 +113,7 @@ The same two paths work with a Composer, PHP and database stack of your own:
 ```shell
 composer create-project drupal/cucumber_project:~12.0 my-site --no-interaction
 cd my-site
-bin/drush site:install cucumber --account-name=webmaster --account-pass=<password> -y
+bin/drush site:install cucumber --account-name=webmaster --account-pass=<password> --site-name="<site name>" -y
 ```
 
 Drush lives at `bin/drush`, not `vendor/bin/drush`: the profile sets the
@@ -122,9 +122,20 @@ Composer `bin-dir` to `bin/`.
 
 ## Usage
 
+The site asks everybody to sign in: a visitor who is not signed in is
+sent to `/user/login`, and lands on a dashboard after signing in.
+
 Log in and create a "Feature" media item at `media/add/feature`: paste
 or upload a Gherkin script and file it in a feature directory. The
 front page is the default dashboard; features are listed at `features`.
+A feature goes through the automated testing workflow: To Do, In
+Progress, Implemented and Published, with Draft as the way back.
+
+The Admin role and the optional user roles write features and take the
+steps of the workflow that fit their work. The theme of the site, front
+and back, is [UIkit Admin](https://www.drupal.org/project/uikit_admin):
+its navigation shows every signed-in person the Features, Products,
+Components and Projects links the role may follow, and a Log out link.
 
 
 ## Testing
