@@ -4,4 +4,3 @@ install-page:
       css/theme/install-page.css: { }
   dependencies:
     - system/maintenance
-    - claro/install-page

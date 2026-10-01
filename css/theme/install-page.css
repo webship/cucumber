@@ -10,8 +10,8 @@ html body a:hover,
 html body a:focus,
 html body a:active,
 html body.install-page .site-version,
-html body .claro-details,
-html body .claro-details__summary,
+html body details,
+html body summary,
 html body .form-item__description,
 html body .task-list li {
   color: #437100;
@@ -19,7 +19,7 @@ html body .task-list li {
 
 html body .task-list .is-active,
 html body .button--primary,
-html body .claro-details__summary:hover {
+html body summary:hover {
   background: #437100;
   color: #fff;
 }
@@ -57,4 +57,67 @@ html body.install-page .site-name {
 
 html body.install-page .site-version {
   vertical-align: middle;
+}
+
+html body.install-page {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  padding: 2rem 1rem;
+}
+
+html body.install-page .layout-container {
+  display: grid;
+  grid-template-columns: 14rem 1fr;
+  gap: 1.5rem 2.5rem;
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 2rem 2.5rem;
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 0 0.5rem 2rem rgb(0 0 0 / 25%);
+}
+
+html body.install-page .layout-container header {
+  grid-column: 1 / -1;
+  height: 6rem;
+}
+
+html body.install-page header h1 {
+  margin: 0 0 0 7.5rem;
+  font-size: 2.5rem;
+  line-height: 6rem;
+}
+
+html body.install-page .layout-sidebar-first {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+html body.install-page main {
+  grid-column: 2;
+  grid-row: 2;
+  min-width: 0;
+}
+
+html body .task-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+html body .task-list li {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+}
+
+@media (max-width: 48rem) {
+  html body.install-page .layout-container {
+    grid-template-columns: 1fr;
+  }
+
+  html body.install-page .layout-sidebar-first,
+  html body.install-page main {
+    grid-column: 1;
+    grid-row: auto;
+  }
 }

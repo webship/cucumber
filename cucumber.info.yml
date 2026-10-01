@@ -7,9 +7,8 @@ project: cucumber
 distribution:
   name: Cucumber
   install:
-    theme: claro
+    theme: uikit_admin
 themes:
-  - claro
   - uikit_admin
 install:
   - system
