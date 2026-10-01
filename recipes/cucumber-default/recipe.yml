@@ -4,13 +4,13 @@ type: Testing
 config:
   actions:
     user.settings:
-      simple_config_update:
+      simpleConfigUpdate:
         register: admin_only
     system.site:
-      simple_config_update:
+      simpleConfigUpdate:
         page.front: '/dashboard/default_dashboard'
     node.settings:
-      simple_config_update:
+      simpleConfigUpdate:
         use_admin_theme: true
     user.role.admin:
       # Granted here, from hook_install(), once every module that defines

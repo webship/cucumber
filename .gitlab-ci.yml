@@ -129,6 +129,9 @@ stylelint:
         cucumber_user_roles.product_owner=1
         -y
     - $CI_PROJECT_DIR/$DRUSH_BIN --root=$CI_PROJECT_DIR/$_WEB_ROOT cache:rebuild
+    # A test runner has no mail server: collect the mails instead of sending
+    # them, so the password reset form returns instead of waiting on a mailer.
+    - $CI_PROJECT_DIR/$DRUSH_BIN --root=$CI_PROJECT_DIR/$_WEB_ROOT config:set system.mail interface.default test_mail_collector -y
     # Node.js 20.
     - curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
     - apt-get install -y nodejs
