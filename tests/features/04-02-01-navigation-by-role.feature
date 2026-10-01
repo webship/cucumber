@@ -32,6 +32,8 @@ Feature: Every role has the navigation of its work and a way out
     Given I am a logged in user with the "<user>" user
     When I set the viewport size to 1280x900
      And I follow "<link>"
+     # The rail link loads a new page: wait for it before checking the path.
+     And I wait until the URL contains "<path>"
     Then the path should be "<path>"
      And I should not see "Access denied"
      And I should not see "Insert selected"
