@@ -22,11 +22,11 @@ Feature: The key Cucumber pages respond
       | Products                | /products                          |
       | Components              | /components                        |
       | Projects                | /projects                          |
-      | Default Dashboard       | /dashboard/default_dashboard       |
-      | Admin Dashboard         | /dashboard/admin_dashboard         |
-      | Tester Dashboard        | /dashboard/tester_dashboard        |
-      | Developer Dashboard     | /dashboard/developer_dashboard     |
-      | Analyst Dashboard       | /dashboard/analyst_dashboard       |
-      | Coordinator Dashboard   | /dashboard/coordinator_dashboard   |
-      | Designer Dashboard      | /dashboard/designer_dashboard      |
-      | Product Owner Dashboard | /dashboard/product_owner_dashboard |
+      | Default Dashboard       | /webdashboard/default_dashboard       |
+      | Admin Dashboard         | /webdashboard/admin_dashboard         |
+      | Tester Dashboard        | /webdashboard/tester_dashboard        |
+      | Developer Dashboard     | /webdashboard/developer_dashboard     |
+      | Analyst Dashboard       | /webdashboard/analyst_dashboard       |
+      | Coordinator Dashboard   | /webdashboard/coordinator_dashboard   |
+      | Designer Dashboard      | /webdashboard/designer_dashboard      |
+      | Product Owner Dashboard | /webdashboard/product_owner_dashboard |

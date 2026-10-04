@@ -52,7 +52,7 @@ Feature: Every role has the navigation of its work and a way out
     When I set the viewport size to 1280x900
      And I follow "Log out"
     Then the path should be "/user/login"
-    When I navigate to "/dashboard/default_dashboard"
+    When I navigate to "/webdashboard/default_dashboard"
     Then the path should be "/user/login"
 
     Examples:

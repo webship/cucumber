@@ -15,15 +15,15 @@ Feature: Login for every configured user
 
   Scenario: Admin lands on the Admin Dashboard after logging in
     Given I am a logged in user with the "Admin" user
-    Then the path should be "/dashboard/admin_dashboard"
+    Then the path should be "/webdashboard/admin_dashboard"
      And I should see "Admin Dashboard"
 
   Scenario: Tester lands on the Tester Dashboard after logging in
     Given I am a logged in user with the "Tester" user
-    Then the path should be "/dashboard/tester_dashboard"
+    Then the path should be "/webdashboard/tester_dashboard"
      And I should see "Tester Dashboard"
 
   Scenario: Authenticated user lands on the Default Dashboard after logging in
     Given I am a logged in user with the "Authenticated user" user
-    Then the path should be "/dashboard/default_dashboard"
+    Then the path should be "/webdashboard/default_dashboard"
      And I should see "Default Dashboard"
