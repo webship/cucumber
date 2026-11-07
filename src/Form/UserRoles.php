@@ -2,11 +2,32 @@
 
 namespace Drupal\cucumber\Form;
 
-use Symfony\Component\Yaml\Yaml;
+use Drupal\Component\Serialization\Yaml;
+use Drupal\Core\Extension\ModuleInstallerInterface;
+use Drupal\Core\Extension\ProfileExtensionList;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class UserRoles extends FormBase {
+
+  /**
+   * Constructs the form.
+   */
+  public function __construct(
+    protected ProfileExtensionList $profileList,
+    protected ModuleInstallerInterface $moduleInstaller,
+  ) {}
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('extension.list.profile'),
+      $container->get('module_installer'),
+    );
+  }
 
   /**
    * {@inheritdoc}
@@ -18,11 +39,11 @@ class UserRoles extends FormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
 
     // Cucumber User Roles.
-    $user_roles_file = DRUPAL_ROOT . '/' . \Drupal::service('extension.list.profile')->getPath('cucumber') . '/config/install_tasks/user_roles.yml';
+    $user_roles_file = DRUPAL_ROOT . '/' . $this->profileList->getPath('cucumber') . '/config/install_tasks/user_roles.yml';
 
     if (file_exists($user_roles_file)) {
       $user_roles_content = file_get_contents($user_roles_file);
-      $user_roles = (array) Yaml::parse($user_roles_content);
+      $user_roles = (array) Yaml::decode($user_roles_content);
 
       $form['#title'] = $this->t($user_roles['user_roles']['display_name']);
       $form['description'] = [
@@ -67,10 +88,10 @@ class UserRoles extends FormBase {
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
-    $user_roles_file = DRUPAL_ROOT . '/' . \Drupal::service('extension.list.profile')->getPath('cucumber') . '/config/install_tasks/user_roles.yml';
+    $user_roles_file = DRUPAL_ROOT . '/' . $this->profileList->getPath('cucumber') . '/config/install_tasks/user_roles.yml';
 
     $user_roles_content = file_get_contents($user_roles_file);
-    $user_roles = (array) Yaml::parse($user_roles_content);
+    $user_roles = (array) Yaml::decode($user_roles_content);
 
     $user_roles_selected = 0;
     $user_roles_options = $user_roles['user_roles']['options'];
@@ -93,18 +114,17 @@ class UserRoles extends FormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
 
     // Cucumber User Roles.
-    $user_roles_file = DRUPAL_ROOT . '/' . \Drupal::service('extension.list.profile')->getPath('cucumber') . '/config/install_tasks/user_roles.yml';
+    $user_roles_file = DRUPAL_ROOT . '/' . $this->profileList->getPath('cucumber') . '/config/install_tasks/user_roles.yml';
 
     $user_roles_content = file_get_contents($user_roles_file);
-    $user_roles = (array) Yaml::parse($user_roles_content);
+    $user_roles = (array) Yaml::decode($user_roles_content);
 
     $user_roles_options = $user_roles['user_roles']['options'];
 
     foreach ($user_roles_options as $user_roles_key => $user_roles_info) {
 
       if ($user_roles_key != "admin" && $form_state->getValue($user_roles_key) == 1) {
-        $installer = \Drupal::service('module_installer');
-        $installer->install([$user_roles_info['source_config']]);
+        $this->moduleInstaller->install([$user_roles_info['source_config']]);
       }
     }
   }

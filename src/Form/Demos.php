@@ -2,11 +2,32 @@
 
 namespace Drupal\cucumber\Form;
 
-use Symfony\Component\Yaml\Yaml;
+use Drupal\Component\Serialization\Yaml;
+use Drupal\Core\Extension\ModuleInstallerInterface;
+use Drupal\Core\Extension\ProfileExtensionList;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class Demos extends FormBase {
+
+  /**
+   * Constructs the form.
+   */
+  public function __construct(
+    protected ProfileExtensionList $profileList,
+    protected ModuleInstallerInterface $moduleInstaller,
+  ) {}
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('extension.list.profile'),
+      $container->get('module_installer'),
+    );
+  }
 
   /**
    * {@inheritdoc}
@@ -18,11 +39,11 @@ class Demos extends FormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
 
     // Cucumber Demo list.
-    $demos_file = DRUPAL_ROOT . '/' . \Drupal::service('extension.list.profile')->getPath('cucumber') . '/config/install_tasks/demos.yml';
+    $demos_file = DRUPAL_ROOT . '/' . $this->profileList->getPath('cucumber') . '/config/install_tasks/demos.yml';
 
     if (file_exists($demos_file)) {
       $demos_content = file_get_contents($demos_file);
-      $demos = (array) Yaml::parse($demos_content);
+      $demos = (array) Yaml::decode($demos_content);
 
       $form['#title'] = $this->t($demos['demos']['display_name']);
       $form['description'] = [
@@ -77,17 +98,16 @@ class Demos extends FormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
 
-    $demos_file = DRUPAL_ROOT . '/' . \Drupal::service('extension.list.profile')->getPath('cucumber') . '/config/install_tasks/demos.yml';
+    $demos_file = DRUPAL_ROOT . '/' . $this->profileList->getPath('cucumber') . '/config/install_tasks/demos.yml';
 
     $demos_content = file_get_contents($demos_file);
-    $demos = (array) Yaml::parse($demos_content);
+    $demos = (array) Yaml::decode($demos_content);
 
     $demo_key = $form_state->getValue('cucumber_demos');
     $source_name = $demos['demos']['options'][$demo_key]['source_name'];
 
     if ($demo_key != 'non_demo') {
-      $installer = \Drupal::service('module_installer');
-      $installer->install([$source_name]);
+      $this->moduleInstaller->install([$source_name]);
     }
   }
 

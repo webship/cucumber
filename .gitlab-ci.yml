@@ -9,6 +9,9 @@ include:
 # Default build: Drupal 11 on PHP 8.4. Drupal 12 and the newest PHP run as
 # opt-in variant jobs, allowed to fail, until they become the default.
 variables:
+  # No yarn.lock is committed; Yarn 4 defaults to immutable installs and would
+  # refuse to create one. Allow lockfile creation in CI for every job.
+  YARN_ENABLE_IMMUTABLE_INSTALLS: "false"
   # The distribution depends on Display Builder (beta), Media Directories (rc) and,
   # through Web Config, Config Update (alpha);
   # drupalci builds its own root project, so our root stability does not apply there.
@@ -17,9 +20,15 @@ variables:
   OPT_IN_TEST_NEXT_MAJOR: "1"
   OPT_IN_TEST_MAX_PHP: "1"
 
+.composer-base:
+  variables:
+    # Drupal core's own Yarn 4.9.1 would read the project .yarnrc.yml (Yarn >= 4.14 keys) too.
+    YARN_RC_FILENAME: .yarnrc.core.yml
+    YARN_NODE_LINKER: node-modules
+
 cspell:
   stage: validate
-  image: node:20
+  image: node:24
   before_script:
     - npm install -g cspell
   script:
@@ -38,7 +47,7 @@ cspell:
 # The paired .eslintignore excludes vendor/, .yarn/, web/ and node_modules/ so
 # `eslint .` only lints the profile's own source.
 .lint-node:
-  image: node:20
+  image: node:24
   dependencies: []
   before_script:
     - npm install --no-save --no-package-lock --ignore-scripts --no-audit --no-fund
@@ -132,8 +141,8 @@ stylelint:
     # A test runner has no mail server: collect the mails instead of sending
     # them, so the password reset form returns instead of waiting on a mailer.
     - $CI_PROJECT_DIR/$DRUSH_BIN --root=$CI_PROJECT_DIR/$_WEB_ROOT config:set system.mail interface.default test_mail_collector -y
-    # Node.js 20.
-    - curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+    # Node.js 24.
+    - curl -fsSL https://deb.nodesource.com/setup_24.x | bash -
     - apt-get install -y nodejs
     - node --version && npm --version
     # Yarn deps + Playwright Chromium.
@@ -170,3 +179,9 @@ webship-js-test:
 composer:
   variables:
     DRUPAL_CORE: "11.4.8"
+
+# Drupal 12: let Composer install the contributed modules that do not declare
+# ^12 yet.
+composer (next major):
+  variables:
+    _LENIENT_ALLOW_LIST: "autocomplete_deluxe,automatic_updates,coffee,config_filter,config_ignore,config_import_single,config_rewrite,config_split,config_update,config_update_ui,crop,ctools,display_builder,display_builder_entity_view,display_builder_page_layout,display_builder_ui,display_builder_views,drupical,embed,entity_embed,field_group,focal_point,inline_entity_form,media_directories_editor,media_directories_ui,media_remote_audio,media_remote_image,metatag,pathauto,sam,smart_trim,tagify,token_filter,tracker,user_redirect,view_password,views_bulk_edit,views_bulk_operations"

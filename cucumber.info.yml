@@ -3,7 +3,6 @@ type: profile
 description: Cucumber Automated Functional Acceptance Testing Management system
 core_version_requirement: ^11.4 || ^12
 package: Cucumber
-project: cucumber
 distribution:
   name: Cucumber
   install:
