@@ -161,6 +161,7 @@ stylelint:
 webship-js-test:
   extends: .drupal-node-base
   script:
+    - ./node_modules/.bin/cucumber-js --config cucumber.js --dry-run
     - ./node_modules/.bin/cucumber-js --config cucumber.js --tags "not @wip"
   artifacts:
     when: always
@@ -178,7 +179,7 @@ webship-js-test:
 # by UIkit Admin, the log in page included, fail on 11.4.6.
 composer:
   variables:
-    DRUPAL_CORE: "11.4.8"
+    DRUPAL_CORE: "11.4.x-dev"
 
 # Drupal 12: let Composer install the contributed modules that do not declare
 # ^12 yet.

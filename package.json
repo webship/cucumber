@@ -24,9 +24,11 @@
     "lint:yaml": "eslint --ext .yml .",
     "test": "node ./node_modules/@cucumber/cucumber/bin/cucumber.js --config cucumber.js",
     "test:headed": "HEADLESS=false node ./node_modules/@cucumber/cucumber/bin/cucumber.js --config cucumber.js",
-    "test:chromium": "BROWSER=chromium node ./node_modules/@cucumber/cucumber/bin/cucumber.js --config cucumber.js"
+    "test:chromium": "BROWSER=chromium node ./node_modules/@cucumber/cucumber/bin/cucumber.js --config cucumber.js",
+    "test:dry": "node ./node_modules/@cucumber/cucumber/bin/cucumber.js --config cucumber.js --dry-run"
   },
   "devDependencies": {
+    "@webship-js/drupal-core-steps": "^2.1.0",
     "webship-js": "^2.0.6"
   },
   "resolutions": {
