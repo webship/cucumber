@@ -174,12 +174,15 @@ webship-js-test:
       junit: tests/reports/junit.xml
   allow_failure: false
 
-# Drupal 11.4.8 carries the fix for the Twig 3.30 escape TypeError
-# (https://www.drupal.org/i/3625969), which 11.4.6 does not: pages rendered
-# by UIkit Admin, the log in page included, fail on 11.4.6.
+# The Drupal 11.4 development branch carries the fix for the Twig 3.30 escape
+# TypeError (https://www.drupal.org/i/3625969), which 11.4.6 does not: pages
+# rendered by UIkit Admin, the log in page included, fail on 11.4.6. The branch
+# has dev stability, below the alpha floor set for the pipeline above, so this
+# job lowers the floor to dev.
 composer:
   variables:
     DRUPAL_CORE: "11.4.x-dev"
+    MINIMUM_STABILITY_OVERRIDE: "dev"
 
 # Drupal 12: let Composer install the contributed modules that do not declare
 # ^12 yet.
