@@ -10,6 +10,7 @@ users:
   - tester
   - analyst
   - coordinator
+  - designer
   - product_owner
   - administrator
 user:
@@ -33,6 +34,10 @@ user:
     name: Coordinator
     mail: test.coordinator@webship.org
     role: coordinator
+  designer:
+    name: Designer
+    mail: test.designer@webship.org
+    role: designer
   product_owner:
     name: Product Owner
     mail: test.product_owner@webship.org
@@ -40,4 +45,4 @@ user:
   administrator:
     name: Administrator
     mail: test.administrator@webship.org
-    role: administrator
+    role: admin

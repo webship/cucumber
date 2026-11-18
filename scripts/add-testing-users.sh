@@ -10,9 +10,11 @@ usage() {
   cat <<'HELP'
 Usage: bash add-testing-users.sh [--help]
 
-Adds the users of cucumber.users.yml to the Cucumber site, one for each role:
-Authenticated user, Developer, Tester, Analyst, Coordinator, Product Owner and
-Administrator. Run it from this scripts folder of the Cucumber profile
+Adds the users of cucumber.users.yml to the Cucumber site, one for each user
+role of the site: Authenticated user (no role), Developer, Tester, Analyst,
+Coordinator, Designer, Product Owner and Administrator (the Admin role). The
+optional roles are the ones the installer adds when they are chosen. Run it
+from this scripts folder of the Cucumber profile
 (web/profiles/contrib/cucumber/scripts); with DDEV, inside the web container:
 
   ddev exec 'cd web/profiles/contrib/cucumber/scripts && bash add-testing-users.sh'
@@ -22,7 +24,7 @@ in its environment variable, CUCUMBER_<USER>_PASS, where <USER> is the key of
 the user in cucumber.users.yml in capitals:
 
   CUCUMBER_AUTHENTICATED_PASS   CUCUMBER_DEVELOPER_PASS   CUCUMBER_TESTER_PASS
-  CUCUMBER_ANALYST_PASS         CUCUMBER_COORDINATOR_PASS
+  CUCUMBER_ANALYST_PASS         CUCUMBER_COORDINATOR_PASS CUCUMBER_DESIGNER_PASS
   CUCUMBER_PRODUCT_OWNER_PASS   CUCUMBER_ADMINISTRATOR_PASS
 
 A user whose variable is not set gets a random password made for this run,

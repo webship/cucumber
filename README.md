@@ -31,6 +31,8 @@ directories, with dashboards for each team role.
 ## Requirements
 
 Drupal core `^11.4 || ^12`. Drupal 11.4 on PHP 8.4 is the tested default.
+Node.js 24 or later for the tooling and the webship-js suite (`package.json`),
+as for the tooling of Drupal core.
 Every library comes from a Composer package, so no asset-packagist,
 npm-asset or bower-asset repository is needed.
 
@@ -86,9 +88,11 @@ ddev drush site:install cucumber --account-name=webmaster --account-pass=<passwo
 ddev launch
 ```
 
-`ddev restart` picks up the `.ddev/config.yaml` the template ships (PHP 8.3,
-Node.js 22, MariaDB 10.11), which replaces the one `ddev config` wrote. The
-site is at `https://<directory>.ddev.site`.
+`ddev restart` picks up the `.ddev/config.yaml` the template ships, which
+replaces the one `ddev config` wrote: the
+[Cucumber Project](https://www.drupal.org/project/cucumber_project) README
+gives its PHP, Node.js and MariaDB versions. The site is at
+`https://<directory>.ddev.site`.
 
 ### On an existing DDEV project
 
@@ -145,13 +149,15 @@ and Cucumber-js) lives in `tests/`. See `tests/README.md`.
 
 ### Testing users
 
-`scripts/add-testing-users.sh` adds one user for each role of
-`scripts/cucumber.users.yml` to a Cucumber site: Authenticated user,
-Developer, Tester, Analyst, Coordinator, Product Owner and Administrator. No
-password is kept in the repository: each user takes the password in its
-environment variable, `CUCUMBER_<USER>_PASS` (`CUCUMBER_TESTER_PASS`,
-`CUCUMBER_PRODUCT_OWNER_PASS`, ...), or a random one made for the run and
-printed once at the end, the way CI makes the passwords of its test accounts.
+`scripts/add-testing-users.sh` adds the users of `scripts/cucumber.users.yml`
+to a Cucumber site, one for each user role of the site: Authenticated user (no
+role), Developer, Tester, Analyst, Coordinator, Designer, Product Owner and
+Administrator (the Admin role). The optional roles are the ones the installer
+adds when they are chosen in its User Roles step. No password is kept in the
+repository: each user takes the password in its environment variable,
+`CUCUMBER_<USER>_PASS` (`CUCUMBER_TESTER_PASS`, `CUCUMBER_PRODUCT_OWNER_PASS`,
+...), or a random one made for the run and printed once at the end, the way CI
+makes the passwords of its test accounts.
 Run it from the `scripts` folder of the profile, inside DDEV:
 
 ```shell
