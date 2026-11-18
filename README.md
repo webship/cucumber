@@ -142,3 +142,20 @@ Components and Projects links the role may follow, and a Log out link.
 
 A [webship-js](https://www.npmjs.com/package/webship-js) suite (Playwright
 and Cucumber-js) lives in `tests/`. See `tests/README.md`.
+
+### Testing users
+
+`scripts/add-testing-users.sh` adds one user for each role of
+`scripts/cucumber.users.yml` to a Cucumber site: Authenticated user,
+Developer, Tester, Analyst, Coordinator, Product Owner and Administrator. No
+password is kept in the repository: each user takes the password in its
+environment variable, `CUCUMBER_<USER>_PASS` (`CUCUMBER_TESTER_PASS`,
+`CUCUMBER_PRODUCT_OWNER_PASS`, ...), or a random one made for the run and
+printed once at the end, the way CI makes the passwords of its test accounts.
+Run it from the `scripts` folder of the profile, inside DDEV:
+
+```shell
+ddev exec 'cd web/profiles/contrib/cucumber/scripts && CUCUMBER_TESTER_PASS="<password>" bash add-testing-users.sh'
+```
+
+`bash add-testing-users.sh --help` lists every variable.
