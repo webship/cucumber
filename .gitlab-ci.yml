@@ -6,7 +6,7 @@ include:
       - "/includes/include.drupalci.variables.yml"
       - "/includes/include.drupalci.workflows.yml"
 
-# Default build: Drupal 11 on PHP 8.4. Drupal 12 and the newest PHP run as
+# Default build: Drupal 11 on PHP 8.5. Drupal 12 and the newest PHP run as
 # opt-in variant jobs, allowed to fail, until they become the default.
 variables:
   # No yarn.lock is committed; Yarn 4 defaults to immutable installs and would
@@ -16,7 +16,7 @@ variables:
   # through Web Config, Config Update (alpha);
   # drupalci builds its own root project, so our root stability does not apply there.
   MINIMUM_STABILITY_OVERRIDE: "alpha"
-  _TARGET_PHP: "8.4"
+  _TARGET_PHP: "8.5"
   OPT_IN_TEST_NEXT_MAJOR: "1"
   OPT_IN_TEST_MAX_PHP: "1"
 
