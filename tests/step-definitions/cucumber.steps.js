@@ -1,6 +1,8 @@
 /**
  * @file
- * Cucumber profile steps: shared Webship login/provisioning plus Ace input.
+ * Cucumber profile steps: the field and button checks of the Feature form and
+ * the Ace editor input. The login by handle comes from
+ * @webship-js/drupal-core-steps.
  */
 
 const { Given, When, Then } = require('@cucumber/cucumber');
@@ -88,8 +90,9 @@ Then(/^(?:I |we )?should see the button "([^"]*)"$/, async function (text) {
 });
 
 /**
- * Set the content of the Ace editor that replaced a textarea, then wait for
- * ace_editor's debounced sync back to the hidden textarea.
+ * Set the content of the Ace editor that replaced a textarea, then wait until
+ * the Ace Editor module has written it back to that textarea (it does so on
+ * the editor's change event, debounced), so the form submits the new script.
  *
  * Example #1: When I fill in the Ace editor with:
  * Example #2: And I fill in the Ace editor with:
@@ -109,7 +112,22 @@ When(/^(?:I |we )?fill in the Ace editor with:$/, async function (text) {
         .edit(document.querySelector('.ace_editor'))
         .session.setValue(value);
     }, text);
-    await this.page.waitForTimeout(700);
+    // The editor's container is "<textarea id>-ace-editor".
+    await this.page.waitForFunction(
+      () => {
+        const editor = document.querySelector('.ace_editor');
+        const textarea =
+          editor && editor.id
+            ? document.getElementById(editor.id.replace(/-ace-editor$/, ''))
+            : null;
+        return (
+          !!textarea &&
+          textarea.value === window.ace.edit(editor).session.getValue()
+        );
+      },
+      null,
+      { timeout: 15000 },
+    );
   }, 'Could not fill in the Ace editor');
 });
 

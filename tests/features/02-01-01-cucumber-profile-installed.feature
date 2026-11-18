@@ -12,10 +12,9 @@ Feature: The Cucumber installation profile is installed
      And I should see "Cucumber"
 
   Scenario: The Cucumber modules installed by the profile are enabled
-    When I navigate to "/admin/modules"
-    Then the element "#edit-modules-cucumber-core-enable" with the attribute "checked" and the value "checked" should exist
-     And the element "#edit-modules-gherkin-enable" with the attribute "checked" and the value "checked" should exist
-     And the element "#edit-modules-cucumber-user-roles-enable" with the attribute "checked" and the value "checked" should exist
-     And the element "#edit-modules-cucumber-products-enable" with the attribute "checked" and the value "checked" should exist
-     And the element "#edit-modules-cucumber-components-enable" with the attribute "checked" and the value "checked" should exist
-     And the element "#edit-modules-cucumber-projects-enable" with the attribute "checked" and the value "checked" should exist
+    Then the "cucumber_core" module should be installed
+     And the "gherkin" module should be installed
+     And the "cucumber_user_roles" module should be installed
+     And the "cucumber_products" module should be installed
+     And the "cucumber_components" module should be installed
+     And the "cucumber_projects" module should be installed

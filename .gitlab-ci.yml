@@ -92,8 +92,8 @@ stylelint:
 #   3. before_script installs Drupal with the cucumber profile itself, then
 #      Node.js + yarn deps + Playwright Chromium. Test jobs only override
 #      `script:`.
-#   4. Per-role test users are provisioned by the first suite scenario, so
-#      drush only installs Drupal with the Webmaster account.
+#   4. The site build creates the accounts of cucumber.js
+#      (worldParameters.users) with drush; the suite only logs in.
 # ------------------------------------------------------------------------------
 .drupal-node-base:
   extends: .testing-job-base
@@ -106,8 +106,16 @@ stylelint:
   variables:
     # composer.json sets bin-dir to bin/, so drush is not under vendor/bin.
     DRUSH_BIN: "bin/drush"
-    DRUPAL_ADMIN_USERNAME: "webmaster"
-    DRUPAL_ADMIN_PASSWORD: "dD.123123ddd"
+    # The accounts of cucumber.js worldParameters.users. Their passwords are
+    # made in before_script, for this throwaway site only.
+    DRUPAL_ADMIN_USER: "webmaster"
+    DRUPAL_ADMIN_MAIL: "webmaster@example.test"
+    CUCUMBER_ADMIN_USER: "admin_user"
+    CUCUMBER_ADMIN_MAIL: "admin_user@example.test"
+    CUCUMBER_TESTER_USER: "tester_user"
+    CUCUMBER_TESTER_MAIL: "tester_user@example.test"
+    DRUPAL_AUTHENTICATED_USER: "authenticated_user"
+    DRUPAL_AUTHENTICATED_MAIL: "authenticated_user@example.test"
     DRUPAL_TEST_BASE_URL: "http://localhost"
     LAUNCH_URL: "http://localhost"
     FORCE_COLOR: "1"
@@ -122,13 +130,18 @@ stylelint:
     - service apache2 start
     # Database.
     - export SIMPLETEST_DB=mysql://$MYSQL_USER:$MYSQL_PASSWORD@database/$MYSQL_DATABASE
+    # Test account passwords, for this job only.
+    - export DRUPAL_ADMIN_PASS=$(php -r "echo bin2hex(random_bytes(12));")
+    - export CUCUMBER_ADMIN_PASS=$(php -r "echo bin2hex(random_bytes(12));")
+    - export CUCUMBER_TESTER_PASS=$(php -r "echo bin2hex(random_bytes(12));")
+    - export DRUPAL_AUTHENTICATED_PASS=$(php -r "echo bin2hex(random_bytes(12));")
     # Drupal site install with the cucumber profile, answering its install
     # tasks: every user role (Admin is always on), all recipes, no demo.
     - $CI_PROJECT_DIR/$DRUSH_BIN --root=$CI_PROJECT_DIR/$_WEB_ROOT site:install cucumber
         --db-url=$SIMPLETEST_DB
-        --account-name=webmaster
-        --account-pass=dD.123123ddd
-        --account-mail=webmaster@example.test
+        --account-name="$DRUPAL_ADMIN_USER"
+        --account-pass="$DRUPAL_ADMIN_PASS"
+        --account-mail="$DRUPAL_ADMIN_MAIL"
         --site-name="Cucumber Test"
         cucumber_user_roles.tester=1
         cucumber_user_roles.developer=1
@@ -138,6 +151,14 @@ stylelint:
         cucumber_user_roles.product_owner=1
         -y
     - $CI_PROJECT_DIR/$DRUSH_BIN --root=$CI_PROJECT_DIR/$_WEB_ROOT cache:rebuild
+    # Test accounts (cucumber.js worldParameters.users): a member of the Admin
+    # role, a tester and a member without a role. The suite never creates or
+    # deletes an account: the site build does.
+    - $CI_PROJECT_DIR/$DRUSH_BIN --root=$CI_PROJECT_DIR/$_WEB_ROOT user:create "$CUCUMBER_ADMIN_USER" --mail="$CUCUMBER_ADMIN_MAIL" --password="$CUCUMBER_ADMIN_PASS"
+    - $CI_PROJECT_DIR/$DRUSH_BIN --root=$CI_PROJECT_DIR/$_WEB_ROOT user:role:add admin "$CUCUMBER_ADMIN_USER"
+    - $CI_PROJECT_DIR/$DRUSH_BIN --root=$CI_PROJECT_DIR/$_WEB_ROOT user:create "$CUCUMBER_TESTER_USER" --mail="$CUCUMBER_TESTER_MAIL" --password="$CUCUMBER_TESTER_PASS"
+    - $CI_PROJECT_DIR/$DRUSH_BIN --root=$CI_PROJECT_DIR/$_WEB_ROOT user:role:add tester "$CUCUMBER_TESTER_USER"
+    - $CI_PROJECT_DIR/$DRUSH_BIN --root=$CI_PROJECT_DIR/$_WEB_ROOT user:create "$DRUPAL_AUTHENTICATED_USER" --mail="$DRUPAL_AUTHENTICATED_MAIL" --password="$DRUPAL_AUTHENTICATED_PASS"
     # A test runner has no mail server: collect the mails instead of sending
     # them, so the password reset form returns instead of waiting on a mailer.
     - $CI_PROJECT_DIR/$DRUSH_BIN --root=$CI_PROJECT_DIR/$_WEB_ROOT config:set system.mail interface.default test_mail_collector -y

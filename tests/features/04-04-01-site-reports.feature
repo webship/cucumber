@@ -14,12 +14,10 @@ Feature: The reports of the site have nothing to say about Cucumber
 
   Scenario: No module of the past administration theme is installed
     When I navigate to "/admin/appearance"
-    Then I should see "UIkit Admin"
-     And I should not see "Gin"
-    When I navigate to "/admin/modules"
-    Then I should not see "Gin Login"
-     And I should not see "Gin Toolbar"
+    Then the default theme should be "UIkit Admin"
+     And I should not see "Gin" in the ".system-themes-list-installed" element
+     And the "gin_login" module should not be installed
+     And the "gin_toolbar" module should not be installed
 
   Scenario: Anonymous Redirect is installed
-    When I navigate to "/admin/modules"
-    Then the element "#edit-modules-anonymous-redirect-enable" with the attribute "checked" and the value "checked" should exist
+    Then the "anonymous_redirect" module should be installed

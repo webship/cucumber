@@ -3,6 +3,8 @@ Feature: Adding a Feature media item with a Gherkin script
   I want to write a Gherkin script in the Ace editor and save it as a Feature
   So that the script is stored and listed with the other features
 
+  The scenario that saves a Feature removes it at its end.
+
   Background:
     Given I am a logged in user with the "Webmaster" user
 
@@ -26,3 +28,6 @@ Feature: Adding a Feature media item with a Gherkin script
     Then I should see "Feature Login smoke feature has been created."
     When I navigate to "/admin/content/media"
     Then I should see "Login smoke feature"
+    When I open the "Delete" operation in the "Login smoke feature" row
+     And I confirm the deletion
+    Then I should see "The media item Login smoke feature has been deleted."

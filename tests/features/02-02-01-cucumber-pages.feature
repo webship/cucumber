@@ -9,12 +9,12 @@ Feature: The key Cucumber pages respond
   Scenario: The front page is the Default Dashboard
     When I go to the homepage
     Then I should see "Default Dashboard"
-     And I should not see "The website encountered an unexpected error"
+     And the page should return HTTP status 200
 
   Scenario Outline: The "<page>" page loads
     When I navigate to "<path>"
     Then I should see "<page>"
-     And I should not see "The website encountered an unexpected error"
+     And the page should return HTTP status 200
 
     Examples:
       | page                    | path                               |

@@ -3,6 +3,9 @@ Feature: The roles write a feature and move it through the workflow
   I want to write a feature with its Gherkin script and move it from step to step
   So that the listings show the state every feature is in
 
+  Each role removes the feature it wrote in the last scenario, so a second
+  run starts from the same site.
+
   Scenario Outline: The "<user>" user writes a feature with a Gherkin script
     Given I am a logged in user with the "<user>" user
     When I navigate to "/media/add/feature"
@@ -67,3 +70,15 @@ Feature: The roles write a feature and move it through the workflow
      And I click "Edit" in the "Tester profile feature" row
     Then the option "In Progress" should exist within the select element "#edit-moderation-state-0-state"
      And the option "Published" should not exist within the select element "#edit-moderation-state-0-state"
+
+  Scenario Outline: The "<user>" user removes the feature it wrote
+    Given I am a logged in user with the "<user>" user
+    When I navigate to "/features?name=<user>%20profile%20feature"
+     And I open the "Delete" operation in the "<user> profile feature" row
+     And I confirm the deletion
+    Then I should see "The media item <user> profile feature has been deleted."
+
+    Examples:
+      | user   |
+      | Admin  |
+      | Tester |

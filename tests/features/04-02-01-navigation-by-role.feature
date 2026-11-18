@@ -35,7 +35,7 @@ Feature: Every role has the navigation of its work and a way out
      # The rail link loads a new page: wait for it before checking the path.
      And I wait until the URL contains "<path>"
     Then the path should be "<path>"
-     And I should not see "Access denied"
+     And the page should return HTTP status 200
      And I should not see "Insert selected"
 
     Examples:
@@ -62,5 +62,4 @@ Feature: Every role has the navigation of its work and a way out
 
   Scenario: A member without a role may not open the Features page
     Given I am a logged in user with the "Authenticated user" user
-    When I navigate to "/features"
-    Then I should see "Access denied"
+    Then I should be denied access to "/features"
